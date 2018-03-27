@@ -38,6 +38,7 @@
 #include "prompt.h"
 #include "religion.h"
 #include "skills.h"
+#include "status.h"
 #include "stringutil.h"
 #include "spl-book.h"
 #include "spl-util.h"

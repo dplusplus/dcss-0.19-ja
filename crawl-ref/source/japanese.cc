@@ -7,6 +7,7 @@
 #include "AppHdr.h"
 #include "database.h"
 #include "english.h"
+#include "itemprop-enum.h"
 #include "japanese.h"
 #include "stringutil.h"
 

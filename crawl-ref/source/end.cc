@@ -367,7 +367,7 @@ NORETURN void end_game(scorefile_entry &se, int hiscore_index)
                         hiscore_index);
 
 #ifndef DGAMELAUNCH
-    cprintf(jtrans_notrim("\nYou can find your morgue file in the '%s' directory."),
+    cprintf(jtrans_notrimc("\nYou can find your morgue file in the '%s' directory."),
             morgue_directory().c_str());
 #endif
 
