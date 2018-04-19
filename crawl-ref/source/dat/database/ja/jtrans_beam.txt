@@ -457,7 +457,7 @@ The sticky flame splashes onto %s!
 %%%%
 is flash-frozen.
 
-%sは一瞬のうちに凍結された。
+は一瞬のうちに凍結された。
 %%%%
 %s %s blown backwards by the freezing wind.
 
