@@ -327,6 +327,17 @@ static TextDB AllDBs[] =
            "jtrans_zap_data.txt",
 
            "montitle.txt",
+
+           "jtrans_tilereg_abl.txt",
+           "jtrans_tilereg_cmd.txt",
+           "jtrans_tilereg_dgn.txt",
+           "jtrans_tilereg_doll.txt",
+           "jtrans_tilereg_inv.txt",
+           "jtrans_tilereg_map.txt",
+           "jtrans_tilereg_mem.txt",
+           "jtrans_tilereg_msg.txt",
+           "jtrans_tilereg_skl.txt",
+           "jtrans_tilereg_spl.txt",
            nullptr),
 
     TextDB("randart_vanilla", "database/ja/crawlj/",

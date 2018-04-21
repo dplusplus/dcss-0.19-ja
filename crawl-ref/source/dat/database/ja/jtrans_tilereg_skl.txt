@@ -1,0 +1,33 @@
+%%%%
+%-14s Skill %4.1f Aptitude %c%d
+
+%-14s スキルLv %4.1f 適性 %c%d
+%%%%
+You cannot train this skill.
+
+このスキルを鍛えることはできない。
+%%%%
+There's no point to toggling this skill anymore.
+
+このスキルをこれ以上鍛えようとすることには意味がない。
+%%%%
+Manage skills
+
+スキル管理
+%%%%
+You cannot train this skill now.
+
+現状ではこのスキルを鍛えることはできない。
+%%%%
+Disable training
+
+訓練終了
+%%%%
+Enable training
+
+訓練開始
+%%%%
+[Ctrl + L-Click] Change skill level (wizmode)
+
+[Ctrl + 左クリック] スキルLv変更(ウィザードモード)
+%%%%

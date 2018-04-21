@@ -1,0 +1,13 @@
+%%%%
+[L-Click] Enable map mode
+
+[左クリック] マップモードを有効にする
+%%%%
+[L-Click] Travel / [R-Click] View
+
+[左クリック] 自動移動 / [右クリック] その場所を見る
+%%%%
+[Shift + L-Click] Autoexplore
+
+[Shift + 左クリック] 自動探索
+%%%%

@@ -1,0 +1,145 @@
+%%%%
+Custom
+
+カスタム
+%%%%
+Default
+
+デフォルト
+%%%%
+Equip
+
+装備
+%%%%
+(none)
+
+(なし)
+%%%%
+(show equip)
+
+(装備を表示)
+%%%%
+Doll index %d / %d
+
+組み合わせ番号 %d / %d
+%%%%
+Current Equipment
+
+現在の装備
+%%%%
+Custom Doll
+
+素体をカスタム
+%%%%
+Job Defaults
+
+職業デフォルト
+%%%%
+Doll Mode: %s
+
+プレイヤータイル組み合わせ: %s
+%%%%
+Base
+
+ベース
+%%%%
+Shadow
+
+影
+%%%%
+Halo
+
+後光
+%%%%
+Ench
+
+魔力付与状態
+%%%%
+Cloak
+
+クローク
+%%%%
+Boots
+
+ブーツ
+%%%%
+Legs
+
+脚
+%%%%
+Body
+
+体
+%%%%
+Gloves
+
+籠手/手袋
+%%%%
+LHand
+
+左手
+%%%%
+RHand
+
+右手
+%%%%
+Hair
+
+髪
+%%%%
+Beard
+
+髭/スカーフ
+%%%%
+Helm
+
+兜
+%%%%
+DrcWing
+
+ドラコ翼
+%%%%
+DrcHead
+
+ドラコ頭
+%%%%
+->
+
+→
+%%%%
+%s%12s: (show equip)
+
+%s %12s: (装備を表示)
+%%%%
+%s%12s: (none)
+
+%s %12s: (なし)
+%%%%
+%s%12s: %3d/%3d
+
+%s %12s: %3d/%3d
+%%%%
+Change parts       left/right              Confirm choice      Enter
+
+パーツ変更         ←/→                   選択を確認             Enter
+%%%%
+Change category    up/down                 Copy doll           Ctrl-C
+
+カテゴリ変更       ↑/↓                   組み合わせをコピー     Ctrl + C
+%%%%
+Change doll        0-9, Shift + arrows     Paste copied doll   Ctrl-V
+
+組み合わせ切り替え 0～9, Shift + 矢印      組み合わせをペースト   Ctrl + V
+%%%%
+Change doll mode   m                       Randomise doll      Ctrl-R
+
+モードを切り替え   m                       ランダム組み合わせ     Ctrl + R
+%%%%
+Save menu          Escape, Ctrl-S          Toggle equipment    *
+
+セーブする         Esc, Ctrl + S           装備中のものと切り替え *
+%%%%
+Quit menu          q, Ctrl-Q
+
+終了する           q, Ctrl + Q
+%%%%

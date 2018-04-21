@@ -1,0 +1,25 @@
+%%%%
+[L-Click]
+
+[左クリック]
+%%%%
+Display abilities
+
+能力一覧を表示
+%%%%
+Use abilities
+
+能力を使用
+%%%%
+You cannot use this ability right now.
+
+今はこの能力を使うことはできない。
+%%%%
+[L-Click] Use (%)
+
+[左クリック] 使用 (%)
+%%%%
+[R-Click] Describe (%)
+
+[右クリック] 解説 (%)
+%%%%

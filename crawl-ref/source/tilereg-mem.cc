@@ -5,6 +5,7 @@
 #include "tilereg-mem.h"
 
 #include "cio.h"
+#include "database.h"
 #include "describe.h"
 #include "macro.h"
 #include "output.h"
@@ -43,8 +44,8 @@ void MemoriseRegion::draw_tag()
 
     const spell_type spell = (spell_type) idx;
     const string failure = failure_rate_to_string(raw_spell_fail(spell));
-    string desc = make_stringf("%s    (%s)    %d/%d spell slot%s",
-                               spell_title(spell),
+    string desc = make_stringf(jtransc("%s    (%s)    %d/%d spell slot%s"),
+                               spell_title_jc(spell),
                                failure.c_str(),
                                spell_levels_required(spell),
                                player_spell_levels(),
@@ -84,8 +85,8 @@ bool MemoriseRegion::update_tab_tip_text(string &tip, bool active)
     const char *prefix2 = active ? "" : "          ";
 
     tip = make_stringf("%s%s\n%s%s",
-                       prefix1, "Display spells in carried books",
-                       prefix2, "Memorise spells");
+                       jtrans_notrimc(prefix1), jtransc("Display spells in carried books"),
+                       jtrans_notrimc(prefix2), jtransc("Memorise spells"));
 
     return true;
 }
@@ -102,14 +103,14 @@ bool MemoriseRegion::update_tip_text(string& tip)
     int flag = m_items[item_idx].flag;
     vector<command_type> cmd;
     if (flag & TILEI_FLAG_INVALID)
-        tip = "You cannot memorise this spell now.";
+        tip = jtrans("You cannot memorise this spell now.");
     else
     {
-        tip = "[L-Click] Memorise (%)";
+        tip = jtrans("[L-Click] Memorise (%)");
         cmd.push_back(CMD_MEMORISE_SPELL);
     }
 
-    tip += "\n[R-Click] Describe";
+    tip += jtrans_notrim("\n[R-Click] Describe");
 
     insert_commands(tip, cmd);
     return true;

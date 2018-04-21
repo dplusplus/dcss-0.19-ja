@@ -1,0 +1,5 @@
+%%%%
+[L-Click] Browse message history
+
+[左クリック] メッセージ履歴を表示する
+%%%%

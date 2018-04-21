@@ -5,6 +5,7 @@
 #include "tilereg-spl.h"
 
 #include "cio.h"
+#include "database.h"
 #include "libutil.h"
 #include "macro.h"
 #include "message.h"
@@ -45,8 +46,8 @@ void SpellRegion::draw_tag()
 
     const spell_type spell = (spell_type) idx;
     const string failure = failure_rate_to_string(raw_spell_fail(spell));
-    string desc = make_stringf("%d MP    %s    (%s)", spell_mana(spell),
-                               spell_title(spell), failure.c_str());
+    string desc = make_stringf(jtransc("%d MP    %s    (%s)"), spell_mana(spell),
+                               spell_title_jc(spell), failure.c_str());
     draw_desc(desc.c_str());
 }
 
@@ -84,8 +85,8 @@ bool SpellRegion::update_tab_tip_text(string &tip, bool active)
     const char *prefix2 = active ? "" : "          ";
 
     tip = make_stringf("%s%s\n%s%s",
-                       prefix1, "Display memorised spells",
-                       prefix2, "Cast spells");
+                       jtrans_notrimc(prefix1), jtransc("Display memorised spells"),
+                       jtrans_notrimc(prefix2), jtransc("Cast spells"));
 
     return true;
 }
@@ -102,14 +103,14 @@ bool SpellRegion::update_tip_text(string& tip)
     int flag = m_items[item_idx].flag;
     vector<command_type> cmd;
     if (flag & TILEI_FLAG_INVALID)
-        tip = "You cannot cast this spell right now.";
+        tip = jtrans("You cannot cast this spell right now.");
     else
     {
-        tip = "[L-Click] Cast (%)";
+        tip = jtrans("[L-Click] Cast (%)");
         cmd.push_back(CMD_CAST_SPELL);
     }
 
-    tip += "\n[R-Click] Describe (%)";
+    tip += jtrans_notrim("\n[R-Click] Describe (%)");
     cmd.push_back(CMD_DISPLAY_SPELLS);
     insert_commands(tip, cmd);
 

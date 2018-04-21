@@ -6,6 +6,7 @@
 
 #include "cio.h"
 #include "command.h"
+#include "database.h"
 #include "food.h"
 #include "libutil.h"
 #include "nearby-danger.h"
@@ -306,14 +307,14 @@ bool MapRegion::update_tip_text(string& tip)
         return false;
 
 #ifdef TOUCH_UI
-    tip = "[L-Click] Enable map mode";
+    tip = jtrans("[L-Click] Enable map mode");
 #else
-    tip = "[L-Click] Travel / [R-Click] View";
+    tip = jtrans("[L-Click] Travel / [R-Click] View");
     if (!player_in_branch(BRANCH_LABYRINTH)
         && (you.hunger_state > HS_STARVING || you_min_hunger())
         && i_feel_safe())
     {
-        tip += "\n[Shift + L-Click] Autoexplore";
+        tip += jtrans_notrim("\n[Shift + L-Click] Autoexplore");
     }
 #endif
     return true;

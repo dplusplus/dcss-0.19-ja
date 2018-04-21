@@ -1,0 +1,25 @@
+%%%%
+%s    (%s)    %d/%d spell slot%s
+
+%s    (%s)    %d/%d 記憶力
+%%%%
+Display spells in carried books
+
+所持している魔法書内の呪文を表示する
+%%%%
+Memorise spells
+
+呪文を覚える
+%%%%
+You cannot memorise this spell now.
+
+現状ではこの呪文を覚えることができない。
+%%%%
+[L-Click] Memorise (%)
+
+[左クリック]
+%%%%
+[R-Click] Describe
+
+[右クリック] 解説を見る
+%%%%

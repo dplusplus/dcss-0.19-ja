@@ -485,7 +485,7 @@ static item_def* _get_evokable_item(const actor* target)
     InvMenu menu(MF_SINGLESELECT | MF_ANYPRINTABLE
                  | MF_ALLOW_FORMATTING | MF_SELECT_BY_PAGE);
     menu.set_type(MT_ANY);
-    menu.set_title("Wand to zap?");
+    menu.set_title(jtrans("Wand to zap?"));
     menu.load_items(list);
     menu.show();
     vector<SelItem> sel = menu.get_selitems();
@@ -514,7 +514,7 @@ static bool _evoke_item_on_target(actor* target)
 
     if (is_known_empty_wand(*item))
     {
-        mpr("That wand is empty.");
+        mpr(jtrans("That wand is empty."));
         return false;
     }
 
@@ -590,14 +590,14 @@ static bool _cast_spell_on_target(actor* target)
 
     if (!_spell_in_range(spell, target))
     {
-        mprf("%s is out of range for that spell.",
+        mprf(jtransc("%s is out of range for that spell."),
              target->name(DESC_THE).c_str());
         return true;
     }
 
     if (spell_mana(spell) > you.magic_points)
     {
-        mpr("You don't have enough magic to cast that spell.");
+        mpr(jtrans("You don't have enough magic to cast that spell."));
         return true;
     }
 
@@ -772,7 +772,7 @@ int DungeonRegion::handle_mouse(MouseEvent &event)
     {
         string desc = get_terse_square_desc(gc);
         // Suppress floor description
-        if (desc == "floor")
+        if (desc == "floor" || desc == feature_name_j("floor"))
             desc = "";
 
         if (you.see_cell(gc))
@@ -1061,7 +1061,7 @@ static string _check_spell_evokable(const actor* target,
     string str = "";
     if (_have_appropriate_spell(target))
     {
-        str += "\n[Ctrl + L-Click] Cast spell (%)";
+        str += jtrans_notrim("\n[Ctrl + L-Click] Cast spell (%)");
         cmd.push_back(CMD_CAST_SPELL);
     }
 
@@ -1073,9 +1073,9 @@ static string _check_spell_evokable(const actor* target,
         // the application window, at least when we're not
         // in fullscreen mode, so we use Ctrl-Shift instead.
         if (!tiles.is_fullscreen())
-            key = "Ctrl-Shift";
+            key = jtrans("Ctrl-Shift");
 #endif
-        str += "\n[" + key + " + L-Click] Zap wand (%)";
+        str += "\n[" + key + jtrans_notrim(" + L-Click] Zap wand (%)");
         cmd.push_back(CMD_EVOKE);
     }
 
@@ -1086,7 +1086,7 @@ static void _add_tip(string &tip, string text)
 {
     if (!tip.empty())
         tip += "\n";
-    tip += text;
+    tip += jtrans_notrim(text);
 }
 
 bool tile_dungeon_tip(const coord_def &gc, string &tip)
@@ -1179,16 +1179,16 @@ bool tile_dungeon_tip(const coord_def &gc, string &tip)
         {
             _add_tip(tip, "[Shift + L-Click] ");
             if (feat == DNGN_ENTER_SHOP)
-                tip += "enter shop";
+                tip += jtrans("enter shop");
             else if (feat_is_altar(feat)
                      && player_can_join_god(feat_altar_god(feat)))
             {
-                tip += "pray at altar";
+                tip += jtrans("pray at altar");
             }
             else if (feat_is_gate(feat))
-                tip += "enter gate";
+                tip += jtrans("enter gate");
             else
-                tip += "use stairs";
+                tip += jtrans("use stairs");
 
             tip += " (%)";
             cmd.push_back(dir);
@@ -1288,7 +1288,7 @@ bool DungeonRegion::update_alt_text(string &alt)
     proc.get_string(alt);
 
     // Suppress floor description
-    if (alt == "Floor.")
+    if (alt == "Floor." || alt == feature_name_j("Floor"))
     {
         alt.clear();
         return false;

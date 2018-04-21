@@ -1,0 +1,147 @@
+%%%%
+Unwield (%-)
+
+武器を手放す (%-)
+%%%%
+Wield (%)
+
+武器を手にする (%)
+%%%%
+# [L-Click]
+
+# jtrans_tilereg_abl.txtと重複
+%%%%
+Display inventory
+
+所有物一覧を表示
+%%%%
+Use items
+
+アイテムを使用
+%%%%
+Next page\n[L-Click] Show next page of items
+
+次のページ
+[左クリック] アイテム一覧の次のページを見る
+%%%%
+Previous page\n[L-Click] Show previous page of items
+
+前のページ
+[左クリック] アイテム一覧の前のページを見る
+%%%%
+(holding %s)
+
+(%sを拘束している)
+%%%%
+[L-Click] Pick up (%)
+
+[左クリック] 拾う (%)
+%%%%
+[Ctrl + L-Click] Partial pick up (%)
+
+[Ctrl + 左クリック] 一部だけ拾う (%)
+%%%%
+[Shift + L-Click]
+
+[Shift + 左クリック]
+%%%%
+Bottle blood
+
+採血
+%%%%
+Chop up
+
+解体
+%%%%
+[Shift + R-Click] Drink blood (e)
+
+[Shift + 右クリック] 血を飲む (e)
+%%%%
+[Shift + R-Click] Eat (e)
+
+[Shift + 右クリック] 食べる (e)
+%%%%
+[Ctrl + L-Click] Fire (f)
+
+[Ctrl + 左クリック] 射撃する (f)
+%%%%
+Evoke (V)
+
+発動 (V)
+%%%%
+Draw a card (%)
+
+カードを引く (%)
+%%%%
+[Ctrl + L-Click]
+
+[Ctrl + 左クリック]
+%%%%
+Evoke (%)
+
+発動 (%)
+%%%%
+Wear (%)
+
+装備する (%)
+%%%%
+Take off (%)
+
+脱ぐ (%)
+%%%%
+Put on (%)
+
+装身具を身につける (%)
+%%%%
+Remove (%)
+
+装身具を外す (%)
+%%%%
+Fire (%)
+
+射撃する (%)
+%%%%
+Memorise (%)
+
+呪文を習得する (%)
+%%%%
+Read (%)
+
+読む (%)
+%%%%
+Quaff (%)
+
+飲む (%)
+%%%%
+Eat (%)
+
+食べる (%)
+%%%%
+Drink blood (%)
+
+血を飲む (%)
+%%%%
+Use
+
+使用する
+%%%%
+[R-Click] Describe
+
+[右クリック] 解説を表示
+%%%%
+[Shift + L-Click] Drop (%)
+
+[Shift + 左クリック] 床に置く (%)
+%%%%
+[Ctrl-Shift + L-Click] Drop quantity (%#)
+
+[Ctrl + Shift + 左クリック] 何個か置く (%#)
+%%%%
+Next page
+
+次のページ
+%%%%
+Previous page
+
+前のページ
+%%%%

@@ -1,0 +1,101 @@
+%%%%
+Wand to zap?
+
+どのワンドを振る？
+%%%%
+That wand is empty.
+
+そのワンドは空っぽだ。
+%%%%
+# Your Spells
+
+# jtrans_spl_cast.txtと重複
+%%%%
+%s is out of range for that spell.
+
+%sはその呪文の射程外だ。
+%%%%
+# You don't have enough magic to cast that spell.
+
+# jtrans_spl_cast.txtと重複
+%%%%
+[Ctrl + L-Click] Cast spell (%)
+
+[Ctrl + 左クリック] 呪文を唱える (%)
+%%%%
+Ctrl-Shift
+
+Ctrl + Shift
+%%%%
++ L-Click] Zap wand (%)
+
++ 左クリック] ワンドを振る (%)
+%%%%
+[L-Click] Move
+
+[左クリック] 移動
+%%%%
+[L-Click] Attack
+
+[左クリック] 攻撃
+%%%%
+[Shift + L-Click] Fire (%)
+
+[Shift + 左クリック] 射撃 (%)
+%%%%
+[L-Click] Travel
+
+[左クリック] 自動移動
+%%%%
+[L-Click] Open door (%)
+
+[左クリック] 扉を開ける (%)
+%%%%
+[L-Click] Pick up items (%)
+
+[左クリック] アイテムを拾う (%)
+%%%%
+[Shift + L-Click]
+
+[Shift + 左クリック]
+%%%%
+enter shop
+
+店に入る
+%%%%
+pray at altar
+
+祭壇で祈る
+%%%%
+enter gate
+
+門をくぐる
+%%%%
+use stairs
+
+階段を昇る/降りる
+%%%%
+[L-Click] Use stairs (%)
+
+[左クリック] 階段を昇る/降りる (%)
+%%%%
+[L-Click] Pray at altar (%)
+
+[左クリック] 祭壇で祈る (%)
+%%%%
+[L-Click] Wait one turn (%)
+
+[左クリック] 1ターン待機 (%)
+%%%%
+[R-Click] Overview (%)
+
+[右クリック] キャラクター概要を見る (%)
+%%%%
+[Shift + R-Click] Religion (%)
+
+[Shift + 右クリック] 信仰状況を見る (%)
+%%%%
+[R-Click] Describe
+
+[右クリック] 解説文を見る
+%%%%

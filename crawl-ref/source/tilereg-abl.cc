@@ -44,7 +44,7 @@ void AbilityRegion::draw_tag()
     const string failure = failure_rate_to_string(get_talent(ability,
                                                              false).fail);
     string desc = make_stringf("%s    (%s)",
-                               ability_name(ability), failure.c_str());
+                               ability_name_jc(ability), failure.c_str());
     draw_desc(desc.c_str());
 }
 
@@ -83,8 +83,8 @@ bool AbilityRegion::update_tab_tip_text(string &tip, bool active)
     const char *prefix2 = active ? "" : "          ";
 
     tip = make_stringf("%s%s\n%s%s",
-                       prefix1, "Display abilities",
-                       prefix2, "Use abilities");
+                       jtrans_notrimc(prefix1), jtransc("Display abilities"),
+                       jtrans_notrimc(prefix2), jtransc("Use abilities"));
 
     return true;
 }
@@ -101,19 +101,19 @@ bool AbilityRegion::update_tip_text(string& tip)
     int flag = m_items[item_idx].flag;
     vector<command_type> cmd;
     if (flag & TILEI_FLAG_INVALID)
-        tip = "You cannot use this ability right now.";
+        tip = jtrans("You cannot use this ability right now.");
     else
     {
-        tip = "[L-Click] Use (%)";
+        tip = jtrans("[L-Click] Use (%)");
         cmd.push_back(CMD_USE_ABILITY);
     }
 
     // TODO: command to display abilities outside of use
 #if 0
-    tip += "\n[R-Click] Describe (%)";
+    tip += jtrans_notrim("\n[R-Click] Describe (%)");
     cmd.push_back(CMD_DISPLAY_SPELLS);
-    insert_commands(tip, cmd);
 #endif
+    insert_commands(tip, cmd);
 
     return true;
 }
