@@ -95,7 +95,3 @@ use stairs
 
 [Shift + 右クリック] 信仰状況を見る (%)
 %%%%
-[R-Click] Describe
-
-[右クリック] 解説文を見る
-%%%%

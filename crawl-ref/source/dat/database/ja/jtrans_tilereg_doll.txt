@@ -1,19 +1,19 @@
 %%%%
-Custom
+[tilereg-doll]Custom
 
 カスタム
 %%%%
-Default
+[tilereg-doll]Default
 
 デフォルト
 %%%%
-Equip
+[tilereg-doll]Equip
 
 装備
 %%%%
-(none)
+[tilereg-doll](none)
 
-(なし)
+# jtrans_describe_god.txtと重複
 %%%%
 (show equip)
 
@@ -39,67 +39,67 @@ Doll Mode: %s
 
 プレイヤータイル組み合わせ: %s
 %%%%
-Base
+[tilereg-doll]Base
 
 ベース
 %%%%
-Shadow
+[tilereg-doll]Shadow
 
 影
 %%%%
-Halo
+[tilereg-doll]Halo
 
 後光
 %%%%
-Ench
+[tilereg-doll]Ench
 
 魔力付与状態
 %%%%
-Cloak
+[tilereg-doll]Cloak
 
 クローク
 %%%%
-Boots
+[tilereg-doll]Boots
 
 ブーツ
 %%%%
-Legs
+[tilereg-doll]Legs
 
 脚
 %%%%
-Body
+[tilereg-doll]Body
 
 体
 %%%%
-Gloves
+[tilereg-doll]Gloves
 
 籠手/手袋
 %%%%
-LHand
+[tilereg-doll]LHand
 
 左手
 %%%%
-RHand
+[tilereg-doll]RHand
 
 右手
 %%%%
-Hair
+[tilereg-doll]Hair
 
 髪
 %%%%
-Beard
+[tilereg-doll]Beard
 
 髭/スカーフ
 %%%%
-Helm
+[tilereg-doll]Helm
 
 兜
 %%%%
-DrcWing
+[tilereg-doll]DrcWing
 
 ドラコ翼
 %%%%
-DrcHead
+[tilereg-doll]DrcHead
 
 ドラコ頭
 %%%%

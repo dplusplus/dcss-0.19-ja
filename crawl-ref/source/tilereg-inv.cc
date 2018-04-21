@@ -331,7 +331,7 @@ bool InventoryRegion::update_tip_text(string& tip)
 
         if (item_is_stationary_net(item))
         {
-            tip += make_stringf(jtrans_notrimc(" (holding %s)"),
+            tip += make_stringf(tagged_jtransc("[tilereg-inv]", " (holding %s)"),
                                 net_holdee(item)->name(DESC_A).c_str());
         }
 

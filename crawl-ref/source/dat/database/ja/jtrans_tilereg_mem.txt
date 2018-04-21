@@ -19,7 +19,3 @@ You cannot memorise this spell now.
 
 [左クリック]
 %%%%
-[R-Click] Describe
-
-[右クリック] 解説を見る
-%%%%

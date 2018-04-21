@@ -29,7 +29,7 @@ Previous page\n[L-Click] Show previous page of items
 前のページ
 [左クリック] アイテム一覧の前のページを見る
 %%%%
-(holding %s)
+[tilereg-inv](holding %s)
 
 (%sを拘束している)
 %%%%
@@ -40,10 +40,6 @@ Previous page\n[L-Click] Show previous page of items
 [Ctrl + L-Click] Partial pick up (%)
 
 [Ctrl + 左クリック] 一部だけ拾う (%)
-%%%%
-[Shift + L-Click]
-
-[Shift + 左クリック]
 %%%%
 Bottle blood
 
@@ -124,10 +120,6 @@ Drink blood (%)
 Use
 
 使用する
-%%%%
-[R-Click] Describe
-
-[右クリック] 解説を表示
 %%%%
 [Shift + L-Click] Drop (%)
 

@@ -13,6 +13,9 @@
 #include "tilepick-p.h"
 #include "unicode.h"
 
+#define _jtrans(key)  (tagged_jtrans("[tilereg-doll]", key))
+#define _jtransc(key) (tagged_jtrans("[tilereg-doll]", key).c_str())
+
 DollEditRegion::DollEditRegion(ImageManager *im, FontWrapper *font) :
     m_font_buf(font),
     m_tile_buf(&im->m_textures[TEX_PLAYER], 17),
@@ -159,13 +162,13 @@ void DollEditRegion::render()
         // Describe the three middle tiles.
         float tile_name_x = (left_gutter + 2.7) * 32.0f;
         float tile_name_y = (edit_doll_line + 1) * 32.0f;
-        m_font_buf.add(jtrans("Custom"), VColour::white, tile_name_x, tile_name_y);
+        m_font_buf.add(_jtrans("Custom"), VColour::white, tile_name_x, tile_name_y);
         tile_name_x = (left_gutter + 4.7) * 32.0f;
         tile_name_y = (edit_doll_line + 1) * 32.0f;
-        m_font_buf.add(jtrans("Default"), VColour::white, tile_name_x, tile_name_y);
+        m_font_buf.add(_jtrans("Default"), VColour::white, tile_name_x, tile_name_y);
         tile_name_x = (left_gutter + 7) * 32.0f;
         tile_name_y = (edit_doll_line + 1) * 32.0f;
-        m_font_buf.add(jtrans("Equip"), VColour::white, tile_name_x, tile_name_y);
+        m_font_buf.add(_jtrans("Equip"), VColour::white, tile_name_x, tile_name_y);
     }
 
     set_transform();
@@ -208,9 +211,9 @@ void DollEditRegion::render()
     m_cur_buf.draw();
 
     // Add text.
-    string part_name = jtrans("(none)");
+    string part_name = _jtrans("(none)");
     if (m_part_idx == TILEP_SHOW_EQUIP)
-        part_name = jtrans("(show equip)");
+        part_name = _jtrans("(show equip)");
     else if (m_part_idx)
         part_name = tile_player_name(m_part_idx);
 
@@ -222,7 +225,7 @@ void DollEditRegion::render()
     m_font_buf.add(item_str, VColour::white, item_name_x, item_name_y);
 
     string doll_name;
-    doll_name = make_stringf(jtransc("Doll index %d / %d"), m_doll_idx, NUM_MAX_DOLLS - 1);
+    doll_name = make_stringf(_jtransc("Doll index %d / %d"), m_doll_idx, NUM_MAX_DOLLS - 1);
     float doll_name_x = left_gutter * 32.0f;
     float doll_name_y = (doll_line + 1) * 32.0f;
     m_font_buf.add(doll_name, VColour::white, doll_name_x, doll_name_y);
@@ -233,7 +236,7 @@ void DollEditRegion::render()
         "Custom Doll",
         "Job Defaults"
     };
-    doll_name = make_stringf(jtransc("Doll Mode: %s"), jtransc(mode_name[m_mode]));
+    doll_name = make_stringf(_jtransc("Doll Mode: %s"), _jtransc(mode_name[m_mode]));
     doll_name_y += m_font->char_height() * 2.0f;
     m_font_buf.add(doll_name, VColour::white, doll_name_x, doll_name_y);
 
@@ -271,20 +274,20 @@ void DollEditRegion::render()
             disp = disp - tile_player_part_start[i] + 1;
         int maxp = tile_player_part_count[i];
 
-        const string sel = (m_cat_idx == i) ? jtrans("->") : "　";
+        const string sel = (m_cat_idx == i) ? _jtrans("->") : "　";
 
         if (part == TILEP_SHOW_EQUIP)
-            info_str = make_stringf(jtransc("%s%12s: (show equip)"),
+            info_str = make_stringf(_jtransc("%s%12s: (show equip)"),
                                     sel.c_str(),
-                                    chop_stringc(jtrans(cat_name[i]), 12));
+                                    chop_stringc(_jtrans(cat_name[i]), 12));
         else if (!part)
-            info_str = make_stringf(jtransc("%s%12s: (none)"),
+            info_str = make_stringf(_jtransc("%s%12s: (none)"),
                                     sel.c_str(),
-                                    chop_stringc(jtrans(cat_name[i]), 12));
+                                    chop_stringc(_jtrans(cat_name[i]), 12));
         else
-            info_str = make_stringf(jtransc("%s%12s: %3d/%3d"),
+            info_str = make_stringf(_jtransc("%s%12s: %3d/%3d"),
                                     sel.c_str(),
-                                    chop_stringc(jtrans(cat_name[i]), 12), disp, maxp);
+                                    chop_stringc(_jtrans(cat_name[i]), 12), disp, maxp);
         m_font_buf.add(info_str, VColour::white, info_x, info_y);
         info_y += m_font->char_height();
     }
@@ -296,22 +299,22 @@ void DollEditRegion::render()
         const int width  = m_font->char_width();
         const float start_y = doll_name_y + height * 3;
         const float start_x = width * 6;
-        m_font_buf.add(jtrans(
+        m_font_buf.add(_jtrans(
             "Change parts       left/right              Confirm choice      Enter"),
             VColour::white, start_x, start_y);
-        m_font_buf.add(jtrans(
+        m_font_buf.add(_jtrans(
             "Change category    up/down                 Copy doll           Ctrl-C"),
             VColour::white, start_x, start_y + height * 1);
-        m_font_buf.add(jtrans(
+        m_font_buf.add(_jtrans(
             "Change doll        0-9, Shift + arrows     Paste copied doll   Ctrl-V"),
             VColour::white, start_x, start_y + height * 2);
-        m_font_buf.add(jtrans(
+        m_font_buf.add(_jtrans(
             "Change doll mode   m                       Randomise doll      Ctrl-R"),
             VColour::white, start_x, start_y + height * 3);
-        m_font_buf.add(jtrans(
+        m_font_buf.add(_jtrans(
             "Save menu          Escape, Ctrl-S          Toggle equipment    *"),
             VColour::white, start_x, start_y + height * 4);
-        m_font_buf.add(jtrans(
+        m_font_buf.add(_jtrans(
             "Quit menu          q, Ctrl-Q"),
             VColour::white, start_x, start_y + height * 5);
     }
@@ -483,5 +486,8 @@ void DollEditRegion::run()
         player_doll = equip_doll;
     }
 }
+
+#undef _jtrans
+#undef _jtransc
 
 #endif
