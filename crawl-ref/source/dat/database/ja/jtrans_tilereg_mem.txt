@@ -17,5 +17,5 @@ You cannot memorise this spell now.
 %%%%
 [L-Click] Memorise (%)
 
-[左クリック]
+[左クリック] 習得する
 %%%%

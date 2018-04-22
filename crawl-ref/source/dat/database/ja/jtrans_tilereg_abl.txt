@@ -17,9 +17,9 @@ You cannot use this ability right now.
 %%%%
 [L-Click] Use (%)
 
-[左クリック] 使用 (%)
+[左クリック] 能力を使用 (%)
 %%%%
 [R-Click] Describe (%)
 
-[右クリック] 解説 (%)
+[右クリック] 解説を見る (%)
 %%%%

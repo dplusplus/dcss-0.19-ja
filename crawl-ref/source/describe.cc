@@ -4084,7 +4084,7 @@ string get_command_description(const command_type cmd, bool terse)
             // Try for the terse description.
             result = get_command_description(cmd, true);
             if (!result.empty())
-                return result + ".";
+                return result;
         }
         return command_to_name(cmd);
     }

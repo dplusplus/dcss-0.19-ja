@@ -1,0 +1,21 @@
+%%%%
+Execute system commands
+
+システムコマンドを実行する
+%%%%
+Navigate around map
+
+マップモード各種操作
+%%%%
+# for die()
+invalid cgotoxy region in tiles: %d
+
+%%%%
+# for die()
+Bogus region
+
+%%%%
+#ifdef DEBUG_TILES_REDRAW
+redrawing tiles
+
+%%%%

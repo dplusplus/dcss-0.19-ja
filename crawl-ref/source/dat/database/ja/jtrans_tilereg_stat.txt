@@ -1,0 +1,5 @@
+%%%%
+[L-Click] Show player information
+
+[左クリック] プレイヤー情報を見る
+%%%%

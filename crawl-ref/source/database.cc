@@ -338,6 +338,9 @@ static TextDB AllDBs[] =
            "jtrans_tilereg_msg.txt",
            "jtrans_tilereg_skl.txt",
            "jtrans_tilereg_spl.txt",
+           "jtrans_tilereg_stat.txt",
+           "jtrans_tilereg_tab.txt",
+           "jtrans_tilesdl.txt",
            nullptr),
 
     TextDB("randart_vanilla", "database/ja/crawlj/",

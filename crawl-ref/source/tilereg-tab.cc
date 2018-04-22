@@ -5,6 +5,7 @@
 #include "tilereg-tab.h"
 
 #include "cio.h"
+#include "database.h"
 #include "english.h"
 #include "libutil.h"
 #include "macro.h"
@@ -296,7 +297,7 @@ void TabbedRegion::draw_tag()
     if (!tab)
         return;
 
-    draw_desc(tab->name().c_str());
+    draw_desc(tagged_jtransc("[tilereg-tab]", tab->name()));
 }
 
 void TabbedRegion::on_resize()

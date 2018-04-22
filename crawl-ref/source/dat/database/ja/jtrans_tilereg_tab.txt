@@ -1,0 +1,49 @@
+%%%%
+# tilereg-tab.h
+[tilereg-tab]Commands
+
+コマンド
+%%%%
+Execute commands
+
+コマンドを実行する
+%%%%
+# tilereg-inv.h
+[tilereg-tab]Inventory
+
+所有物一覧
+%%%%
+# tilereg-spl.h
+[tilereg-tab]Spells
+
+習得済み呪文一覧
+%%%%
+# tilereg-mem.h
+[tilereg-tab]Memorisation
+
+習得可能呪文一覧
+%%%%
+# tilereg-abl.h
+[tilereg-tab]Abilities
+
+能力一覧
+%%%%
+# tilereg-mon.h
+[tilereg-tab]Monsters
+
+モンスター一覧
+%%%%
+# tilereg-skl.h
+[tilereg-tab]Skills
+
+スキル一覧
+%%%%
+# tilesdl.cc
+[tilereg-tab]System Commands
+
+システムコマンド一覧
+%%%%
+[tilereg-tab]Navigation
+
+マップモード
+%%%%
