@@ -1103,8 +1103,9 @@ bool tile_dungeon_tip(const coord_def &gc, string &tip)
     {
         tip = you.your_name;
         tip += " (";
-        tip += get_species_abbrev(you.species);
-        tip += get_job_abbrev(you.char_class);
+        tip += make_stringf(jtransc("{species} {job}"),
+                            species_name_jc(you.species),
+                            get_job_name_jc(you.char_class));;
         tip += ")";
 
         tip += _check_spell_evokable(&you, cmd);
