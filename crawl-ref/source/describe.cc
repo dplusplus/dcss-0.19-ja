@@ -4083,8 +4083,14 @@ string get_command_description(const command_type cmd, bool terse)
         {
             // Try for the terse description.
             result = get_command_description(cmd, true);
-            if (!result.empty())
+            if (!result.empty()) {
+                // verbose/terseで文面共通のものがあるため
+                // verboseの場合句点を付加
+                if (!ends_with(result, "。"))
+                    result += "。";
+
                 return result;
+            }
         }
         return command_to_name(cmd);
     }
