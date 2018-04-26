@@ -108,7 +108,7 @@ bool CommandRegion::update_tip_text(string& tip)
     if (command_to_key(cmd) != '\0')
     {
         tip += " (%)";
-        insert_commands(tip, { cmd });
+        insert_commands(tip, { cmd }, false);
     }
 
     // tip += "\n[R-Click] Describe";
