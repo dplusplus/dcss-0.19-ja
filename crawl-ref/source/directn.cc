@@ -1487,7 +1487,7 @@ vector<string> direction_chooser::monster_description_suffixes(
 
     _push_back_if_nonempty(mi.wounds_description(true), &suffixes);
     _push_back_if_nonempty(mi.constriction_description(), &suffixes);
-    _append_container(suffixes, mi.attributes());
+    _append_container(suffixes, mi.attributes_ja(true));
     _append_container(suffixes, _get_monster_desc_vector(mi));
     _append_container(suffixes, behaviour->get_monster_desc(mi));
 
@@ -2085,7 +2085,7 @@ void get_square_desc(const coord_def &c, describe_info &inf)
     if (const monster_info *mi = env.map_knowledge(c).monsterinfo())
     {
         // First priority: monsters.
-        string desc = get_monster_equipment_desc(*mi) + jtrans_notrim(".\n");
+        string desc = get_monster_equipment_desc(*mi) + "\n";
         const string wounds = mi->wounds_description_sentence();
         if (!wounds.empty())
             desc += uppercase_first(wounds) + "\n";
@@ -3134,14 +3134,16 @@ static string _stair_destination_description(const coord_def &pos)
 
 static string _mon_enchantments_string(const monster_info& mi)
 {
-    const vector<string> enchant_descriptors = mi.attributes();
+    const vector<string> enchant_descriptors = mi.attributes_ja();
 
     if (!enchant_descriptors.empty())
     {
-        return make_stringf(jtransc("{pronoun} is {ench desc list}."),
-                            mi.pronoun_j(PRONOUN_SUBJECTIVE).c_str(),
-                            comma_separated_line(enchant_descriptors.begin(),
-                                                 enchant_descriptors.end()).c_str());
+        string ench_desc = mi.pronoun_j(PRONOUN_SUBJECTIVE) + "は";
+        ench_desc += comma_separated_line(enchant_descriptors.begin(),
+                                          enchant_descriptors.end(),
+                                          "。\n" + mi.pronoun_j(PRONOUN_SUBJECTIVE) + "は",
+                                          "。\n");
+        return ench_desc;
     }
     else
         return "";
@@ -3504,9 +3506,9 @@ string get_monster_equipment_desc(const monster_info& mi,
                                                 "と", "、", "、および");
 
     if (!item_description.empty() && !desc.empty())
-        desc += ", " + item_description + "を装備している";
+        desc += " (" + item_description + "を装備している)";
     if (!carried_desc.empty() && !desc.empty())
-        desc += ", " + carried_desc;
+        desc += " (" + carried_desc + ")";
 
     return desc;
 }

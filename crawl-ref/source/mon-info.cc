@@ -1690,167 +1690,346 @@ void monster_info::to_string(int count, string& desc, int& desc_colour,
     desc = out.str();
 }
 
+static string attr_j(const string &word, bool for_enclosure)
+{
+    string attr = tagged_jtrans("[attr]", word);
+
+    if (for_enclosure)
+    {
+        string::size_type pos;
+        if(((pos = attr.rfind("だ")) != string::npos) && (ends_with(attr, "だ")))
+           attr.erase(pos);
+    }
+
+    return attr;
+}
+
 vector<string> monster_info::attributes() const
 {
     vector<string> v;
 
     if (is(MB_BERSERK))
-        v.emplace_back(info_j("berserk"));
+        v.emplace_back("berserk");
     if (is(MB_HASTED) || is(MB_BERSERK))
     {
         if (!is(MB_SLOWED))
-            v.emplace_back(info_j("fast"));
+            v.emplace_back("fast");
         else
-            v.emplace_back(info_j("fast+slow"));
+            v.emplace_back("fast+slow");
     }
     else if (is(MB_SLOWED))
-        v.emplace_back(info_j("slow"));
+        v.emplace_back("slow");
     if (is(MB_STRONG) || is(MB_BERSERK))
-        v.emplace_back(info_j("unusually strong"));
+        v.emplace_back("unusually strong");
 
     if (is(MB_POISONED))
-        v.emplace_back(info_j("poisoned"));
+        v.emplace_back("poisoned");
     if (is(MB_SICK))
-        v.emplace_back(info_j("sick"));
+        v.emplace_back("sick");
     if (is(MB_GLOWING))
-        v.emplace_back(info_j("softly glowing"));
+        v.emplace_back("softly glowing");
     if (is(MB_INSANE))
-        v.emplace_back(info_j("frenzied and insane"));
+        v.emplace_back("frenzied and insane");
     if (is(MB_CONFUSED))
-        v.emplace_back(info_j("confused"));
+        v.emplace_back("confused");
     if (is(MB_INVISIBLE))
-        v.emplace_back(info_j("slightly transparent"));
+        v.emplace_back("slightly transparent");
     if (is(MB_CHARMED))
-        v.emplace_back(info_j("in your thrall"));
+        v.emplace_back("in your thrall");
     if (is(MB_BURNING))
-        v.emplace_back(info_j("covered in liquid flames"));
+        v.emplace_back("covered in liquid flames");
     if (is(MB_CAUGHT))
-        v.emplace_back(info_j("entangled in a net"));
+        v.emplace_back("entangled in a net");
     if (is(MB_WEBBED))
-        v.emplace_back(info_j("entangled in a web"));
+        v.emplace_back("entangled in a web");
     if (is(MB_PETRIFIED))
-        v.emplace_back(info_j("petrified"));
+        v.emplace_back("petrified");
     if (is(MB_PETRIFYING))
-        v.emplace_back(info_j("slowly petrifying"));
+        v.emplace_back("slowly petrifying");
     if (is(MB_VULN_MAGIC))
-        v.emplace_back(info_j("susceptible to hostile enchantments"));
+        v.emplace_back("susceptible to hostile enchantments");
     if (is(MB_SWIFT))
-        v.emplace_back(info_j("covering ground quickly"));
+        v.emplace_back("covering ground quickly");
     if (is(MB_SILENCING))
-        v.emplace_back(info_j("radiating silence"));
+        v.emplace_back("radiating silence");
     if (is(MB_PARALYSED))
-        v.emplace_back(info_j("paralysed"));
+        v.emplace_back("paralysed");
     if (is(MB_REPEL_MSL))
-        v.emplace_back(info_j("repelling missiles"));
+        v.emplace_back("repelling missiles");
     if (is(MB_DEFLECT_MSL))
-        v.emplace_back(info_j("deflecting missiles"));
+        v.emplace_back("deflecting missiles");
     if (is(MB_FEAR_INSPIRING))
-        v.emplace_back(info_j("inspiring fear"));
+        v.emplace_back("inspiring fear");
     if (is(MB_BREATH_WEAPON))
     {
-        v.push_back(make_stringf(info_j("catching %s breath").c_str(),
+        v.push_back(string("catching ")
+                    + pronoun(PRONOUN_POSSESSIVE) + " breath");
+    }
+    if (is(MB_DAZED))
+        v.emplace_back("dazed");
+    if (is(MB_MUTE))
+        v.emplace_back("mute");
+    if (is(MB_BLIND))
+        v.emplace_back("blind");
+    if (is(MB_DUMB))
+        v.emplace_back("stupefied");
+    if (is(MB_MAD))
+        v.emplace_back("lost in madness");
+    if (is(MB_REGENERATION))
+        v.emplace_back("regenerating");
+    if (is(MB_RAISED_MR))
+        v.emplace_back("resistant to hostile enchantments");
+    if (is(MB_OZOCUBUS_ARMOUR))
+        v.emplace_back("covered in an icy film");
+    if (is(MB_WRETCHED))
+        v.emplace_back("misshapen and mutated");
+    if (is(MB_WORD_OF_RECALL))
+        v.emplace_back("chanting recall");
+    if (is(MB_INJURY_BOND))
+        v.emplace_back("sheltered from injuries");
+    if (is(MB_WATER_HOLD))
+        v.emplace_back("engulfed in water");
+    if (is(MB_WATER_HOLD_DROWN))
+    {
+        v.emplace_back("engulfed in water");
+        v.emplace_back("unable to breathe");
+    }
+    if (is(MB_FLAYED))
+        v.emplace_back("covered in terrible wounds");
+    if (is(MB_WEAK))
+        v.emplace_back("weak");
+    if (is(MB_DIMENSION_ANCHOR))
+        v.emplace_back("unable to translocate");
+    if (is(MB_TOXIC_RADIANCE))
+        v.emplace_back("radiating toxic energy");
+    if (is(MB_GRASPING_ROOTS))
+        v.emplace_back("movement impaired by roots");
+    if (is(MB_FIRE_VULN))
+        v.emplace_back("more vulnerable to fire");
+    if (is(MB_TORNADO))
+        v.emplace_back("surrounded by raging winds");
+    if (is(MB_TORNADO_COOLDOWN))
+        v.emplace_back("surrounded by restless winds");
+    if (is(MB_BARBS))
+        v.emplace_back("skewered by barbs");
+    if (is(MB_POISON_VULN))
+        v.emplace_back("more vulnerable to poison");
+    if (is(MB_ICEMAIL))
+        v.emplace_back("surrounded by an icy envelope");
+    if (is(MB_AGILE))
+        v.emplace_back("unusually agile");
+    if (is(MB_FROZEN))
+        v.emplace_back("encased in ice");
+    if (is(MB_BLACK_MARK))
+        v.emplace_back("absorbing vital energies");
+    if (is(MB_SAP_MAGIC))
+        v.emplace_back("magic-sapped");
+    if (is(MB_SHROUD))
+        v.emplace_back("shrouded");
+    if (is(MB_CORROSION))
+        v.emplace_back("covered in acid");
+    if (is(MB_SLOW_MOVEMENT))
+        v.emplace_back("covering ground slowly");
+    if (is(MB_LIGHTLY_DRAINED))
+        v.emplace_back("lightly drained");
+    if (is(MB_HEAVILY_DRAINED))
+        v.emplace_back("heavily drained");
+    if (is(MB_RESISTANCE))
+        v.emplace_back("unusually resistant");
+    if (is(MB_HEXED))
+        v.emplace_back("control wrested from you");
+    if (is(MB_BONE_ARMOUR))
+        v.emplace_back("corpse armoured");
+    if (is(MB_BRILLIANCE_AURA))
+        v.emplace_back("aura of brilliance");
+    if (is(MB_EMPOWERED_SPELLS))
+        v.emplace_back("spells empowered");
+    if (is(MB_READY_TO_HOWL))
+        v.emplace_back("ready to howl");
+    if (is(MB_PARTIALLY_CHARGED))
+        v.emplace_back("partially charged");
+    if (is(MB_FULLY_CHARGED))
+        v.emplace_back("fully charged");
+    if (is(MB_GOZAG_INCITED))
+        v.emplace_back("incited by Gozag");
+    if (is(MB_PAIN_BOND))
+    {
+        v.push_back(string("sharing ")
+                    + pronoun(PRONOUN_POSSESSIVE) + " pain");
+    }
+    if (is(MB_IDEALISED))
+        v.emplace_back("idealised");
+    if (is(MB_BOUND_SOUL))
+        v.emplace_back("bound soul");
+    if (is(MB_INFESTATION))
+        v.emplace_back("infested");
+    if (is(MB_STILL_WINDS))
+        v.emplace_back("stilling the winds");
+    return v;
+}
+
+vector<string> monster_info::attributes_ja(bool for_enclosure) const
+{
+    vector<string> v;
+    auto attr_j_for_enc = [=](string w){ return attr_j(w, for_enclosure); };
+
+    if (is(MB_BERSERK))
+        v.emplace_back(attr_j_for_enc("berserk"));
+    if (is(MB_HASTED) || is(MB_BERSERK))
+    {
+        if (!is(MB_SLOWED))
+            v.emplace_back(attr_j_for_enc("fast"));
+        else
+            v.emplace_back(attr_j_for_enc("fast+slow"));
+    }
+    else if (is(MB_SLOWED))
+        v.emplace_back(attr_j_for_enc("slow"));
+    if (is(MB_STRONG) || is(MB_BERSERK))
+        v.emplace_back(attr_j_for_enc("unusually strong"));
+
+    if (is(MB_POISONED))
+        v.emplace_back(attr_j_for_enc("poisoned"));
+    if (is(MB_SICK))
+        v.emplace_back(attr_j_for_enc("sick"));
+    if (is(MB_GLOWING))
+        v.emplace_back(attr_j_for_enc("softly glowing"));
+    if (is(MB_INSANE))
+        v.emplace_back(attr_j_for_enc("frenzied and insane"));
+    if (is(MB_CONFUSED))
+        v.emplace_back(attr_j_for_enc("confused"));
+    if (is(MB_INVISIBLE))
+        v.emplace_back(attr_j_for_enc("slightly transparent"));
+    if (is(MB_CHARMED))
+        v.emplace_back(attr_j_for_enc("in your thrall"));
+    if (is(MB_BURNING))
+        v.emplace_back(attr_j_for_enc("covered in liquid flames"));
+    if (is(MB_CAUGHT))
+        v.emplace_back(attr_j_for_enc("entangled in a net"));
+    if (is(MB_WEBBED))
+        v.emplace_back(attr_j_for_enc("entangled in a web"));
+    if (is(MB_PETRIFIED))
+        v.emplace_back(attr_j_for_enc("petrified"));
+    if (is(MB_PETRIFYING))
+        v.emplace_back(attr_j_for_enc("slowly petrifying"));
+    if (is(MB_VULN_MAGIC))
+        v.emplace_back(attr_j_for_enc("susceptible to hostile enchantments"));
+    if (is(MB_SWIFT))
+        v.emplace_back(attr_j_for_enc("covering ground quickly"));
+    if (is(MB_SILENCING))
+        v.emplace_back(attr_j_for_enc("radiating silence"));
+    if (is(MB_PARALYSED))
+        v.emplace_back(attr_j_for_enc("paralysed"));
+    if (is(MB_REPEL_MSL))
+        v.emplace_back(attr_j_for_enc("repelling missiles"));
+    if (is(MB_DEFLECT_MSL))
+        v.emplace_back(attr_j_for_enc("deflecting missiles"));
+    if (is(MB_FEAR_INSPIRING))
+        v.emplace_back(attr_j_for_enc("inspiring fear"));
+    if (is(MB_BREATH_WEAPON))
+    {
+        v.push_back(make_stringf(attr_j_for_enc("catching %s breath").c_str(),
                                  pronoun_j(PRONOUN_POSSESSIVE).c_str()));
     }
     if (is(MB_DAZED))
-        v.emplace_back(info_j("dazed"));
+        v.emplace_back(attr_j_for_enc("dazed"));
     if (is(MB_MUTE))
-        v.emplace_back(info_j("mute"));
+        v.emplace_back(attr_j_for_enc("mute"));
     if (is(MB_BLIND))
-        v.emplace_back(info_j("blind"));
+        v.emplace_back(attr_j_for_enc("blind"));
     if (is(MB_DUMB))
-        v.emplace_back(info_j("stupefied"));
+        v.emplace_back(attr_j_for_enc("stupefied"));
     if (is(MB_MAD))
-        v.emplace_back(info_j("lost in madness"));
+        v.emplace_back(attr_j_for_enc("lost in madness"));
     if (is(MB_REGENERATION))
-        v.emplace_back(info_j("regenerating"));
+        v.emplace_back(attr_j_for_enc("regenerating"));
     if (is(MB_RAISED_MR))
-        v.emplace_back(info_j("resistant to hostile enchantments"));
+        v.emplace_back(attr_j_for_enc("resistant to hostile enchantments"));
     if (is(MB_OZOCUBUS_ARMOUR))
-        v.emplace_back(info_j("covered in an icy film"));
+        v.emplace_back(attr_j_for_enc("covered in an icy film"));
     if (is(MB_WRETCHED))
-        v.emplace_back(info_j("misshapen and mutated"));
+        v.emplace_back(attr_j_for_enc("misshapen and mutated"));
     if (is(MB_WORD_OF_RECALL))
-        v.emplace_back(info_j("chanting recall"));
+        v.emplace_back(attr_j_for_enc("chanting recall"));
     if (is(MB_INJURY_BOND))
-        v.emplace_back(info_j("sheltered from injuries"));
+        v.emplace_back(attr_j_for_enc("sheltered from injuries"));
     if (is(MB_WATER_HOLD))
-        v.emplace_back(info_j("engulfed in water"));
+        v.emplace_back(attr_j_for_enc("engulfed in water"));
     if (is(MB_WATER_HOLD_DROWN))
     {
-        v.emplace_back(info_j("engulfed in water"));
-        v.emplace_back(info_j("unable to breathe"));
+        v.emplace_back(attr_j_for_enc("engulfed in water"));
+        v.emplace_back(attr_j_for_enc("unable to breathe"));
     }
     if (is(MB_FLAYED))
-        v.emplace_back(info_j("covered in terrible wounds"));
+        v.emplace_back(attr_j_for_enc("covered in terrible wounds"));
     if (is(MB_WEAK))
-        v.emplace_back(info_j("weak"));
+        v.emplace_back(attr_j_for_enc("weak"));
     if (is(MB_DIMENSION_ANCHOR))
-        v.emplace_back(info_j("unable to translocate"));
+        v.emplace_back(attr_j_for_enc("unable to translocate"));
     if (is(MB_TOXIC_RADIANCE))
-        v.emplace_back(info_j("radiating toxic energy"));
+        v.emplace_back(attr_j_for_enc("radiating toxic energy"));
     if (is(MB_GRASPING_ROOTS))
-        v.emplace_back(info_j("movement impaired by roots"));
+        v.emplace_back(attr_j_for_enc("movement impaired by roots"));
     if (is(MB_FIRE_VULN))
-        v.emplace_back(info_j("more vulnerable to fire"));
+        v.emplace_back(attr_j_for_enc("more vulnerable to fire"));
     if (is(MB_TORNADO))
-        v.emplace_back(info_j("surrounded by raging winds"));
+        v.emplace_back(attr_j_for_enc("surrounded by raging winds"));
     if (is(MB_TORNADO_COOLDOWN))
-        v.emplace_back(info_j("surrounded by restless winds"));
+        v.emplace_back(attr_j_for_enc("surrounded by restless winds"));
     if (is(MB_BARBS))
-        v.emplace_back(info_j("skewered by barbs"));
+        v.emplace_back(attr_j_for_enc("skewered by barbs"));
     if (is(MB_POISON_VULN))
-        v.emplace_back(info_j("more vulnerable to poison"));
+        v.emplace_back(attr_j_for_enc("more vulnerable to poison"));
     if (is(MB_ICEMAIL))
-        v.emplace_back(info_j("surrounded by an icy envelope"));
+        v.emplace_back(attr_j_for_enc("surrounded by an icy envelope"));
     if (is(MB_AGILE))
-        v.emplace_back(info_j("unusually agile"));
+        v.emplace_back(attr_j_for_enc("unusually agile"));
     if (is(MB_FROZEN))
-        v.emplace_back(info_j("encased in ice"));
+        v.emplace_back(attr_j_for_enc("encased in ice"));
     if (is(MB_BLACK_MARK))
-        v.emplace_back(info_j("absorbing vital energies"));
+        v.emplace_back(attr_j_for_enc("absorbing vital energies"));
     if (is(MB_SAP_MAGIC))
-        v.emplace_back(info_j("magic-sapped"));
+        v.emplace_back(attr_j_for_enc("magic-sapped"));
     if (is(MB_SHROUD))
-        v.emplace_back(info_j("shrouded"));
+        v.emplace_back(attr_j_for_enc("shrouded"));
     if (is(MB_CORROSION))
-        v.emplace_back(info_j("covered in acid"));
+        v.emplace_back(attr_j_for_enc("covered in acid"));
     if (is(MB_SLOW_MOVEMENT))
-        v.emplace_back(info_j("covering ground slowly"));
+        v.emplace_back(attr_j_for_enc("covering ground slowly"));
     if (is(MB_LIGHTLY_DRAINED))
-        v.emplace_back(info_j("lightly drained"));
+        v.emplace_back(attr_j_for_enc("lightly drained"));
     if (is(MB_HEAVILY_DRAINED))
-        v.emplace_back(info_j("heavily drained"));
+        v.emplace_back(attr_j_for_enc("heavily drained"));
     if (is(MB_RESISTANCE))
-        v.emplace_back(info_j("unusually resistant"));
+        v.emplace_back(attr_j_for_enc("unusually resistant"));
     if (is(MB_HEXED))
-        v.emplace_back(info_j("control wrested from you"));
+        v.emplace_back(attr_j_for_enc("control wrested from you"));
     if (is(MB_BONE_ARMOUR))
-        v.emplace_back(info_j("corpse armoured"));
+        v.emplace_back(attr_j_for_enc("corpse armoured"));
     if (is(MB_BRILLIANCE_AURA))
-        v.emplace_back(info_j("aura of brilliance"));
+        v.emplace_back(attr_j_for_enc("aura of brilliance"));
     if (is(MB_EMPOWERED_SPELLS))
-        v.emplace_back(info_j("spells empowered"));
+        v.emplace_back(attr_j_for_enc("spells empowered"));
     if (is(MB_READY_TO_HOWL))
-        v.emplace_back(info_j("ready to howl"));
+        v.emplace_back(attr_j_for_enc("ready to howl"));
     if (is(MB_PARTIALLY_CHARGED))
-        v.emplace_back(info_j("partially charged"));
+        v.emplace_back(attr_j_for_enc("partially charged"));
     if (is(MB_FULLY_CHARGED))
-        v.emplace_back(info_j("fully charged"));
+        v.emplace_back(attr_j_for_enc("fully charged"));
     if (is(MB_GOZAG_INCITED))
-        v.emplace_back(info_j("incited by Gozag"));
+        v.emplace_back(attr_j_for_enc("incited by Gozag"));
     if (is(MB_PAIN_BOND))
     {
-        v.push_back(make_stringf(info_j("sharing %s pain").c_str(),
+        v.push_back(make_stringf(attr_j_for_enc("sharing %s pain").c_str(),
                                  pronoun_j(PRONOUN_POSSESSIVE).c_str()));
     }
     if (is(MB_IDEALISED))
-        v.emplace_back(info_j("idealised"));
+        v.emplace_back(attr_j_for_enc("idealised"));
     if (is(MB_BOUND_SOUL))
-        v.emplace_back(info_j("bound soul"));
+        v.emplace_back(attr_j_for_enc("bound soul"));
     if (is(MB_INFESTATION))
-        v.emplace_back(info_j("infested"));
+        v.emplace_back(attr_j_for_enc("infested"));
     if (is(MB_STILL_WINDS))
-        v.emplace_back(info_j("stilling the winds"));
+        v.emplace_back(attr_j_for_enc("stilling the winds"));
     return v;
 }
 

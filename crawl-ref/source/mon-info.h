@@ -301,6 +301,7 @@ struct monster_info : public monster_info_base
     string full_name_en(description_level_type desc = DESC_PLAIN) const;
 
     vector<string> attributes() const;
+    vector<string> attributes_ja(bool for_enclosure = false) const;
 
     const string pronoun(pronoun_type variant) const;
     const string pronoun_j(pronoun_type variant) const;

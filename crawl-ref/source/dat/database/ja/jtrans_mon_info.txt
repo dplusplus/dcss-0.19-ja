@@ -153,7 +153,7 @@ shaped shifter
 %%%%
 [info]mute
 
-静寂
+沈黙
 %%%%
 [info]blind
 
@@ -175,259 +175,283 @@ shaped shifter
 
 (仲間のスライム)
 %%%%
-[info]fast
+[attr]berserk
 
-加速中
+バーサーク中だ
 %%%%
-[info]fast+slow
+[attr]fast
 
-加減速中
+加速中だ
 %%%%
-[info]slow
+[attr]fast+slow
 
-減速中
+加減速中だ
 %%%%
-[info]unusually strong
+[attr]slow
 
-強化中
+減速中だ
 %%%%
-[info]poisoned
+[attr]unusually strong
+
+強化中だ
+%%%%
+[attr]poisoned
 
 毒に冒されている
 %%%%
-[info]sick
+[attr]sick
 
 病気に冒されている
 %%%%
-[info]softly glowing
+[attr]softly glowing
 
 輝いている
 %%%%
-[info]frenzied and insane
+[attr]frenzied and insane
 
 正気を失っている
 %%%%
-[info]slightly transparent
+[attr]confused
 
-透明化中
+混乱中だ
 %%%%
-[info]in your thrall
+[attr]slightly transparent
 
-隷属中
+透明化中だ
 %%%%
-[info]covered in liquid flames
+[attr]in your thrall
+
+隷属中だ
+%%%%
+[attr]covered in liquid flames
 
 焼夷の炎を浴びている
 %%%%
-[info]entangled in a net
+[attr]entangled in a net
 
 網に絡めとられている
 %%%%
-[info]entangled in a web
+[attr]entangled in a web
 
 蜘蛛の巣に引っかかっている
 %%%%
-[info]slowly petrifying
+[attr]slowly petrifying
 
-石化進行中
+石化進行中だ
 %%%%
-[info]susceptible to hostile enchantments
+[attr]susceptible to hostile enchantments
 
 敵対的な魔法に弱い
 %%%%
-[info]covering ground quickly
+[attr]covering ground quickly
 
-敏捷化中
+敏捷化中だ
 %%%%
-[info]radiating silence
+[attr]radiating silence
 
 沈黙を振りまいている
 %%%%
-[info]repelling missiles
+[attr]repelling missiles
 
 飛来物を逸らしている
 %%%%
-[info]deflecting missiles
+[attr]deflecting missiles
 
 飛来物を弾いている
 %%%%
-[info]inspiring fear
+[attr]inspiring fear
 
 恐怖に怯えている
 %%%%
-[info]catching %s breath
+[attr]catching %s breath
 
 息が上がっている
 %%%%
-[info]lost in madness
+[attr]dazed
+
+目が回っている
+%%%%
+[attr]mute
+
+沈黙中だ
+%%%%
+[attr]blind
+
+目が見えない
+%%%%
+[attr]stupefied
+
+呆然としている
+%%%%
+[attr]lost in madness
 
 激怒で我を忘れている
 %%%%
-[info]regenerating
+[attr]regenerating
 
-再生中
+再生中だ
 %%%%
-[info]resistant to hostile enchantments
+[attr]resistant to hostile enchantments
 
 敵対的な魔法に強い
 %%%%
-[info]covered in an icy film
+[attr]covered in an icy film
 
 氷の鎧に覆われている
 %%%%
-[info]misshapen and mutated
+[attr]misshapen and mutated
 
 奇形の体をしている
 %%%%
-[info]chanting recall
+[attr]chanting recall
 
-招来の呪文を詠唱中
+招来の呪文を詠唱中だ
 %%%%
-[info]sheltered from injuries
+[attr]sheltered from injuries
 
 創傷から護られている
 %%%%
-[info]engulfed in water
+[attr]engulfed in water
 
 水に包まれている
 %%%%
-[info]unable to breathe
+[attr]unable to breathe
 
 呼吸することができない
 %%%%
-[info]covered in terrible wounds
+[attr]covered in terrible wounds
 
 体全体がひどい傷で覆われている
 %%%%
-[info]weak
+[attr]weak
 
-弱体化中
+弱体化中だ
 %%%%
-[info]unable to translocate
+[attr]unable to translocate
 
 転位できない
 %%%%
-[info]radiating toxic energy
+[attr]radiating toxic energy
 
 毒の波動を放っている
 %%%%
-[info]movement impaired by roots
+[attr]movement impaired by roots
 
 木の根で動きが阻害されている
 %%%%
-[info]more vulnerable to fire
+[attr]more vulnerable to fire
 
 さらに火に弱くなっている
 %%%%
-[info]surrounded by raging winds
+[attr]surrounded by raging winds
 
 荒れ狂う風に包まれている
 %%%%
-[info]surrounded by restless winds
+[attr]surrounded by restless winds
 
-止むことない風に包まれている
+止むことのない風に包まれている
 %%%%
-[info]skewered by barbs
+[attr]skewered by barbs
 
 逆棘が刺さっている
 %%%%
-[info]more vulnerable to poison
+[attr]more vulnerable to poison
 
 さらに毒に弱くなっている
 %%%%
-[info]surrounded by an icy envelope
+[attr]surrounded by an icy envelope
 
 氷の鎧を身にまとっている
 %%%%
-[info]unusually agile
+[attr]unusually agile
 
-非常に機敏
+非常に機敏だ
 %%%%
-[info]encased in ice
+[attr]encased in ice
 
 凍結している
 %%%%
-[info]absorbing vital energies
+[attr]absorbing vital energies
 
 生命力を吸い取っている
 %%%%
-[info]magic-sapped
+[attr]magic-sapped
 
 魔法が阻害されている
 %%%%
-[info]shrouded
+[attr]shrouded
 
 ゴルブリアの帷子を纏っている
 %%%%
-[info]covered in acid
+[attr]covered in acid
 
 酸を浴びている
 %%%%
-[info]covering ground slowly
+[attr]covering ground slowly
 
 大地をゆっくりと動いている
 %%%%
-[info]lightly drained
+[attr]lightly drained
 
 少し衰弱している
 %%%%
-[info]heavily drained
+[attr]heavily drained
 
 ひどく衰弱している
 %%%%
-[info]unusually resistant
+[attr]unusually resistant
 
 非常に耐性が強い
 %%%%
-[info]control wrested from you
+[attr]control wrested from you
 
 あなたに指揮権を奪われている
 %%%%
-[info]corpse armoured
+[attr]corpse armoured
 
 屍肉の鎧を纏っている
 %%%%
-[info]aura of brilliance
+[attr]aura of brilliance
 
 叡智のオーラを放っている
 %%%%
-[info]spells empowered
+[attr]spells empowered
 
 魔法が強化されている
 %%%%
-[info]ready to howl
+[attr]ready to howl
 
 今にも叫ぼうとしている
 %%%%
-[info]partially charged
+[attr]partially charged
 
-魔法を準備中
+魔法を準備中だ
 %%%%
-[info]fully charged
+[attr]fully charged
 
-魔法の準備完了
+魔法の準備を完了している
 %%%%
-[info]incited by Gozag
+[attr]incited by Gozag
 
 ゴザーグにけしかけられている
 %%%%
-[info]sharing %s pain
+[attr]sharing %s pain
 
-痛み分け状態
+痛み分け状態だ
 %%%%
-[info]idealised
+[attr]idealised
 
 強化されている
 %%%%
-[info]bound soul
+[attr]bound soul
 
 魂が呪縛されている
 %%%%
-[info]infested
+[attr]infested
 
 太陽虫に寄生されている
 %%%%
-[info]stilling the winds
+[attr]stilling the winds
 
 風を止ませている
 %%%%
