@@ -59,10 +59,6 @@ your old self.
 
 元の姿
 %%%%
-blade {hands}
-
-刃の%s
-%%%%
 You %s blades for %s.
 
 あなたは刃の%sを持っている。
@@ -74,6 +70,10 @@ Your %s turn%s into%s razor-sharp scythe blade%s.
 Your %s revert%s to %s normal proportions.
 
 あなたの%sは元の形状に戻った。
+%%%%
+Blade {hands}
+
+刃の%s
 %%%%
 You inwardly fear your resemblance to a lawn ornament.
 

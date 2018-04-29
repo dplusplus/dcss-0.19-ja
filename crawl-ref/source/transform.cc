@@ -525,7 +525,7 @@ public:
      */
     string get_long_name() const override
     {
-        return make_stringf(jtransc("blade {hands}"),
+        return make_stringf(jtransc("Blade {hands}"),
                             form_jc(blade_parts(true)));
     }
 
@@ -573,7 +573,7 @@ public:
      */
     string get_uc_attack_name(string default_name) const override
     {
-        return make_stringf(jtransc("Blade %s"),
+        return make_stringf(jtransc("blade {hands}"),
                             form_jc(blade_parts(true)));
     }
 };
