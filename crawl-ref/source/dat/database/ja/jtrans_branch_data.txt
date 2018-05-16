@@ -349,7 +349,7 @@ You enter the halls of Pandemonium!\nTo return, you must find a gate leading bac
 
 <[branch]Ziggurat>
 %%%%
-[branch abbrj]Zit
+[branch abbrj]Zig
 
 ジ
 %%%%
