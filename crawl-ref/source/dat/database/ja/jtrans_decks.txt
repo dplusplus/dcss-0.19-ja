@@ -483,6 +483,7 @@ You feel rather smug.
 # TAG_MAJOR_VERSION == 34
 This type of card no longer exists!
 
+そのカードはもう存在しない！
 %%%%
 You have %s a buggy card!
 
