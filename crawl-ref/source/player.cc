@@ -5412,7 +5412,7 @@ string player_save_info::short_desc() const
 
     const string qualifier = game_state::game_type_name_for(saved_game_type);
     if (!qualifier.empty())
-        desc << "[" << qualifier << "] ";
+        desc << "[" << jtrans(qualifier) << "] ";
 
     desc << make_stringf(jtransc("{name}, a level {lv} {species} {job} {of some God}"),
                          (religion != GOD_NO_GOD) ? make_stringf(jtransc("of {some God}"),
