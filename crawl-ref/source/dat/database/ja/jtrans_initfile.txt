@@ -17,7 +17,7 @@
 %%%%
 [gametype]hints
 
-ヒントモード
+解説付きモード
 %%%%
 [gametype]none
 

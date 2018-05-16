@@ -41,7 +41,7 @@ Tutorial that covers the basics of Dungeon Crawl survival.
 %%%%
 Hints Mode for Dungeon Crawl
 
-ダンジョンクロウル 解説モード
+ダンジョンクロウル 解説付きモード
 %%%%
 A mostly normal game that provides more advanced hints than the tutorial.
 
