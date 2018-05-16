@@ -3357,7 +3357,7 @@ static vector<string> _evolution_name(const monster_info& mon)
     auto conv = map_find(conversions, mon.type);
     if (conv && !mon.has_trivial_ench(ENCH_PETRIFIED))
         return { make_stringf(jtransc("can evolve into %s"),
-                              mons_type_name(conv->new_type, DESC_PLAIN).c_str()) };
+                              jtransc(mons_type_name(conv->new_type, DESC_PLAIN))) };
     else
         return { jtrans("cannot be evolved") };
 }
