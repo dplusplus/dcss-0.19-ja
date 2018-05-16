@@ -149,7 +149,7 @@ right {hand}
 %%%%
 [item adj terse]buggy-vorpal
 
-#訳不要
+# 訳不要
 %%%%
 [item adj terse]vamp
 
@@ -175,8 +175,6 @@ right {hand}
 
 躱し身
 %%%%
-
-%%%%
 [item adj terse]confuse
 
 混乱
@@ -191,7 +189,7 @@ right {hand}
 %%%%
 [item adj terse]buggy-num
 
-#訳不要
+# 訳不要
 %%%%
 [item adj terse]acid
 
