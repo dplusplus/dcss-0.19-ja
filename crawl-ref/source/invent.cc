@@ -1499,11 +1499,14 @@ bool check_old_item_warning(const item_def& item,
     case OPER_WEAR:
         prompt += make_stringf(jtransc("Really take off %s?"),
                                old_name.c_str());
+        break;
     case OPER_PUTON:
         prompt += make_stringf(jtransc("Really remove %s?"),
                                old_name.c_str());
+        break;
     default:
         prompt += "buggy prompt";
+        break;
     }
 
     if (penance)
