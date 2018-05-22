@@ -17,7 +17,7 @@ Nothing suitable (ignored '=f'-inscribed item on '%c').
 %%%%
 Quivering %s for %s.
 
-%sを%s用に準備した。
+%s を%s用に準備した。
 %%%%
 blowguns
 

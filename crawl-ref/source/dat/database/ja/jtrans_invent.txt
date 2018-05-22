@@ -205,15 +205,15 @@ You don't have any such object.
 %%%%
 Really unwield %s?
 
-本当に%sを手放しますか？
+本当に %s を手放しますか？
 %%%%
 Really take off %s?
 
-本当に%sを脱ぎますか？
+本当に %s を脱ぎますか？
 %%%%
 Really remove %s?
 
-本当に%sを外しますか？
+本当に %s を外しますか？
 %%%%
 # This could place you under penance!
 

@@ -13,7 +13,7 @@ This weapon is already branded with pain.
 %%%%
 Really brand %s?
 
-本当に%sに魔力を付与しますか？
+本当に %s に魔力を付与しますか？
 %%%%
 rebranding a weapon of distortion
 
