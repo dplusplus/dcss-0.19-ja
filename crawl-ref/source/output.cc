@@ -1159,7 +1159,9 @@ static void _redraw_title()
                                            name_len - (in_len - WIDTH) - 1);
             }
 
-            title = trimmed_name + ", " + filtered_lang(player_title(false));
+            title = make_stringf("%s『%s』",
+                                 player_title(false).c_str(),
+                                 trimmed_name.c_str());
         }
     }
 
