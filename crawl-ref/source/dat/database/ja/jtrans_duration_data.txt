@@ -450,7 +450,7 @@ You are in the eye of a mighty hurricane.
 %%%%
 The ground has become liquefied beneath your feet.
 
-あなたの足下の地面がぬかるんだ。
+あなたの足下の地面はぬかるんでいる。
 %%%%
 The ground is no longer liquid beneath you.
 
@@ -494,7 +494,7 @@ Your blows are lightning fast.
 %%%%
 You are calling for your life to be saved.
 
-あなたは生命の保護を請うている。
+あなたは生命の保護を願っている。
 %%%%
 Your divine protection fades away.
 
@@ -510,7 +510,7 @@ Your divine protection fades away.
 %%%%
 You emit darkness.
 
-あなたは暗闇を発した。
+あなたは暗闇を発している。
 %%%%
 The ambient light returns to normal.
 
@@ -700,13 +700,13 @@ Your movement is impeded by grasping roots.
 
 あなたの動きは絡まる木の根に邪魔されている。
 %%%%
-[dur]-rF
+[dur]rF-
 
-火炎耐性低下
+耐火－
 %%%%
 [dur]fire vulnerable
 
-<[dur]-rF>
+火炎耐性低下
 %%%%
 You are more vulnerable to fire.
 
@@ -728,7 +728,7 @@ Manticore spikes are embedded in your body.
 
 マンティコアの逆棘が体に食い込んでいる。
 %%%%
-[dur]-rP
+[dur]rP-
 
 耐毒－
 %%%%
@@ -766,7 +766,7 @@ The ice encasing you melts away.
 %%%%
 Casting spells hinders your spell success.
 
-詠唱すればするほど成功しにくくなる。
+あなたが呪文を詠唱すればするほど成功しにくくなる。
 %%%%
 Your magic seems less tainted.
 
@@ -1066,7 +1066,7 @@ The world stops spinning.
 %%%%
 Your shed blood clings to and protects you.
 
-流した血液が固まってあなたを守った。
+流した血液が固まってあなたを守っている。
 %%%%
 Your blood armour dries and flakes away.
 
@@ -1103,6 +1103,10 @@ Your icy envelope is restored.
 You feel the effects of Trog's Hand fading.
 
 あなたはトログの御手による守護が薄れていくのを感じた。
+%%%%
+[dur]gold aura
+
+金貨のオーラ
 %%%%
 You regain access to your magic.
 

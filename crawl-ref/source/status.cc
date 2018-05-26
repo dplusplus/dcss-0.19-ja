@@ -112,7 +112,7 @@ static void _mark_expiring(status_info* inf, bool expiring)
         if (!inf->short_text.empty())
             inf->short_text = duration_name_j(inf->short_text) + jtrans_notrim(" (expiring)");
         if (!inf->long_text.empty())
-            inf->long_text = jtrans_notrim("Expiring: ") + inf->long_text;
+            inf->long_text = jtrans_notrim("Expiring: ") + jtrans(inf->long_text);
     }
 }
 
