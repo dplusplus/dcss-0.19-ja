@@ -557,7 +557,7 @@
 %%%%
 [title]Plane @Walker@
 
-次元渡航者
+次元の狭間を@Walker@
 %%%%
 [skill]Transmutations
 

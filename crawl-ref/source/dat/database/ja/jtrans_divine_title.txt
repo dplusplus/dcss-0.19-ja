@@ -751,7 +751,7 @@
 %%%%
 [title]@Walker@ of the Path
 
-真理の道の歩行者
+真理の道を@Walker@
 %%%%
 [title]Lifter of the Veil
 
