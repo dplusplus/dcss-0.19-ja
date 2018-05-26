@@ -151,7 +151,6 @@ enum card_type
 const char* card_name(card_type card);
 const string card_name_j(card_type card, bool card_of = false);
 const string card_name_j(const string &name, bool card_of = false);
-const char* card_name_jc(card_type card, bool card_of = false);
 card_type name_to_card(string name);
 const string deck_contents(uint8_t deck_type);
 void evoke_deck(item_def& deck);
