@@ -1715,10 +1715,10 @@ endif
 	cp -p $(ZIP_DOCS) build-win/stone_soup-tiles-$(MAJOR_VERSION)/
 
 #	fix encoding (utf-8 -> shift-jis)
-	nkf -Ws --overwrite build-win/stone_soup-tiles-$(MAJOR_VERSION)/dat/defaults/*.txt
-	nkf -Ws --overwrite build-win/stone_soup-tiles-$(MAJOR_VERSION)/dat/dlua/lm_timed.lua
-	nkf -Ws --overwrite build-win/stone_soup-tiles-$(MAJOR_VERSION)/dat/dlua/lm_tmsg.lua
-	nkf -Ws --overwrite build-win/stone_soup-tiles-$(MAJOR_VERSION)/dat/dlua/lm_trove.lua
+	find build-win/stone_soup-tiles-$(MAJOR_VERSION)/dat/defaults/ -name '*.txt' | xargs -I{} iconv {} -f utf8 -t sjis -o {}
+	iconv build-win/stone_soup-tiles-$(MAJOR_VERSION)/dat/dlua/lm_timed.lua -f utf8 -t sjis -o build-win/stone_soup-tiles-$(MAJOR_VERSION)/dat/dlua/lm_timed.lua
+	iconv build-win/stone_soup-tiles-$(MAJOR_VERSION)/dat/dlua/lm_tmsg.lua -f utf8 -t sjis -o build-win/stone_soup-tiles-$(MAJOR_VERSION)/dat/dlua/lm_tmsg.lua
+	iconv build-win/stone_soup-tiles-$(MAJOR_VERSION)/dat/dlua/lm_trove.lua -f utf8 -t sjis -o build-win/stone_soup-tiles-$(MAJOR_VERSION)/dat/dlua/lm_trove.lua
 
 	cd build-win && zip -9r ../stone_soup-$(SRC_VERSION)-tiles-win32.zip *
 	rm -rf build-win
