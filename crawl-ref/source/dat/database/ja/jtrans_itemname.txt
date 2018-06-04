@@ -421,7 +421,7 @@ of chopping
 %%%%
 [item adj terse]slash
 
-切れ味
+切り裂き
 %%%%
 [item adj verbose]slashing
 
@@ -429,7 +429,7 @@ of chopping
 %%%%
 of slashing
 
-切れ味の
+切り裂きの
 %%%%
 buggy vorpal
 
