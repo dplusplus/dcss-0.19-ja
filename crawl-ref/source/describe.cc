@@ -2085,16 +2085,25 @@ string get_item_description(const item_def &item, bool verbose,
 
     // This information is obscure and differs per-item, so looking it up in
     // a docs file you don't know to exist is tedious.
+
+    string prefix_guide;
     if (verbose)
     {
-        description << jtrans_notrim("\n\nStash search prefixes: ")
-                    << userdef_annotate_item(STASH_LUA_SEARCH_ANNOTATE, &item);
+        prefix_guide += jtrans_notrim("\nStash search prefixes: ")
+                     + userdef_annotate_item(STASH_LUA_SEARCH_ANNOTATE, &item);
         string menu_prefix = item_prefix(item, false);
         if (!menu_prefix.empty())
-            description << jtrans_notrim("\nMenu/colouring prefixes: ") << menu_prefix;
+            prefix_guide += jtrans_notrim("\nMenu/colouring prefixes: ") + menu_prefix;
     }
 
-    return description.str();
+    string description_text = description.str();
+    if (!prefix_guide.empty())
+    {
+        description_text += (ends_with(description_text, "\n") ? "" : "\n")
+                          + prefix_guide;
+    }
+
+    return description_text;
 }
 
 void get_feature_desc(const coord_def &pos, describe_info &inf)
