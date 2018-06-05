@@ -961,143 +961,146 @@ static string _describe_weapon(const item_def &item, bool verbose)
     // special weapon descrip
     if (item_type_known(item) && (spec_ench != SPWPN_NORMAL || enchanted))
     {
-        description += "\n\n";
+        string special_weapon_description;
 
         switch (spec_ench)
         {
         case SPWPN_FLAMING:
             if (is_range_weapon(item))
             {
-                description += jtrans("It causes projectiles fired from it to burn "
+                special_weapon_description += jtrans("It causes projectiles fired from it to burn "
                     "those they strike,");
             }
             else
             {
-                description += jtrans("It has been specially enchanted to burn "
+                special_weapon_description += jtrans("It has been specially enchanted to burn "
                     "those struck by it,");
             }
-            description += jtrans("causing extra injury flaming");
+            special_weapon_description += jtrans("causing extra injury flaming");
             if (!is_range_weapon(item) &&
                 (damtype == DVORP_SLICING || damtype == DVORP_CHOPPING))
             {
-                description += jtrans_notrim("\nBig, fiery blades are also staple "
+                special_weapon_description += jtrans_notrim("\nBig, fiery blades are also staple "
                     "armaments of hydra-hunters.");
             }
             break;
         case SPWPN_FREEZING:
             if (is_range_weapon(item))
             {
-                description += jtrans("It causes projectiles fired from it to freeze "
+                special_weapon_description += jtrans("It causes projectiles fired from it to freeze "
                     "those they strike,");
             }
             else
             {
-                description += jtrans("It has been specially enchanted to freeze "
+                special_weapon_description += jtrans("It has been specially enchanted to freeze "
                     "those struck by it,");
             }
-            description += jtrans("causing extra injury freezing");
-            description += jtrans_notrim(make_stringf("\n%s can also slow down cold-blooded creatures.",
+            special_weapon_description += jtrans("causing extra injury freezing");
+            special_weapon_description += jtrans_notrim(make_stringf("\n%s can also slow down cold-blooded creatures.",
                                                       is_range_weapon(item) ? "They" : "It"));
             break;
         case SPWPN_HOLY_WRATH:
-            description += jtrans("It has been blessed by the Shining One");
+            special_weapon_description += jtrans("It has been blessed by the Shining One");
             if (is_range_weapon(item))
             {
-                description += make_stringf(jtransc(", and any {ammo name} fired from it will"),
+                special_weapon_description += make_stringf(jtransc(", and any {ammo name} fired from it will"),
                                             ammo_name_jc(item));
             }
-            description += jtrans(" cause great damage to the undead and demons.");
+            special_weapon_description += jtrans(" cause great damage to the undead and demons.");
             break;
         case SPWPN_ELECTROCUTION:
             if (is_range_weapon(item))
             {
-                description += jtrans("It charges the ammunition it shoots with "
+                special_weapon_description += jtrans("It charges the ammunition it shoots with "
                     "electricity; occasionally upon a hit, such missiles "
                     "may discharge and cause terrible harm.");
             }
             else
             {
-                description += jtrans("Occasionally, upon striking a foe, it will "
+                special_weapon_description += jtrans("Occasionally, upon striking a foe, it will "
                     "discharge some electrical energy and cause terrible "
                     "harm.");
             }
             break;
         case SPWPN_VENOM:
             if (is_range_weapon(item))
-                description += jtrans("It poisons the ammo it fires.");
+                special_weapon_description += jtrans("It poisons the ammo it fires.");
             else
-                description += jtrans("It poisons the flesh of those it strikes.");
+                special_weapon_description += jtrans("It poisons the flesh of those it strikes.");
             break;
         case SPWPN_PROTECTION:
-            description += jtrans("It protects the one who uses it against "
+            special_weapon_description += jtrans("It protects the one who uses it against "
                 "injury (+AC on strike).");
             break;
         case SPWPN_DRAINING:
-            description += jtrans("A truly terrible weapon, it drains the "
+            special_weapon_description += jtrans("A truly terrible weapon, it drains the "
                 "life of those it strikes.");
             break;
         case SPWPN_SPEED:
-            description += jtrans("Attacks with this weapon are significantly faster.");
+            special_weapon_description += jtrans("Attacks with this weapon are significantly faster.");
             break;
         case SPWPN_VORPAL:
             if (is_range_weapon(item))
             {
-                description += make_stringf(jtransc("Any {ammo name} fired from it inflicts extra damage."),
+                special_weapon_description += make_stringf(jtransc("Any {ammo name} fired from it inflicts extra damage."),
                                             ammo_name_jc(item));
             }
             else
             {
-                description += jtrans("It inflicts extra damage upon your "
+                special_weapon_description += jtrans("It inflicts extra damage upon your "
                     "enemies.");
             }
             break;
         case SPWPN_CHAOS:
             if (is_range_weapon(item))
             {
-                description += jtrans("Each projectile launched from it has a "
+                special_weapon_description += jtrans("Each projectile launched from it has a "
                                       "different, random effect.");
             }
             else
             {
-                description += jtrans("Each time it hits an enemy it has a "
+                special_weapon_description += jtrans("Each time it hits an enemy it has a "
                     "different, random effect.");
             }
             break;
         case SPWPN_VAMPIRISM:
-            description += jtrans("It inflicts no extra harm, but heals "
+            special_weapon_description += jtrans("It inflicts no extra harm, but heals "
                 "its wielder when it wounds a living foe.");
             break;
         case SPWPN_PAIN:
-            description += jtrans("In the hands of one skilled in necromantic "
+            special_weapon_description += jtrans("In the hands of one skilled in necromantic "
                 "magic, it inflicts extra damage on living creatures.");
             break;
         case SPWPN_DISTORTION:
-            description += jtrans("It warps and distorts space around it. "
+            special_weapon_description += jtrans("It warps and distorts space around it. "
                 "Unwielding it can cause banishment or high damage.");
             break;
         case SPWPN_PENETRATION:
-            description += jtrans("Ammo fired by it will pass through the "
+            special_weapon_description += jtrans("Ammo fired by it will pass through the "
                 "targets it hits, potentially hitting all targets in "
                 "its path until it reaches maximum range.");
             break;
         case SPWPN_REAPING:
-            description += jtrans("If a monster killed with it leaves a "
+            special_weapon_description += jtrans("If a monster killed with it leaves a "
                 "corpse in good enough shape, the corpse will be "
                 "animated as a zombie friendly to the killer.");
             break;
         case SPWPN_ANTIMAGIC:
-            description += jtrans("It reduces the magical energy of the wielder, "
+            special_weapon_description += jtrans("It reduces the magical energy of the wielder, "
                     "and disrupts the spells and magical abilities of those "
                     "hit. Natural abilities and divine invocations are not "
                     "affected.");
             break;
         case SPWPN_NORMAL:
             ASSERT(enchanted);
-            description += jtrans("It has no special brand (it is not flaming, "
+            special_weapon_description += jtrans("It has no special brand (it is not flaming, "
                     "freezing, etc), but is still enchanted in some way - "
                     "positive or negative.");
             break;
         }
+
+        if (!special_weapon_description.empty())
+            description += "\n\n" + special_weapon_description;
     }
 
     if (you.duration[DUR_EXCRUCIATING_WOUNDS] && &item == you.weapon())
@@ -2040,7 +2043,7 @@ string get_item_description(const item_def &item, bool verbose,
         die("Bad item class");
     }
     if (!desc.empty())
-        description << desc;
+        description << desc << (ends_with(desc, "\n") ? "" : "\n");
 
     if (!verbose && item_known_cursed(item))
         description << make_stringf(jtrans_notrimc("\nIt has a curse placed upon it."),
@@ -2078,7 +2081,7 @@ string get_item_description(const item_def &item, bool verbose,
     }
 
     if (verbose && origin_describable(item))
-        description << "\n\n" << origin_desc(item, true);
+        description << "\n" << origin_desc(item, true);
 
     // This information is obscure and differs per-item, so looking it up in
     // a docs file you don't know to exist is tedious.
