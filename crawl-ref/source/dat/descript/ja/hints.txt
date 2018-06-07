@@ -1,210 +1,322 @@
 %%%%
 welcome
 
-<white>Welcome to Dungeon Crawl!</white>
+# <white>Welcome to Dungeon Crawl!</white>
+#
+# Your objective is to lead a <w>{{ return you.race() }} {{ return you.class()
+# }}</w> safely through the depths of the dungeon, retrieving the fabled Orb of
+# Zot and returning it to the surface. In the beginning, however, let discovery
+# be your main goal. Try to delve as deeply as possible but beware; death lurks
+# around every corner.
+#
+# For the moment, just remember the following keys and their functions:
+#   <input>$cmd[CMD_DISPLAY_COMMANDS]?</input> — shows the items and the commands
+#   <input>$cmd[CMD_SAVE_GAME]</input>  — saves the game, to be resumed later
+# (but note that death is permanent)
+#   <input>$cmd[CMD_LOOK_AROUND]</input>  — examines something in your vicinity
+#
+# The hint mode will help you play Crawl without reading any documentation. If
+# you haven't yet, you might want to try out the tutorial. Also, if you feel
+# intrigued, there is more information available in the following files from the
+# docs/ directory (all of which can also be read in-game):
+#   <lightblue>quickstart.txt</lightblue>     — A very short guide to Crawl.
+#   <lightblue>crawl_manual.txt</lightblue>   — This contains all details on
+# species, magic, skills, etc.
+#   <lightblue>options_guide.txt</lightblue>  — Crawl's interface is highly
+# configurable. This document explains all the options.
+#
+# Happy Crawling!
+<white>ダンジョンクロウルへようこそ！</white>
 
-Your objective is to lead a <w>{{ return you.race() }} {{ return you.class()
-}}</w> safely through the depths of the dungeon, retrieving the fabled Orb of
-Zot and returning it to the surface. In the beginning, however, let discovery
-be your main goal. Try to delve as deeply as possible but beware; death lurks
-around every corner.
+あなたの目標は{{ return crawl.tagged_jtrans("[spec name]", you.race()) }}の{{ return crawl.tagged_jtrans("[job]", you.class()) }}を安全にダンジョンの深層へと導き、
+伝説の『ゾットのオーブ』を回収して地上へと帰還することです。
+とはいえ、最初のうちは発見することを主目的にしてください。
+可能な限り徹底的に探索しましょう――しかし、気をつけてください。
+死は至る所に潜んでいます。
 
-For the moment, just remember the following keys and their functions:
-  <input>$cmd[CMD_DISPLAY_COMMANDS]?</input> — shows the items and the commands
-  <input>$cmd[CMD_SAVE_GAME]</input>  — saves the game, to be resumed later
-(but note that death is permanent)
-  <input>$cmd[CMD_LOOK_AROUND]</input>  — examines something in your vicinity
+さしあたっては、以下のコマンドとその動作だけを覚えておいてください:
+  <input>$cmd[CMD_DISPLAY_COMMANDS]?</input> — 各種項目やコマンド一覧を表示します
+  <input>$cmd[CMD_SAVE_GAME]</input>  — 中断して後で再開するためにゲームを保存します
+         (しかし、死んだら最初からとなることに注意してください)
+  <input>$cmd[CMD_LOOK_AROUND]</input>  — あなたの周囲にあるものを調べます
 
-The hint mode will help you play Crawl without reading any documentation. If
-you haven't yet, you might want to try out the tutorial. Also, if you feel
-intrigued, there is more information available in the following files from the
-docs/ directory (all of which can also be read in-game):
-  <lightblue>quickstart.txt</lightblue>     — A very short guide to Crawl.
-  <lightblue>crawl_manual.txt</lightblue>   — This contains all details on
-species, magic, skills, etc.
-  <lightblue>options_guide.txt</lightblue>  — Crawl's interface is highly
-configurable. This document explains all the options.
+解説モードは説明書に目を通さずにクロウルを遊ぶのに役立ちます。
+まだやっていなかったら、チュートリアルモードも試してみたくなるかもしれません。
+また、もし興味が湧いたなら、"docs"フォルダー内の下記ファイルにあるさらなる情報が利用できます。
+(これらはすべてゲーム内でも読むことができます):
+  <lightblue>quickstart.txt</lightblue>     — とても短いクロウルのガイド
+  <lightblue>crawl_manual.txt</lightblue>   — 種族、魔法、スキル、その他についての詳細を含みます
+  <lightblue>options_guide.txt</lightblue>  — クロウルのインターフェースは非常に細かく設定可能です。
+                       この文書はオプションに関する全てを説明します
 
-Happy Crawling!
+それでは、ダンジョンクロウルをお楽しみください！
 %%%%
 death
 
-Condolences! Your character's premature death is a sad, but common occurrence
-in Crawl. Rest assured that with diligence and playing experience your
-characters will last longer.
+# Condolences! Your character's premature death is a sad, but common occurrence
+# in Crawl. Rest assured that with diligence and playing experience your
+# characters will last longer.
+#
+# Perhaps the following advice can improve your playing style:
+ご愁傷様！ あなたのキャラクターが早すぎる死を迎えることは悲しいことですが、
+このゲームではよくある出来事です。
+努力と経験によってあなたのキャラクターはより長生きするようになるので、ご安心ください。
 
-Perhaps the following advice can improve your playing style:
+もしかしたら以下の助言があなたの遊び方を上達させてくれるかもしれません:
 %%%%
 death conjurer melee
 
-As a Conjurer your main weapon should be offensive magic. Cast spells more
-often! Remember to rest when your Magic is low.
+# As a Conjurer your main weapon should be offensive magic. Cast spells more
+# often! Remember to rest when your Magic is low.
+あなたは妖術師ですので、攻撃魔法を主に武器として使うべきでしょう。
+もっと頻繁に呪文を唱えましょう！ 魔力が低下したときには休憩するのを覚えておいてください。
 %%%%
 death berserker unberserked
 
-Don't forget to go berserk when fighting particularly difficult foes. It's
-risky, but makes you faster and beefier.
+# Don't forget to go berserk when fighting particularly difficult foes. It's
+# risky, but makes you faster and beefier.
+# {{
+#     if you.hunger() < 3 then
+#         return "Berserking is impossible while very hungry or worse, so " ..
+#                "make sure to stay fed at all times, just in case you need " ..
+#                "to berserk."
+#     end
+# }}
+強敵と戦う際にバーサークすることを忘れないでください。
+危険はあるものの、あなたの動きを速く、力強くします。
 {{
     if you.hunger() < 3 then
-        return "Berserking is impossible while very hungry or worse, so " ..
-               "make sure to stay fed at all times, just in case you need " ..
-               "to berserk."
+        return "「とても空腹」かそれ以上に腹が減っている時はバーサークすることはできません。\n" ..
+               "そのため、バーサークするときに備えて必ず常時腹を満たしておきましょう。"
     end
 }}
 %%%%
 death ranger melee
 
-Your bow and arrows are extremely powerful against distant monsters. Be sure to
-collect all arrows lying around in the dungeon.
+# Your bow and arrows are extremely powerful against distant monsters. Be sure to
+# collect all arrows lying around in the dungeon.
+あなたの持つ弓矢は離れたところにいるモンスターに対し非常に強力です。
+ダンジョンのあちこちに落ちている矢を必ず全部集めましょう。
 %%%%
 death random 0
 
-Always consider using projectiles, wands or spells before engaging monsters in
-close combat.
+# Always consider using projectiles, wands or spells before engaging monsters in
+# close combat.
+近接戦闘に突入する前に、飛び道具、ワンド、そして呪文を使うことを常に考えましょう。
 %%%%
 death random 1
 
-Learn when to run away from things you can't handle — this is important! It is
-often wise to skip a particularly dangerous level. But don't overdo this as
-monsters will only get harder the deeper you delve.
+# Learn when to run away from things you can't handle — this is important! It is
+# often wise to skip a particularly dangerous level. But don't overdo this as
+# monsters will only get harder the deeper you delve.
+あなたの手に負えない出来事からいつ逃げ出すかを学びましょう――それは重要です！
+特別危険な階層を飛ばすことはしばしば賢い判断です。
+しかしあなたが深く潜るにつれてモンスターたちは強くなっていく一方なので、やりすぎは禁物です。
 %%%%
 death random 2
 
-Rest between encounters, if possible in an area already explored and cleared of
-monsters. Pressing <input>$cmd[CMD_REST]</input><localtiles>, or
-<input>clicking on the 'rest' button in the command bar'</input></localtiles>
-will rest for 100 turns, or until fully healed.
+# Rest between encounters, if possible in an area already explored and cleared of
+# monsters. Pressing <input>$cmd[CMD_REST]</input><localtiles>, or
+# <input>clicking on the 'rest' button in the command bar'</input></localtiles>
+# will rest for 100 turns, or until fully healed.
+敵との遭遇の合間に、もし可能なら探索済みかつモンスターも掃討した区域内で休息しましょう。
+<input>$cmd[CMD_REST]</input>を押<localtiles>すか、またはコマンドタブの'休息して傷を癒やす'ボタンを<input>クリック</input></localtiles>すと100ターン経過するか、あるいは全快するまで休息します。
 %%%%
 death random 3
 
-Remember to use those scrolls, potions or wands you've found. Learn to
-improvise: identify your items by using them.
+# Remember to use those scrolls, potions or wands you've found. Learn to
+# improvise: identify your items by using them.
+見つけた巻物・水薬・ワンドを使うのを覚えておいてください。
+即興的にやる方法を知りましょう: アイテムを使うことでそのアイテムを鑑定しましょう。
 %%%%
 death random 4
 
-If a particular encounter feels overwhelming, don't forget to use emergency
-items early on. A scroll of teleportation or a potion of haste can really save
-your bacon.
+# If a particular encounter feels overwhelming, don't forget to use emergency
+# items early on. A scroll of teleportation or a potion of haste can really save
+# your bacon.
+特定の相手との遭遇が恐ろしく感じられたら、緊急用のアイテムを早くから使っておくことを忘れないでください。
+テレポートの巻物やスピードの薬はあなたを危機から守ってくれる可能性が高いです。
 %%%%
 death random 5
 
-Never fight more than one monster, if you can help it. Always back into a
-corridor so that they are forced to fight you one on one.
+# Never fight more than one monster, if you can help it. Always back into a
+# corridor so that they are forced to fight you one on one.
+できうる限り複数の敵と戦わないようにしてください。
+あなたとの一対一の戦いを相手に強いるため、常に通路の奥に引っ込みましょう。
 %%%%
 finished
 
-Congrats! You survived until the end of the hint mode — be sure to try the
-other ones as well. Note that the command help screen
-(<input>$cmd[CMD_DISPLAY_COMMANDS]?</input>) will look very different from now
-on. Here's a last playing hint:
+# Congrats! You survived until the end of the hint mode — be sure to try the
+# other ones as well. Note that the command help screen
+# (<input>$cmd[CMD_DISPLAY_COMMANDS]?</input>) will look very different from now
+# on. Here's a last playing hint:
+おめでとう！ あなたはこの解説付きモードが終了するまで生き延びました。
+必ず別の組み合わせも同様に試しておいてください。
+コマンドヘルプ画面(<input>$cmd[CMD_DISPLAY_COMMANDS]?</input>)は今やだいぶ違って見えることでしょう。
+これが遊ぶにあたっての最後のヒントです:
 %%%%
 finished explored
 
-Walking around and exploring levels gets easier by using auto-explore
-(<input>$cmd[CMD_EXPLORE]</input>). Crawl will let you automatically move to
-and pick up interesting items.<localtiles>
+# Walking around and exploring levels gets easier by using auto-explore
+# (<input>$cmd[CMD_EXPLORE]</input>). Crawl will let you automatically move to
+# and pick up interesting items.<localtiles>
+#
+# Autoexploration can also be started by <input>Ctrl-Leftclick</input> on the
+# minimap.</localtiles>
+自動探索を使う(<input>$cmd[CMD_EXPLORE]</input>)ことで周辺を歩いて階層を探索することが簡単になります。
+自動的にプレイヤーが動き、めぼしいアイテムを拾い上げてくれるでしょう。<localtiles>
 
-Autoexploration can also be started by <input>Ctrl-Leftclick</input> on the
-minimap.</localtiles>
+自動探索はミニマップを<input>Ctrl+左クリック</input>することでも開始できます。</localtiles>
 %%%%
 finished travel
 
-There is a convenient way to travel between distant dungeon levels: press
-<input>$cmd[CMD_INTERLEVEL_TRAVEL]</input> and enter the desired destination.
-If your travel gets interrupted, issuing <input>$cmd[CMD_INTERLEVEL_TRAVEL]
-Enter</input> will continue it.
+# There is a convenient way to travel between distant dungeon levels: press
+# <input>$cmd[CMD_INTERLEVEL_TRAVEL]</input> and enter the desired destination.
+# If your travel gets interrupted, issuing <input>$cmd[CMD_INTERLEVEL_TRAVEL]
+# Enter</input> will continue it.
+遠く離れたダンジョンの階層間を移動する便利な方法が存在します。
+<input>$cmd[CMD_INTERLEVEL_TRAVEL]</input>を押して目的の地点を入力しましょう。
+もし移動が途中で中断されてしまったら、<input>$cmd[CMD_INTERLEVEL_TRAVEL]→Enter</input>を押すと移動が再開されます。
 %%%%
 finished stashes
 
-You can search among all items existing in the dungeon with the
-<input>$cmd[CMD_SEARCH_STASHES]</input> command. For example,
-<input>$cmd[CMD_SEARCH_STASHES]</input> <w>“dagger”</w> will list all daggers,
-and allow you to travel to them. You can even search for dungeon features, like
-<w>“shop”</w> or <w>“altar”</w>.
+# You can search among all items existing in the dungeon with the
+# <input>$cmd[CMD_SEARCH_STASHES]</input> command. For example,
+# <input>$cmd[CMD_SEARCH_STASHES]</input> <w>“dagger”</w> will list all daggers,
+# and allow you to travel to them. You can even search for dungeon features, like
+# <w>“shop”</w> or <w>“altar”</w>.
+<input>$cmd[CMD_SEARCH_STASHES]</input>コマンドを用いることでダンジョン内に存在するすべてのアイテムを検索できます。
+<input>$cmd[CMD_SEARCH_STASHES]</input> → <w>"ダガー"</w>と入力すると全てのダガーを列挙し、その場所まで移動することができます。
+<w>"店"</w>や<w>"祭壇"</w>のようにダンジョン内の施設を検索することもできます。
 %%%%
 finished random 0
 
-The game keeps an automated log for your characters. Use
-<input>$cmd[CMD_DISPLAY_COMMANDS]:</input> to read it. Once your character
-perishes, two morgue files are left in the <w>morgue/</w> directory. The one
-ending in .txt contains a copy of your log. During play, you can create a dump
-file with <input>$cmd[CMD_CHARACTER_DUMP]</input>.
+# The game keeps an automated log for your characters. Use
+# <input>$cmd[CMD_DISPLAY_COMMANDS]:</input> to read it. Once your character
+# perishes, two morgue files are left in the <w>morgue/</w> directory. The one
+# ending in .txt contains a copy of your log. During play, you can create a dump
+# file with <input>$cmd[CMD_CHARACTER_DUMP]</input>.
+あなたのキャラクターの行動は自動的に記録されます。
+それを読むには<input>$cmd[CMD_DISPLAY_COMMANDS]:</input>を押してください。
+キャラクターが死ぬたびに2つのファイルが<w>morgue</w>フォルダーに残されます。
+.txtで終わる片方のファイルにはあなたの行動記録の写しが含まれています。
+プレイしている最中、<input>$cmd[CMD_CHARACTER_DUMP]</input>を押すことでダンプファイルを生成できます。
 %%%%
 finished random 1
 
-Crawl has a macro function built in: press <input>~m</input> to define a macro
-by first specifying a trigger key (say, <input>F1</input>) and a command
-sequence, for example <input>za.</input>. The latter will make the
-<input>F1</input> key always zap the spell in slot a at the nearest monster.
-For more information on macros, type
-<input>$cmd[CMD_DISPLAY_COMMANDS]~</input>.
+# Crawl has a macro function built in: press <input>~m</input> to define a macro
+# by first specifying a trigger key (say, <input>F1</input>) and a command
+# sequence, for example <input>za.</input>. The latter will make the
+# <input>F1</input> key always zap the spell in slot a at the nearest monster.
+# For more information on macros, type
+# <input>$cmd[CMD_DISPLAY_COMMANDS]~</input>.
+クロウルはマクロ機能を備えています。
+<input>~m</input>を押してまず起点となるキー(例えば<input>F1</input>)を指定し、続けて一連のコマンドを入力(例えば<input>za.</input>)してマクロを定義します。
+そうすることで、<input>F1</input>キーを押すと常に最寄りの敵に対し(a)枠の呪文を撃ちます。
+マクロについてのより詳しい情報を調べるには、<input>$cmd[CMD_DISPLAY_COMMANDS]~</input>を押してください。
 %%%%
 finished random 2
 
-The interface can be greatly customised. All options are explained in the file
-<w>options_guide.txt</w> which can be found in the <w>docs</w> directory. The
-options themselves are set in <w>init.txt</w> or <w>.crawlrc</w>. Crawl will
-complain if it can't find either file.
+# The interface can be greatly customised. All options are explained in the file
+# <w>options_guide.txt</w> which can be found in the <w>docs</w> directory. The
+# options themselves are set in <w>init.txt</w> or <w>.crawlrc</w>. Crawl will
+# complain if it can't find either file.
+インターフェイスは非常に柔軟にカスタマイズできます。
+全てのオプションは<w>docs</w>フォルダー内の<w>options_guide.txt</w>で説明されています。
+各オプションは<w>init.txt</w>もしくは<w>.crawlrc</w>で設定されています。
+どちらのファイルも見つからなかった場合はエラー表示されます。
 %%%%
 finished random 3
 
-You can ask other Crawl players for advice and help on the <w>##crawl</w> IRC
-(Internet Relay Chat) channel on freenode (<w>irc.freenode.net</w>).
+# You can ask other Crawl players for advice and help on the <w>##crawl</w> IRC
+# (Internet Relay Chat) channel on freenode (<w>irc.freenode.net</w>).
+freenode (<w>irc.freenode.net</w>) IRCの<w>##crawl</w>チャンネルで他のクロウルプレイヤーに助言と助けを求めることができます。
 %%%%
 dissection reminder
 
-Don't forget that you can butcher corpses with <input>$cmd[CMD_BUTCHER]</input>
-<localtiles>, or by clicking on corspes in the floor part of your inventory
-with the <input>left mouse button</input></localtiles>.
+# Don't forget that you can butcher corpses with <input>$cmd[CMD_BUTCHER]</input>
+# <localtiles>, or by clicking on corspes in the floor part of your inventory
+# with the <input>left mouse button</input></localtiles>.
+<input>$cmd[CMD_BUTCHER]</input>を押<localtiles>すか、所有物一覧タブの足下部分にある死体を<input>左クリック</input></localtiles>して死体を捌くことができるのを忘れないでください。
 %%%%
 HINT_CONVERT Xom
 
-You've just converted to worshipping <w>Xom</w>. You can keep Xom happy by
-keeping him amused; you do absolutely not want this god to grow bored with you!
+# You've just converted to worshipping <w>Xom</w>. You can keep Xom happy by
+# keeping him amused; you do absolutely not want this god to grow bored with you!
+#
+# If you keep Xom amused he'll treat you like a plaything, randomly helping and
+# harming you for his own amusement; otherwise he'll treat you like a disfavoured
+# plaything.
+あなたはたった今<w>ゾム</w>に入信しました。
+あなたはゾムの機嫌をとり続けることによりゾムを幸せな気分で居続けさせることができます。
+あなたは絶対にこの神があなたに飽きることを欲しません！
 
-If you keep Xom amused he'll treat you like a plaything, randomly helping and
-harming you for his own amusement; otherwise he'll treat you like a disfavoured
-plaything.
+もしあなたがゾムを楽しませ続けることができたなら、彼はあなたをお気に入りの玩具のように扱い、
+彼自身の楽しみのためにあなたをランダムに助けたり悩ませたりします。
+そうでなければ、彼は八つ当たり用の玩具のようにあなたを扱うことでしょう。
 %%%%
 HINT_CONVERT Gozag
 
-You've just converted to worshipping <w>Gozag</w>. Unlike other gods, Gozag only
-cares about gold; each divine power costs gold, and they grow more expensive
-with use. Still, that gold won't do you any good if you're dead, and Gozag's
-Potion Petition can be a huge help in combat! If you run short on food, you can
-use Call Merchant to buy a food shop.
+# You've just converted to worshipping <w>Gozag</w>. Unlike other gods, Gozag only
+# cares about gold; each divine power costs gold, and they grow more expensive
+# with use. Still, that gold won't do you any good if you're dead, and Gozag's
+# Potion Petition can be a huge help in combat! If you run short on food, you can
+# use Call Merchant to buy a food shop.
+あなたはたった今<w>ゴザーグ</w>に入信しました。
+他の神と異なり、ゴザーグは金以外のものを気にかけません。
+それぞれの神の御業は金貨を消費し、使うたびにどんどん高額になっていきます。
+とはいえ死んでしまったら元も子もないでしょうし、ゴザーグへの水薬の陳情は戦闘時に大変役に立つでしょう！
+もしあなたが食べ物に不自由したら、商人を誘致して食料品店を建てることができます。
 %%%%
 HINT_CONVERT Ru
 
-You've just converted to worshipping <w>Ru</w>. Unlike other gods, Ru grants
-piety (divine favour) in exchange for personal sacrifices, like giving up your
-ability to drink potions while endangered; the more piety you have, the more
-abilities Ru will grant, and the more powerful those abilities will become.
-Ru will offer sacrifices as you explore the depths of the dungeon.
+# You've just converted to worshipping <w>Ru</w>. Unlike other gods, Ru grants
+# piety (divine favour) in exchange for personal sacrifices, like giving up your
+# ability to drink potions while endangered; the more piety you have, the more
+# abilities Ru will grant, and the more powerful those abilities will become.
+# Ru will offer sacrifices as you explore the depths of the dungeon.
+あなたはたった今<w>ルー</w>に入信しました。
+他の神と異なり、ルーは危機に瀕した際に水薬を飲む能力を失うなどの行為と引き換えに信仰値(と御利益)を授けます。
+信仰値を高めるにつれてルーはより多くの能力をあなたに授け、そして能力自体も強さを増していきます。
+ルーはあなたがダンジョンの奥深くを探索するたびに代償を捧げる提案を行います。
 %%%%
 HINT_CONVERT
 
-You've just converted to worshipping <w>{{ return you.god() }}</w>. Your piety
-(divine favour) will increase as you do things to please your new god, and will
-gradually decrease over time.
+# You've just converted to worshipping <w>{{ return you.god() }}</w>. Your piety
+# (divine favour) will increase as you do things to please your new god, and will
+# gradually decrease over time.
+#
+# You can check your god's likes and dislikes, as well as your current standing
+# and divine abilities, by typing
+# <input>$cmd[CMD_DISPLAY_RELIGION]</input><localtiles>, or by pressing
+# <input>Shift-right-click</input> on your avatar</localtiles>.
+あなたは今<w>{{ return crawl.jtrans(you.god()) }}</w>に入信しました。
+あなたの信仰値(と御利益)は神を喜ばせる行為をするにつれて高まっていき、
+時間が経つにつれて徐々に低下していくでしょう。
 
-You can check your god's likes and dislikes, as well as your current standing
-and divine abilities, by typing
-<input>$cmd[CMD_DISPLAY_RELIGION]</input><localtiles>, or by pressing
-<input>Shift-right-click</input> on your avatar</localtiles>.
+あなたは<input>$cmd[CMD_DISPLAY_RELIGION]</input>を押す<localtiles>か、<input>Shift+右クリック</input>する</localtiles>ことであなたの現在の信仰の篤さや神から授けられた能力はもちろん、
+神の好む/嫌う行為を確認することができます。
 %%%%
 HINT_SEEN_FIRST_OBJECT
 
-That <console>$1 </console>is an item. If you move there and press
-<input>$cmd[CMD_PICKUP]</input><tiles>, or <input>left-click</input> on it in
-your inventory</tiles>, you will pick it up.<console> Generally, items
-are shown by non-letter symbols like <w>%?!"=()[</w>.</console> Some
-objects<tiles>, marked with a green frame,</tiles> will be picked up
-automatically.
+# That <console>$1 </console>is an item. If you move there and press
+# <input>$cmd[CMD_PICKUP]</input><tiles>, or <input>left-click</input> on it in
+# your inventory</tiles>, you will pick it up.<console> Generally, items
+# are shown by non-letter symbols like <w>%?!"=()[</w>.</console> Some
+# objects<tiles>, marked with a green frame,</tiles> will be picked up
+# automatically.
+#
+# Once it is in your inventory, you can drop it again with <tiles>a
+# <input>Shift-left-click</input>. Whenever you <input>right-click</input> on an
+# item</tiles><console><input>$cmd[CMD_DROP]</input>. Any time you look at an
+# item in your inventory (<input>$cmd[CMD_DISPLAY_INVENTORY]</input>)</console>,
+# you can read about its properties and its description.
+<console>あの$1</console><tiles>あれ</tiles>はアイテムです。
+そこに移動していって<input>$cmd[CMD_PICKUP]</input>を押す<tiles>か、所有物一覧タブ上で<input>左クリック</input>する</tiles>ことでそれを拾い上げます。
+<console>一般的に、アイテムは<w>?!"=()[</w>のような非アルファベットのシンボルで表示されます。
+</console>いくつかの<tiles>緑の四角で縁取られた</tiles>アイテムは自動的に拾い上げられます。
 
-Once it is in your inventory, you can drop it again with <tiles>a
-<input>Shift-left-click</input>. Whenever you <input>right-click</input> on an
-item</tiles><console><input>$cmd[CMD_DROP]</input>. Any time you look at an
-item in your inventory (<input>$cmd[CMD_DISPLAY_INVENTORY]</input>)</console>,
-you can read about its properties and its description.
+<tiles>アイテムを<input>右クリック</input>すればいつでも</tiles><console>所有物一覧(<input>$cmd[CMD_DISPLAY_INVENTORY]</input>)に載ったアイテムはいつでも</console>アイテムの特性とその解説を読むことができます。 <console>
+<input>$cmd[CMD_DROP]</input>を押して</console><tiles><input>Shift+左クリック</input>で</tiles>一度所有物に含めたアイテムを再び床に置くことができます。<tiles>
+アイテムを<input>右クリック</input>すればいつでも</tiles><console>所有物一覧(<input>$cmd[CMD_DISPLAY_INVENTORY]</input>)に載ったアイテムはいつでも</console>アイテムの特性とその解説を読むことができます。
 %%%%
