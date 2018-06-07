@@ -131,7 +131,7 @@ However, as a hunter you will want to deal with it using your bow. If you have a
 %%%%
 First <w>w</w>ield it, then follow the instructions.<tiles>\nAs a short-cut you can also <w>right-click</w> on your shortbow to read its description, and <w>left-click</w> to wield it.</tiles>
 
-まず[<w>w</w>]コマンドで武器として装備し、説明に従いましょう。<tiles>
+まず[<w>w</w>]を押して武器として装備し、説明に従いましょう。<tiles>
 ショートカットとして、ショートボウを<w>[右クリック]</w>して解説文を読んだり、
 <w>[左クリック]</w>して武器として装備することもできます。</tiles>
 %%%%
@@ -264,7 +264,7 @@ hint seen spbook trog
 #             text << god_name(GOD_TROG)
 #                  << " hates it when you memorize magic, and prefers you to "
 #                     "burn books with the corresponding <w>%</w>bility.";
-%sはあなたが魔法を習得するのを嫌い、<w>[%%]</w>コマンドで能力を使って魔法書を焼くことを好みます。
+%sはあなたが魔法を習得するのを嫌い、<w>[%%]</w>を押して能力を使って魔法書を焼くことを好みます。
 %%%%
 hint seen weapon
 
@@ -423,8 +423,8 @@ hint seen carrion 2
 #         text << " When a corpse is lying on the ground, you "
 #                 "can <w>%</w>hop it up. Once hungry, you can "
 #                 "then <w>%</w>at the resulting chunks.";
-死体が地面に転がっているとき、あなたは<w>[%]</w>コマンドで肉を捌くことができます。
-空腹になれば、<w>[%]</w>コマンドで先程得た肉の塊を食べることができます。
+死体が地面に転がっているとき、あなたは<w>[%]</w>を押して肉を捌くことができます。
+空腹になれば、<w>[%]</w>を押して先程得た肉の塊を食べることができます。
 %%%%
 hint seen carrion 3
 
@@ -764,7 +764,7 @@ hint seen altar
 #                 "taking up the corresponding faith you'll be asked for "
 #                 "confirmation.";
 あの %s は祭壇です。
-<w>[x]</w>コマンドで祭壇にカーソルを合わせ、<w>[v]</w>を押すことで
+<w>[x]</w>を押して祭壇にカーソルを合わせ、<w>[v]</w>を押すことで
 短い解説文を読むことができます。
 その上に立って<w>[%%]</w>や<w>[%%]</w>を押すことで入信したり、
 その神についての情報を得ることができます。
@@ -1106,7 +1106,7 @@ hint make chunks
 #                 "but their chunks will be named accordingly, so don't worry "
 #                 "about any surprises in the food!";
 なんて運がいい！
-モンスターは<w>[%]</w>コマンドで解体して<w>[%]</w>コマンドで食べることのできる死体を残しました。
+モンスターは<w>[%]</w>を押して解体し<w>[%]</w>を押して食べることのできる死体を残しました。
 いくつかのモンスターは食べることができなかったり変異性を持っていたりしますが、
 肉にはそれに応じて名前が付けられるため、食べ物についておっかなびっくりになることはありません！
 %%%%
@@ -1280,7 +1280,7 @@ hint can berserk
 #         text << "Against particularly difficult foes, you should use your "
 #                 "Berserk <w>%</w>bility. Killing monsters while berserking "
 #                 "makes it last longer.";
-特に困難な敵に対しては、<w>[%]</w>コマンドでバーサークを使うべきでしょう。
+特に困難な敵に対しては、<w>[%]</w>を押してバーサークを使うべきでしょう。
 バーサーク中にモンスターを殺すことにより、バーサーク状態はさらに長く続きます。
 %%%%
 hint postberserk
@@ -1342,7 +1342,7 @@ hint retreat caster
 %%%%
 Or you could e<w>%</w>oke a wand to deal damage.
 
-あるいは、<w>[%]</w>コマンドでワンドを振ってダメージを与えることもできます。
+あるいは、<w>[%]</w>を押してワンドを振ってダメージを与えることもできます。
 %%%%
 hint you mutated
 
@@ -1599,7 +1599,7 @@ hint wield weapon ranger
 
 #             text << "You can easily switch between weapons in slots a and "
 #                     "b by pressing <w>%</w>.";
-あなたは<w>[%]</w>コマンドで所持品一覧の(a)枠と(b)枠の武器を簡単に持ち替えることができます。
+あなたは<w>[%]</w>を押して所持品一覧の(a)枠と(b)枠の武器を簡単に持ち替えることができます。
 %%%%
 hint wield weapon other
 
@@ -1775,13 +1775,13 @@ hint spell miscast use tile local
 #                     "to check your current failure rates.";
 魔法に失敗すると嫌な結果をもたらします。 難しい魔法の場合は特にそうです。
 魔法の成功しやすさは魔術系スキルを鍛えるか、 特定のアイテムを利用することにより向上します。
-<w>[%]</w>コマンド、 もしくは呪文のアイコンの上にマウスを動かすことで失敗率を調べることができます。
+<w>[%]</w>を押すか、 もしくは呪文のアイコンの上にマウスを動かすことで失敗率を調べることができます。
 %%%%
 hint spell miscast
 
 魔法に失敗すると嫌な結果をもたらします。 難しい魔法の場合は特にそうです。
 魔法の成功しやすさは魔術系スキルを鍛えるか、 特定のアイテムを利用することにより向上します。
-<w>[%]</w>コマンドで失敗率を調べることができます。
+<w>[%]</w>を押して失敗率を調べることができます。
 %%%%
 You just miscast a spell.
 
@@ -2224,8 +2224,8 @@ hints describe item weapon !wielded
 #                 ostr << "You can wield this weapon with <w>%</w>, or use "
 #                         "<w>%</w> to switch between the weapons in slot "
 #                         "a and b. (Use <w>%i</w> to adjust item slots.)";
-あなたはこれを<w>[%]</w>コマンドで武器として手に持つことができる。
-<w>[%]</w>コマンドで所持品一覧の(a)枠と(b)枠の武器を持ち替えることができる。
+あなたはこれを<w>[%]</w>を押して武器として手に持つことができる。
+<w>[%]</w>を押して所持品一覧の(a)枠と(b)枠の武器を持ち替えることができる。
 (アイテム枠の調整を行うには<w>[%i]</w>コマンドを用いる)
 %%%%
 hints describe item weapon !wielded !bestskill
@@ -2294,7 +2294,7 @@ hints describe item missiles throwable
 #                 ostr << item.name(DESC_YOUR)
 #                      << " can be <w>%</w>ired without the use of a launcher. ";
 #                 ostr << _hints_throw_stuff(item);
-<w>[%%]</w>コマンドを用いることで射撃武器を用いることなしにあなたの持つ%sを投擲できる。
+<w>[%%]</w>を押すことで射撃武器を用いることなしにあなたの持つ%sを投擲できる。
 %%%%
 hints describe item missiles launched use tile
 
@@ -2323,12 +2323,12 @@ hints describe item missiles launched use tile
 代替手段として、射撃したい矢弾のアイコンを<w>[左クリック]</w>し、
 そして対象としたいモンスターを<w>[左クリック]</w>して攻撃することができる。
 
-キーボードを操作する場合、単純にその%sを<w>[%]</w>コマンドで撃つことができる。
+キーボードを操作する場合、単純にその%sを<w>[%]</w>を押して撃つことができる。
 そうすれば
 %%%%
 hints describe item missiles launched
 
-あなたは既にそれに適した射出道具を手にしているので、単純にその%sを<w>[%]</w>コマンドで撃つことができる。
+あなたは既にそれに適した射出道具を手にしているので、単純にその%sを<w>[%]</w>を押して撃つことができる。
 そうすれば
 %%%%
 hints describe item missiles other
@@ -2339,7 +2339,7 @@ hints describe item missiles other
 #                      << (item.quantity > 1? "s" : "")
 #                      << ", first you need to <w>%</w>ield an appropriate "
 #                         "launcher.";
-この%sを射撃するには、<w>[%]</w>コマンドでそれに適した射撃道具を装備すること。
+この%sを射撃するには、<w>[%]</w>を押してそれに適した射撃道具を装備すること。
 %%%%
 hints describe item armour centaur
 
@@ -2376,12 +2376,12 @@ hints describe item armour use tile
 #                         "perform either action."
 # #endif
 #                         ".";
-あなたは防具を<w>[%]</w>コマンドで装備し、<w>[%]</w>コマンドで脱ぐことができる。
+あなたは防具を<w>[%]</w>を押して装備し、<w>[%]</w>を押して脱ぐことができる。
 また代替手段として、タイルを<w>[クリック]</w>することでそれぞれの行動を取ることができる。
 %%%%
 hints describe item armour
 
-あなたは防具を<w>[%]</w>コマンドで装備し、<w>[%]</w>コマンドで脱ぐことができる。
+あなたは防具を<w>[%]</w>を押して装備し、<w>[%]</w>を押して脱ぐことができる。
 %%%%
 hints describe item armour conjurer !lightarmour
 
@@ -2527,12 +2527,12 @@ hints describe item jewellery use tile
 #                     "item in your inventory"
 # #endif
 #                     ".";
-装身具は<w>[%]</w>コマンドで身につけたり、<w>[%]</w>コマンドで外したりできるが、
+装身具は<w>[%]</w>を押して身につけたり、<w>[%]</w>を押して外したりできるが、
 タイル版では所有物一覧タブ上で<w>[クリック]</w>することによっても同様のことができる。
 %%%%
 hints describe item jewellery
 
-装身具は<w>[%]</w>コマンドで身につけたり、<w>[%]</w>コマンドで外したりできる。
+装身具は<w>[%]</w>を押して身につけたり、<w>[%]</w>を押して外したりできる。
 %%%%
 hints describe item jewellery cursed
 
@@ -2594,7 +2594,7 @@ hints describe item books manual
 hints describe item books trog unindent
 
 #                         ostr << "\nIt's a book, you can <w>%</w>ead it.";
-これは<w>[%]</w>コマンドで読むことのできる本だ。
+これは<w>[%]</w>を押して読むことのできる本だ。
 %%%%
 hints describe item books trog indent
 
@@ -2635,7 +2635,7 @@ hints describe item books can memorise
 #                         ostr << "\nSuch a <lightblue>highlighted "
 #                                 "spell</lightblue> can be <w>%</w>emorised "
 #                                 "right away. ";
-<lightblue>強調表示された呪文</lightblue>は<w>[%]</w>コマンドで今すぐ習得できる。
+<lightblue>強調表示された呪文</lightblue>は<w>[%]</w>を押して今すぐ習得できる。
 %%%%
 hints describe item books cannot memorise
 
@@ -2689,7 +2689,7 @@ hints describe item corpse skeleton
 hints describe item corpse
 
 #             ostr << "Most corpses can be <w>%</w>hopped into edible chunks.";
-ほとんどの死体は<w>[%]</w>コマンドで肉の塊へと解体できる。
+ほとんどの死体は<w>[%]</w>を押して肉の塊へと解体できる。
 %%%%
 hints describe item rod unindent use tile
 
@@ -3170,7 +3170,7 @@ hints describe monster dangerous
 %%%%
 hints describe monster dangerous trog
 
-逃げるか、<w>[a]</w>コマンドでバーサークした方がいいかもしれない。
+逃げるか、<w>[a]</w>を押してバーサークした方がいいかもしれない。
 %%%%
 hints describe monster stabbable
 

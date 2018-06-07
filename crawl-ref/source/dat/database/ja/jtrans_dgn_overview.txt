@@ -22,7 +22,7 @@
 %%%%
 (use <white>Ctrl-F "altar"</white> to reach them and <white>?/G</white> for information about gods)
 
-(移動するには <white>Ctrl-F</white> コマンドで<white>"祭壇"</white>を検索してください)
+(移動するには<white>[Ctrl-F]</white>を押して<white>"祭壇"</white>を検索してください)
       (<white>Ctrl-F</white> コマンドの後<white>?/B</white> で詳しい情報を閲覧できます)
 %%%%
 <green>Shops:</green>
@@ -31,7 +31,7 @@
 %%%%
 (use <white>Ctrl-F "shop"</white> to reach them - yellow denotes antique shop)
 
-(移動するには<white>Ctrl-F</white> コマンドで<white>"shop"</white>を検索してください。<yellow>黄色</yellow>は中古品店)
+(移動するには<white>[Ctrl-F]</white>を押して<white>"shop"</white>を検索してください。<yellow>黄色</yellow>は中古品店)
 %%%%
 <green>Portals:</green>
 

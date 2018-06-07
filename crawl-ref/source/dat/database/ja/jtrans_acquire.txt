@@ -53,5 +53,5 @@ snickers.
 %%%%
 What kind of item would you like to acquire? (\ to view known items)
 
-どの種類のアイテムを獲得しますか？ ('\' コマンドで既知のアイテム一覧表示)
+どの種類のアイテムを獲得しますか？ ('\' を押して既知のアイテム一覧表示)
 %%%%

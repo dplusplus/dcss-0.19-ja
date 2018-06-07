@@ -111,7 +111,7 @@ Thank you for shopping at %s!
 %%%%
 You can access your shopping list by pressing '$'.
 
-'$' コマンドで購入リストを管理できます。
+'$'を押して購入リストを管理できます。
 %%%%
 [shop]Antique Weapon
 
