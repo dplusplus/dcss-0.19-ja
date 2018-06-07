@@ -9,7 +9,7 @@
 %%%%
 [feature]closed door
 
-閉じられた扉
+<closed door>
 %%%%
 [feature]runed door
 
@@ -109,7 +109,7 @@
 %%%%
 [feature]open door
 
-開いた扉
+開かれた扉
 %%%%
 [feature]mechanical trap
 

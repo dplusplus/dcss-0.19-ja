@@ -694,7 +694,7 @@ display experience info
 %%%%
 <w>%</w>/<w>%</w> : Open/Close door
 
-<w>%</w>/<w>%</w> : ドアを開け閉めする。
+<w>%</w>/<w>%</w> : 扉を開け閉めする。
 %%%%
 <w>%</w>/<w>%</w> : use staircase
 

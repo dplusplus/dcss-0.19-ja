@@ -141,19 +141,19 @@ tutorial1 newlevel
 
 # Also, remember: You can reread old messages with
 # <input>$cmd[CMD_REPLAY_MESSAGES]</input>.
-新しい階層へようこそ！ まずは右手のドアの先へ行きましょう。
+新しい階層へようこそ！ まずは右手の扉の先へ行きましょう。
 
 <input>$cmd[CMD_REPLAY_MESSAGES]</input>で前のメッセージを読み返せることも覚えておいてください。
 %%%%
 tutorial1 door
 
 # You can open a closed door by walking into it.
-閉じたドアはその方向へ移動することによって開けることが可能です。
+閉ざされた扉はその方向へ移動することによって開けることが可能です。
 %%%%
 tutorial1 close_door
 
 # To close an open door, press <input>$cmd[CMD_CLOSE_DOOR]</input>.
-開いたドアを閉じるには、 <input>$cmd[CMD_CLOSE_DOOR]</input>を押してください。
+開かれた扉を閉じるには、 <input>$cmd[CMD_CLOSE_DOOR]</input>を押してください。
 %%%%
 tutorial1 water
 
@@ -212,9 +212,9 @@ tutorial1 exit
   <input>$cmd[CMD_GO_DOWNSTAIRS]</input>        一つ下の階層へ移動する
   <input>$cmd[CMD_DISPLAY_MAP]<<</input>/<input>$cmd[CMD_DISPLAY_MAP]></input>  最寄りの上り/下り階段へ自動移動
 
-<yellow>ドア</yellow>
-  ドアのある方向に移動することで開く
-  <input>$cmd[CMD_CLOSE_DOOR]</input>        開いたドアを閉める (<w>C</w>lose)
+<yellow>扉</yellow>
+  扉のある方向に移動することで開く
+  <input>$cmd[CMD_CLOSE_DOOR]</input>        開かれた扉を閉める (<w>C</w>lose)
 
 <yellow>トラベル</yellow><localtiles>
   <input>ミニマップ</input>上をクリック</localtiles><nomouse>

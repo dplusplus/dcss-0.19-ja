@@ -528,7 +528,7 @@ Which direction?
 %%%%
 The door is shut tight!
 
-ドアは固く閉ざされた！
+扉は固く閉ざされた！
 %%%%
 It's already open!
 
@@ -544,11 +544,11 @@ There isn't anything that you can open there!
 %%%%
 You can't close doors while held in a net.
 
-網で拘束されている間はドアを閉めることはできない。
+網で拘束されている間は扉を閉めることはできない。
 %%%%
 You can't close doors while caught in a web.
 
-蜘蛛の巣に巻きつかれている間はドアを閉めることはできない。
+蜘蛛の巣に巻きつかれている間は扉を閉めることはできない。
 %%%%
 There's nothing to close nearby.
 
