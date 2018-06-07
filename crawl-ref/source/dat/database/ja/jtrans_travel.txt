@@ -215,13 +215,13 @@ stair
 
 階段
 %%%%
-stairs
+# stairs
 
-<stair>
+# jtrans_hints.txtと重複
 %%%%
-runed door
+# runed door
 
-ルーンが刻まれたドア
+# jtrans_hints.txtと重複
 %%%%
 runed doors
 

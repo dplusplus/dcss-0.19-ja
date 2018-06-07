@@ -31,9 +31,9 @@ This %s can only be entered while carrying at least %d rune%s of Zot.
 
 この%sへは少なくとも%d個のルーンを所持していないと入ることはできない。
 %%%%
-portal
+# portal
 
-ポータル
+# jtrans_hints.txtと重複
 %%%%
 branch
 

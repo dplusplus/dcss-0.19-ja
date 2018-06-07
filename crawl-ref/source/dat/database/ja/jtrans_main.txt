@@ -418,9 +418,9 @@ Are you sure you want to abandon this character and quit the game?
 
 本当にこのキャラクターを放棄してゲームを終了しますか？
 %%%%
-Unknown command. (For a list of commands type <w>?\?</w>.)
+Unknown command. (For a list of commands type <w>??</w>.)
 
-そのコマンドは存在しません。(<w>?</w> コマンドで一覧を表示)
+そのコマンドは存在しません。(<w>??</w> を押してコマンド一覧を表示)
 %%%%
 Unknown command.
 

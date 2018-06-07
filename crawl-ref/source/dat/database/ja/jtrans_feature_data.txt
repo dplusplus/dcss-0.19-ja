@@ -13,7 +13,7 @@
 %%%%
 [feature]runed door
 
-ルーンで封印された扉
+<Runed door>
 %%%%
 [feature]sealed door
 
