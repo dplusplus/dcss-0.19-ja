@@ -1053,7 +1053,7 @@ Base shield rating:
 %%%%
 Skill to remove penalty:
 
-盾装備時のペナルティ:
+ペナルティ除去に必要なスキルレベル:
 %%%%
 Base armour rating:
 
