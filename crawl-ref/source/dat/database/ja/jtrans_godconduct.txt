@@ -321,7 +321,7 @@ you hurt your foes; however, effects that cause damage over time do not interest
 %%%%
 you destroy spellbooks via the <w>a</w> command
 
-(<w>a</w>)bilityコマンドを用いて魔法書を焼くこと
+<w>[a]</w>コマンドを用いて魔法書を焼くこと
 %%%%
 you sacrifice items by allowing slimes to consume them
 
