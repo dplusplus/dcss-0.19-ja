@@ -1,4 +1,886 @@
 %%%%
+# database経由では$cmd[～]、$item[～]、<input>～</input>は使えないことに注意
+%%%%
+(Melee oriented character with divine support)
+
+(神の助けを得つつ直接攻撃することを目的としたキャラクター)
+%%%%
+(Magic oriented character)
+
+(魔法を使うことを目的としたキャラクター)
+%%%%
+(Ranged fighter)
+
+(遠隔射撃を使うキャラクター)
+%%%%
+(erroneous character)
+
+# 訳不要
+%%%%
+%c - %s %s %s
+
+%c - %sの%s %s
+%%%%
+<white>You must be new here indeed!</white>\n\n<cyan>You can be:</cyan>
+
+<white>あなたは新参の者に違いない！</white>
+
+<cyan>あなたは以下から選択できる:</cyan>
+%%%%
+<brown>\nEsc - Quit\n* - Random hints mode character</brown>
+
+<brown>
+Esc - 終了
+* - 解説モードの組み合わせからランダムに選択する</brown>
+%%%%
+Goodbye!
+
+さようなら！
+%%%%
+<lightred>ERROR: unterminated $cmd</lightred>
+
+# 訳不要
+%%%%
+<lightred>ERROR: unterminated $item</lightred>
+
+# 訳不要
+%%%%
+<lightred>ERROR: unterminated <input></lightred>
+
+# 訳不要
+%%%%
+Error, no hint for '%s'.
+
+# 訳不要
+%%%%
+See you next game!
+
+次のゲームでお会いしましょう！
+%%%%
+hints healing reminder
+
+#             text =  "Remember to rest between fights and to enter unexplored "
+#                     "terrain with full health and magic. Ideally you "
+#                     "should retreat into areas you've already explored and "
+#                     "cleared of monsters; resting on the edge of the explored "
+#                     "terrain increases the chances of your rest being "
+#                     "interrupted by wandering monsters. For resting, press "
+#                     "<w>5</w> or <w>Shift-numpad 5</w>"
+#                     "<tiles>, or <w>click the rest button</w></tiles>"
+#                     ".";
+戦闘してから未探索領域に踏み込むまでの間に、体力と魔力を最大まで回復しておくことを覚えておきましょう。
+理想的には、あなたが既に探索してモンスターを撃破した領域内に戻るべきです。
+探索済み領域の端で休息することは、うろついているモンスターに休息を中断させられる可能性を高めます。
+休息するには<w>[5]</w>や<w>[Shift+テンキーの5]</w>を押<tiles>すか、
+もしくは<w>[休息コマンドボタンをクリック]</w></tiles>しましょう。
+%%%%
+hints healing reminder trog
+
+#                 text += "\nAlso, berserking might help you not to lose so much "
+#                         "health in the first place. To use your abilities type "
+#                         "<w>a</w>.";
+また、バーサークすることで体力の減少そのものを抑えるのに役立つかもしれません。
+能力を行使するには[<w>a</w>]を押しましょう。
+%%%%
+hints monster seen tile
+
+#     string text = "That ";
+#
+#     if (is_tiles())
+#     {
+#         text +=
+#             string("monster is a ") +
+#             mon.name(DESC_PLAIN).c_str() +
+#             ". You can learn about any monster by hovering your mouse over it,"
+#             " and read its description by <w>right-clicking</w> on it.";
+このモンスターは%sです。
+あなたはマウスポインタをモンスターに合わせることでそれについて知ることができ、
+また、モンスターを<w>[右クリック]</w>することで解説文を読むことができます。
+%%%%
+hints monster seen non-tile
+
+#         text +=
+#             glyph_to_tagstr(get_mons_glyph(mi)) +
+#             " is a monster, usually depicted by a letter. Some typical "
+#             "early monsters look like <brown>r</brown>, <green>l</green>, "
+#             "<brown>K</brown> or <lightgrey>g</lightgrey>. ";
+この %s はモンスターであり、通常一つの文字として描画されます。
+序盤の典型的なモンスターは<brown>r</brown>、<green>l</green>、<brown>K</brown>および<lightgrey>g</lightgrey>のように見えます。
+%%%%
+Your console settings allowing, you'll always see a list of monsters somewhere on the screen.
+
+あなたの使うコンソールの設定次第では、画面のどこかにモンスター一覧が常に表示されるでしょう。
+%%%%
+You can gain information about it by pressing <w>x</w> and moving the cursor over the monster, and read the monster description by then pressing <w>v</w>.
+
+<w>[x]</w>を押してからモンスターの上にカーソルを合わせることでモンスターの情報を得ることができ、
+さらに<w>[v]</w>を押すことでモンスターの解説文を読むことができます。
+%%%%
+To attack this monster with your wielded weapon, just move into it.
+
+手に持っている武器でこのモンスターに攻撃するためには、単純にモンスターのいる場所に移動しましょう。
+%%%%
+Note that as long as there's a non-friendly monster in view you won't be able to automatically move to distant squares, to avoid death by misclicking.
+
+友好的でないモンスターが見えるところにいる間は、ミスクリックによる死を防ぐため離れた位置に自動的に移動することはできません。
+%%%%
+However, as a hunter you will want to deal with it using your bow. If you have a look at your shortbow from your <w>i</w>nventory, you'll find an explanation of how to do this.
+
+とはいえ、狩人であるあなたは自分の弓で相手を攻撃したいでしょう。
+もしあなたの所持品一覧('<w>i</w>')にショートボウが含まれていた場合、どうすればいいかの説明が表示されるはずです。
+%%%%
+First <w>w</w>ield it, then follow the instructions.<tiles>\nAs a short-cut you can also <w>right-click</w> on your shortbow to read its description, and <w>left-click</w> to wield it.</tiles>
+
+まず[<w>w</w>]コマンドで武器として装備し、説明に従いましょう。<tiles>
+ショートカットとして、ショートボウを<w>[右クリック]</w>して解説文を読んだり、
+<w>[左クリック]</w>して武器として装備することもできます。</tiles>
+%%%%
+<tiles>Clicking with your <w>right mouse button</w> on your shortbow will also let you read its description.</tiles>
+
+<tiles>ショートボウを<w>[右クリック]</w>して解説文を読むこともできます。</tiles>
+%%%%
+hints monster seen conjurer
+
+#         text =  "However, as a conjurer you will want to deal with it using "
+#                 "magic. If you have a look at your spellbook from your "
+#                 "<w>i</w>nventory, you'll find an explanation of how to do "
+#                 "this."
+#                 "<tiles>\nAs a short-cut you can also <w>right-click</w> on your "
+#                 "book in your inventory to read its description.</tiles>";
+とはいえ、妖術師であるあなたは魔法を使って相手を攻撃したいでしょう。
+もしあなたの所持品一覧('<w>i</w>')に魔法書が含まれていた場合、どうすればいいかの説明が表示されるはずです。<tiles>
+ショートカットとして、所持品一覧中の魔法書を<w>[右クリック]</w>して解説文を読むこともできます。</tiles>
+%%%%
+describe portal bazaar
+
+#     if (feat == DNGN_ENTER_BAZAAR)
+#     {
+#         text =  "is a portal to an inter-dimensional bazaar filled with "
+#                 "shops. It will disappear if you don't enter it soon, "
+#                 "so hurry. ";
+#     }
+#     // Sewers can appear on D:3-6, ossuaries D:4-8.
+#     else
+#     {
+#         text =  "is a portal to an optional level, offering extra loot in "
+#                 "exchange for extra danger. There's no penalty for skipping "
+#                 "it, but the portal will disappear if you wait, so you have "
+#                 "to decide now if you want to risk it. ";
+#     }
+#
+#     text += "You can enter a portal just like a set of stairs, by standing on "
+#             "it and <tiles><w>clicking</w></tiles>"
+#             "<console>pressing <w>></w></console>. "
+#             "To return, find "
+#             "<tiles>a similar looking portal.</tiles>"
+#             "<console>another <w>"
+#           + stringize_glyph(get_feat_symbol(DNGN_EXIT_SEWER))
+#           + "</w> - but NOT the ancient stone arch you'll start "
+#             "out on!</console>.";
+中に店がいっぱいの超次元バザールへのポータルです。
+すぐに入らなければ消えてしまうので、急いで入りましょう。
+ポータルには階段と同様に、その上に立って<tiles><w>[クリック]</w>する</tiles><console><w>[>]</w>を押す</console>ことで中に入ることができます。
+中から戻るには、<tiles>入ってきたのと似たポータルを探しましょう。</tiles><console>もうひとつの <w>%s</w> を探しましょう。
+(あなたが今くぐり抜けてきた「古代の石で造られたアーチ」ではありません！)</console>
+%%%%
+describe portal non-bazaar
+
+
+追加で恩恵をもたらすとともに追加の危険も伴う任意選択制の階層へのポータルです。
+ポータルを見過ごすことにはペナルティはありませんが、ぐずぐずしていると消滅してしまうので
+リスクを負うか否かを即座に決めなくてはいけません。
+ポータルには階段と同様に、その上に立って<tiles><w>[クリック]</w>する</tiles><console><w>[>]</w>を押す</console>ことで中に入ることができます。
+中から戻るには、<tiles>入ってきたのと似たポータルを探しましょう。</tiles><console>もうひとつの <w>%s</w> を探しましょう。
+(あなたが今くぐり抜けてきた「古代の石で造られたアーチ」ではありません！)</console>
+%%%%
+hint seen potion
+
+#         text << "You have picked up your first potion"
+#                 "<console> ('<w>"
+#              << stringize_glyph(get_item_symbol(SHOW_ITEM_POTION))
+#              << "</w>'). Use </console>"
+#                 "<tiles>. Simply <w>left-click</w> on it, or press </tiles>"
+#                 "<w>%</w> to quaff it.\n"
+#                 "Once you've identified a potion, either with a scroll of "
+#                 "identification or by drinking it, you'll automatically "
+#                 "recognize all other potions of the same type; this means "
+#                 "it's sometimes useful to drink potions just to identify them.";
+あなたは初めて水薬<console>('<w>%s</w>')</console>を手にしました。
+これを飲むには<tiles>単純に<w>[左クリック]</w>するか、</tiles><w>[%%]</w>を押しましょう。
+鑑定の巻物を読むか直接飲むことによって一度薬の種類を鑑定すると、他の同種の水薬も全て自動的に認識します。
+つまり、ただ鑑定するためだけに薬を飲むことが役に立つこともあります。
+%%%%
+hint seen scroll
+
+#         text << "You have picked up your first scroll"
+#                 "<console> ('<w>"
+#              << stringize_glyph(get_item_symbol(SHOW_ITEM_SCROLL))
+#              << "</w>'). Type </console>"
+#                 "<tiles>. Simply <w>left-click</w> on it, or press </tiles>"
+#                 "<w>%</w> to read it.\n"
+#                 "Once you've identified a scroll, either with a scroll of "
+#                 "identification or by reading it, you'll automatically "
+#                 "recognize all other scrolls of the same type; this means "
+#                 "it's sometimes useful to read scrolls just to identify them.";
+あなたは初めて巻物<console>('<w>%s</w>')</console>を手にしました。
+これを読むには<tiles>単純に<w>[左クリック]</w>するか、</tiles><w>[%%]</w> を押しましょう。
+鑑定の巻物を使ったり読むなどして一度巻物の種類を鑑定すると、他の同種の巻物も全て自動的に認識します。
+つまり、ただ鑑定するためだけに巻物を読むことが役に立つこともあります。
+%%%%
+hint seen wand
+
+#         text << "You have picked up your first wand"
+#                 "<console> ('<w>"
+#              << stringize_glyph(get_item_symbol(SHOW_ITEM_WAND))
+#              << "</w>'). Type </console>"
+#                 "<tiles>. Simply <w>left-click</w> on it, or press </tiles>"
+#                 "<w>%</w> to evoke it.\n"
+#                 "Until you fully identify a wand, either with a scroll of "
+#                 "identification or by zapping it after gaining some Evocations "
+#                 "skill, you won't know how many charges it has, and you'll "
+#                 "waste a few charges every time you evoke it.";
+あなたは初めてワンド<console>('<w>%s</w>')</console>を手にしました。
+<tiles>単純に<w>[左クリック]</w>するか、</tiles><w>[%%]</w>を押すことで発動できます。
+鑑定の巻物を読むか、ある程度発動スキルを鍛えた状態で振るなどしてワンドを完全に鑑定するまでは
+あなたはワンドがどれだけの残り回数を持っているか知ることができず、
+また、発動させるたびにいくらかの回数を浪費します。
+%%%%
+hint seen spbook
+
+#         text << "You have picked up a book"
+#                 "<console> ('<w>"
+#              << stringize_glyph(get_item_symbol(SHOW_ITEM_BOOK))
+#              << "'</w>) "
+#                 "If it's a spellbook, you'll be able to memorise spells from "
+#                 "it via <w>%</w>, and cast them with <w>%</w>.</console>"
+#                 "<tiles>. If it's a spellbook, you can memorise spells from "
+#                 "it with <w>left-click</w>.</tiles>";
+あなたは本<console>('<w>%s</w>')を手にしました。
+もしそれが魔法書なら、あなたは<w>[%%]</w>を押して呪文を習得でき、<w>[%%]</w>で唱えることができます。</console><tiles>を手にしました。
+もしそれが魔法書なら、あなたは<w>[左クリック]</w>することで呪文を習得することができます。</tiles>
+%%%%
+hint seen spbook trog
+
+#             text << god_name(GOD_TROG)
+#                  << " hates it when you memorize magic, and prefers you to "
+#                     "burn books with the corresponding <w>%</w>bility.";
+%sはあなたが魔法を習得するのを嫌い、<w>[%%]</w>コマンドで能力を使って魔法書を焼くことを好みます。
+%%%%
+hint seen weapon
+
+#         text << "This is the first weapon "
+#                 "<console>('<w>"
+#              << stringize_glyph(get_item_symbol(SHOW_ITEM_WEAPON))
+#              << "</w>') </console>"
+#                 "you've picked up. Use <w>%</w> "
+#                 "<tiles>or <w>left-click</w> on it </tiles>"
+#                 "to wield it, but be aware that this weapon "
+#                 "might train a different skill from your current one. You can "
+#                 "view the weapon's properties from your <w>%</w>nventory"
+#                 "<tiles> or by <w>right-clicking</w> on it</tiles>"
+#                 ".";
+これはあなたが初めて手にした武器<console>('%s')</console>です。
+これを武器として使うには<w>[%]</w>を押<tiles>すか<w>[左クリック]</w></tiles>してください。
+しかし、この武器は今あなたが訓練しているスキルとは別のスキルを要するものかもしれません。
+所持品一覧('<w>%</w>')から<tiles>、もしくは<w>[右クリック]</w>で</tiles>武器の特性を見ることができます。
+%%%%
+hint seen weapon berserker
+
+#             text << "\nYou should probably stick with axes. Checking other "
+#                     "axes' enchantments can be worthwhile, but weapons can be "
+#                     "cursed and difficult to remove, so unless you have a "
+#                     "scroll of remove curse, only wield weapons you're ready "
+#                     "to be stuck with!";
+あなたは斧だけを振るうべきでしょう。
+他の斧の持つ魔力を試すことには価値がありそうですが、武器は呪われている可能性があり
+手放すことが難しくなるため、解呪の巻物を持っていない限りは、武器を手に持つだけで
+あなたは立ち往生することになります！
+%%%%
+hint seen missiles use tile local
+
+#         text << "This is the first stack of missiles "
+#                 "<console>('<w>"
+#              << stringize_glyph(get_item_symbol(SHOW_ITEM_MISSILE))
+#              << "</w>') </console>"
+#                 "you've picked up. Missiles like tomahwaks and throwing nets "
+#                 "can be thrown by hand, but other missiles like arrows and "
+#                 "needles require a launcher and training in using it to be "
+#                 "really effective. "
+# #ifdef USE_TILE_LOCAL
+#                 "<w>Right-clicking</w> on "
+# #else
+#                 "Selecting "
+# #endif
+#                 "the item in your <w>%</w>nventory will give more "
+#                 "information about both missiles and launcher.";
+これはあなたが初めて手にした射出物<console>('%s')</console>です。
+トマホークや投げ網は手で投げることができますが、矢や吹き矢針といった他の射出物は
+射出道具を必要とし、その扱いを鍛えることはとても有効です。
+所持品一覧('<w>%</w>')内のアイテムを<w>[右クリック]</w>すると、
+矢弾とそれの射出道具両方についての更なる情報を得ることができます。
+%%%%
+hint seen missiles
+
+これはあなたが初めて手にした射出物<console>('%s')</console>です。
+トマホークや投げ網は手で投げることができますが、矢や吹き矢針といった他の射出物は
+射出道具を必要とし、その扱いを鍛えることはとても有効です。
+所持品一覧('<w>%</w>')内のアイテムを選択すると、
+矢弾とそれの射出道具両方についての更なる情報を得ることができます。
+%%%%
+hint seen missiles ranger
+
+#             text << "\nAs you're already trained in Bows, you only need to "
+#                     "bother collecting arrows.";
+あなたは既に弓の腕を鍛えているので、矢だけを集めればよいです。
+%%%%
+hint seen missiles conjurer
+
+#             text << jtrans_notrim("\nHowever, as a spellslinger, you don't really need "
+#                                   "another type of ranged attack.");
+しかしあなたは魔法使いですので、他の種類の遠隔攻撃はそんなに必要ありません。
+%%%%
+hint seen missiles other
+
+#             text << "\nFor now you might be best off with sticking to "
+#                     "stones for ranged attacks.";
+今のところは、遠隔攻撃のためには石だけ使っておくのが一番かもしれません。
+%%%%
+hint seen armour
+
+#         text << "This is the first piece of armour "
+#                 "<console>('<w>"
+#              << stringize_glyph(get_item_symbol(SHOW_ITEM_ARMOUR))
+#              << "</w>') </console>"
+#                 "you've picked up. "
+#                 "<tiles>You can click on it to wear it, and click again to "
+#                 "remove it. <w>Right-clicking</w> on it will give more "
+#                 "information.</tiles>"
+#                 "<console>Use <w>%</w> to wear it and <w>%</w> to take it off "
+#                 "again. You can view its properties from your "
+#                 "<w>%</w>nventory.</console>";
+これはあなたが初めて手にした防具<console>('%s')</console>です。<tiles>
+<w>[クリック]</w>すると装備することができ、再度<w>[クリック]</w>すると脱ぐことができます。
+アイテムを<w>[右クリック]</w>してさらなる情報を得ることができます。</tiles><console>
+<w>[%]</w>を押して装備し、<w>[%]</w>を押して再び脱ぎます。
+所持品一覧(<w>'%'</w>)からその防具の特性を見ることができます。</console>
+%%%%
+hint seen armour Mi/Ce
+
+#             text << "\nNote that as a " << species_name(you.species)
+#                  << " you will be unable to wear "
+#                  << (you.species == SP_CENTAUR ? "boots" : "helmets")
+#                  << ".";
+あなたは%sなので、%sを装備できないことに注意しましょう。
+%%%%
+# boots
+
+# jtrans_armour_name.txtと重複
+%%%%
+helmets
+
+兜や帽子
+%%%%
+hint seen randart
+
+#         text << "Weapons and armour that have unusual descriptions like this "
+#                 "are much more likely to be of higher enchantment or have "
+#                 "special properties, good or bad.";
+このような普通でない説明が付いている武器や防具は、いいにせよ悪いにせよ、
+さらなる魔力強化がされていたり、特別な性能を持っている可能性が高いです。
+%%%%
+hint seen food
+
+#             text << "You have picked up some food"
+#             "<console> ('<w>"
+#              << stringize_glyph(get_item_symbol(SHOW_ITEM_FOOD))
+#              << "</w>')</console>"
+#                 ". You can eat it by typing <w>e</w>"
+#                 "<tiles> or by <w>left-clicking</w> on it</tiles>"
+#                 ". However, it is usually best to conserve rations and fruit, "
+#                 "since raw meat from corpses is generally plentiful.";
+あなたは食べ物<console>('<w>%s</w>')</console>を手にしました。
+<w>[%%]</w>を押す<tiles>か、<w>[左クリック]</w>する</tiles>ことでそれを食べることができます。
+しかし、死体から得る生肉の方が一般にはたくさん手に入るため、
+食料や果物を後に取っておくことが通常の場合は最善です。
+%%%%
+Ah, a corpse!
+
+ああ、死体です！
+%%%%
+hint seen carrion
+
+#                 text << "That <console>";
+#                 string glyph = glyph_to_tagstr(get_item_glyph(mitm[i]));
+#                 const string::size_type found = glyph.find("%");
+#                 if (found != string::npos)
+#                     glyph.replace(found, 1, "percent");
+#                 text << glyph << " ";
+#                 text << "</console>is a corpse.";
+<console>あの %s </console><tiles>あれ</tiles>は死体です。
+%%%%
+hint seen carrion 2
+
+#         text << " When a corpse is lying on the ground, you "
+#                 "can <w>%</w>hop it up. Once hungry, you can "
+#                 "then <w>%</w>at the resulting chunks.";
+死体が地面に転がっているとき、あなたは<w>[%]</w>コマンドで肉を捌くことができます。
+空腹になれば、<w>[%]</w>コマンドで先程得た肉の塊を食べることができます。
+%%%%
+hint seen carrion 3
+
+#         text << "<tiles> You can also chop up any corpse that shows up in "
+#                 "the floor part of your inventory region, simply by "
+#                 "<w>left-clicking</w> on it while pressing <w>Shift</w>, and "
+#                 "then eat the resulting chunks with <w>Shift + right-mouse</w>"
+#                 ".</tiles>";
+<tiles>所有物一覧タブの地面部分に表示される死体を<w>[Shift]</w>を押しながら
+<w>[左クリック]</w>することでも捌くことができます。
+そして得た肉の塊を<w>[Shift+右クリック]</w>して食べます。</tiles>
+%%%%
+hint seen jewellery
+
+#         text << "You have picked up a a piece of jewellery, either a ring"
+#              << "<console> ('<w>"
+#              << stringize_glyph(get_item_symbol(SHOW_ITEM_RING))
+#              << "</w>')</console>"
+#              << " or an amulet"
+#              << "<console> ('<w>"
+#              << stringize_glyph(get_item_symbol(SHOW_ITEM_AMULET))
+#              << "</w>')"
+#              << ". Type <w>%</w> to put it on and <w>%</w> to remove "
+#                 "it. You can view its properties from your <w>%</w>nventory</console>"
+#              << "<tiles>. You can click on it to put it on, and click again "
+#                 "to remove it. By <w>right-clicking> on it, you can view its "
+#                 "properties</tiles>.";
+あなたは指輪<console>('<w>%s</w>')</console>や護符<console>('<w>%s</w>')</console>といった装身具を手にしました。<console>
+これを身につけるには<w>[%%]</w>を、外すには<w>[%%]</w>を押しましょう。
+あなたは所有物一覧('<w>i</w>')から装身具の持つ特性を見ることができます。</console><tiles>
+あなたはこれを<w>[クリック]</w>して身につけ、再度<w>[クリック]</w>して外すことができます。
+<w>[右クリック]</w>することで、装身具の持つ特性を見ることができます。</tiles>
+%%%%
+hint seen misc
+
+#         text << "This is a curious object indeed. You can play around with "
+#                 "it to find out what it does by "
+#                 "<tiles>clicking on it to e<w>%</w>oke </tiles>"
+#                 "<console>e<w>%</w>oking </console>"
+#                 "it. As usual, selecting it from your <w>%</w>nventory "
+#                 "might give you more information.";
+これは本当に不思議な物体です。
+これが何をするものなのかを知るために、<w>[%]</w>を押<tiles>すか
+<w>[クリック]</w></tiles>して発動させてみることができます。
+通常の場合は、所有物一覧('<w>%</w>')で選択することでさらなる情報を得られるでしょう。
+%%%%
+hint seen rod
+
+#         text << "You have picked up a magical rod"
+#                 "<console> ('<w>";
+#         text << stringize_glyph(get_item_symbol(SHOW_ITEM_ROD))
+#              << "</w>')</console>"
+#                 ". It must be <w>%</w>ielded to be of use. "
+#                 "A rod allows the casting of the unique spell it contains "
+#                 "even without magic knowledge simply by "
+#                 "e<w>%</w>oking it. It has a limited pool of magic which"
+#                 "recharges over time, and its power depends on "
+#                 "your Evocations skill.";
+あなたは魔法のロッド<console>('<w>%s</w>')</console>を手にしました。
+これを使うには<w>[%%]</w>を押して手に持たなければなりません。
+ロッドを使うと、魔法の知識がなくとも<w>[%]</w>を押して発動させることで
+中に収められた固有の呪文を唱えることができます。
+ロッドには時間によって回復する限られた魔力容量が存在し、
+その威力はあなたの発動スキルに依存します。
+%%%%
+hint seen rod 2
+
+#         text << "<tiles> You can wield and then evoke rods by "
+#                 "<w>left-clicking</w> on them.</tiles>";
+<tiles>
+あなたはこれを装備した後、<w>[右クリック]</w>することで発動させることができます。</tiles>
+%%%%
+hint seen staff
+
+#         text << "You have picked up a magic staff"
+#                 "<console> ('<w>";
+#
+#         text << stringize_glyph(get_item_symbol(SHOW_ITEM_STAFF))
+#              << "</w>')</console>"
+#                 ". It must be <w>%</w>ielded to be of use. "
+#                 "Magicians use staves to increase their power in certain "
+#                 "spell schools. It can also be used as a weapon."
+#                 "<tiles> You can wield a staff by <w>left-clicking</w>.</tiles>";
+あなたは魔法の杖<console>('<w>%s</w>')</console>を手にしました。
+これを使うには<w>[%%]</w>を押して手に持たなければなりません。
+魔法使いたちはそれぞれの系統の魔術の力を高めるために杖を使用します。
+また、武器としても使うことができます。<tiles>
+<w>[左クリック]</w>することで杖を手に持つことができます。</tiles>
+%%%%
+hint seen gold
+
+#         text << "You have picked up your first pile of gold"
+#                 "<console> ('<yellow>"
+#              << stringize_glyph(get_item_symbol(SHOW_ITEM_GOLD))
+#              << "</yellow>')</console>"
+#                 ". Unlike most other objects in Crawl it doesn't show up in "
+#                 "your inventory, takes up no space in your inventory, weighs "
+#                 "nothing and can't be dropped. Gold can be used to buy "
+#                 "items from shops, and is appreciated by certain gods.";
+あなたは初めて金貨<console>('<yellow>%s</yellow>')</console>を手にしました。
+他のほとんどのクロウルのアイテムとは異なり、これは所有物一覧に載ることはなく、
+所有物一覧の枠を消費せず、重さもなく、床に置くこともできません。
+金貨は店でアイテムを購入することができ、また、特定の神々に認められる手段ともなります。
+%%%%
+hint seen stairs
+
+#         text << "These ";
+# #ifndef USE_TILE
+#         // Is a monster blocking the view?
+#         if (monster_at(gc))
+#             DELAY_EVENT;
+#
+#         text << glyph_to_tagstr(get_cell_glyph(gc)) << " ";
+# #else
+#         tiles.place_cursor(CURSOR_TUTORIAL, gc);
+#         tiles.add_text_tag(TAG_TUTORIAL, "Stairs", gc);
+# #endif
+#         text << "are downstairs. You can enter the next (deeper) "
+#                 "level by following them down (<w>%</w>). To return to "
+#                 "this level, press <w>%</w> while standing on the "
+#                 "upstairs.";
+#         cmd.push_back(CMD_GO_DOWNSTAIRS);
+#         cmd.push_back(CMD_GO_UPSTAIRS);
+#
+# #ifdef USE_TILE
+#         text << "\nAlternately, you can <w>left-click</w> on stairs you're "
+#                 "standing on to use them.";
+# #endif
+この %s は下り階段です。
+階段を下りることで、次の(さらに深い)階層へと足を踏み入れることができます。 (<w>[%%]</w>)
+今いるこの階層に戻ってくるには、上り階段の場所に立った状態で<w>[%%]</w>キーを押してください。
+%%%%
+Stairs
+
+<stair>
+%%%%
+hint seen stairs use tile
+
+これは下り階段です。
+階段を下りることで、次の(さらに深い)階層へと足を踏み入れることができます。 (<w>[%]</w>)
+今いるこの階層に戻ってくるには、上り階段の場所に立った状態で<w>[%]</w>キーを押してください。
+代替手段として、階段の上に立って<w>[左クリック]</w>することでも利用できます。
+%%%%
+hint seen escape hatch
+
+#         text << "This ";
+# #ifndef USE_TILE
+#         text << glyph_to_tagstr(get_cell_glyph(gc));
+#         text << " ";
+# #else
+#         tiles.place_cursor(CURSOR_TUTORIAL, gc);
+#         tiles.add_text_tag(TAG_TUTORIAL, "Escape hatch", gc);
+# #endif
+#         text << "is an escape hatch. You can use it to "
+#                 "leave a level with <w>%</w> and <w>%</w> respectively"
+# #ifdef USE_TILE
+#                 " (or by <w>left-clicking</w>)"
+# #endif
+#                 ", like stairs; unlike stairs, however, hatches are a one-way "
+#                 " trip, so be careful when descending!";
+この %s は脱出ハッチです。
+階段と同じように、<w>[%]</w>や<w>[%]</w>をそれぞれ押すことでこの階層を離脱できます。
+しかし、階段と違った点として脱出ハッチは一方通行であるため、下の階に行く時には注意しましょう！
+%%%%
+hint seen escape hatch use tile
+
+これは脱出ハッチです。
+階段と同じように、<w>[%]</w>や<w>[%]</w>をそれぞれ押す(もしくは<w>[左クリック]</w>する)ことで
+この階層を離脱できます。
+しかし、階段と違った点として脱出ハッチは一方通行であるため、下の階に行く時には注意しましょう！
+%%%%
+Escape hatch
+
+脱出ハッチ
+%%%%
+hint seen branch
+
+#         text << "This ";
+# #ifndef USE_TILE
+#         // Is a monster blocking the view?
+#         if (monster_at(gc))
+#             DELAY_EVENT;
+#
+#         // FIXME: Branch entrance character is not being coloured yellow.
+#         text << glyph_to_tagstr(get_cell_glyph(gc)) << " ";
+# #else
+#         tiles.place_cursor(CURSOR_TUTORIAL, gc);
+#         tiles.add_text_tag(TAG_TUTORIAL, "Branch stairs", gc);
+# #endif
+#         text << "is the entrance to a different branch of the dungeon, "
+#                 "which might have different terrain, level layout and "
+#                 "monsters from the current main branch you're in. Some "
+#                 "branches contain only a single level, and others are many "
+#                 "levels deep. They can also contain entrances to other "
+#                 "branches."
+#
+#                 "\n\nThe first three branches you'll encounter are the "
+#                 "Temple, the Lair and the Orcish Mines. While the Lair"
+#                 "and the Mines can be dangerous for the new adventurer, "
+#                 "the Temple is completely safe and contains a number of "
+#                 "altars at which you might convert to a new god.";
+この %s はダンジョンの分岐への入口です。
+ダンジョンの分岐ではあなたが今いる本道と異なる地形、配置、モンスターが見られます。
+ひとつの階層しかない分岐もあれば、何階層にもわたっている分岐もあります。
+分岐はさらに別の分岐への入口を含むことがあります。
+
+あなた最初に出くわす三つの分岐は、寺院、獣の棲み処、そしてオークの坑道です。
+獣の棲み処とオークの坑道は新米冒険者にとっては危険をはらみますが、
+寺院はまったく安全で、いくつもの祭壇が備わっています。
+あなたはそこで新たな神へと改宗するかもしれません。
+%%%%
+hint seen branch use tile
+
+これはダンジョンの分岐への入口です。
+ダンジョンの分岐ではあなたが今いる本道と異なる地形、配置、モンスターが見られます。
+ひとつの階層しかない分岐もあれば、何階層にもわたっている分岐もあります。
+分岐はさらに別の分岐への入口を含むことがあります。
+
+あなた最初に出くわす三つの分岐は、寺院、獣の棲み処、そしてオークの鉱山です。
+獣の棲み処とオークの鉱山は新米冒険者にとっては危険をはらみますが、
+寺院はまったく安全で、いくつもの祭壇が備わっています。
+あなたはそこで新たな神へと改宗するかもしれません。
+%%%%
+Branch stairs
+
+分岐へと通じる階段
+%%%%
+Portal
+
+ポータル
+%%%%
+hint stair brand use tile
+
+#         text << "A small symbol on a stair tile signifies that there are "
+#                 "items in that position that you may want to check out.";
+階段のマスに付いた小さな記号は、その場所にアイテムが存在することを示します。
+あなたはそこを確認しておきたくなるかもしれません。
+%%%%
+hint stair brand
+
+#         text << "If any items are covering stairs or an escape hatch, then "
+#                 "that will be indicated by highlighting the <w><<</w> or "
+#                 "<w>></w> symbol, instead of hiding the stair symbol with "
+#                 "an item glyph.";
+もし何らかのアイテムが階段や脱出ハッチの上にある場合、
+アイテムの記号で階段のシンボルを隠すのではなく、
+強調表示された<w>[<]</w>もしくは<w>[>]</w>で表示されます。
+%%%%
+hint heap brand use tile
+
+#         text << "A small symbol on an item tile signifies that there is at "
+#                 "least one other item in the same heap that you may want to "
+#                 "check out.";
+アイテムのあるマスに付いた小さな記号は、そのアイテムの下に少なくとも一つ
+他のアイテムが存在することを示します。
+あなたはそこを確認しておきたくなるかもしれません。
+%%%%
+hint heap brand
+
+#         text << "If two or more items are on a single square, then the square "
+#                 "will be highlighted, and the symbol for the item on the top "
+#                 "of the heap will be shown.";
+もし2個かそれ以上のアイテムがひとつのマスに重なっている場合、そのマスは強調表示され、
+アイテムの山の一番上にある物のシンボルが表示されます。
+%%%%
+hint trap brand
+
+#         text << "If any items are covering a trap, then that will be "
+#                 "indicated by highlighting the <w>^</w> symbol, instead of "
+#                 "hiding the trap symbol with an item glyph.";
+もしアイテムと罠が同じ位置にあった場合、罠の記号をアイテムの記号で隠すのではなく、
+強調表示された <w>^</w> の記号で示します。
+%%%%
+Oops... you just triggered a trap.
+
+おおっと…… あなたはたった今罠を動作させてしまいました。
+%%%%
+You just discovered a trap.
+
+あなたはたった今罠を発見しました。
+%%%%
+hint seen trap
+
+#         text << "You'll occasionally stumble into these nasty constructions";
+# #ifndef USE_TILE
+#         {
+#             cglyph_t g = get_cell_glyph(gc);
+#
+#             if (g.ch == ' ' || g.col == BLACK)
+#                 g.col = LIGHTCYAN;
+#
+#             text << ", depicted by " << _colourize_glyph(g.col, '^');
+#         }
+# #endif
+#         text << ". Each type of trap has a different effect when stepped on, "
+#                 "like alerting enemies or causing random teleportation.";
+あなたは折に触れてこの %s で表示される不快な構造物に踏み込んでしまうでしょう。
+罠はその種類によって、敵に警告を発したり、ランダムな位置へのテレポーテーションを
+引き起こしたりといった異なる効果があります。
+%%%%
+hint seen trap use tile
+
+あなたは折に触れてこの不快な構造物に踏み込んでしまうでしょう。
+罠はその種類によって、敵に警告を発したり、ランダムな位置へのテレポーテーションを
+引き起こしたりといった異なる効果があります。
+%%%%
+An altar to {god name}
+
+%sの祭壇
+%%%%
+hint seen altar
+
+#         text << "That ";
+# #ifndef USE_TILE
+#         // Is a monster blocking the view?
+#         if (monster_at(gc))
+#             DELAY_EVENT;
+#
+#         text << glyph_to_tagstr(get_cell_glyph(gc)) << " ";
+# #else
+#         {
+#             tiles.place_cursor(CURSOR_TUTORIAL, gc);
+#             string altar = "An altar to ";
+#             altar += god_name(feat_altar_god(grd(gc)));
+#             tiles.add_text_tag(TAG_TUTORIAL, altar, gc);
+#         }
+# #endif
+#         text << "is an altar. "
+# #ifdef USE_TILE
+#                 "By <w>right-clicking</w> on it with your mouse "
+# #else
+#                 "If you target the altar with <w>x</w>, then press <w>v</w> "
+# #endif
+#                 "you can get a short description.\n"
+#                 "Press <w>%</w> or <w>%</w> while standing on the square to join the faith "
+#                 "or read some information about the god in question. Before "
+#                 "taking up the corresponding faith you'll be asked for "
+#                 "confirmation.";
+あの %s は祭壇です。
+<w>[x]</w>コマンドで祭壇にカーソルを合わせ、<w>[v]</w>を押すことで
+短い解説文を読むことができます。
+その上に立って<w>[%%]</w>や<w>[%%]</w>を押すことで入信したり、
+その神についての情報を得ることができます。
+まだその神に入信していなければ、確認を求められるでしょう。
+%%%%
+hint seen altar use tile
+
+あれは祭壇です。
+<w>[右クリック]</w>することで短い解説文を読むことができます。
+%%%%
+hint seen altar conjurer
+
+#             text << "\n\nThe simplest god for an unexperienced conjurer is "
+#                     "probably Vehumet, though Sif Muna is a good second "
+#                     "choice.";
+駆け出しの妖術師にとって一番単純明快な神はおそらくヴェフメットですが、
+シフ・ムーナも次善の選択です。
+%%%%
+hint seen shop
+
+#         text << "That "
+# #ifndef USE_TILE
+#              << glyph_to_tagstr(get_cell_glyph(gc)) << " "
+# #endif
+#                 "is a shop. You can enter it by typing <w>%</w> or <w>%</w>"
+# #ifdef USE_TILE
+#                 ", or by <w>left-clicking</w> on it "
+# #endif
+#                 "while standing on the square.";
+#         cmd.push_back(CMD_GO_UPSTAIRS);
+#         cmd.push_back(CMD_GO_DOWNSTAIRS);
+#
+#         text << "\n\nIf there's anything you want which you can't afford yet "
+#                 "you can hold <w>Shift</w> and press the corresponding letter "
+#                 "to put them on your shopping list. The game will then remind "
+#                 "you when you gather enough gold to buy them.";
+あの %s は店です。
+その上に立って<w>[%]</w>もしくは<w>[%]</w>を押すことで中に入ることができます。
+
+もし欲しいものがまだ入手できなかったときは、<w>[Shift]</w>を押しながら品物に対応する文字を押して買い物リストに追加することができます。
+そうすればあなたがそのアイテムを買うのに十分な量の金貨を集めた時に通知してくれるでしょう。
+%%%%
+hint seen shop use tile
+
+あれは店です。
+その上に立って<w>[%]</w>もしくは<w>[%]</w>を押すか、<w>[左クリック]</w>することで中に入ることができます。
+
+もし欲しいものがまだ入手できなかったときは、<w>[Shift]</w>を押しながら品物に対応する文字を押して買い物リストに追加することができます。
+そうすればあなたがそのアイテムを買うのに十分な量の金貨を集めた時に通知してくれるでしょう。
+%%%%
+Closed door
+
+閉ざされた扉
+%%%%
+hint seen door
+
+#         text << "That "
+# #ifndef USE_TILE
+#              << glyph_to_tagstr(get_cell_glyph(gc)) << " "
+# #endif
+#                 "is a closed door. You can open it by walking into it. "
+#                 "Sometimes it is useful to close a door. Do so by <console>"
+#                 "pressing <w>%</w> while next to it. If there are several "
+#                 "doors, you will then be prompted for a direction.</console>"
+#                 "<tiles>clicking on the door while next to it.</tiles>";
+あの %s は「閉ざされた扉」です。あの中に歩いていくことで開けることができます。
+時々、ドアを閉めるのが役に立つこともあります。<console>
+隣接しているときに<w>[%]</w>を押すことでそうすることができます。
+もしドアが複数ある場合、ドアの方向を指定するよう促されるでしょう。</console><tiles>
+隣接しているときにドアを<w>[クリック]</w>することでそうすることができます。</tiles>
+%%%%
+hint seen door use tile
+
+あれは「閉ざされた扉」です。あの中に歩いていくことで開けることができます。
+時々、ドアを閉めるのが役に立つこともあります。<console>
+隣接しているときに<w>[%]</w>を押すことでそうすることができます。
+もしドアが複数ある場合、ドアの方向を指定するよう促されるでしょう。</console><tiles>
+隣接しているときにドアを<w>[クリック]</w>することでそうすることができます。</tiles>
+%%%%
+Runed door
+
+ルーンで封印された扉
+%%%%
+hint seen runed door
+
+#         text << "That ";
+# #ifndef USE_TILE
+#         text << glyph_to_tagstr(get_cell_glyph(gc)) << " ";
+# #endif
+#         text << "is a runed door, which is probably in front of something "
+#                 "unusually dangerous. Monsters will never open it. If you do, "
+#                 "the runes will be broken, and it will become a normal door.";
+あの %s はルーンで封印された扉で、おそらくその向こうに特別危険な何かが隠れています。
+モンスターたちはこれを開けることは決してありません。
+もしあなたがこれを開けたとき、ルーンは壊れ、普通の扉になってしまいます。
+%%%%
+hint seen runed door use tile
+
+あれはルーンで封印された扉で、おそらくその向こうに特別危険な何かが隠れています。
+モンスターたちはこれを開けることは決してありません。
+もしあなたがこれを開けたとき、ルーンは壊れ、普通の扉になってしまいます。
+%%%%
+hint killed monster
+
+#         text << "Congratulations, your character just gained experience by "
+#                 "killing this monster! This will raise some of your skills, "
+#                 "making you more deadly.";
+おめでとうございます、あなたのキャラクターはこのモンスターを殺すことによりたった今経験値を得ました！
+これはあなたの持つスキルを高め、あなたをより強力にします。
+%%%%
+hint killed monster trog
+
+#             text << " Also, most kills will grant you favour in the eyes of "
+#                     "Trog.";
+また、殺害行為は多くの場合トログの歓心を得ることになります。
+%%%%
 hint new level
 
 #         text << "Well done! Reaching a new experience level is always a "
@@ -6,9 +888,9 @@ hint new level
 #                 "occasionally increases to your attributes: strength, "
 #                 "intelligence, and dexterity.";
 よくできました！ レベルが上がることはいつだってよい出来事です。
-HPやMPが増加し、 時には腕力や知力、 器用さといった能力値が上昇することもあります。
+体力や魔力が増加し、 時には腕力や知力、 器用さといった能力値が上昇することもあります。
 %%%%
-hint new level magic char
+hint new level conjurer
 
 #             text << "\nGaining an experience level also lets you learn more "
 #                     "difficult spells. You can memorise a second spell "
@@ -18,9 +900,9 @@ hint new level magic char
 # #endif
 #                     ".";
 経験レベルを上げることでさらに高度な呪文を習得することが可能になります。
-<w>[%]</w>を押すか、呪文記憶タブの中の目的の呪文アイコンを<w>クリック</w>して2つめの呪文を習得できます。
+<w>[%]</w>を押すか、呪文記憶タブの中の目的の呪文アイコンを<w>[クリック]</w>して2つめの呪文を習得できます。
 %%%%
-hint new level magic char use tile
+hint new level conjurer use tile
 
 経験レベルを上げることでさらに高度な呪文を習得することが可能になります。
 <w>[%]</w>を押して2つめの呪文を習得できます。
@@ -47,9 +929,42 @@ hint skill raise
 あなたの持っているスキルが一定値に達しました。
 使用しているスキルはモンスターを倒して経験値を得ることによって自動的に鍛錬されます。
 通常、スキル経験値はあなたが積極的に用いているスキルから優先的に割り振られます。
-スキル経験値の様子を閲覧する、 または割り振りを管理するには
-<console><w>[%]</w>を押してください。</console>
-<tiles>画面右下の'スキル'タブをクリックしてください。</tiles>
+スキル経験値の様子を閲覧する、 または割り振りを管理するには<console><w>[%]</w>を押してください。</console><tiles>画面右下の'スキル'タブを<w>[クリック]</w>してください。</tiles>
+%%%%
+hint gained magical spell
+
+#         text << "Being skilled in a magical \"school\" makes it easier to "
+#                 "learn and cast spells of that school. Many spells belong to "
+#                 "a combination of several schools, in which case the average "
+#                 "skill in these schools will determine spellcasting success "
+#                 "and power.";
+ある魔術の種別に熟達することは、その種別に属する呪文を学び、唱えることを容易にします。
+複数の種別の組み合わせに属する多くの呪文については、それらの平均習熟度が呪文の成功率や
+威力を決定します。
+%%%%
+hint gained melee skill
+
+#         text << "Being skilled with a particular type of weapon will make you "
+#                 "deal slightly more damage and attack significantly faster "
+#                 "with all weapons of that type. It's a good idea to focus on "
+#                 "just one weapon type, usually one you start with, though "
+#                 "finding a particularly good weapon may justify a switch.";
+特定の武器種別に熟達すると、それに属する全ての武器を振るった際に
+より多くのダメージを与えたり、攻撃速度が増したりします。
+ひとつだけの武器種別(普通はゲーム開始時に持っていた武器)に集中するのはよい考えですが、
+格段に良い武器を見つけた場合などはそれに切り替えるのもよいでしょう。
+%%%%
+hint gained ranged skill
+
+#         text << "Being skilled in a particular type of ranged attack will let "
+#                 "you deal more damage when using the appropriate weapons. It "
+#                 "is usually best to concentrate on one type of ranged attack "
+#                 "(including spells), and to use a melee weapon as a backup "
+#                 "for fighting weak enemies.";
+特定の遠隔攻撃種別に熟達すると、それに適した全ての武器を振るった際に
+より多くのダメージを与えます。
+ひとつの遠隔攻撃種別(呪文を含む)に集中し、弱い敵と戦う際に代替手段として
+直接攻撃武器を使うのが通常の場合最適となります。
 %%%%
 hint choose stat
 
@@ -65,6 +980,38 @@ hint choose stat
 <w>知力</w>はあなたの唱える魔法をより頼もしく、 強力にすることができます。
 <w>器用さ</w>はあなたの回避能力や隠密性を高めます。
 %%%%
+hint you enchanted
+
+#         text << "Enchantments of all types can befall you temporarily. "
+#                 "Brief descriptions of these appear at the lower end of the "
+#                 "stats area. Press <w>%</w> for more details. You can search "
+#                 "for full enchantment descriptions by pressing <w>%/T</w>.";
+あらゆる種類の魔力付与があなたに一時的にもたらされることがあります。
+それらの簡潔な解説がステータス欄の一番下に表示されます。
+<w>[%]</w>を押すことでさらなる詳細が得られます。
+<w>[%/T]</w>を押すことで、魔力付与状態の完全な解説文を検索することができます。
+%%%%
+hint you poison
+
+#         text << "Poison will slowly reduce your health. You can wait it out "
+#                 "with <w>%</w>, if you're in combat or lethally poisoned, "
+#                 "you'll probably want to quaff a potion of curing.";
+毒はあなたの体力を少しずつ減らします。
+<w>[%]</w>を押して回復を待つこともできますが、戦闘中だったり、
+致命的な毒に冒されている場合などはおそらく治療の薬を飲みたくなるでしょう。
+%%%%
+hint you rotting
+
+#         text << "Ugh, your flesh has been rotted away! This reduces your"
+#                 "<w>maximum</w> health (your usual maximum health will be "
+#                 "indicated by a number in parentheses).\n"
+#                 "Whenever you drink potions of curing and heal wounds, "
+#                 "some rot will be cured, but you'll be healed less.";
+ああ、あなたの肉体が腐り落ちていきます！
+こうなるとあなたの<w>最大</w>HPが減少していきます。
+(あなたの通常時の最大HPはカッコで括られて表示されます)
+治療の薬や怪我の治療の薬を飲めば腐敗は収まりますが、HPの回復量は少なくなるでしょう。
+%%%%
 hint you cursed
 
 #         text << "Cursed equipment, once worn or wielded, cannot be dropped or "
@@ -79,6 +1026,41 @@ hint removed curse
 #                 "can now unequip any previously cursed items.";
 あなたの装備にかけられていた呪いが解けたため、 装備を外すことができるようになりました。
 %%%%
+hint you hungry
+
+#         text << "There are two ways to overcome hunger: food you started "
+#                 "with or found, and self-made chunks from corpses. To get the "
+#                 "latter, all you need to do is <w>%</w>hop up a corpse. "
+#                 "Luckily, all adventurers carry a pocket knife with them "
+#                 "which is perfect for butchering. Try to dine on chunks in "
+#                 "order to save permanent food.";
+空腹に打ち勝つための2つの手段があります。
+ひとつはあなたが持ち込んだか発見するかした食料、もうひとつは死体から自分で調達した肉の塊です。
+後者を手に入れるためには、死体のすぐそばで<w>[%]</w>を押しましょう。
+幸運なことに、冒険者は誰もが死体の解体に最適のポケットナイフを持ち歩いています。
+保存のきく食料を節約するために、肉の塊を口にしましょう。
+%%%%
+hint you hungry berserker
+
+#             text << "\nNote that you cannot Berserk while very hungry or worse.";
+「とても空腹」かそれ以上に腹が減っている場合、バーサークできないことに注意してください。
+%%%%
+hint you starving
+
+#         text << "You are now suffering from terrible hunger. You'll need to "
+#                 "<w>%</w>at something quickly, or you'll die. The safest "
+#                 "way to deal with this is to simply eat something from your "
+#                 "inventory, rather than wait for a monster to leave a corpse.";
+あなたは今ひどい空腹に襲われています。
+<w>[%]</w>を押して何かを食べる必要があり、さもないと死んでしまうでしょう。
+これに対処する最も安全な方法は単に何か所持しているものを食べることですが、
+次善の策としてモンスターが死体を残すのを待つこともできます。
+%%%%
+hint you starving conjurer
+
+#             text << "\nNote that you cannot cast spells while starving.";
+「餓死しかけ」状態では呪文を唱えることができないのに注意してください。
+%%%%
 hint multi pickup use tile
 
 #         text << "There are a lot of items here. You choose what to pick up "
@@ -89,8 +1071,8 @@ hint multi pickup use tile
 #                 "to enter the pickup menu. To leave the menu, confirm your "
 #                 "selection with <w>Enter</w>.";
 ここにはたくさんのアイテムがあります。 メニューから何を拾うか選択しましょう。
-<w>[%]</w>を押<localtiles>すか、 もしくはプレイヤーキャラを<w>クリック</w></localtiles>してアイテム拾得メニューに入ります。
-メニューを終了するには、 <w>[Enter]</w>を押して選択を確定します。
+<w>[%]</w>を押<localtiles>すか、 もしくはプレイヤーキャラを<w>[クリック]</w></localtiles>してアイテム拾得メニューに入ります。
+メニューを終了するには、<w>[Enter]</w>を押して選択を確定します。
 %%%%
 hint multi pickup
 
@@ -98,12 +1080,310 @@ hint multi pickup
 <w>[%]</w>を押してアイテム拾得メニューに入ります。
 メニューを終了するには、 <w>[Enter]</w>を押して選択を確定します。
 %%%%
+hint full inventory
+
+#         text << "Sadly, your inventory is limited to 52 items, and it "
+#             "appears your knapsack is full.";
+#         text << " However, this is easy enough to rectify: simply "
+#                 "<w>%</w>rop some of the stuff you don't need right now.";
+残念なことに、あなたの所持枠は52種に制限されており、そうなるとあなたのナップザックは満杯になります。
+しかし、それに対処することは簡単です。
+単に<w>[%]</w>を押して、今すぐは必要でないものをいくつか置いていきましょう。
+%%%%
+hint full inventory use tile
+
+#         text << " In the drop menu you can then comfortably select which "
+#                 "items to drop by pressing their inventory letter, or by "
+#                 "clicking on them.";
+ドロップメニューでは、アイテム種ごとに割り当てられたアルファベットを押すか、
+アイテム種を<w>[クリック]</w>することで床に置くアイテムを簡単に選択することができます。
+%%%%
+hint make chunks
+
+#         text << "How lucky! That monster left a corpse which you can now "
+#                 "<w>%</w>hop up, producing chunks that you can then "
+#                 "<w>%</w>at. Some monsters are inedible or or even mutagenic,"
+#                 "but their chunks will be named accordingly, so don't worry "
+#                 "about any surprises in the food!";
+なんて運がいい！
+モンスターは<w>[%]</w>コマンドで解体して<w>[%]</w>コマンドで食べることのできる死体を残しました。
+いくつかのモンスターは食べることができなかったり変異性を持っていたりしますが、
+肉にはそれに応じて名前が付けられるため、食べ物についておっかなびっくりになることはありません！
+%%%%
+hint shift run
+
+#         text << "Walking around takes fewer keystrokes if you press "
+#                 "<w>Shift-direction</w> or <w>/ direction</w>. "
+#                 "That will let you run until a monster comes into sight or "
+#                 "your character sees something interesting.";
+<w>[Shift+方向]</w>もしくは<w>[/ 方向]</w>を押せば、短いキー入力であたりを動けます。
+そうすることで、モンスターが視界に入ってくるか、キャラクターが何か興味深いものを見つけるまで走ることとなります。
+%%%%
+hint map view
+
+#         text << "As you explore a level, orientation can become difficult. "
+#                 "Press <w>%</w> to bring up the level map. Typing <w>?</w> "
+#                 "shows the list of level map commands. "
+#                 "Most importantly, moving the cursor to a spot and pressing "
+#                 "<w>.</w> or <w>Enter</w> lets your character move there on "
+#                 "its own.";
+あなたが階層を探索するにつれて、位置を把握することは難しくなりがちです。
+<w>[%]</w>を押してレベルマップを出しましょう。
+さらに<w>[?]</w>を押すとレベルマップにおけるコマンド一覧が表示されます。
+一番重要なのは、あるマスにカーソルを動かして<w>[.]</w>もしくは<w>[Enter]</w>を押すことで
+プレイヤーキャラクターをその場所まで動かすことです。
+%%%%
+hint map view use tile
+
+#         text << "\nAlso, clicking on the right-side minimap with your "
+#                 "<w>right mouse button</w> will zoom into that dungeon area. "
+#                 "Clicking with the <w>left mouse button</w> instead will let "
+#                 "you move there.";
+加えて、画面右側のミニマップを<w>[右クリック]</w>することで対応する箇所を表示します。
+また、<w>[左クリック]</w>することでそこに移動します。
+%%%%
+hint auto explore
+
+#         text << "Fully exploring a level and picking up all the interesting "
+#                 "looking items can be tedious. To save on this tedium you "
+#                 "can press <w>%</w> to auto-explore, which will "
+#                 "automatically explore unmapped regions, automatically pick "
+#                 "up interesting items, and stop if a monster or interesting "
+#                 "dungeon feature (stairs, altar, etc.) is encountered.";
+階層をくまなく探索し、見つかった目ぼしいアイテムを全て拾い集めるのは退屈になりがちです。
+退屈な作業を減らすために、<w>[%]</w>を押して自動探索――自動的に未到達領域を探索し、
+自動的に目ぼしいアイテムを拾い、モンスターや一風変わった設備(階段、祭壇、その他)と
+出くわしたときには停止すること――ができます。
+%%%%
+hint done explore
+
+#         text << "Hey, you've finished exploring the dungeon on this level! "
+#                 "You can search for stairs from the level map (<w>%</w>) "
+#                 "by pressing <w>></w>. The cursor will jump to the nearest "
+#                 "staircase, and by pressing <w>.</w> or <w>Enter</w> your "
+#                 "character can move there, too. Each level of Crawl has three "
+# #ifndef USE_TILE
+#                 "white "
+# #endif
+#                 "up and three "
+# #ifndef USE_TILE
+#                 "white "
+# #endif
+#                 "down stairs. Unexplored parts can often be accessed via "
+#                 "another level.";
+やあ、あなたはダンジョンのこの階層の探索を終えました！
+あなたはレベルマップ(<w>[%]</w>)から<w>[>]</w>を押すことで階段を探すことができます。
+カーソルは最寄りの階段の場所に移動し、そして<w>[.]</w>や<w>[Enter]</w>を押すことで
+あなたのキャラクターもそこに移動します。
+クロウルでの各階層にはそれぞれ3つの白い上り階段と3つの白い下り階段が存在します。
+探索されていない場所は別の階層を経由して到達できることがしばしばあります。
+%%%%
+hint done explore use tile
+
+やあ、あなたはダンジョンのこの階層の探索を終えました！
+あなたはレベルマップ(<w>[%]</w>)から<w>[>]</w>を押すことで階段を探すことができます。
+カーソルは最寄りの階段の場所に移動し、そして<w>[.]</w>や<w>[Enter]</w>を押すことで
+あなたのキャラクターもそこに移動します。
+クロウルでの各階層にはそれぞれ3つの階段と3つの下り階段が存在します。
+探索されていない場所は別の階層を経由して到達できることがしばしばあります。
+%%%%
+hint auto exclusion
+
+#         text << "\nTo prevent autotravel or autoexplore taking you into "
+#                 "dangerous territory, you can set travel exclusions by "
+#                 "entering the map view (<w>%</w>) and then toggling the "
+#                 "exclusion radius on the monster position with <w>e</w>. "
+#                 "To make this easier some immobile monsters listed in the "
+#                 "<w>auto_exclude</w> option (such as this one) are considered "
+#                 "dangerous enough to warrant an automatic setting of an "
+#                 "exclusion. It will be automatically cleared if you manage to "
+#                 "kill the monster. You could also manually remove the "
+#                 "exclusion with <w>%ee</w> but unless you remove this monster "
+#                 "from the auto_exclude list, the exclusion will be reset the "
+#                 "next turn.";
+自動移動や自動探索で危険な区域に立ち入ってしまうのを防ぐために、マップモード('<w>%</w>')に入って自動移動禁止エリアを張り、
+<w>[e]</w>を押してモンスターのいる位置を中心とした禁止エリアの範囲を切り替えることができます。
+これをより簡単にするため、自動的に禁止エリアが設定されるのに値するほど危険だと見なされているモンスター(例えばこれ)は<w>auto_exclude</w>オプションに列記されています。
+禁止エリアはあなたがなんとかモンスターを倒せた際は自動的に消去されます。
+<w>[%ee]</w>を押して手動で除去することもできますが、あなたがこのモンスターをauto_exclude指定から除いていない限り、次のターンには禁止エリアが再設定されてしまいます。
+%%%%
 hint healing potions
 
 #         text << "Your health is getting dangerously low. Retreating and/or "
 #                 "quaffing a potion of heal wounds or curing might be a good idea.";
 あなたのHPは危険なまでに低下しています。
 逃げるか、HPを回復する薬を飲むか、あるいはその両方を行うのがよいでしょう。
+%%%%
+hint need healing use tile
+
+#         text << "If you're low on health or magic and there's no urgent "
+#                 "need to move, you can rest for a bit. Ideally, you should "
+#                 "retreat to an area you've already explored and cleared "
+#                 "of monsters before resting, since resting on the edge of "
+#                 "the explored terrain increases the risk of rest being "
+#                 "interrupted by a wandering monster. Press <w>%</w> or "
+#                 "<w>shift-numpad-5</w>"
+# #ifdef USE_TILE
+#                 ", or click on the 'rest' button,"
+# #endif
+#                 " to do so.";
+もしあなたの体力や魔力が低下し、移動すべき差し迫った理由がなければ、少しの間休息することができます。
+理想的には、休息する前にあなたが既に探索してモンスターを撃破した領域内に戻るべきです。
+探索済み領域の端で休息することは、うろついているモンスターに休息を中断させられる可能性を高めます。
+休息するには<w>[5]</w>や<w>[Shift+テンキーの5]</w>を押すか、
+もしくは<w>[休息コマンドボタンをクリック]</w>しましょう。
+%%%%
+hint need healing
+
+もしあなたの体力や魔力が低下し、移動すべき切迫した理由がなければ、少しの間休息することができます。
+理想的には、休息する前にあなたが既に探索してモンスターを撃破した領域内に戻るべきです。
+探索済み領域の端で休息することは、うろついているモンスターに休息を中断させられる可能性を高めます。
+休息するには<w>[5]</w>や<w>[Shift+テンキーの5]</w>を押しましょう。
+%%%%
+hint need poison healing
+
+#         text << "You are lethally poisoned, so now would be a good time to "
+#                 "<w>%</w>uaff a potion of heal wounds or, better yet, a "
+#                 "potion of curing. If you have seen neither of these so far, "
+#                 "try unknown potions in your inventory. Good luck!";
+
+あなたは致命的な毒に冒されているため、<w>[%]</w>を押して怪我の治療の薬を飲むのがよいでしょう。
+治療の薬があればもっとよいです。
+もしこれまであなたがその両方を目にしていなかった場合は、所有物の中の未鑑定の水薬を試してみましょう。
+幸運を祈ります！
+%%%%
+hint invisible danger
+
+#         text << "Fighting against a monster you cannot see is difficult. "
+#                 "If you don't have a source of see invisibility, you can find "
+#                 "invisible monsters by luring them into shallow water, opaque "
+#                 "clouds (from a scroll of fog), or a corridor, where their "
+#                 "movements will be more predictable. If things go south, try "
+#                 "teleporting out, or leaving the level entirely!";
+目に見えないモンスターと戦うのは困難です。
+もしあなたが霊視の手段を手にしていない場合、浅い水場、(煙幕の巻物による)不透明な雲、細い通路などといった場所におびきよせると相手の動きがより予測しやすくなるでしょう。
+もし状況が悪化したなら、テレポートするか、この階層を離れるなどしてください！
+%%%%
+hint need healing invis
+
+#         text << "You recently noticed an invisible monster, so unless you "
+#                 "killed it or left the scene resting might not be safe. If you "
+#                 "still need to replenish your health or magic, you'll have "
+#                 "to quaff an appropriate potion. For normal resting you will "
+#                 "first have to get away from the danger.";
+あなたは目に見えないモンスターを最近目にしたので、それを倒すかその場から立ち去るかするまでは休憩を取ることは安全ではないかもしれません。
+もしまだ体力や魔力を補充する必要があるなら、適切な水薬を飲まなければならないでしょう。
+通常の休息を行うには、あなたはまず危険から身を離すことが必要です。
+%%%%
+hint can berserk
+
+#         text << "Against particularly difficult foes, you should use your "
+#                 "Berserk <w>%</w>bility. Killing monsters while berserking "
+#                 "makes it last longer.";
+特に困難な敵に対しては、<w>[%]</w>コマンドでバーサークを使うべきでしょう。
+バーサーク中にモンスターを殺すことにより、バーサーク状態はさらに長く続きます。
+%%%%
+hint postberserk
+
+#         text << "Berserking is extremely exhausting! It burns a lot of "
+#                 "nutrition, and afterwards you are slowed down and "
+#                 "occasionally even pass out. You won't be able to berserk "
+#                 "again until enough time passes for your exhaustion to fade.";
+バーサークすると非常に消耗します！
+満腹値を大量に消費し、その後動きが遅くなったり、場合によっては気絶することさえあります。
+あなたは疲労が回復するまである程度時間が過ぎなければ再びバーサークすることはできません。
+%%%%
+hint run away
+
+#         text << "Whenever your health is very low and you're in danger of "
+#                 "dying, check your options carefully. Often, retreat or use "
+#                 "of some item might be a viable alternative to fighting on.";
+体力が極めて低下していたり死の危険にさらされている時は、必ず取れる選択肢を慎重に確認しましょう。
+多くの場合、戦い続けるよりも、逃げたり何らかのアイテムを使うなどした方が生存の可能性があります。
+%%%%
+hint run away centaur
+
+#             text << " As a four-legged centaur you are particularly quick - "
+#                     "running is usually an option!";
+あなたは4本の脚を持ったセントールなので、あなたの足はとても速いです。
+走ることはよくある選択肢です！
+%%%%
+hint run away trog
+
+#             text << "With "
+#                 << apostrophise(god_name(you.religion))
+#                 << " support you can use your Berserk ability (<w>%</w>) to "
+#                     "temporarily gain more health and greater strength. Bear "
+#                     "in mind that berserking at the last minute is often "
+#                     "risky, and prevents you from using items to escape!";
+%sの手助けにより、あなたは(<w>[%]</w>を押して)一時的により多くの体力と怪力を得るべくバーサーク能力を使うことができます。
+バーサークが切れる寸前はしばしば危険であり、しかも脱出のためのアイテムを使うことが封じられることを心に留めておいてください！
+%%%%
+hint run away 2
+
+#         text << " If retreating to another level, keep in mind that monsters "
+#                 "may follow you if they're standing right next to you when "
+#                 "you start climbing or descending the stairs. And even if "
+#                 "you've managed to shake them off, they'll still be there when "
+#                 "you come back, so you might want to use a different set of "
+#                 "stairs when you return.";
+もし他の階層に逃げようとするなら、階段を上るか下るかした時にすぐ隣にいるモンスターがあなたについてくることがあるのを忘れないでおいてください。
+そしてもしなんとかモンスターを撒くことができたとしてもモンスターは依然としてそこにいるため、
+戻るときには別の階段を使うようにするとよいでしょう。
+%%%%
+hint retreat caster
+
+#         text << "Without magical power you're unable to cast spells. While "
+#                 "melee is a possibility, that's not where your strengths "
+#                 "lie, so retreat (if possible) might be the better option.";
+あなたは魔力なしには呪文を唱えることはできません。
+直接攻撃することも可能ですが、それはあなたが得意とするところではないので、
+(可能なら)逃げることはよりよい選択肢です。
+%%%%
+Or you could e<w>%</w>oke a wand to deal damage.
+
+あるいは、<w>[%]</w>コマンドでワンドを振ってダメージを与えることもできます。
+%%%%
+hint you mutated
+
+#         text << "Mutations can be obtained from several sources, among them "
+#                 "potions, spell miscasts, and overuse of strong enchantments "
+#                 "like invisibility. The gods Zin and Jiyva will cure your "
+#                 "mutations, but otherwise, your only recourse is to potions "
+#                 "of cure mutation. Check your mutations with <w>%</w>.";
+水薬、呪文の失敗効果、透明化のような強力な魔力付与の濫用などといったいろいろな原因で突然変異を得ることがあります。
+ジンとジーヴァはあなたの持つ変異を癒やしてくれますが、それを除けば頼りとなるのは突然変異治療の薬しかありません。
+<w>[%]</w>を押して突然変異の一覧を見ましょう。
+%%%%
+hint new passive ability god use tile
+
+#             text << "You just gained a divine ability. Press <w>%</w> "
+# #ifdef USE_TILE
+#                     "or press <w>Shift</w> and <w>right-click</w> on the "
+#                     "player tile "
+# #endif
+#                     "to take a look at your abilities.";
+あなたはいま神から能力を授かりました。
+能力を一覧するには<w>[%]</w>を押すか、<w>[Shift]</w>を押しながらプレイヤーキャラクターを<w>[右クリック]</w>します。
+%%%%
+hint new passive ability god
+
+あなたはいま神から能力を授かりました。
+能力を一覧するには<w>[%]</w>を押します。
+%%%%
+hint new ability god
+
+#             text << "You just gained a divine ability. Press <w>%</w> to "
+#                     "take a look at your abilities or to use one of them.";
+あなたは神から能力を授かりました。
+あなたの持つ能力の数々を一覧したり、その中の一つを行使したりするには<w>[%]</w>を押します。
+%%%%
+hint new ability mut
+
+#         text << "That mutation granted you a new ability. Press <w>%</w> to "
+#                 "take a look at your abilities or to use one of them.";
+この突然変異はあなたに新たな能力をもたらします。
+あなたの持つ能力の数々を一覧したり、その中の一つを行使したりするには<w>[%]</w>を押します。
 %%%%
 hint new ability item flying use tile local
 
@@ -117,7 +1397,7 @@ hint new ability item flying use tile local
 #                     "messages, as most forms of flight have a limited "
 #                     "duration.";
 飛行能力によって、 溶岩や深い水の上を渡ることができるようになります。
-能力を発動するには、 能力メニュー(<w>[%]</w> もしくは <w>コマンドパネル</w>を<w>[クリック]</w>)を開いて能力を選択してください。
+能力を発動するには、 能力メニュー(<w>[%]</w>もしくは<w>コマンドパネル</w>を<w>[クリック]</w>)を開いて能力を選択してください。
 一度飛行したら、ステータス行やメッセージを見逃さないようにしましょう。
 ほとんどの手段では限られた時間しか飛ぶことができません。
 %%%%
@@ -127,6 +1407,23 @@ hint new ability item flying
 能力を発動するには、 能力メニュー(<w>[%]</w>)を開いて能力を選択してください。
 一度飛行したら、 ステータス行やメッセージを見逃さないようにしましょう。
 ほとんどの手段では限られた時間しか飛ぶことができません。
+%%%%
+hint new ability item non-flying use tile
+
+#             text << "That item you just equipped granted you a new ability. "
+#                     "Press <w>%</w> "
+# #ifdef USE_TILE
+#                     "(or <w>click</w> in the <w>command panel</w>) "
+# #endif
+#                     "to take a look at your abilities or to use one of them.";
+今あなたが装備したアイテムはあなたに新たな能力を与えます。
+あなたの持つ能力の数々を一覧したり、その中の一つを行使したりするには<w>[%]</w>を押しましょう。
+(あるいは<w>コマンドパネル</w>内で<w>[クリック]</w>)
+%%%%
+hint new ability item non-flying
+
+今あなたが装備したアイテムはあなたに新たな能力を与えます。
+あなたの持つ能力の数々を一覧したり、その中の一つを行使したりするには<w>[%]</w>を押しましょう。
 %%%%
 hint item resistances use tile local
 
@@ -138,12 +1435,332 @@ hint item resistances use tile local
 # #endif
 #                 ") for details.";
 このアイテムを装備するとあなたの耐性に影響を与えます。
-キャラクター概要画面(<w>[%]</w>もしくはコマンドパネルの<w>キャラクター概要ボタン</w>をクリック)で詳しい情報をチェックしましょう。
+キャラクター概要画面(<w>[%]</w>もしくはコマンドパネルの<w>キャラクター概要ボタン</w>を<w>[クリック]</w>)で詳しい情報をチェックしましょう。
 %%%%
 hint item resistances
 
 このアイテムを装備するとあなたの耐性に影響を与えます。
 キャラクター概要画面(<w>[%]</w>)で詳しい情報をチェックしましょう。
+%%%%
+hint flying
+
+#             text << "To stop flying, use the corresponding ability "
+#                     "in the ability menu (<w>%</w>).";
+飛行を停止するには、能力メニュー('<w>%</w>')からそれに対応する能力を使用します。
+%%%%
+hint inaccuracy use tile local
+
+#         text << "Not all items are useful, and some of them are outright "
+#                 "harmful. Press <w>%</w> ";
+# #ifdef USE_TILE_LOCAL
+#         text << "or <w>click</w> on your equipped amulet to remove it.";
+# #else
+#         text << "to remove your amulet.";
+# #endif
+全てのアイテムが有用であるわけではなく、いくつかはむしろ有害ですらあります。
+身につけた護符を外すには<w>[%]</w>を押すか、護符を<w>[クリック]</w>しましょう。
+%%%%
+hint inaccuracy
+
+全てのアイテムが有用であるわけではなく、いくつかはむしろ有害ですらあります。
+身につけた護符を外すには<w>[%]</w>を押しましょう。
+%%%%
+hint god displeased use tile
+
+#         text << "Uh-oh, " << god_name(you.religion) << " is growing "
+#                 "displeased because your piety is running low. Possibly this "
+#                 "is the case because you're committing heretical acts, "
+#                 "because " << god_name(you.religion) << " finds your "
+#                 "worship lacking, or a combination of the two. "
+#                 "If your piety goes to zero, then you'll be excommunicated. "
+#                 "Better get cracking on raising your piety, and/or stop "
+#                 "annoying your god. ";
+#
+#         text << "In any case, you'd better reread the religious description. "
+#                 "To do so, type <w>%</w>"
+# #ifdef USE_TILE
+#                 " or press <w>Shift</w> and <w>right-click</w> on your avatar"
+# #endif
+#                 ".";
+おっと、あなたの信仰値がだんだん減っているため%sは不機嫌を募らせています。
+これはあなたが教えに背く行いをしたか、あなたの信仰が足りないことに%sが気付いたか、もしくはその両方の状況です。
+もし信仰値が0になってしまうと、あなたは神に見放されてしまいます。
+信仰値を上げることに本腰を入れるか、神をいらだたせる行為をやめるか、あるいはその両方をするのがよいです。
+どちらにせよ、あなたは信仰についての解説を再読するのがよいでしょう。
+そうするには、<w>[%]</w>を押すか、<w>[Shift]</w>を押しながらプレイヤーキャラクターを<w>[右クリック]</w>してください。
+%%%%
+hint god displeased
+
+おっと、あなたの信仰値がだんだん減っているため%sは不機嫌を募らせています。
+これはあなたが教えに背く行いをしたか、あなたの信仰が足りないことに%sが気付いたか、もしくはその両方の状況です。
+もし信仰値が0になってしまうと、あなたは神に見放されてしまいます。
+信仰値を上げることに本腰を入れるか、神をいらだたせる行為をやめるか、あるいはその両方をするのがよいです。
+どちらにせよ、あなたは信仰についての解説を再読するのがよいでしょう。
+そうするには、<w>[%]</w>を押してください。
+%%%%
+hint excommunicate old piety < 1
+
+#             if (old_piety < 1)
+#             {
+#                 text << "Uh-oh, " << old_god_name << " just excommunicated you "
+#                         "for running out of piety (your divine favour went "
+#                         "to nothing). Maybe you repeatedly violated the "
+#                         "religious rules, or maybe you failed to please your "
+#                         "deity often enough, or some combination of the two. "
+#                         "If you can find an altar dedicated to "
+#                      << old_god_name;
+#             }
+#             else
+#             {
+#                 text << "Should you decide that abandoning " << old_god_name
+#                      << "wasn't such a smart move after all, and you'd like to "
+#                         "return to your old faith, you'll have to find an "
+#                         "altar dedicated to " << old_god_name << " where";
+#             }
+#             text << " you can re-convert, and all will be well. Otherwise "
+#                     "you'll have to weather this god's displeasure until all "
+#                     "divine wrath is spent.";
+おっと、信仰値がなくなってしまったため%sはあなたを見放してしまいました。
+(あなたの神から授けられた諸々は無くなります)
+おそらくあなたは信仰の掟をくり返し破るか、神を十分な頻度で喜ばせるのに失敗したか、あるいはその両方でしょう。
+もしあなたが%sの祭壇を見つけ出せたら再入信することができ、一件落着です。
+そうでない場合、あなたは神の怒りが完全に収まるまでそれにさらされ続けなければいけません。
+%%%%
+hint excommunicate old piety >= 1
+
+もしあなたが%sを見捨てる行為は結局賢い行いではなかったと思い直し、かつての信仰に戻りたいと願うなら、
+再入信するために%sの祭壇を見つけなくてはならないでしょう。そうすれば一件落着です。
+そうでない場合、あなたは神の怒りが完全に収まるまでそれにさらされ続けなければいけません。
+%%%%
+hint excommunicate convert good god -> good god
+
+#                     text << "Fortunately, it seems that " << old_god_name <<
+#                             " didn't mind your converting to " << new_god_name
+#                          << ". ";
+#
+#                     if (old_piety > piety_breakpoint(0))
+#                         text << "You even kept some of your piety! ";
+#
+#                     text << "Note that this kind of alliance only exists "
+#                             "between the three good gods, so don't expect this "
+#                             "to be the norm.";
+幸運にも、%sはあなたが%sに改宗することを気にしないようです。%s
+この同盟関係は三柱の善神の間にのみ成り立ち、通常はそうなることを期待できないことに注意してください。
+%%%%
+You even kept some of your piety!
+
+しかも、信仰値をいくらか維持できます！
+%%%%
+hint excommunicate convert good god -> !hated god
+
+#                     text << "Fortunately, it seems that " << old_god_name <<
+#                             " didn't mind your converting to " << new_god_name
+#                          << ". That's because " << old_god_name << " is one of "
+#                             "the good gods who generally are rather forgiving "
+#                             "about change of faith - unless you switch over to "
+#                             "the path of evil, in which case their retribution "
+#                             "can be nasty indeed!";
+幸運にも、%sはあなたが%sに改宗することを気にしないようです。
+%sは善神のうちの一柱ですので、通常は信仰を変えることを許してくれます――あなたが悪の道に進んだのでなければ。
+その場合に受ける天罰は本当におぞましいものとなりかねません！
+%%%%
+hint excommunicate convert good god -> hated god
+
+#                     text << "Looks like " << old_god_name << " didn't "
+#                             "appreciate your converting to " << new_god_name
+#                          << "! But really, changing from one of the good gods "
+#                             "to an evil one, what did you expect!? For any god "
+#                             "not on the opposing side of the faith, "
+#                          << old_god_name << " would have been much more "
+#                             "forgiving. ";
+どうやら%sはあなたが%sへと改宗するのにいい顔をしないようです！
+しかし実のところ、善神から悪神への改宗なのだから当たり前でしょう！？
+対立する側の信仰への改宗でさえなければ、神はもっと寛大であったでしょう。
+%%%%
+hint excommunicate convert god -> hated god
+
+#                 text << "Looks like " << old_god_name << " didn't appreciate "
+#                         "your converting to " << new_god_name << "! (Actually, "
+#                         "only the three good gods will usually be forgiving "
+#                         "about this kind of faithlessness.) ";
+どうやら%sはあなたが%sへと改宗するのにいい顔をしないようです！
+(実際の所、通常はこのような不信心行為を許してくれるのは三柱の善神だけです)
+%%%%
+hint excommunicate convert angry
+
+#                 text << "Unfortunately, while converting back would appease "
+#                      << old_god_name << ", it would annoy " << new_god_name
+#                      << ", so you're stuck with having to suffer the wrath of "
+#                         "one god or another.";
+不運なことに、%sに再入信することは神の怒りをなだめる一方、今度は%sを苛立たせる羽目になるため、
+あなたはどちらにせよ片方の神の怒りを買うことは避けられません。
+%%%%
+hint wield weapon ranger
+
+#             text << "You can easily switch between weapons in slots a and "
+#                     "b by pressing <w>%</w>.";
+あなたは<w>[%]</w>コマンドで所持品一覧の(a)枠と(b)枠の武器を簡単に持ち替えることができます。
+%%%%
+hint wield weapon other
+
+#             text << "You can easily switch back to your weapon in slot a by "
+#                     "pressing <w>%</w>. To change the slot of an item, type "
+#                     "<w>%i</w> and choose the appropriate slots.";
+<w>[%]</w>を押すことによって、簡単に所持品一覧の(a)枠の武器に持ち換えることができます。
+アイテムの枠を変更するには、<w>[%i]</w>を押して所定のキーを選択してください。
+%%%%
+hint fleeing monster
+
+#         text << "Now that monster is scared of you! Note that you do not "
+#                 "absolutely have to follow it. Rather, you can let it run "
+#                 "away. Sometimes, though, it can be useful to attack a "
+#                 "fleeing creature by throwing something after it. If you "
+#                 "have any stones in your <w>%</w>nventory, you can look "
+#                 "at one of them to read an explanation of how to do this.";
+今モンスターはあなたに怯えています！
+あなたがそれに付いていく必要は全くないことに注意してください。
+むしろ逃げ去るままにしておくこともできます。
+しかし、逃げ出しているモンスターに何かを投げて攻撃することも時々は有効です。
+所持品一覧('<w>i</w>')に石がもし含まれていれば、説明文を読んでどうすればよいか見ることができます。
+%%%%
+hint monster brand use tile
+
+#         text << "That monster looks a bit unusual. You might wish to examine "
+#                 "it a bit more closely by "
+# #ifdef USE_TILE
+#                 "hovering your mouse over its tile.";
+# #else
+#                 "pressing <w>%</w> and moving the cursor onto its square.";
+#         cmd.push_back(CMD_LOOK_AROUND);
+# #endif
+あのモンスターは少し違って見えます。
+あなたはマウスをその上に動かしてもう少し詳しく調べたくなるかもしれません。
+%%%%
+hint monster brand
+
+あのモンスターは少し違って見えます。
+あなたは<w>[%]</w>を押した後カーソルをその上に動かしてもう少し詳しく調べたくなるかもしれません。
+%%%%
+hint monster friendly
+
+#         text << "That monster is friendly to you and will attack your "
+#                 "enemies, though you'll get only part of the experience for "
+#                 "monsters damaged by allies, compared to what you'd get for "
+#                 "doing all the work yourself. You can command your allies by "
+#                 "pressing <w>%</w>.";
+このモンスターはあなたに友好的で敵に対し攻撃してくれますが、自分で全部片付けるのに対し、
+仲間がモンスターを攻撃して得られる経験値はその一部だけとなります。
+仲間に対して<w>[%]</w>を押して指示を出すことができます。
+%%%%
+hint monster friendly !att wont attack
+
+#             text << "\nHowever, it is only <w>temporarily</w> friendly, and "
+#                     "will become dangerous again when this friendliness "
+#                     "wears off.";
+しかしあくまで<w>一時的</w>に友好なだけであり、友情が過ぎ去ってしまえば再び危険な存在に戻るでしょう。
+%%%%
+hint monster shout !vis
+
+#             text << "Uh-oh, some monster noticed you, either one that's "
+#                     "around a corner or one that's invisible. Plus, the "
+#                     "noise it made will alert other monsters in the "
+#                     "vicinity, who will come to check out what the commotion "
+#                     "was about.";
+おっと、曲がり角の向こうにいるか、目に見えないモンスターがあなたに気付きました。
+それに加え、モンスターが立てた物音は近辺にいる他のモンスターに警告を与え、
+そいつらは何の騒ぎが起きたかを確認しにやってきます。
+%%%%
+hint monster shout !mons_can_shout
+
+#             text << "Uh-oh, that monster noticed you! Fortunately, it "
+#                     "didn't make any noise, but many monsters do make "
+#                     "noise when they notice you. That will alert other "
+#                     "monsters in the area, who will come to check out what "
+#                     "the commotion was about.";
+おっと、あのモンスターはあなたに気付きました！
+幸運にもあのモンスターは音を立てることはありませんが、多くのモンスターはあなたに気付いたときに音を発します。
+特定の範囲にいる他のモンスターに警告を与え、そいつらは何の騒ぎが起きたかを確認しにやってきます。
+%%%%
+hint monster shout
+
+#             text << "Uh-oh, that monster noticed you! Plus, the "
+#                     "noise it made will alert other monsters in the "
+#                     "vicinity, who will come to check out what the commotion "
+#                     "was about.";
+おっと、あのモンスターはあなたに気付きました！
+それに加え、モンスターが立てた物音は近辺にいる他のモンスターに警告を与え、
+そいつらは何の騒ぎが起きたかを確認しにやってきます。
+%%%%
+hint monster left los
+
+#         text << m->name(DESC_THE, true) << " didn't vanish, but merely "
+#                 "moved onto a square which you can't currently see. It's still "
+#                 "nearby, unless something happens to it in the short amount of "
+#                 "time it's out of sight.";
+モンスターは消えたのではなく、単にあなたから見えない位置のマスに移動したにすぎません。
+視界外にいるわずかな時間のうちに何かが起こったのでない限り、モンスターは近くにいます。
+%%%%
+hint seen zero exp mon use tile
+
+#         text << "That ";
+# #ifdef USE_TILE
+#         // need to highlight monster
+#         tiles.place_cursor(CURSOR_TUTORIAL, gc);
+#         tiles.add_text_tag(TAG_TUTORIAL, *mi);
+#
+#         text << "is a ";
+# #else
+#         text << glyph_to_tagstr(get_mons_glyph(*mi)) << " is a ";
+# #endif
+#         text << mi->proper_name_en(DESC_PLAIN).c_str() << ". ";
+#
+#         text << "While <w>technically</w> a monster, it's more like "
+#                 "dungeon furniture, since it's harmless and doesn't move. "
+#                 "If it's in your way you can attack and kill it like other "
+#                 "monsters, but you won't get any experience for doing so. ";
+あれは%sです。
+<w>技術的にいうと</w>モンスター扱いですが、無害で動かないためダンジョンの一部のようなものです。
+もしあなたの行く先にそれがあった場合、攻撃して他のモンスターのように「殺して」しまうこともできますが、
+そういった行為では一切経験値は得られません。
+%%%%
+hint seen zero exp mon
+
+あの %s は%sです。
+<w>技術的にいうと</w>モンスター扱いですが、無害で動かないためダンジョンの一部のようなものです。
+もしあなたの行く先にそれがあった場合、攻撃して他のモンスターのように「殺して」しまうこともできますが、
+そういった行為では一切経験値は得られません。
+%%%%
+hint abyss
+
+#         text << "Uh-oh, you've wound up in the Abyss! The Abyss is a special "
+#                 "place where you cannot remember or map where you've been; it "
+#                 "is filled with nasty monsters, and you're probably going to "
+#                 "die.\n";
+#         text << "To increase your chances of survival until you can find the "
+#                 "exit"
+# #ifndef USE_TILE
+#                 " (a flickering <w>"
+#              << stringize_glyph(get_feat_symbol(DNGN_EXIT_ABYSS))
+#              << "</w>)"
+# #endif
+#                 ", keep moving, don't fight any of the monsters, and don't "
+#                 "chase after items on the ground. If monsters are closing in, "
+#                 "try to use items of hasting to get away.";
+おっと、あなたはアビスに落とされました！
+アビスはあなたがいた階層を記録・記憶することのできない特殊な場所で、
+おぞましいモンスターで満ちあふれており、あなたはおそらく死んでしまうでしょう。
+出口(きらきら輝く'%s')を探し出すまで生き延びる確率を上げるには、常に移動し続け、モンスターと戦わず、
+そして地面に落ちているアイテムを追わないことです。
+もしモンスターが迫ってきたら、逃げるために動きを速くするアイテムの使用を試してみましょう。
+%%%%
+hint abyss use tile
+
+おっと、あなたはアビスに落とされました！
+アビスはあなたがいた階層を記録・記憶することのできない特殊な場所で、
+おぞましいモンスターで満ちあふれており、あなたはおそらく死んでしまうでしょう。
+出口を探し出すまで生き延びる確率を上げるには、常に移動し続け、モンスターと戦わず、
+そして地面に落ちているアイテムを追わないことです。
+もしモンスターが迫ってきたら、逃げるために動きを速くするアイテムの使用を試してみましょう。
 %%%%
 hint spell miscast use tile local
 
@@ -158,7 +1775,7 @@ hint spell miscast use tile local
 #                     "to check your current failure rates.";
 魔法に失敗すると嫌な結果をもたらします。 難しい魔法の場合は特にそうです。
 魔法の成功しやすさは魔術系スキルを鍛えるか、 特定のアイテムを利用することにより向上します。
-<w>[%]</w>コマンド、 もしくは呪文のアイコンの上にマウスオーバーすることで失敗率を調べることができます。
+<w>[%]</w>コマンド、 もしくは呪文のアイコンの上にマウスを動かすことで失敗率を調べることができます。
 %%%%
 hint spell miscast
 
@@ -166,9 +1783,1423 @@ hint spell miscast
 魔法の成功しやすさは魔術系スキルを鍛えるか、 特定のアイテムを利用することにより向上します。
 <w>[%]</w>コマンドで失敗率を調べることができます。
 %%%%
+You just miscast a spell.
+
+あなたは今魔法を唱えるのを失敗しました。
+%%%%
+hint spell miscast heavy armour
+
+#             text << "Wearing heavy body armour or using a shield, especially a "
+#                     "large one, can severely hamper your spellcasting "
+#                     "abilities. You can check the effect of this by comparing "
+#                     "the failure rates on the <w>%\?</w> screen with and "
+#                     "without the item being worn.\n\n";
+重い胴鎧を着たり、盾(特に大きいもの)を使うのは呪文の詠唱能力をいくらか妨げます。
+そのアイテムを装備したり外したりしながら<w>[%\?]</w>を押した画面で失敗率を比較してその効果を確認することができます。
+%%%%
+hint spell miscast 2
+
+#         text << "If the spellcasting success chance is high (which can be "
+#                 "checked by entering <w>%\?</w> or <w>%</w>) then a miscast "
+#                 "merely means the spell is not working, along with a harmless "
+#                 "side effect. "
+#                 "However, for spells with a high failure rate, there's a "
+#                 "chance of contaminating yourself with magical energy, plus a "
+#                 "chance of an additional harmful side effect. Normally this "
+#                 "isn't a problem, since magical contamination bleeds off over "
+#                 "time, but if you're repeatedly contaminated in a short amount "
+#                 "of time you'll mutate or suffer from other ill side effects."
+#                 "\n\n";
+If the spellcasting success chance is high (which can be checked by entering <w>%\?</w> or <w>%</w>) then a miscast merely means the spell is not working, along with a harmless side effect.
+
+もし呪文詠唱の成功率(<w>[%\?]</w>や<w>[%]</w>を押した画面で確認できます)が高い場合は、
+魔法失敗は単に呪文がうまく働かなかっただけのことを意味し、無害な副作用しか起きません。
+しかし失敗率の高い呪文については、あなたが魔力に汚染される危険、およびさらなる有害な副作用をもたらす危険が存在します。
+魔力汚染はゆっくりと自然に排出されるため普通は問題となりませんが、
+もしあなたが短期間のうちにくり返し魔力に汚染されると、突然変異したりその他の悪い副作用を患うこととなるでしょう。
+%%%%
+hint spell miscast 3
+
+#         text << "Note that a miscast spell will still consume the full amount "
+#                 "of MP and nutrition that a successfully cast spell would.";
+魔法失敗の際でも、成功したときと全く同じ量の魔力と満腹値を消費することに注意してください。
+%%%%
+hint spell hunger use tile
+
+#         text << "The spell you just cast made you hungrier; you can see how "
+#                 "hungry spells make you by "
+# #ifdef USE_TILE
+#                 "examining your spells in the spell display, or by "
+# #endif
+#                 "entering <w>%\?!</w> or <w>%I</w>. "
+#                 "The amount of nutrition consumed increases with the level of "
+#                 "the spell and decreases depending on your intelligence stat "
+#                 "and your Spellcasting skill. If both of these are high "
+#                 "enough a spell might even not cost you any nutrition at all.";
+あなたが今唱えた呪文はあなたをより空腹にします。
+どのくらい呪文が満腹値を減らすかは、呪文選択画面で調べるか、
+<w>[%\?!]</w>や<w>[%I]</w>を押すなどして知ることができます。
+消費される満腹値は呪文のレベルによって上昇し、あなたの知力と呪文詠唱スキルによって減少します。
+もし双方が十分高ければ、呪文を使っても全く満腹値を消費しないということさえあるかもしれません。
+%%%%
+hint spell hunger
+
+あなたが今唱えた呪文はあなたをより空腹にします。
+どのくらい呪文が満腹値を減らすかは、<w>[%\?!]</w>や<w>[%I]</w>を押すなどして知ることができます。
+消費される満腹値は呪文のレベルによって上昇し、あなたの知力と呪文詠唱スキルによって減少します。
+もし双方が十分高ければ、呪文を使っても全く満腹値を消費しないということさえあるかもしれません。
+%%%%
+hint glowing
+
+#         text << "You've accumulated so much magical contamination that you're "
+#                 "glowing! You usually acquire magical contamination from using "
+#                 "some powerful magics, like invisibility or haste, or from "
+#                 "miscasting spells. ";
+#
+#         if (!player_severe_contamination())
+#         {
+#             text << "As long as the status only shows in grey nothing will "
+#                     "actually happen as a result of it, but as you continue "
+#                     "suffusing yourself with magical contamination you'll "
+#                     "eventually start glowing for real, which ";
+#         }
+#         else
+#         {
+#             text << "This normally isn't a problem as contamination slowly "
+#                     "bleeds off on its own, but it seems that you've "
+#                     "accumulated so much contamination over a short amount of "
+#                     "time that it ";
+#         }
+#         text << "can have nasty effects, such as mutating you or dealing direct "
+#                 "damage. In addition, glowing is going to make you much more "
+#                 "noticeable.";
+あなたは魔力汚染を多く蓄積したため光り輝いています！
+通常の場合、透明化や加速などの強力な魔法を使ったり、魔法を失敗したりすることで魔力汚染を受けます。
+ステータス表示が暗い灰色で表示されている間は実際には何も起きませんが、
+しかしあなたが魔力汚染にさらされ続けると、やがて本当に光を発するようになり、
+突然変異を引き起こしたり直接ダメージを受けるなどといった嫌な効果をもたらすことがあります。
+加えて、光を放つことはあなたの存在をより目立たせる働きがあります。
+%%%%
+hint glowing player severe contamination
+
+あなたは魔力汚染を多く蓄積したため光り輝いています！
+通常の場合、透明化や加速などの強力な魔法を使ったり、魔法を失敗したりすることで魔力汚染を受けます。
+魔力汚染はゆっくりと自然に排出されるため普通は問題となりませんが、
+どうやらあなたは短期間のうちに多くの魔力汚染を蓄積したらしく、突然変異を引き起こしたり
+直接ダメージを受けるなどといった嫌な効果をもたらすことがあります。
+加えて、光を放つことはあなたの存在をより目立たせる働きがあります。
+%%%%
+hint you resist use tile
+
+#         text << "There are many dangers in Crawl. Luckily, there are ways to "
+#                 "(at least partially) resist some of them, if you are "
+#                 "fortunate enough to find them. There are two basic variants "
+#                 "of resistances: the innate magic resistance that depends on "
+#                 "your species, grows with experience level, and protects "
+#                 "against hostile enchantments; and the specific resistances "
+#                 "against certain types of magic and also other effects, e.g. "
+#                 "fire or draining.\n"
+#                 "You can find items in the dungeon or gain mutations that will "
+#                 "increase (or lower) one or more of your resistances. To view "
+#                 "your current set of resistances, "
+# #ifdef USE_TILE
+#                 "<w>right-click</w> on the player avatar.";
+# #else
+#                 "press <w>%</w>.";
+#         cmd.push_back(CMD_RESISTS_SCREEN);
+# #endif
+クロウルのダンジョンには多くの危険が存在します。
+幸運にも、それらのうちのいくつかを(少なくとも部分的には)耐えるための方法が複数存在します。
+もしあなたがそれを手に入れることができたら、の話ですが。
+耐性には大きく分けて二つの種類があります。
+ひとつはあなたの種族により先天的に備わっている魔法耐性で、経験レベルが上がることによって成長し、
+敵対的な魔法から身を守ります。
+もうひとつは魔法やその他が持つ、例えば火炎や衰弱など、の種別に対する耐性です。
+あなたは耐性を一個かそれ以上増やす(または減らす)アイテムをダンジョン内で見つけたり、またはそうした突然変異を得たりすることができます。
+あなたが今備えている耐性一覧を見るには、プレイヤーキャラクターを<w>[右クリック]</w>してください。
+%%%%
+hint you resist
+
+クロウルのダンジョンには多くの危険が存在します。
+幸運にも、それらのうちのいくつかを(少なくとも部分的には)耐えるための方法が複数存在します。
+もしあなたがそれを手に入れることができたら、の話ですが。
+耐性には大きく分けて二つの種類があります。
+ひとつはあなたの種族により先天的に備わっている魔法耐性で、経験レベルが上がることによって成長し、
+敵対的な魔法から身を守ります。
+もうひとつは魔法やその他が持つ、例えば火炎や衰弱など、の種別に対する耐性です。
+あなたは耐性を一個かそれ以上増やす(または減らす)アイテムをダンジョン内で見つけたり、またはそうした突然変異を得たりすることができます。
+あなたが今備えている耐性一覧を見るには、<w>[%]</w>を押してください。
+%%%%
+hint caught in net
+
+#         text << "While you are held in a net, you cannot move around or engage "
+#                 "monsters in combat. Instead, any movement you take is counted "
+#                 "as an attempt to struggle free from the net.";
+あなたが網に絡めとられている間は、あちこち動き回ったりモンスターと交戦することができません。
+その代わり、あなたがする動きは全て網からもがいて逃れるのを試行したものとして扱われます。
+%%%%
+hint caught in net conjurer
+
+#             text << " Note that casting spells is still very much possible, "
+#                     "as is using wands, scrolls and potions.";
+呪文を唱えることはワンド・巻物・水薬を使用するのと同様、一切不都合がないことに注意してください。
+%%%%
+hint caught in net non-conjurer
+
+#             text << " Note that using wands, scrolls and potions is still "
+#                     "very much possible.";
+ワンド・巻物・水薬を使用するのには一切不都合がないことに注意してください。
+%%%%
+hint you silence use tile
+
+#         text << "While you are silenced, you cannot cast spells, read scrolls "
+#                 "or use divine invocations. The same is true for any monster "
+#                 "within the effect radius. The field of silence (recognizable "
+#                 "by "
+# #ifdef USE_TILE
+#                 "the special-looking frame tiles"
+# #else
+#                 "different-coloured floor squares"
+# #endif
+#                 ") is always centered on you and will move along with you. "
+#                 "The radius will gradually shrink, eventually making you the "
+#                 "only one affected, before the effect fades entirely.";
+あなたが静寂に包まれている間、呪文を唱えることや巻物を読むこと、および神から授かった能力を使うことができなくなります。
+これはその効果が及ぶ範囲内にいる全てのモンスターについても同様です。
+静寂効果の範囲(特別な見た目の枠で囲まれたマスで示される)は常にあなたを中心とし、あなたが移動するのに付いてきます。
+効果範囲は次第に狭まり、やがてあなた自身にだけ影響を及ぼすようになり、その後完全に効果が消滅します。
+%%%%
+hint you silence
+
+あなたが静寂に包まれている間、呪文を唱えることや巻物を読むこと、および神から授かった能力を使うことができなくなります。
+これはその効果が及ぶ範囲内にいる全てのモンスターについても同様です。
+静寂効果の範囲(異なる色で表示されたマスで示される)は常にあなたを中心とし、あなたが移動するのに付いてきます。
+効果範囲は次第に狭まり、やがてあなた自身にだけ影響を及ぼすようになり、その後完全に効果が消滅します。
+%%%%
+Welcome back! If it's been a while, you may want to refresh your memory.
+
+お帰りなさい！ もし長いこと中断していたなら、記憶を新たにしたくなるかもしれませんね。
+%%%%
+Your <w>%</w>nventory
+
+所有物一覧 (<w>%</w>)
+%%%%
+your spells (<w>%?</w>)
+
+習得した呪文一覧 (<w>%?</w>)
+%%%%
+your <w>%</w>bilities
+
+能力一覧 (<w>%</w>)
+%%%%
+your set of mutations (<w>%</w>)
+
+突然変異一覧 (<w>%</w>)
+%%%%
+your religious standing (<w>%</w>)
+
+信仰の状況 (<w>%</w>)
+%%%%
+the message history (<w>%</w>)
+
+メッセージ履歴 (<w>%</w>)
+%%%%
+the character overview screen (<w>%</w>)
+
+キャラクター情報画面 (<w>%</w>)
+%%%%
+the dungeon overview screen (<w>%</w>)
+
+ダンジョン概要画面 (<w>%</w>)
+%%%%
+are good things to check.
+
+をチェックしておくのは良いことです。
+%%%%
+hint autopickup thrown
+
+#         text << "When stepping on items you've thrown, they will be "
+#                 "picked up automatically.";
+あなたが投擲/射撃したアイテムの上に立つと、自動的に拾い上げられます。
+%%%%
+hint gained spellcasting use tile
+
+#         text << "As your Spellcasting skill increases, you will be able to "
+#              << "memorise more spells, and will suffer less hunger and "
+#              << "somewhat fewer failures when you cast them.\n"
+#              << "Press <w>%</w> "
+# #ifdef USE_TILE_LOCAL
+#              << "(or click on the <w>skill button</w> in the command panel) "
+# #endif
+#              << "to have a look at your skills and manage their training.";
+あなたの呪文詠唱スキルが上昇するにつれて、さらに呪文を習得することができるようになり、
+消費する満腹値が減ったり、呪文を唱えた際の成功率がいくらか高まったりします。
+あなたの持つスキルを一覧したり訓練状況を管理したりするために、
+<w>[%]</w>(あるいはコマンドパネルの<w>スキルボタン</w>)を押しましょう。
+%%%%
+hint gained spellcasting
+
+あなたの呪文詠唱スキルが上昇するにつれて、さらに呪文を習得することができるようになり、
+消費する満腹値が減ったり、呪文を唱えた際の成功率がいくらか高まったりします。
+あなたの持つスキルを一覧したり訓練状況を管理したりするために、<w>[%]を押しましょう。
+%%%%
+hint fumbling shallow water
+
+#         text << "Fighting in shallow water will sometimes cause you to slip "
+#                 "and fumble your attack. If possible, try to fight on "
+#                 "firm ground.";
+浅い水場で戦うと、足を滑らせたり攻撃に失敗したりします。
+可能なら、しっかりとした足場で戦うようにしましょう。
+%%%%
+hint cloud warning
+
+#         text << "Rather than step into this cloud and hurt yourself, you "
+#                 "should either wait for a few turns to see if it "
+#                 "vanishes (with <w>%</w>), or just step around it.";
+雲の中に踏み入って傷つくよりも、それが消えるまで('<w>%</w>'を押して)何ターンかの間待つか、
+単に周囲をうろついたほうがよいでしょう。
+%%%%
+You've found something new (but I don't know what)!
+
+# 訳不要
+%%%%
 hint animate corpse skeleton
 
 #         text << "As long as a monster has a skeleton, Animate Skeleton also "
 #                 "works on unskeletalized corpses.";
 モンスターが骨を持っているのなら、スケルトンの造成の呪文は白骨化していない死体に対しても有効です。
+%%%%
+hints abilities info
+
+#     string broken = "This screen shows your character's set of talents. "
+#         "You can gain new abilities via certain items, through religion or by "
+#         "way of mutations. Activation of an ability usually comes at a cost, "
+#         "e.g. nutrition or Magic power. Press '<w>!</w>' or '<w>?</w>' to "
+#         "toggle between ability selection and description.";
+この画面ではあなたのキャラクターが持つ能力の一覧が表示されます。
+特定のアイテム、信仰、突然変異などによって新たな能力を得ることができます。
+能力の発動には通常の場合満腹値や魔力などといったコストがかかります。
+'<w>!</w>'や'<w>?</w>'を押すことで、能力の選択操作と解説操作を切り替えできます。
+%%%%
+hints skills info
+
+#     string broken = "This screen shows the skill set of your character. "
+#         "The number next to the skill is your current level, the higher the "
+#         "better. The <brown>brown percent value</brown> shows how much "
+#         "experience is allocated to go towards that skill. "
+#         "You can toggle which skills to train by "
+#         "pressing their slot letters. A <darkgrey>grey</darkgrey> skill "
+#         "will not be trained and ease the training of others.";
+この画面ではあなたのキャラクターのスキルセットが表示されます。
+スキル名の右に表示される数字は現在のレベルを指し、高いほど良いです。
+<brown>茶色でパーセント表示された数値</brown>は経験値がどの程度の割合振分けられているかを表します。
+どのスキルを訓練をするかを、それに割り当てられた文字を押すことで切り替えできます。
+<darkgrey>暗い灰色</darkgrey>のスキルは訓練されておらず、他のスキルの訓練を楽にします。
+%%%%
+hints skill training info
+
+#     string broken = "The training percentage (in <brown>brown</brown>) "
+#         "shows the relative amount of the experience gained which will be "
+#         "used to train each skill. It is automatically set depending on "
+#         "which skills you have used recently. Disabling a skill sets the "
+#         "training rate to 0.";
+トレーニング割合(<brown>茶色</brown>で表示)は各スキルを鍛えるのに使われる
+経験値の相対量を示します。
+その割合はあなたが最近どのスキルを使用したかによって自動的に設定されます。
+スキルを無効にすると、トレーニング割合は0に設定されます。
+%%%%
+hints skills description info
+
+#     string broken = "This screen shows the skill set of your character. "
+#                     "Press the letter of a skill to read its description, or "
+#                     "press <w>?</w> again to return to the skill selection.";
+この画面ではあなたのキャラクターのスキルセットが表示されます。
+各スキルに割り当てられた文字を押して解説文を読むか、
+再度<w>[?]</w>を押してスキル選択画面に戻りましょう。
+%%%%
+hints target mode
+
+# 他のヒントメッセージからは "You'll～"でこのメッセージに繋がるため訳を合わせる
+
+#     result = "then be taken to target mode with the nearest monster or "
+#              "previous target already targeted. You can also cycle through "
+#              "all hostile monsters in sight with <w>+</w> or <w>-</w>. "
+#              "Once you're aiming at the correct monster, simply hit "
+#              "<w>f</w>, <w>Enter</w> or <w>.</w> to shoot at it. "
+#              "If you miss, <w>";
+#
+#     command_type cmd;
+#     if (spells)
+#     {
+#         result = make_stringf(result.c_str(), "%ap");
+#         cmd = CMD_CAST_SPELL;
+#     }
+#     else
+#     {
+#         result = make_stringf(result.c_str(), "%f");
+#         cmd = CMD_FIRE;
+#     }
+#
+#     result += "</w> fires at the same target again.";
+照準モードに移行し、一番近くにいる敵か、もしくは以前照準済みの目標に照準が合うだろう。
+あなたは視界内の全ての敵対的なモンスターを<w>[+]</w>または<w>[-]</w>で順繰りに選択することができる。
+目的通りのモンスターに照準したら、あとは単純に<w>[f]</w>、<w>[Enter]</w>、あるいは<w>[.]</w>を押して射撃する。
+もし外してしまったら、<w>[%]</w>を押して再び同じ目標に射撃すること。
+%%%%
+To do this,
+
+これを使うには、
+%%%%
+first <w>%</w>ield it
+
+まず<w>[%]</w>を押して装備し、
+%%%%
+first <w>%</w>ear it
+
+まず<w>[%]</w>を押して装備し、
+%%%%
+first <w>%</w>ut it on
+
+まず<w>[%]</w>を押して身につけ、
+%%%%
+<r>(BUG! this item shouldn't give an ability)</r>
+
+# 訳不要
+%%%%
+, then
+
+、そして
+%%%%
+hints abiliities
+
+#     str += "enter the ability menu with <w>%</w>, and then "
+#            "choose the corresponding ability. Note that such an attempt of "
+#            "activation, especially by the untrained, is likely to fail.";
+<w>[%]</w>を押して能力メニューに入り、対応する能力を選択する。
+このような能力発動の試みは、特に未熟なうちは失敗しやすいことに注意すること。
+%%%%
+hints throw stuff
+
+#    result  = "To do this, type <w>%</w> to fire, then <w>";
+#    result += item.slot;
+#    result += "</w> for ";
+#    result += (item.quantity > 1 ? "these" : "this");
+#    result += " ";
+#    result += item_base_name(item);
+#    result += (item.quantity > 1? "s" : "");
+#    result += ". You'll ";
+#    result += _hints_target_mode();
+そうするには、<w>[%%]</w>を押した後この%sを%s。
+すると%s
+%%%%
+# hints describe item ～ 系はアイテム解説文に付加されるため、だ・である体に統一
+%%%%
+hints describe item weapon gives ability
+
+#                     ostr << "When wielded, some weapons (such as this one) "
+#                             "offer certain abilities you can activate. ";
+武器として手に持った時、いくつかの種類の武器(例えばこれ)は特定の発動可能な能力をもたらす。
+%%%%
+hints describe item weapon gives resistance use tile
+
+#                     ostr << "\nThis weapon offers its wearer protection from "
+#                             "certain sources. For an overview of your "
+#                             "resistances (among other things) type <w>%</w>"
+# #ifdef USE_TILE
+#                             " or click on your avatar with the <w>right mouse "
+#                             "button</w>"
+# #endif
+#                             ".";
+この武器は装備する者に特定の対象から守る力を与える。
+(他のアイテム等からのものも含め)あなたの持つ耐性の概要を表示するには<w>[%]</w>を押すか、
+キャラクター自身を<w>[右クリック]</w>すること。
+%%%%
+hints describe item weapon gives resistance
+
+この武器は装備する者に特定の対象から守る力を与える。
+(他のアイテム等からのものも含め)あなたの持つ耐性の概要を表示するには<w>[%]</w>を押すこと。
+%%%%
+hints describe item weapon !wielded
+
+#                 ostr << "You can wield this weapon with <w>%</w>, or use "
+#                         "<w>%</w> to switch between the weapons in slot "
+#                         "a and b. (Use <w>%i</w> to adjust item slots.)";
+あなたはこれを<w>[%]</w>コマンドで武器として手に持つことができる。
+<w>[%]</w>コマンドで所持品一覧の(a)枠と(b)枠の武器を持ち替えることができる。
+(アイテム枠の調整を行うには<w>[%i]</w>コマンドを用いる)
+%%%%
+hints describe item weapon !wielded !bestskill
+
+#                     ostr << "\nHowever, you've been training in <w>"
+#                          << skill_name(best_wpskill)
+#                          << "</w> for a while, so maybe you should "
+#                             "continue training that rather than <w>"
+#                          << skill_name(curr_wpskill)
+#                          << "</w>. (Type <w>%</w> to see the skill "
+#                             "management screen for the actual numbers.)";
+とはいえ、あなたは%sスキルをしばらく訓練してきたので、%sスキルに切り替えるより
+そのまま訓練を続けるべきだろう。
+(スキル管理画面で実際のスキルレベル数を見るには<w>[%%]</w>を押すこと)
+%%%%
+hints describe item weapon wielded range weapon use tile
+
+#                     ostr << "To attack a monster, ";
+# #ifdef USE_TILE
+#                     ostr << "if you have appropriate ammo quivered you can "
+#                             "<w>left mouse click</w> on the monster while "
+#                             "prssing the <w>Shift key</w>. Alternatively, "
+#                             "you can <w>left mouse click</w> on the tile for "
+#                             "the ammo you wish to fire, and then <w>left "
+#                             "mouse click</w> on the monster.\n\n";
+#                     ostr << "To launch ammunition using the keyboard, ";
+# #endif
+#                     ostr << "you only need to "
+#                             "<w>%</w>ire the appropriate type of ammunition. "
+#                             "You'll ";
+#                     */
+#                     ostr << _hints_target_mode();
+モンスターを攻撃するには、もし適した矢弾が射撃準備済みなら<w>[Shift]</w>を押しながら
+モンスターを<w>[左クリック]</w>する。
+代替手段として、撃ちたい矢弾のアイコンを<w>[左クリック]</w>し、そしてモンスターを
+<w>[左クリック]</w>することができる。
+キーボードを操作する場合、ただ<w>[%]</w>を押してそれに適した矢弾を射撃すればよい。
+すると
+%%%%
+hints describe item weapon wielded range weapon
+
+モンスターを攻撃するには、ただ<w>[%]</w>を押してそれに適した矢弾を射撃すればよい。
+すると
+%%%%
+hints describe item weapon wielded melee weapon
+
+モンスターを攻撃するには、ただモンスターのいる場所に歩けばよい。
+%%%%
+hints describe item weapon unknown artefact
+
+#                 ostr << "\n\nWeapons and armour that have unusual descriptions "
+#                      << "like this are much more likely to be of higher "
+#                      << "enchantment or have special properties, good or bad.";
+このような普通でない説明が付いている武器や防具は、いいにせよ悪いにせよ、
+さらなる魔力強化がされていたり、特別な性能を持っている可能性が高い。
+%%%%
+hints describe item weapon cursed
+
+#                 ostr << "\n\nOnce wielded, a cursed weapon can't be "
+#                         "unwielded until the curse has been lifted by "
+#                         "reading a scroll of remove curse.";
+呪われた武器を一度手に持つと、解呪の巻物を読んで呪いを解くまで手放すことはできない。
+%%%%
+hints describe item missiles throwable
+
+#                 ostr << item.name(DESC_YOUR)
+#                      << " can be <w>%</w>ired without the use of a launcher. ";
+#                 ostr << _hints_throw_stuff(item);
+<w>[%%]</w>コマンドを用いることで射撃武器を用いることなしにあなたの持つ%sを投擲できる。
+%%%%
+hints describe item missiles launched use tile
+
+#                 ostr << "As you're already wielding the appropriate launcher, "
+#                         "you can simply ";
+# #ifdef USE_TILE
+#                 ostr << "<w>left mouse click</w> on the monster you want "
+#                         "to hit while pressing the <w>Shift key</w>. "
+#                         "Alternatively, you can <w>left mouse click</w> on "
+#                         "this tile of the ammo you want to fire, and then "
+#                         "<w>left mouse click</w> on the monster you want "
+#                         "to hit.\n\n"
+#
+#                         "To launch this ammo using the keyboard, you can "
+#                         "simply ";
+# #endif
+#
+#                 ostr << "<w>%</w>ire "
+#                      << (item.quantity > 1 ? "these" : "this")
+#                      << " " << item.name(DESC_BASENAME)
+#                      << (item.quantity > 1? "s" : "")
+#                      << ". You'll ";
+#                 ostr << _hints_target_mode();
+あなたは既にそれに適した射出道具を手にしているので、
+単純に<w>[Shift]</w>を押しながら射撃したいモンスターを<w>[左クリック]</w>して撃つことができる。
+代替手段として、射撃したい矢弾のアイコンを<w>[左クリック]</w>し、
+そして対象としたいモンスターを<w>[左クリック]</w>して攻撃することができる。
+
+キーボードを操作する場合、単純にその%sを<w>[%]</w>コマンドで撃つことができる。
+そうすれば
+%%%%
+hints describe item missiles launched
+
+あなたは既にそれに適した射出道具を手にしているので、単純にその%sを<w>[%]</w>コマンドで撃つことができる。
+そうすれば
+%%%%
+hints describe item missiles other
+
+#                 ostr << "To shoot "
+#                      << (item.quantity > 1 ? "these" : "this")
+#                      << " " << item.name(DESC_BASENAME)
+#                      << (item.quantity > 1? "s" : "")
+#                      << ", first you need to <w>%</w>ield an appropriate "
+#                         "launcher.";
+この%sを射撃するには、<w>[%]</w>コマンドでそれに適した射撃道具を装備すること。
+%%%%
+hints describe item armour centaur
+
+#                 ostr << "As a Centaur you cannot wear boots. "
+#                         "(Type <w>%</w> to see a list of your mutations and "
+#                         "innate abilities.)";
+あなたはセントールなのでブーツを履くことができない。
+(突然変異および先天的能力の一覧を見るには<w>[%]</w>を押すこと)
+%%%%
+hints describe item armour minotaur
+
+#                 ostr << "As a Minotaur you cannot wear helmets. "
+#                         "(Type <w>%</w> to see a list of your mutations and "
+#                         "innate abilities.)";
+あなたはミノタウロスなので硬い兜をかぶることができない。
+(突然変異および先天的能力の一覧を見るには<w>[%]</w>を押すこと)
+%%%%
+hints describe item armour centaur barding
+
+#                 ostr << "Only centaurs can wear centaur barding.";
+セントールの馬甲を装備できるのはセントールだけだ。
+%%%%
+hints describe item armour naga barding
+
+#                 ostr << "Only nagas can wear naga barding.";
+ナーガの具装を装備できるのはナーガだけだ。
+%%%%
+hints describe item armour use tile
+
+#                 ostr << "You can wear pieces of armour with <w>%</w> and take "
+#                         "them off again with <w>%</w>"
+# #ifdef USE_TILE
+#                         ", or, alternatively, simply click on their tiles to "
+#                         "perform either action."
+# #endif
+#                         ".";
+あなたは防具を<w>[%]</w>コマンドで装備し、<w>[%]</w>コマンドで脱ぐことができる。
+また代替手段として、タイルを<w>[クリック]</w>することでそれぞれの行動を取ることができる。
+%%%%
+hints describe item armour
+
+あなたは防具を<w>[%]</w>コマンドで装備し、<w>[%]</w>コマンドで脱ぐことができる。
+%%%%
+hints describe item armour conjurer !lightarmour
+
+#                 ostr << "\nNote that body armour with a high encumbrance "
+#                         "rating may hinder your ability to cast spells. Light "
+#                         "armour such as robes and leather armour will be "
+#                         "generally safe for any aspiring spellcaster.";
+高い行動阻害レートを持った胴鎧はあなたが呪文を唱える能力を妨げることに注意すること。
+ローブやレザーアーマーといった軽鎧は向上心のある魔法使いにとって一般的には安全である。
+%%%%
+hints describe item armour conjurer shield
+
+#                 ostr << "\nNote that shields will hinder your ability to "
+#                         "cast spells, until you've gained enough Shields "
+#                         "skill to remove the penalty.";
+盾の装備は、あなたが十分盾スキルを鍛えてペナルティをなくさない限り、呪文を唱える能力を妨げることに注意すること。
+%%%%
+hints describe item armour ranger shield
+
+#                 ostr << "\nNote that many ranged weapons are two handed and so "
+#                         "cannot be used with a shield.";
+多くの射撃武器は両手持ち用であるため、その場合盾と一緒には使用できないことに注意すること。
+%%%%
+hints describe item armour artefact
+
+#                 ostr << "\n\nWeapons and armour that have unusual descriptions "
+#                      << "like this are much more likely to be of higher "
+#                      << "enchantment or have special properties, good or bad.";
+このような普通でない説明が付いている武器や防具は、いいにせよ悪いにせよ、
+さらなる魔力強化がされていたり、特別な性能を持っている可能性が高い。
+%%%%
+hints describe item armour wearable cursed
+
+#                     ostr << "\nA cursed piece of armour, once worn, cannot be "
+#                             "removed again until the curse has been lifted by "
+#                             "reading a scroll of remove curse.";
+呪われた防具を一度装備すると、解呪の巻物を読んで呪いを解くまで手放すことはできない。
+%%%%
+hints describe item armour wearable gives resistance use tile
+
+#                     ostr << "\n\nThis armour offers its wearer protection from "
+#                             "certain sources. For an overview of your"
+#                             " resistances (among other things) type <w>%</w>"
+# #ifdef USE_TILE
+#                             " or click on your avatar with the <w>right mouse "
+#                             "button</w>"
+# #endif
+#                             ".";
+この防具は着用者に特定の攻撃から守る力を与える。
+(他のアイテム等からのものも含め)あなたの持つ耐性の概要を表示するには<w>[%%]</w>を押すか、
+キャラクター自身を<w>[右クリック]</w>すること。
+%%%%
+hints describe item armour wearable gives resistance
+
+この防具は着用者に特定の攻撃から守る力を与える。
+(他のアイテム等からのものも含め)あなたの持つ耐性の概要を表示するには<w>[%%]</w>を押すこと。
+%%%%
+hints describe item armour wearable gives ability
+
+#                     ostr << "\n\nWhen worn, some types of armour (such as "
+#                             "this one) offer certain <w>%</w>bilities you can "
+#                             "activate. ";
+装備した時、いくつかの種類の防具(例えばこれ)は特定の発動可能な能力('<w>a</w>')をもたらす。
+%%%%
+hints describe item wand
+
+#             ostr << "The magic within can be unleashed by evoking "
+#                     "(<w>%</w>) it.";
+これを発動させる('<w>%</w>')ことで、中に収められた魔法を解き放つことができる。
+%%%%
+hints describe item wand use tile
+
+# #ifdef USE_TILE
+#             ostr << " Alternatively, you can 1) <w>left mouse click</w> on "
+#                     "the monster you wish to target (or your player character "
+#                     "to target yourself) while pressing the <w>";
+# #ifdef USE_TILE_WEB
+#             ostr << "Ctrl + Shift keys";
+# #else
+# #if defined(UNIX) && defined(USE_TILE_LOCAL)
+#             if (!tiles.is_fullscreen())
+#               ostr << "Ctrl + Shift keys";
+#             else
+# #endif
+#               ostr << "Alt key";
+# #endif
+#             ostr << "</w> and pick the wand from the menu, or 2) "
+#                     "<w>left mouse click</w> on the wand tile and then "
+#                     "<w>left mouse click</w> on your target.";
+# #endif
+他の手段としては、以下のように操作できる。
+1) 対象としたいモンスター(あるいはプレイヤー自身)を、%sを押しながら<w>[左クリック]</w>し、
+   メニューからワンドを選択する
+2) ワンドのアイコンを<w>[左クリック]</w>した後、対象を<w>[左クリック]</w>する
+%%%%
+Ctrl + Shift keys
+
+<w>[Ctrl+Shift]</w>キー
+%%%%
+Alt key
+
+<w>[Alt]</w>キー
+%%%%
+hints describe item food use tile
+
+#             ostr << "Food can simply be <w>%</w>aten"
+# #ifdef USE_TILE
+#                     ", something you can also do by <w>left clicking</w> "
+#                     "on it"
+# #endif
+#                     ". ";
+食べ物は<w>[%]</w>キーを押すか、その上で<w>[左クリック]</w>することで簡単に食べることができる。
+%%%%
+hints describe item food
+
+食べ物は<w>[%]</w>キーを押すことで簡単に食べることができる。
+%%%%
+hints describe item food chunk
+
+#                 ostr << "Note that most species refuse to eat raw meat "
+#                         "unless hungry. ";
+ほとんどの種族は空腹状態にならない限り肉の塊を食べるのを拒否することに注意。
+%%%%
+hints describe item scroll use tile
+
+#             ostr << "Type <w>%</w> to read this scroll"
+# #ifdef USE_TILE
+#                     "or simply click on it with your <w>left mouse button</w>"
+# #endif
+#                     ".";
+この巻物を読むには、<w>[%]</w>キーを押すか<w>[左クリック]</w>すること。
+%%%%
+hints describe item scroll
+
+この巻物を読むには、<w>[%]</w>キーを押すこと。
+%%%%
+hints describe item jewellery use tile
+
+#             ostr << "Jewellery can be <w>%</w>ut on or <w>%</w>emoved "
+#                     "again"
+# #ifdef USE_TILE
+#                     ", though in Tiles, either can be done by clicking on the "
+#                     "item in your inventory"
+# #endif
+#                     ".";
+装身具は<w>[%]</w>コマンドで身につけたり、<w>[%]</w>コマンドで外したりできるが、
+タイル版では所有物一覧タブ上で<w>[クリック]</w>することによっても同様のことができる。
+%%%%
+hints describe item jewellery
+
+装身具は<w>[%]</w>コマンドで身につけたり、<w>[%]</w>コマンドで外したりできる。
+%%%%
+hints describe item jewellery cursed
+
+#                 ostr << "\nA cursed piece of jewellery will cling to its "
+#                         "unfortunate wearer's neck or fingers until the curse "
+#                         "is finally lifted when he or she reads a scroll of "
+#                         "remove curse.";
+呪われた装身具は、不運な着用者が解呪の巻物を読んで呪いを解くまでその首や指から離れない。
+%%%%
+hints describe item jewellery gives resistance use tile
+
+#                 ostr << "\n\nThis "
+#                      << (item.sub_type < NUM_RINGS ? "ring" : "amulet")
+#                      << " offers its wearer protection "
+#                         "from certain sources. For an overview of your "
+#                         "resistances (among other things) type <w>%</w>"
+# #ifdef USE_TILE
+#                         " or click on your avatar with the <w>right mouse "
+#                         "button</w>"
+# #endif
+#                         ".";
+この%sは着用者に特定の対象から守る力を与える。
+(他のアイテム等からのものも含め)あなたの持つ耐性の概要を表示するには<w>[%%]</w>を押すか、
+キャラクター自身を<w>[右クリック]</w>すること。
+%%%%
+hints describe item jewellery gives resistance
+
+この%sは着用者に特定の攻撃から守る力を与える。
+(他のアイテム等からのものも含め)あなたの持つ耐性の概要を表示するには<w>[%%]</w>を押すこと。
+%%%%
+hints describe item jewellery gives ability
+
+#                 ostr << "\n\nWhen worn, some types of jewellery (such as this "
+#                         "one) offer certain <w>%</w>bilities you can activate. ";
+身につけた時、いくつかの種類の装身具(例えばこれ)は特定の発動可能な能力('<w>a</w>')をもたらす。
+%%%%
+hints describe item potions use tile
+
+#             ostr << "Type <w>%</w> to quaff this potion"
+# #ifdef USE_TILE
+#                     "or simply click on it with your <w>left mouse button</w>"
+# #endif
+#                     ".";
+この水薬を飲むには、<w>[%]</w>キーを押すか<w>[左クリック]</w>すること。
+%%%%
+hints describe item potions
+
+この水薬を飲むには、<w>[%]</w>キーを押すこと。
+%%%%
+hints describe item books manual
+
+#                 ostr << "A manual can greatly help you in training a skill. "
+#                         "As long as you are carrying it, the skill in "
+#                         "question will be trained more efficiently and will "
+#                         "level up faster.";
+虎の巻はスキルを鍛える大きな助けとなる。
+あなたがそれを持ち運んでいる間該当するスキルはより効率よく鍛えられ、レベルが上がるのが速くなる。
+%%%%
+hints describe item books trog unindent
+
+#                         ostr << "\nIt's a book, you can <w>%</w>ead it.";
+これは<w>[%]</w>コマンドで読むことのできる本だ。
+%%%%
+hints describe item books trog indent
+
+#                         ostr << "\nA spellbook! You could <w>%</w>emorise some "
+#                                 "spells and then cast them with <w>%</w>.";
+魔法書だ！ あなたは<w>[%]</w>を押していくつか呪文を習得し、
+<w>[%]</w>を押して呪文を唱えることができる。
+%%%%
+hints describe item books trog
+
+#                     ostr << "\nAs a worshipper of "
+#                          << god_name(GOD_TROG)
+#                          << ", though, you might instead wish to burn this "
+#                             "tome of hated magic by using the corresponding "
+#                             "<w>%</w>bility. "
+#                             "Note that this only works on books that are lying "
+#                             "on the floor and not on your current square. ";
+しかしあなたは%sの信徒であるので、その代わりに対応する能力('<w>%</w>')を使って憎き魔法の本を燃やそうと願うかもしれない。
+その能力は床に置いてある本にのみ働き、なおかつ自分がいるマスに置いてあると働かないことに注意すること。
+%%%%
+hints describe item books unindent use tile
+
+#                     ostr << "\nIt's a book, you can <w>%</w>ead it"
+# #ifdef USE_TILE
+#                             ", something that can also be achieved by clicking "
+#                             "on its tile in your inventory."
+# #endif
+#                             ".";
+これは本であり、読む('<w>%</w>')ことができる。
+所有物一覧の中のこの本のアイコンをクリックすることでも同様に可能である。
+%%%%
+hints describe item books unindent
+
+これは本であり、読む('<w>%</w>')ことができる。
+%%%%
+hints describe item books can memorise
+
+#                         ostr << "\nSuch a <lightblue>highlighted "
+#                                 "spell</lightblue> can be <w>%</w>emorised "
+#                                 "right away. ";
+<lightblue>強調表示された呪文</lightblue>は<w>[%]</w>コマンドで今すぐ習得できる。
+%%%%
+hints describe item books cannot memorise
+
+#                         ostr << "\nYou cannot memorise any "
+#                              << (you.spell_no ? "more " : "")
+#                              << "spells right now. This will change as you "
+#                                 "grow in levels and Spellcasting proficiency. ";
+あなたは今は%s呪文を習得することができない。
+レベルが上がり、呪文詠唱に熟達するにつれて習得できるようになる。
+%%%%
+hints describe item books can you.spell_no use tile
+
+#                         ostr << "\n\nTo use magic, ";
+# #ifdef USE_TILE
+#                         ostr << "you can <w>left mouse click</w> on the "
+#                                 "monster you wish to target (or on your "
+#                                 "player character to cast a spell on "
+#                                 "yourself) while pressing the <w>Control "
+#                                 "key</w>, and then select a spell from the "
+#                                 "menu. Or you can switch to the spellcasting "
+#                                 "display by <w>clicking on the</w> "
+#                                 "corresponding <w>tab</w>."
+#                                 "\n\nAlternatively, ";
+# #endif
+#                         ostr << "you can type <w>%</w> and choose a "
+#                                 "spell, e.g. <w>a</w> (check with <w>?</w>). "
+#                                 "For attack spells you'll ";
+#                         cmd.push_back(CMD_CAST_SPELL);
+#                         ostr << _hints_target_mode(true);
+魔法を使うには、<w>[Ctrl]</w>キーを押しながら対象としたいモンスターを<w>[左クリック]</w>
+(または、自分に魔法をかける際は自分を<w>[左クリック]</w>)し、メニューから魔法を選択する。
+また、対応する<w>タブ</w>を<w>[クリック]</w>することで呪文詠唱画面に切り替えることもできる。
+他の手段としては、<w>[%]</w>を押して魔法を選択する、例えば<w>[a]</w>を押すこと。
+(<w>[?]</w>を押して確認)
+攻撃魔法を使うと
+%%%%
+hints describe item books can you.spell_no
+
+魔法を使うには、<w>[%]</w>を押して魔法を選択する、例えば<w>[a]</w>を押すこと。
+(<w>[?]</w>を押して確認)
+攻撃魔法を使うと
+%%%%
+hints describe item corpse skeleton
+
+#                 ostr << "Skeletons can be used as components for certain "
+#                         "necromantic spells. Apart from that, they are "
+#                         "largely useless.";
+骸骨は特定の死霊術の道具として用いられる。
+それを除けば、多くの場合は何も役に立たない。
+%%%%
+hints describe item corpse
+
+#             ostr << "Most corpses can be <w>%</w>hopped into edible chunks.";
+ほとんどの死体は<w>[%]</w>コマンドで肉の塊へと解体できる。
+%%%%
+hints describe item rod unindent use tile
+
+#                 ostr << "\n\nTo find out what this rod might do, you have "
+#                         "to <w>%</w>ield it to see if you can use the "
+#                         "spell hidden within, then e<w>%</w>oke it to "
+#                         "actually do so"
+# #ifdef USE_TILE
+#                         ", both of which can be done by clicking on it"
+# #endif
+#                         ".";
+このロッドが何をするのか理解するには、中に隠された呪文を使えるか確認するために<w>[%]</w>を押して手に持ち、
+<w>[%]</w>を押して実際に使ってみる必要がある。
+双方の操作は<w>[クリック]</w>することでどちらも行うことができる。
+%%%%
+hints describe item rod unindent
+
+このロッドが何をするのか理解するには、中に隠された呪文を使えるか確認するために<w>[%]</w>を押して手に持ち、
+<w>[%]</w>を押して実際に使ってみる必要がある。
+%%%%
+hints describe item rod indent use tile
+
+#                 ostr << "\n\nYou can use this rod's magic by "
+#                         "<w>%</w>ielding and e<w>%</w>oking it"
+# #ifdef USE_TILE
+#                         ", both of which can be achieved by clicking on it"
+# #endif
+#                         ".";
+あなたはこのロッドを<w>[%]</w>を押して手に持ち、<w>[%]</w>を押して発動することでその魔力を使うことができる。
+双方の操作は<w>[クリック]</w>することでどちらも行うことができる。
+%%%%
+hints describe item rod indent
+
+あなたはこのロッドを<w>[%]</w>を押して手に持ち、<w>[%]</w>を押して発動することでその魔力を使うことができる。
+%%%%
+hints describe item staves
+
+#             ostr << "This staff can enhance your spellcasting, possibly "
+#                     "making a certain spell school more powerful, or "
+#                     "making difficult magic easier to cast. ";
+この杖はあなたの呪文詠唱能力を高め、特定の種別の魔法をより強力にしたり、より簡単に唱えられるようにする。
+%%%%
+hints describe item staves give resistance use tile
+
+#                 ostr << "It also offers its wielder protection from "
+#                         "certain sources. For an overview of your "
+#                         "resistances (among other things) type <w>%</w>"
+# #ifdef USE_TILE
+#                         " or click on your avatar with the <w>right mouse "
+#                         "button</w>"
+# #endif
+#                         ".";
+また、装備する者に特定の対象から守る力を与える。
+(他のアイテム等からのものも含め)あなたの持つ耐性の概要を表示するには<w>[%]</w>を押すか、
+キャラクター自身を<w>[右クリック]</w>すること。
+%%%%
+hints describe item staves give resistance
+
+また、装備する者に特定の対象から守る力を与える。
+(他のアイテム等からのものも含め)あなたの持つ耐性の概要を表示するには<w>[%]</w>を押すこと。
+%%%%
+hints describe item staves trog
+
+#                 ostr << "\n\nSeeing how "
+#                      << god_name(GOD_TROG, false)
+#                      << " frowns upon the use of magic, this staff will be "
+#                         "of little use to you and you might just as well "
+#                         "<w>%</w>rop it now.";
+Seeing how %s frowns upon the use of magic, this staff will be of little use to you and you might just as well <w>%</w>rop it now.
+%sは魔法の使用によい顔をしないのでこの杖はあなたにとってほとんど役に立たず、
+<w>[%]</w>を押して今すぐ置いていった方がよい。
+%%%%
+hints describe item misc decks use tile
+
+#                 ostr << "Decks of cards are powerful but dangerous magical "
+#                         "items. Try e<w>%</w>oking it"
+# #ifdef USE_TILE
+#                         ", which can be done by clicking on it"
+# #endif
+#                         ". You can read about the effect of a card by "
+#                         "searching the game's database with <w>%/c</w>.";
+カードのデッキは強力ながら危険な魔法のアイテムである。
+<w>[%]</w>を押して発動させてみよう。
+<w>%/c</w>を押してゲーム内のデータベースを検索し、カードの効果について閲覧することができる。
+%%%%
+hints describe item misc decks
+
+カードのデッキは強力ながら危険な魔法のアイテムである。
+<w>[クリック]</w>して発動させてみよう。
+<w>%/c</w>を押してゲーム内のデータベースを検索し、カードの効果について閲覧することができる。
+%%%%
+hints describe item misc
+
+#                 ostr << "Miscellaneous items sometimes harbour magical powers "
+#                         "that can be harnessed by e<w>%</w>oking the item.";
+その他の雑多なアイテムは魔法の力を宿していることがあり、
+<w>[%]</w>を押して発動させることでその力を解き放つことができる。
+%%%%
+hints inscription info
+
+#          "Inscriptions are a powerful concept of Dungeon Crawl.\n"
+#          "You can inscribe items to comment on them \n"
+#          "or to set rules for item interaction. If you are new to Crawl, \n"
+#          "you can safely ignore this feature.";
+アイテムへの銘の付与はダンジョンクロウルにおける強力な発想の一つである。
+アイテムに銘を付与してコメントを載せたり、アイテム周りの動作についてルールを課すこともできる。
+もしあなたがクロウルに不慣れなら、単にこの機能を無視しても大丈夫だ。
+%%%%
+hints inscription info 2
+
+#        "(In the main screen, press <w>?6</w> for more information.)\n";
+(更なる情報を得るには、メイン画面で<w>[?6]</w>を押すこと)
+%%%%
+hints describe feature dngn granite statue
+
+#         ostr << "It's just a harmless statue - or is it?\nEven if not "
+#                 "a danger by themselves, statues often mark special "
+#                 "areas, dangerous ones or ones harbouring treasure.";
+それは単なる無害な像――それとも？
+それ自体には危険がないかもしれないが、彫像はしばしば特別な場所、危険な者たち、
+あるいはそれらが貯めこんだ財宝の目印となる。
+%%%%
+hints describe feature dngn nasty traps
+
+#         ostr << "These nasty constructions can cause a range of "
+#                 "unpleasant effects. You won't be able to avoid "
+#                 "tripping traps by flying over them; their magic "
+#                 "construction will cause them to be triggered anyway.";
+これらの不快な構造物は様々な面白くない効果をもたらすことがある。
+あなたはこの上を飛んだとしても罠に引っかかるのを回避することはできない。
+その魔法的な構造はどちらにせよ作動する。
+%%%%
+hints describe feature dngn trap shaft
+
+#         ostr << "The dungeon contains a number of natural obstacles such "
+#                 "as shafts, which lead one to three levels down. Once you "
+#                 "know the shaft is there, you can safely step over it.\n"
+#                 "If you want to jump down there, use <w>></w> to do so. "
+#                 "Be warned that getting back here might be difficult.";
+ダンジョンには数多くの天然の障害物があり、例として縦穴がある。
+縦穴にはまると1～3階下へと落下してしまう。
+一度縦穴がそこにあることを知ると、あなたは安全にその上を渡ることができる。
+もしあなたがそこに飛び込みたければ、<w>[>]</w>を押してそうすることができる。
+ここに戻ってくることが困難となるかもしれないことに注意。
+%%%%
+hints describe feature dngn trap web
+
+#         ostr << "Some areas of the dungeon, such as the Spider Nest, may "
+#                 "be strewn with giant webs that may ensnare you for a short "
+#                 "time and notify nearby spiders of your location. "
+#                 "Players in Spider Form can safely navigate the webs (as "
+#                 "can incorporeal entities and various oozes). ";
+ダンジョンのある区域、例えば蜘蛛の穴ぐらなどには、
+あなたを短時間拘束し近くの蜘蛛にあなたの位置を伝える蜘蛛の巣がそこらじゅうに存在します。
+蜘蛛の姿に変化したプレイヤーは(不定形の存在やウーズ類と同様)安全に蜘蛛の巣を渡ることができます。
+%%%%
+hints describe feature dngn stone stairs down use tile
+
+#         ostr << "You can enter the next (deeper) level by following them "
+#                 "down (<w>></w>). To get back to this level again, "
+#                 "press <w><<</w> while standing on the upstairs.";
+# #ifdef USE_TILE
+#         ostr << " In Tiles, you can achieve the same, in either direction, "
+#                 "by clicking the <w>left mouse button</w>.";
+これを下りる(<w>[>]</w>)ことで一つ次の(深い)階層に足を踏み入れることができる。
+この階層に再び戻ってくるには、上り階段の上で<w>[<<]</w>を押すこと。
+またタイル版では、それぞれの行動を単に<w>[左クリック]</w>することで行うことができる。
+%%%%
+hints describe feature dngn stone stairs down
+
+これを下りる(<w>[>]</w>)ことで一つ次の(深い)階層に足を踏み入れることができる。
+この階層に再び戻ってくるには、上り階段の上で<w>[<<]</w>を押すこと。
+%%%%
+hints describe feature dngn stone stairs down unknown
+
+#             ostr << "\n\nYou have not yet passed through this particular "
+#                     "set of stairs. ";
+あなたはまだこの階段を通り抜けていない。
+%%%%
+hints describe feature dngn exit dungeon
+
+#         ostr << "These stairs lead out of the dungeon. Following them "
+#                 "will end the game. The only way to win is to "
+#                 "transport the fabled Orb of Zot outside.";
+この階段はダンジョンの外へと続いている。
+これを上るとゲームは終了する。
+勝利への道はただ一つ、伝説の『ゾットのオーブ』を外へと持ち出すことだ。
+%%%%
+hints describe feature dngn stairs up use tile
+
+#         ostr << "You can enter the previous (shallower) level by "
+#                 "following these up (<w><<</w>). This is ideal for "
+#                 "retreating or finding a safe resting spot, since the "
+#                 "previous level will have less monsters, and monsters "
+#                 "on this level can't follow you up unless they're "
+#                 "standing right next to you. To get back to this "
+#                 "level again, press <w>></w> while standing on the "
+#                 "downstairs.";
+# #ifdef USE_TILE
+#         ostr << " In Tiles, you can perform either action simply by "
+#                 "clicking the <w>left mouse button</w> instead.";
+# #endif
+これを上る(<w>[<]</w>)ことで一つ前の(浅い)階層に足を踏み入れることができる。
+一つ前の階層は比較的モンスターが少なく、モンスターはあなたに直接隣接していない限り
+階段をついてくることができないため、そうすることは一時退避したり、
+安全に回復できる場所を探すのに理想的である。
+この階層に再び戻ってくるには、下り階段の上で<w>[>]</w>を押すこと。
+またタイル版では、それぞれの行動を単に<w>[左クリック]</w>することで行うことができる。
+%%%%
+hints describe feature dngn stairs up
+
+これを上る(<w>[<]</w>)ことで一つ前の(浅い)階層に足を踏み入れることができる。
+一つ前の階層は比較的モンスターが少なく、モンスターはあなたに直接隣接していない限り
+階段をついてくることができないため、そうすることは一時退避したり、
+安全に回復できる場所を探すのに理想的である。
+この階層に再び戻ってくるには、下り階段の上で<w>[>]</w>を押すこと。
+%%%%
+hints describe feature dngn stairs up unknown
+
+#             ostr << "\n\nYou have not yet passed through this "
+#                     "particular set of stairs. ";
+あなたはまだこの階段を通り抜けていない。
+%%%%
+hints describe feature dngn escape hatch
+
+#         ostr << "Escape hatches can be used to quickly leave a level with "
+#                 "<w><<</w> and <w>></w>, respectively. Note that you will "
+#                 "usually be unable to return right away.";
+脱出ハッチは<w>[<<]</w>か<w>[>]</w>をそれぞれ押して即座にこの階から離れることに使われる。
+通常は、すぐには戻ってくることができないことに注意。
+%%%%
+hints describe feature dngn closed/runed door
+
+#             ostr << "\nTo avoid accidentally opening a door you'd rather "
+#                     "remain closed during travel or autoexplore, you can "
+#                     "mark it with an exclusion from the map view "
+#                     "(<w>X</w>) with <w>ee</w> while your cursor is on the "
+#                     "grid in question. Such an exclusion will prevent "
+#                     "autotravel from ever entering that grid until you "
+#                     "remove the exclusion with another press of <w>Xe</w>.";
+自動移動や自動探索の間、閉じたままにしておきたい扉をうっかり開けてしまうのを避けるには、
+マップモード('<w>X</w>')からそのマスにカーソルを合わせて<w>[ee]</w>を押して自動移動禁止マークを付けておくことができる。
+自動移動禁止エリアは別途<w>[Xe]</w>を押して解除するまで、自動移動の際にそのマスに踏み込まないようにする。
+%%%%
+hints describe feature altar sif !player_can_join_god
+
+#                 ostr << "As <w>p</w>raying on the altar will tell you, "
+#                      << god_name(altar_god) << " only accepts worship from "
+#                         "those who have already dabbled in magic. You can "
+#                         "find out more about this god by searching the "
+#                         "database with <w>?/g</w>.\n"
+#                         "For other gods, you'll be able to join the faith "
+#                         "by <w>p</w>raying at their altar.";
+
+# 現状このメッセージが出ることはないが一応
+# (p)rayコマンドはもうないので修正
+祭壇の上で<w>[<<]</w>や<w>[>]</w>を押すと分かるように、%sは既に魔法を習いだした者からの信仰のみを受け入れる。
+<w>[?/g]</w>を押してデータベースを検索することにより、この神についてもっと理解することができる。
+他の神に対しては、祭壇の上で<w>[<<]</w>や<w>[>]</w>を押すことで入信できる。
+%%%%
+hints describe feature altar no god
+
+#                 ostr << "This is your chance to join a religion! In "
+#                         "general, the gods will help their followers, "
+#                         "bestowing powers of all sorts upon them, but many "
+#                         "of them demand a life of dedication, constant "
+#                         "tributes or entertainment in return.\n"
+#                         "You can get information about <w>"
+#                      << god_name(altar_god)
+#                      << "</w> by pressing <w>p</w> while standing on the "
+#                         "altar. Before taking up the responding faith "
+#                         "you'll be asked for confirmation.";
+神に入信するチャンスだ！
+一般的に、神々はその信者を助け、あらゆる種類の力を授ける。
+しかしそれらの多くは生贄や継続した捧げ物、あるいは娯楽を見返りに求める。
+あなたは祭壇の場所に立って<w>[<<]</w>もしくは<w>[>]</w>を押すことで<w>%s</w>についての情報を得る。
+まだその神に入信していなければ、確認を求められるだろう。
+%%%%
+hints describe feature altar use tile
+
+#                 ostr << god_name(you.religion)
+#                      << " probably won't like it if you switch allegiance, "
+#                         "but having a look won't hurt: to get information "
+#                         "on <w>";
+#                 ostr << god_name(altar_god);
+#                 ostr << "</w>, press <w>p</w> while standing on the "
+#                         "altar. Before taking up the responding faith (and "
+#                         "abandoning your current one!) you'll be asked for "
+#                         "confirmation."
+#                         "\nTo see your current standing with "
+#                      << god_name(you.religion)
+#                      << " press <w>^</w>"
+# #ifdef USE_TILE
+#                         ", or click with your <w>right mouse button</w> "
+#                         "on your avatar while pressing <w>Shift</w>"
+# #endif
+#                         ".";
+
+# (p)rayコマンドはもうないので修正
+あなたが信仰を鞍替えするのなら%sはおそらくこれを好まないだろうが、注視するだけならどうもしない。
+<w>%s</w>についての情報を得るには、祭壇の場所に立って<w>[<<]</w>もしくは<w>[>]</w>を押すこと。
+祭壇に応じた神に入信する(そして現在信仰している神を捨てる！)前に、確認が求められるだろう。
+あなたの現在の%sへの信仰状況を見るには<w>[^]</w>を押すか、キャラクター自身を<w>[Shift]</w>を押しながら<w>[右クリック]</w>すること。
+%%%%
+hints describe feature altar
+
+あなたの現在の%sへの信仰状況を見るには<w>[^]</w>を押すこと。
+%%%%
+hints describe feature branch entrance
+
+#             ostr << "An entryway into one of the many dungeon side branches in "
+#                     "Crawl. ";
+#             if (feat != DNGN_ENTER_TEMPLE)
+#                 ostr << "Beware, sometimes these can be deadly!";
+ゲーム内に存在する数多のダンジョンの分岐の一つへの入口だ。
+気をつけろ、それは時に命取りになるかもしれない！
+%%%%
+hints describe feature temple entrance
+
+ゲーム内に存在する数多のダンジョンの分岐の一つへの入口だ。
+%%%%
+hints describe feature blood-covered
+
+#         ostr << "Many forms of combat will spatter the surroundings with blood"
+#                 " (if the victim has any, that is). Some monsters, like jackals "
+#                 "or vampires, can smell blood from a distance and may come "
+#                 "looking.";
+多くの戦闘方法ではあたりに血をばらまくことがある。(被害者の体に血が流れている場合)
+ジャッカルや吸血鬼のようないくつかのモンスターは遠くから血の臭いを嗅ぎ、こちらを見にやってくるかもしれない。
+%%%%
+hints describe cloud harmless
+
+#         ostr << "harmless. ";
+この%sは無害だ。
+%%%%
+hints describe cloud damaging cloud
+
+#         ostr << "probably dangerous, and you should stay out of it if you "
+#                 "can. ";
+この%sはおそらく危険だが、望むならその中にとどまっていることもできる。
+%%%%
+hints describe cloud non-damaging cloud
+
+#         ostr << "currently harmless, but that could change at some point. "
+#                 "Check the overview screen (<w>%</w>) to view your "
+#                 "resistances.";
+この%sは今のところ無害だが、いずれ状況が変わるかもしれない。
+あなたの持つ耐性等の概観画面('<w>%</w>')を確認すること。
+%%%%
+hints describe cloud opaque cloud
+
+#         ostr << (need_cloud? "\nThis cloud" : "It")
+#              << " is opaque. If two or more opaque clouds are between "
+#                 "you and a square, you won't be able to see anything in that "
+#                 "square.";
+%sは見通しがきかない。
+あるマスとあなたの間に2つかそれ以上の不透明な雲が存在する場合、
+あなたはそのマスにあるものは何も見えない。
+%%%%
+This cloud
+
+この雲
+%%%%
+It
+
+<[gender neuter subj]it>
+%%%%
+hints describe disturbance
+
+#     ostr << "The strange disturbance means that there's a monster hiding "
+#             "under the surface of the shallow water. Submerged monsters will "
+#             "not be autotargeted when doing a ranged attack while there are "
+#             "other, visible targets in sight. Of course you can still target "
+#             "it manually if you wish to.";
+その奇妙な渦は、浅い水場の水面下にモンスターが隠れていることを意味します。
+視界内に目視できる他の標的がいた状態で射撃攻撃をする場合は水中のモンスターは自動的に照準されません。
+もちろん、そう望むなら手動で照準を合わせることは依然として可能です。
+%%%%
+hints describe monster unique
+
+#         ostr << "Did you think you were the only adventurer in the dungeon? "
+#                 "Well, you thought wrong! These unique adversaries often "
+#                 "possess skills that normal monsters wouldn't, so be "
+#                 "careful.\n\n";
+ダンジョンにいる冒険者があなた一人だと思っていただろうか？
+うむ、それは間違いだ！
+この有象無象とは異なる競争相手はしばしば普通のモンスターにないスキルを備えているため、
+気をつけておくこと。
+%%%%
+hints describe monster player ghost
+
+#         ostr << "The ghost of a deceased adventurer, it would like nothing "
+#                 "better than to send you the same way.\n\n";
+死んでしまった冒険者の幽霊で、あなたを同じ目にあわせる以外何も望んでいない。
+%%%%
+hints describe monster demon tier 1
+
+#             ostr << "This monster is a demon of the "
+#                  << (tier == 1 ? "highest" :
+#                      tier == 2 ? "second-highest" :
+#                      tier == 3 ? "middle" :
+#                      tier == 4 ? "second-lowest" :
+#                      tier == 5 ? "lowest"
+#                                : "buggy")
+#                  << " tier.\n\n";
+このモンスターは最高位の悪魔だ。
+%%%%
+hints describe monster demon tier 2
+
+このモンスターは高位の悪魔だ。
+%%%%
+hints describe monster demon tier 3
+
+このモンスターは中位の悪魔だ。
+%%%%
+hints describe monster demon tier 4
+
+このモンスターは下位の悪魔だ。
+%%%%
+hints describe monster demon tier 5
+
+このモンスターは最下位の悪魔だ。
+%%%%
+hints describe monster nasty
+
+#                 ostr << "This monster appears to be really dangerous!\n";
+このモンスターは本当に危険なようだ！
+%%%%
+hints describe monster tough
+
+#                 ostr << "This monster appears to be quite dangerous.\n"
+このモンスターはかなり危険なようだ。
+%%%%
+hints describe monster berserking
+
+#         ostr << "A berserking monster is bloodthirsty and fighting madly. "
+#                 "Such a blood rage makes it particularly dangerous!\n\n";
+バーサークしたモンスターは血に飢えており、気が狂ったように戦う。
+このように激怒したモンスターは非常に危険だ！
+%%%%
+hints describe monster friendly
+
+#         ostr << "Friendly monsters will follow you around and attempt to aid "
+#                 "you in battle. You can order your allies by <w>t</w>alking "
+#                 "to them.";
+友好的なモンスターはあなたの後をついてきて、戦闘の助けをしようとしてくれる。
+<w>[t]</w>を押して仲間に指示を出すことができる。
+%%%%
+hints describe monster temporarily friendly
+
+#             ostr << "\n\nHowever, it is only <w>temporarily</w> friendly, "
+#                     "and will become dangerous again when this friendliness "
+#                     "wears off.";
+しかしあくまで<w>一時的</w>に友好なだけであり、友情が過ぎ去ってしまえば再び危険な存在に戻るだろう。
+%%%%
+hints describe monster dangerous wandering/unaware
+
+#             ostr << "You can easily mark its square as dangerous to avoid "
+#                     "accidentally entering into its field of view when using "
+#                     "auto-explore or auto-travel. To do so, enter targeting "
+#                     "mode with <w>x</w> and then press <w>e</w> when your "
+#                     "cursor is hovering over the monster's grid. Doing so will "
+#                     "mark this grid and all surrounding ones within a radius "
+#                     "of 8 as \"excluded\" ones that explore or travel modes "
+#                     "won't enter.";
+自動探索や自動移動を試みた際、うっかりその視界内に入ってしまうのを避けるためにそのマスが危険だと印を付けることが簡単に行える。
+そうするには、<w>[x]</w>で照準モードに入った後、モンスターのいるマスにカーソルを合わせた状態で<w>[e]</w>を押すこと。
+そうするとそのマスに印がつき、その周囲の半径8マス内が「禁止」領域になって自動探索や自動移動では中に入らなくなる。
+%%%%
+hints describe monster dangerous
+
+#             ostr << "This might be a good time to run away";
+#
+#             if (you_worship(GOD_TROG) && you.can_go_berserk())
+#                 ostr << " or apply your Berserk <w>a</w>bility";
+#             ostr << ".";
+逃げた方がいいかもしれない。
+%%%%
+hints describe monster dangerous trog
+
+逃げるか、<w>[a]</w>コマンドでバーサークした方がいいかもしれない。
+%%%%
+hints describe monster stabbable
+
+#         ostr << "Apparently it has not noticed you - yet. Note that you do "
+#                 "not have to engage every monster you meet. Sometimes, "
+#                 "discretion is the better part of valour.";
+どうやらあなたに気付いていないらしい――今はまだ。
+出会った全てのモンスターと交戦しなければならないわけではないことに注意すること。
+「逃げるが勝ち」ということも時にはある。
+%%%%
+hints describe monster distracted
+
+#         ostr << "Apparently it has been distracted by something. You could "
+#                 "use this opportunity to sneak up on this monster - or to "
+#                 "sneak away.";
+どうやらそれは何かに気を取られているらしい。
+あなたはこの隙にモンスターに忍び寄ってもいいし、静かに逃げ去ってもいい。
+%%%%
+hints describe monster !dangerous !has_stat_desc
+
+#         ostr << "\nThis monster doesn't appear to have any resistances or "
+#                 "susceptibilities. It cannot fly and is of average speed. "
+#                 "Examining other, possibly more high-level monsters can give "
+#                 "important clues as to how to deal with them.";
+このモンスターは特に耐性や弱点を持っていないようだ。
+飛ぶこともできず、動きの速さも平均的だ。
+他の、例えばもっと高レベルのモンスターを調べることはそれらを相手取るのに重要な手がかりを与えてくれるだろう。
+%%%%
+Error, no message for '%s'.
+
+# 訳不要
 %%%%

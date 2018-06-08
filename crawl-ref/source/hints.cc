@@ -154,9 +154,11 @@ static void _print_hints_menu(hints_types type)
         break;
     }
 
-    cprintf("%c - %s %s %s\n",
-            letter, species_name(_get_hints_species(type)).c_str(),
-                    get_job_name(_get_hints_job(type)), desc);
+    cprintf(jtrans_notrimc("%c - %s %s %s\n"),
+            letter,
+            species_name_j(_get_hints_species(type)).c_str(),
+            get_job_name_j(_get_hints_job(type)).c_str(),
+            jtransc(desc));
 }
 
 // Hints mode selection screen and choice.
@@ -166,21 +168,21 @@ again:
     clrscr();
 
     cgotoxy(1,1);
-    formatted_string::parse_string(
+    formatted_string::parse_string(jtrans_notrim(
         "<white>You must be new here indeed!</white>"
         "\n\n"
         "<cyan>You can be:</cyan>"
-        "\n").display();
+        "\n")).display();
 
     textcolour(LIGHTGREY);
 
     for (int i = 0; i < HINT_TYPES_NUM; i++)
         _print_hints_menu((hints_types)i);
 
-    formatted_string::parse_string(
+    formatted_string::parse_string(jtrans_notrim(
         "<brown>\nEsc - Quit"
         "\n* - Random hints mode character"
-        "</brown>\n").display();
+        "</brown>\n")).display();
 
     while (true)
     {
@@ -213,7 +215,7 @@ again:
 #endif
             game_ended();
         case 'X':
-            cprintf("\nGoodbye!");
+            cprintf("%s", jtrans_notrimc("\nGoodbye!"));
 #ifdef USE_TILE_WEB
             tiles.send_exit_reason("cancel");
 #endif
@@ -504,7 +506,7 @@ void hints_death_screen()
     mprf(MSGCH_TUTORIAL, "%s", untag_tiles_console(text).c_str());
     more();
 
-    mprf(MSGCH_TUTORIAL, "See you next game!");
+    mprf(MSGCH_TUTORIAL, "%s", jtransc("See you next game!"));
 
     Hints.hints_events.init(false);
 }
@@ -607,6 +609,8 @@ static void _hints_healing_reminder()
             Hints.hints_just_triggered = true;
 
             string text;
+            text = jtrans("hints healing reminder");
+            /*
             text =  "Remember to rest between fights and to enter unexplored "
                     "terrain with full health and magic. Ideally you "
                     "should retreat into areas you've already explored and "
@@ -615,16 +619,20 @@ static void _hints_healing_reminder()
                     "interrupted by wandering monsters. For resting, press "
                     "<w>5</w> or <w>Shift-numpad 5</w>"
                     "<tiles>, or <w>click the rest button</w></tiles>"
-                    ".";
+                    ".");
+            */
 
             if (you.hp < you.hp_max && you_worship(GOD_TROG)
                 && you.can_go_berserk())
             {
+                text += jtrans_notrim("hints healing reminder trog");
+                /*
                 text += "\nAlso, berserking might help you not to lose so much "
                         "health in the first place. To use your abilities type "
-                        "<w>a</w>.";
+                        "<w>a</w>.");
+                */
             }
-            mprf(MSGCH_TUTORIAL, "%s", text.c_str());
+            mprf(MSGCH_TUTORIAL, "%s", untag_tiles_console(text).c_str());
 
             if (is_resting())
                 stop_running();
@@ -860,65 +868,74 @@ void hints_monster_seen(const monster& mon)
     tiles.add_text_tag(TAG_TUTORIAL, mi);
 #endif
 
-    string text = "That ";
+    string text;
 
     if (is_tiles())
     {
+        text = make_stringf(jtransc("hints monster seen tile"),
+                            mon.name(DESC_PLAIN).c_str());
+/*
         text +=
             string("monster is a ") +
             mon.name(DESC_PLAIN).c_str() +
             ". You can learn about any monster by hovering your mouse over it,"
             " and read its description by <w>right-clicking</w> on it.";
+*/
     }
     else
     {
+        text = make_stringf(jtransc("hints monster seen non-tile"),
+                            glyph_to_tagstr(get_mons_glyph(mi)).c_str());
+/*
         text +=
             glyph_to_tagstr(get_mons_glyph(mi)) +
             " is a monster, usually depicted by a letter. Some typical "
             "early monsters look like <brown>r</brown>, <green>l</green>, "
             "<brown>K</brown> or <lightgrey>g</lightgrey>. ";
+*/
         if (crawl_view.mlistsz.y > 0)
         {
-            text += "Your console settings allowing, you'll always see a "
-                    "list of monsters somewhere on the screen.\n";
+            text += jtrans_notrim("Your console settings allowing, you'll always see a "
+                                  "list of monsters somewhere on the screen.\n");
         }
-        text += "You can gain information about it by pressing <w>x</w> and "
-                "moving the cursor over the monster, and read the monster "
-                "description by then pressing <w>v</w>. ";
+        text += jtrans_notrim("You can gain information about it by pressing <w>x</w> and "
+                              "moving the cursor over the monster, and read the monster "
+                              "description by then pressing <w>v</w>. ");
     }
 
-    text += "\nTo attack this monster with your wielded weapon, just move "
-            "into it. ";
+    text += jtrans_notrim("\nTo attack this monster with your wielded weapon, just move "
+                          "into it. ") + "\n";
     if (is_tiles())
     {
-        text +=
+        text += jtrans(
             "Note that as long as there's a non-friendly monster in view you "
             "won't be able to automatically move to distant squares, to avoid "
-            "death by misclicking.";
+            "death by misclicking.");
     }
 
     mprf(MSGCH_TUTORIAL, "%s", text.c_str());
 
     if (Hints.hints_type == HINT_RANGER_CHAR)
     {
-        text =  "However, as a hunter you will want to deal with it using your "
+        text =  jtransln(
+                "However, as a hunter you will want to deal with it using your "
                 "bow. If you have a look at your shortbow from your "
                 "<w>i</w>nventory, you'll find an explanation of how to do "
-                "this. ";
+                "this. ");
 
         if (!you.weapon()
             || you.weapon()->base_type != OBJ_WEAPONS
             || you.weapon()->sub_type != WPN_SHORTBOW)
         {
-            text += "First <w>w</w>ield it, then follow the instructions."
+            text += jtrans("First <w>w</w>ield it, then follow the instructions."
                 "<tiles>\nAs a short-cut you can also <w>right-click</w> on your "
                 "shortbow to read its description, and <w>left-click</w> to wield "
-                "it.</tiles>";
+                "it.</tiles>");
         }
         else
         {
-            text += "<tiles>Clicking with your <w>right mouse button</w> on your "
-                    "shortbow will also let you read its description.</tiles>";
+            text += jtrans("<tiles>Clicking with your <w>right mouse button</w> on your "
+                           "shortbow will also let you read its description.</tiles>");
         }
 
         mprf(MSGCH_TUTORIAL, "%s", untag_tiles_console(text).c_str());
@@ -926,12 +943,15 @@ void hints_monster_seen(const monster& mon)
     }
     else if (Hints.hints_type == HINT_MAGIC_CHAR)
     {
+        text = jtrans("hints monster seen conjurer");
+        /*
         text =  "However, as a conjurer you will want to deal with it using "
                 "magic. If you have a look at your spellbook from your "
                 "<w>i</w>nventory, you'll find an explanation of how to do "
                 "this."
                 "<tiles>\nAs a short-cut you can also <w>right-click</w> on your "
                 "book in your inventory to read its description.</tiles>";
+        */
         mprf(MSGCH_TUTORIAL, "%s", untag_tiles_console(text).c_str());
 
     }
@@ -966,7 +986,7 @@ void hints_first_item(const item_def &item)
 #ifdef USE_TILE
     const coord_def gc = item.pos;
     tiles.place_cursor(CURSOR_TUTORIAL, gc);
-    tiles.add_text_tag(TAG_TUTORIAL, item.name(DESC_A), gc);
+    tiles.add_text_tag(TAG_TUTORIAL, item.name(DESC_PLAIN), gc);
 #endif
 
     print_hint("HINT_SEEN_FIRST_OBJECT",
@@ -978,8 +998,12 @@ static string _describe_portal(const coord_def &gc)
     const dungeon_feature_type feat = grd(gc);
     string text;
 
+    text = make_stringf(jtransc(feat == DNGN_ENTER_BAZAAR ? "describe portal bazaar"
+                                                          : "describe portal non-bazaar"),
+                        stringize_glyph(get_feat_symbol(DNGN_EXIT_SEWER)).c_str());
     // For the sake of completeness, though it's very unlikely that a
     // player will find a bazaar entrance before reaching XL 7.
+    /*
     if (feat == DNGN_ENTER_BAZAAR)
     {
         text =  "is a portal to an inter-dimensional bazaar filled with "
@@ -1004,6 +1028,7 @@ static string _describe_portal(const coord_def &gc)
           + stringize_glyph(get_feat_symbol(DNGN_EXIT_SEWER))
           + "</w> - but NOT the ancient stone arch you'll start "
             "out on!</console>.";
+    */
 
     return text;
 }
@@ -1123,6 +1148,9 @@ void learned_something_new(hints_event_type seen_what, coord_def gc)
     switch (seen_what)
     {
     case HINT_SEEN_POTION:
+        text << make_stringf(jtransc("hint seen potion"),
+                             stringize_glyph(get_item_symbol(SHOW_ITEM_POTION)).c_str());
+        /*
         text << "You have picked up your first potion"
                 "<console> ('<w>"
              << stringize_glyph(get_item_symbol(SHOW_ITEM_POTION))
@@ -1133,10 +1161,14 @@ void learned_something_new(hints_event_type seen_what, coord_def gc)
                 "identification or by drinking it, you'll automatically "
                 "recognize all other potions of the same type; this means "
                 "it's sometimes useful to drink potions just to identify them.";
+        */
         cmd.push_back(CMD_QUAFF);
         break;
 
     case HINT_SEEN_SCROLL:
+        text << make_stringf(jtransc("hint seen scroll"),
+                             stringize_glyph(get_item_symbol(SHOW_ITEM_SCROLL)).c_str());
+        /*
         text << "You have picked up your first scroll"
                 "<console> ('<w>"
              << stringize_glyph(get_item_symbol(SHOW_ITEM_SCROLL))
@@ -1147,10 +1179,14 @@ void learned_something_new(hints_event_type seen_what, coord_def gc)
                 "identification or by reading it, you'll automatically "
                 "recognize all other scrolls of the same type; this means "
                 "it's sometimes useful to read scrolls just to identify them.";
+        */
         cmd.push_back(CMD_READ);
         break;
 
     case HINT_SEEN_WAND:
+        text << make_stringf(jtransc("hint seen wand"),
+                             stringize_glyph(get_item_symbol(SHOW_ITEM_WAND)).c_str());
+        /*
         text << "You have picked up your first wand"
                 "<console> ('<w>"
              << stringize_glyph(get_item_symbol(SHOW_ITEM_WAND))
@@ -1161,10 +1197,14 @@ void learned_something_new(hints_event_type seen_what, coord_def gc)
                 "identification or by zapping it after gaining some Evocations "
                 "skill, you won't know how many charges it has, and you'll "
                 "waste a few charges every time you evoke it.";
+        */
         cmd.push_back(CMD_EVOKE);
         break;
 
     case HINT_SEEN_SPBOOK:
+        text << make_stringf(jtransc("hint seen spbook"),
+                             stringize_glyph(get_item_symbol(SHOW_ITEM_BOOK)).c_str());
+        /*
         text << "You have picked up a book"
                 "<console> ('<w>"
              << stringize_glyph(get_item_symbol(SHOW_ITEM_BOOK))
@@ -1173,19 +1213,28 @@ void learned_something_new(hints_event_type seen_what, coord_def gc)
                 "it via <w>%</w>, and cast them with <w>%</w>.</console>"
                 "<tiles>. If it's a spellbook, you can memorise spells from "
                 "it with <w>left-click</w>.</tiles>";
+        */
         cmd.push_back(CMD_MEMORISE_SPELL);
         cmd.push_back(CMD_CAST_SPELL);
 
         if (you_worship(GOD_TROG))
         {
+            text << "\n"
+                 << make_stringf(jtransc("hint seen spbook trog"),
+                                 god_name_jc(GOD_TROG));
+            /*
             text << god_name(GOD_TROG)
-                 << " hates it when you memorize magic, and prefers you to "
-                    "burn books with the corresponding <w>%</w>bility.";
+                 << jtrans(" hates it when you memorize magic, and prefers you to "
+                           "burn books with the corresponding <w>%</w>bility.");
+            */
             cmd.push_back(CMD_USE_ABILITY);
         }
         break;
 
     case HINT_SEEN_WEAPON:
+        text << make_stringf(jtransc("hint seen weapon"),
+                             stringize_glyph(get_item_symbol(SHOW_ITEM_WEAPON)).c_str());
+        /*
         text << "This is the first weapon "
                 "<console>('<w>"
              << stringize_glyph(get_item_symbol(SHOW_ITEM_WEAPON))
@@ -1197,21 +1246,32 @@ void learned_something_new(hints_event_type seen_what, coord_def gc)
                 "view the weapon's properties from your <w>%</w>nventory"
                 "<tiles> or by <w>right-clicking</w> on it</tiles>"
                 ".";
+        */
 
         cmd.push_back(CMD_WIELD_WEAPON);
         cmd.push_back(CMD_DISPLAY_INVENTORY);
 
         if (Hints.hints_type == HINT_BERSERK_CHAR)
         {
+            text << "\n"
+                 << jtrans("hint seen weapon berserker");
+            /*
             text << "\nYou should probably stick with axes. Checking other "
                     "axes' enchantments can be worthwhile, but weapons can be "
                     "cursed and difficult to remove, so unless you have a "
                     "scroll of remove curse, only wield weapons you're ready "
                     "to be stuck with!";
+            */
         }
         break;
 
     case HINT_SEEN_MISSILES:
+#ifdef USE_TILE_LOCAL
+        text << jtrans("hint seen missiles use tile local");
+#else
+        text << jtrans("hint seen missiles");
+#endif
+        /*
         text << "This is the first stack of missiles "
                 "<console>('<w>"
              << stringize_glyph(get_item_symbol(SHOW_ITEM_MISSILE))
@@ -1227,27 +1287,43 @@ void learned_something_new(hints_event_type seen_what, coord_def gc)
 #endif
                 "the item in your <w>%</w>nventory will give more "
                 "information about both missiles and launcher.";
+        */
 
         cmd.push_back(CMD_DISPLAY_INVENTORY);
 
         if (Hints.hints_type == HINT_RANGER_CHAR)
         {
+            text << "\n"
+                 << jtrans("hint seen missiles ranger");
+            /*
             text << "\nAs you're already trained in Bows, you only need to "
                     "bother collecting arrows.";
+            */
         }
         else if (Hints.hints_type == HINT_MAGIC_CHAR)
         {
+            text << "\n"
+                 << jtrans("hint seen missiles conjurer");
+            /*
             text << "\nHowever, as a spellslinger, you don't really need "
                     "another type of ranged attack.";
+            */
         }
         else
         {
+            text << "\n"
+                 << jtrans("hint seen missiles other");
+            /*
             text << "\nFor now you might be best off with sticking to "
                     "stones for ranged attacks.";
+            */
         }
         break;
 
     case HINT_SEEN_ARMOUR:
+        text << make_stringf(jtransc("hint seen armour"),
+                             stringize_glyph(get_item_symbol(SHOW_ITEM_ARMOUR)).c_str());
+        /*
         text << "This is the first piece of armour "
                 "<console>('<w>"
              << stringize_glyph(get_item_symbol(SHOW_ITEM_ARMOUR))
@@ -1259,26 +1335,38 @@ void learned_something_new(hints_event_type seen_what, coord_def gc)
                 "<console>Use <w>%</w> to wear it and <w>%</w> to take it off "
                 "again. You can view its properties from your "
                 "<w>%</w>nventory.</console>";
+        */
         cmd.push_back(CMD_WEAR_ARMOUR);
         cmd.push_back(CMD_REMOVE_ARMOUR);
         cmd.push_back(CMD_DISPLAY_INVENTORY);
 
         if (you.species == SP_CENTAUR || you.species == SP_MINOTAUR)
         {
+            text << make_stringf(jtrans_notrimc("hint seen armour Mi/Ce"),
+                                 species_name_jc(you.species),
+                                 jtransc(you.species == SP_CENTAUR ? "boots" : "helmets"));
+            /*
             text << "\nNote that as a " << species_name(you.species)
                  << " you will be unable to wear "
                  << (you.species == SP_CENTAUR ? "boots" : "helmets")
                  << ".";
+            */
         }
         break;
 
     case HINT_SEEN_RANDART:
+        text << jtrans("hint seen randart");
+        /*
         text << "Weapons and armour that have unusual descriptions like this "
                 "are much more likely to be of higher enchantment or have "
                 "special properties, good or bad.";
+        */
         break;
 
     case HINT_SEEN_FOOD:
+        text << make_stringf(jtransc("hint seen food"),
+                             stringize_glyph(get_item_symbol(SHOW_ITEM_FOOD)).c_str());
+        /*
             text << "You have picked up some food"
             "<console> ('<w>"
              << stringize_glyph(get_item_symbol(SHOW_ITEM_FOOD))
@@ -1287,20 +1375,30 @@ void learned_something_new(hints_event_type seen_what, coord_def gc)
                 "<tiles> or by <w>left-clicking</w> on it</tiles>"
                 ". However, it is usually best to conserve rations and fruit, "
                 "since raw meat from corpses is generally plentiful.";
+        */
         break;
 
     case HINT_SEEN_CARRION:
         // TODO: Specialcase skeletons!
 
         if (gc.x <= 0 || gc.y <= 0) // XXX: only relevant for carrion shops?
-            text << "Ah, a corpse!";
+        {
+            text << jtrans("Ah, a corpse!");
+        }
         else
         {
             int i = you.visible_igrd(gc);
             if (i == NON_ITEM)
-                text << "Ah, a corpse!";
+                text << jtrans("Ah, a corpse!");
             else
             {
+                string glyph = glyph_to_tagstr(get_item_glyph(mitm[i]));
+                const string::size_type found = glyph.find("%");
+                if (found != string::npos)
+                    glyph.replace(found, 1, "percent");
+                text << make_stringf(jtransc("hint seen carrion"),
+                                     glyph.c_str());
+                /*
                 text << "That <console>";
                 string glyph = glyph_to_tagstr(get_item_glyph(mitm[i]));
                 const string::size_type found = glyph.find("%");
@@ -1308,27 +1406,38 @@ void learned_something_new(hints_event_type seen_what, coord_def gc)
                     glyph.replace(found, 1, "percent");
                 text << glyph << " ";
                 text << "</console>is a corpse.";
+                */
 #ifdef USE_TILE
                 tiles.place_cursor(CURSOR_TUTORIAL, gc);
-                tiles.add_text_tag(TAG_TUTORIAL, mitm[i].name(DESC_A), gc);
+                tiles.add_text_tag(TAG_TUTORIAL, mitm[i].name(DESC_PLAIN), gc);
 #endif
             }
         }
 
+        text << jtrans("hint seen carrion 2");
+        /*
         text << " When a corpse is lying on the ground, you "
                 "can <w>%</w>hop it up. Once hungry, you can "
                 "then <w>%</w>at the resulting chunks.";
+        */
         cmd.push_back(CMD_BUTCHER);
         cmd.push_back(CMD_EAT);
 
+        text << jtrans("hint seen carrion 3");
+        /*
         text << "<tiles> You can also chop up any corpse that shows up in "
                 "the floor part of your inventory region, simply by "
                 "<w>left-clicking</w> on it while pressing <w>Shift</w>, and "
                 "then eat the resulting chunks with <w>Shift + right-mouse</w>"
                 ".</tiles>";
+        */
         break;
 
     case HINT_SEEN_JEWELLERY:
+        text << make_stringf(jtransc("hint seen jewellery"),
+                             stringize_glyph(get_item_symbol(SHOW_ITEM_RING)).c_str(),
+                             stringize_glyph(get_item_symbol(SHOW_ITEM_AMULET)).c_str());
+        /*
         text << "You have picked up a a piece of jewellery, either a ring"
              << "<console> ('<w>"
              << stringize_glyph(get_item_symbol(SHOW_ITEM_RING))
@@ -1342,18 +1451,22 @@ void learned_something_new(hints_event_type seen_what, coord_def gc)
              << "<tiles>. You can click on it to put it on, and click again "
                 "to remove it. By <w>right-clicking> on it, you can view its "
                 "properties</tiles>.";
+        */
         cmd.push_back(CMD_WEAR_JEWELLERY);
         cmd.push_back(CMD_REMOVE_JEWELLERY);
         cmd.push_back(CMD_DISPLAY_INVENTORY);
         break;
 
     case HINT_SEEN_MISC:
+        text << jtrans("hint seen misc");
+        /*
         text << "This is a curious object indeed. You can play around with "
                 "it to find out what it does by "
                 "<tiles>clicking on it to e<w>%</w>oke </tiles>"
                 "<console>e<w>%</w>oking </console>"
                 "it. As usual, selecting it from your <w>%</w>nventory "
                 "might give you more information.";
+        */
         cmd.push_back(CMD_EVOKE);
         cmd.push_back(CMD_WIELD_WEAPON);
         cmd.push_back(CMD_EVOKE_WIELDED);
@@ -1361,6 +1474,9 @@ void learned_something_new(hints_event_type seen_what, coord_def gc)
         break;
 
     case HINT_SEEN_ROD:
+        text << make_stringf(jtransc("hint seen rod"),
+                             stringize_glyph(get_item_symbol(SHOW_ITEM_ROD)).c_str());
+        /*
         text << "You have picked up a magical rod"
                 "<console> ('<w>";
         text << stringize_glyph(get_item_symbol(SHOW_ITEM_ROD))
@@ -1371,14 +1487,21 @@ void learned_something_new(hints_event_type seen_what, coord_def gc)
                 "e<w>%</w>oking it. It has a limited pool of magic which"
                 "recharges over time, and its power depends on "
                 "your Evocations skill.";
+        */
         cmd.push_back(CMD_WIELD_WEAPON);
         cmd.push_back(CMD_EVOKE_WIELDED);
 
+        text << jtrans("hint seen rod 2");
+        /*
         text << "<tiles> You can wield and then evoke rods by "
                 "<w>left-clicking</w> on them.</tiles>";
+        */
         break;
 
     case HINT_SEEN_STAFF:
+        text << make_stringf(jtransc("hint seen staff"),
+                             stringize_glyph(get_item_symbol(SHOW_ITEM_STAFF)).c_str());
+        /*
         text << "You have picked up a magic staff"
                 "<console> ('<w>";
 
@@ -1388,10 +1511,14 @@ void learned_something_new(hints_event_type seen_what, coord_def gc)
                 "Magicians use staves to increase their power in certain "
                 "spell schools. It can also be used as a weapon."
                 "<tiles> You can wield a staff by <w>left-clicking</w>.</tiles>";
+        */
         cmd.push_back(CMD_WIELD_WEAPON);
         break;
 
     case HINT_SEEN_GOLD:
+        text << make_stringf(jtransc("hint seen gold"),
+                             stringize_glyph(get_item_symbol(SHOW_ITEM_GOLD)).c_str());
+        /*
         text << "You have picked up your first pile of gold"
                 "<console> ('<yellow>"
              << stringize_glyph(get_item_symbol(SHOW_ITEM_GOLD))
@@ -1400,6 +1527,7 @@ void learned_something_new(hints_event_type seen_what, coord_def gc)
                 "your inventory, takes up no space in your inventory, weighs "
                 "nothing and can't be dropped. Gold can be used to buy "
                 "items from shops, and is appreciated by certain gods.";
+        */
         break;
 
     case HINT_SEEN_STAIRS:
@@ -1408,6 +1536,19 @@ void learned_something_new(hints_event_type seen_what, coord_def gc)
         if (you.num_turns < 1)
             DELAY_EVENT;
 
+#ifndef USE_TILE
+        // Is a monster blocking the view?
+        if (monster_at(gc))
+            DELAY_EVENT;
+        text << make_stringf(jtransc("hint seen stairs"),
+                             glyph_to_tagstr(get_cell_glyph(gc)).c_str());
+#else
+        tiles.place_cursor(CURSOR_TUTORIAL, gc);
+        tiles.add_text_tag(TAG_TUTORIAL, jtrans("Stairs"), gc);
+        text << jtrans("hint seen stairs use tile");
+#endif
+
+        /*
         text << "These ";
 #ifndef USE_TILE
         // Is a monster blocking the view?
@@ -1423,13 +1564,16 @@ void learned_something_new(hints_event_type seen_what, coord_def gc)
                 "level by following them down (<w>%</w>). To return to "
                 "this level, press <w>%</w> while standing on the "
                 "upstairs.";
+        */
         cmd.push_back(CMD_GO_DOWNSTAIRS);
         cmd.push_back(CMD_GO_UPSTAIRS);
 
+        /*
 #ifdef USE_TILE
-        text << "\nAlternately, you can <w>left-click</w> on stairs you're "
-                "standing on to use them.";
+        text << jtrans_notrim("\nAlternately, you can <w>left-click</w> on stairs you're "
+                              "standing on to use them.");
 #endif
+        */
         break;
 
     case HINT_SEEN_ESCAPE_HATCH:
@@ -1440,6 +1584,14 @@ void learned_something_new(hints_event_type seen_what, coord_def gc)
         if (monster_at(gc))
             DELAY_EVENT;
 
+#ifndef USE_TILE
+        text << jtrans("hint seen escape hatch");
+#else
+        text << jtrans("hint seen escape hatch use tile");
+        tiles.place_cursor(CURSOR_TUTORIAL, gc);
+        tiles.add_text_tag(TAG_TUTORIAL, jtrans("Escape hatch"), gc);
+#endif
+        /*
         text << "This ";
 #ifndef USE_TILE
         text << glyph_to_tagstr(get_cell_glyph(gc));
@@ -1455,11 +1607,22 @@ void learned_something_new(hints_event_type seen_what, coord_def gc)
 #endif
                 ", like stairs; unlike stairs, however, hatches are a one-way "
                 " trip, so be careful when descending!";
+        */
         cmd.push_back(CMD_GO_UPSTAIRS);
         cmd.push_back(CMD_GO_DOWNSTAIRS);
         break;
 
     case HINT_SEEN_BRANCH:
+#ifndef USE_TILE
+        if (monster_at(gc))
+            DELAY_EVENT;
+        text << jtrans("hint seen branch");
+#else
+        text << jtrans("hint seen branch use tile");
+        tiles.place_cursor(CURSOR_TUTORIAL, gc);
+        tiles.add_text_tag(TAG_TUTORIAL, jtrans("Branch stairs"), gc);
+#endif
+        /*
         text << "This ";
 #ifndef USE_TILE
         // Is a monster blocking the view?
@@ -1484,6 +1647,7 @@ void learned_something_new(hints_event_type seen_what, coord_def gc)
                 "and the Mines can be dangerous for the new adventurer, "
                 "the Temple is completely safe and contains a number of "
                 "altars at which you might convert to a new god.";
+        */
         break;
 
     case HINT_SEEN_PORTAL:
@@ -1494,16 +1658,17 @@ void learned_something_new(hints_event_type seen_what, coord_def gc)
         if (you.pos() == gc)
             DELAY_EVENT;
 
-        text << "This ";
 #ifndef USE_TILE
         // Is a monster blocking the view?
         if (monster_at(gc))
             DELAY_EVENT;
 
-        text << glyph_to_tagstr(get_cell_glyph(gc)) << " ";
+        text << "この ";
+        text << glyph_to_tagstr(get_cell_glyph(gc)) << " は";
 #else
         tiles.place_cursor(CURSOR_TUTORIAL, gc);
-        tiles.add_text_tag(TAG_TUTORIAL, "Portal", gc);
+        tiles.add_text_tag(TAG_TUTORIAL, jtrans("Portal"), gc);
+        text << "これは";
 #endif
         text << _describe_portal(gc);
         break;
@@ -1514,6 +1679,12 @@ void learned_something_new(hints_event_type seen_what, coord_def gc)
             DELAY_EVENT;
 
 #ifdef USE_TILE
+        text << jtrans("hint stair brand use tile");
+#else
+        text << jtrans("hint stair brand");
+#endif
+        /*
+#ifdef USE_TILE
         text << "A small symbol on a stair tile signifies that there are "
                 "items in that position that you may want to check out.";
 #else
@@ -1522,6 +1693,7 @@ void learned_something_new(hints_event_type seen_what, coord_def gc)
                 "<w>></w> symbol, instead of hiding the stair symbol with "
                 "an item glyph.";
 #endif
+        */
         break;
 
     case HINT_HEAP_BRAND:
@@ -1529,6 +1701,12 @@ void learned_something_new(hints_event_type seen_what, coord_def gc)
         if (actor_at(gc))
             DELAY_EVENT;
 
+#ifdef USE_TILE
+        text << jtrans("hint heap brand use tile");
+#else
+        text << jtrans("hint heap brand");
+#endif
+        /*
 #ifdef USE_TILE
         text << "A small symbol on an item tile signifies that there is at "
                 "least one other item in the same heap that you may want to "
@@ -1540,6 +1718,7 @@ void learned_something_new(hints_event_type seen_what, coord_def gc)
                 "of the heap will be shown.";
 #endif
         break;
+        */
 
     case HINT_TRAP_BRAND:
 #ifdef USE_TILE
@@ -1550,18 +1729,28 @@ void learned_something_new(hints_event_type seen_what, coord_def gc)
         if (actor_at(gc))
             DELAY_EVENT;
 
+        text << jtrans("hint trap brand");
+        /*
         text << "If any items are covering a trap, then that will be "
                 "indicated by highlighting the <w>^</w> symbol, instead of "
                 "hiding the trap symbol with an item glyph.";
+        */
 #endif
         break;
 
     case HINT_SEEN_TRAP:
         if (you.pos() == gc)
-            text << "Oops... you just triggered a trap. ";
+            text << jtransln("Oops... you just triggered a trap. ");
         else
-            text << "You just discovered a trap. ";
+            text << jtransln("You just discovered a trap. ");
 
+#ifndef USE_TILE
+        text << make_stringf(jtransc("hint seen trap"),
+                             _colourize_glyph().c_str());
+#else
+        text << jtrans("hint seen trap use tile");
+#endif
+        /*
         text << "You'll occasionally stumble into these nasty constructions";
 #ifndef USE_TILE
         {
@@ -1575,9 +1764,30 @@ void learned_something_new(hints_event_type seen_what, coord_def gc)
 #endif
         text << ". Each type of trap has a different effect when stepped on, "
                 "like alerting enemies or causing random teleportation.";
+        */
         break;
 
     case HINT_SEEN_ALTAR:
+#ifndef USE_TILE
+        if (monster_at(gc))
+            DELAY_EVENT;
+#else
+        {
+            tiles.place_cursor(CURSOR_TUTORIAL, gc);
+            string altar = make_stringf(jtransc("An altar to {god name}"),
+
+                                        god_name_jc(feat_altar_god(grd(gc))));
+            tiles.add_text_tag(TAG_TUTORIAL, altar, gc);
+        }
+#endif
+
+#ifndef USE_TILE
+        text << make_stringf(jtransc("hint seen altar"),
+                             glyph_to_tagstr(get_cell_glyph(gc)).c_str());
+#else
+        text << jtrans("hint seen altar use tile");
+#endif
+        /*
         text << "That ";
 #ifndef USE_TILE
         // Is a monster blocking the view?
@@ -1604,15 +1814,20 @@ void learned_something_new(hints_event_type seen_what, coord_def gc)
                 "or read some information about the god in question. Before "
                 "taking up the corresponding faith you'll be asked for "
                 "confirmation.";
+        */
         cmd.push_back(CMD_GO_UPSTAIRS);
         cmd.push_back(CMD_GO_DOWNSTAIRS);
 
         if (you_worship(GOD_NO_GOD)
             && Hints.hints_type == HINT_MAGIC_CHAR)
         {
+            text << "\n\n"
+                 << jtrans("hint seen altar conjurer");
+            /*
             text << "\n\nThe simplest god for an unexperienced conjurer is "
                     "probably Vehumet, though Sif Muna is a good second "
                     "choice.";
+            */
         }
         break;
 
@@ -1625,6 +1840,12 @@ void learned_something_new(hints_event_type seen_what, coord_def gc)
         if (monster_at(gc))
             DELAY_EVENT;
 #endif
+#ifndef USE_TILE
+        text << jtrans("hint seen shop");
+#else
+        text << jtrans("hint seen shop use tile");
+#endif
+        /*
         text << "That "
 #ifndef USE_TILE
              << glyph_to_tagstr(get_cell_glyph(gc)) << " "
@@ -1641,6 +1862,9 @@ void learned_something_new(hints_event_type seen_what, coord_def gc)
                 "you can hold <w>Shift</w> and press the corresponding letter "
                 "to put them on your shopping list. The game will then remind "
                 "you when you gather enough gold to buy them.";
+        */
+        cmd.push_back(CMD_GO_UPSTAIRS);
+        cmd.push_back(CMD_GO_DOWNSTAIRS);
         break;
 
     case HINT_SEEN_DOOR:
@@ -1649,9 +1873,16 @@ void learned_something_new(hints_event_type seen_what, coord_def gc)
 
 #ifdef USE_TILE
         tiles.place_cursor(CURSOR_TUTORIAL, gc);
-        tiles.add_text_tag(TAG_TUTORIAL, "Closed door", gc);
+        tiles.add_text_tag(TAG_TUTORIAL, jtrans("Closed door"), gc);
 #endif
 
+#ifndef USE_TILE
+        text << make_stringf(jtransc("hint seen door"),
+                             glyph_to_tagstr(get_cell_glyph(gc)).c_str());
+#else
+        text << jtrans("hint seen door use tile");
+#endif
+        /*
         text << "That "
 #ifndef USE_TILE
              << glyph_to_tagstr(get_cell_glyph(gc)) << " "
@@ -1661,14 +1892,22 @@ void learned_something_new(hints_event_type seen_what, coord_def gc)
                 "pressing <w>%</w> while next to it. If there are several "
                 "doors, you will then be prompted for a direction.</console>"
                 "<tiles>clicking on the door while next to it.</tiles>";
+        */
         cmd.push_back(CMD_CLOSE_DOOR);
         break;
 
     case HINT_SEEN_RUNED_DOOR:
 #ifdef USE_TILE
         tiles.place_cursor(CURSOR_TUTORIAL, gc);
-        tiles.add_text_tag(TAG_TUTORIAL, "Runed door", gc);
+        tiles.add_text_tag(TAG_TUTORIAL, jtrans("Runed door"), gc);
 #endif
+
+#ifndef USE_TILE
+        text << jtrans("hint seen runed door");
+#else
+        text << jtrans("hint seen runed door use tile");
+#endif
+        /*
         text << "That ";
 #ifndef USE_TILE
         text << glyph_to_tagstr(get_cell_glyph(gc)) << " ";
@@ -1676,19 +1915,27 @@ void learned_something_new(hints_event_type seen_what, coord_def gc)
         text << "is a runed door, which is probably in front of something "
                 "unusually dangerous. Monsters will never open it. If you do, "
                 "the runes will be broken, and it will become a normal door.";
+        */
         break;
 
     case HINT_KILLED_MONSTER:
+        text << jtrans("hint killed monster");
+        /*
         text << "Congratulations, your character just gained experience by "
                 "killing this monster! This will raise some of your skills, "
                 "making you more deadly.";
+        */
         // A more detailed description of skills is given when you go past an
         // integer point.
 
         if (you_worship(GOD_TROG))
         {
+            text << "\n"
+                 << jtrans("hint killed monster trog");
+            /*
             text << " Also, most kills will grant you favour in the eyes of "
                     "Trog.";
+            */
         }
         break;
 
@@ -1704,9 +1951,11 @@ void learned_something_new(hints_event_type seen_what, coord_def gc)
         if (Hints.hints_type == HINT_MAGIC_CHAR)
         {
 #ifdef USE_TILE
-            text << jtrans_notrim("\nhint new level magic char use tile");
+            text << "\n"
+                 << jtrans_notrim("hint new level conjurer use tile");
 #else
-            text << jtrans_notrim("\nhint new level magic char");
+            text << "\n"
+                 << jtrans_notrim("hint new level conjurer");
 #endif
             /*
             text << "\nGaining an experience level also lets you learn more "
@@ -1743,27 +1992,36 @@ void learned_something_new(hints_event_type seen_what, coord_def gc)
         break;
 
     case HINT_GAINED_MAGICAL_SKILL:
+        text << jtrans("hint gained magical spell");
+        /*
         text << "Being skilled in a magical \"school\" makes it easier to "
                 "learn and cast spells of that school. Many spells belong to "
                 "a combination of several schools, in which case the average "
                 "skill in these schools will determine spellcasting success "
                 "and power.";
+        */
         break;
 
     case HINT_GAINED_MELEE_SKILL:
+        text << jtrans("hint gained melee skill");
+        /*
         text << "Being skilled with a particular type of weapon will make you "
                 "deal slightly more damage and attack significantly faster "
                 "with all weapons of that type. It's a good idea to focus on "
                 "just one weapon type, usually one you start with, though "
                 "finding a particularly good weapon may justify a switch.";
+        */
         break;
 
     case HINT_GAINED_RANGED_SKILL:
+        text << jtrans("hint gained ranged skill");
+        /*
         text << "Being skilled in a particular type of ranged attack will let "
                 "you deal more damage when using the appropriate weapons. It "
                 "is usually best to concentrate on one type of ranged attack "
                 "(including spells), and to use a melee weapon as a backup "
                 "for fighting weak enemies.";
+        */
         break;
 
     case HINT_CHOOSE_STAT:
@@ -1780,10 +2038,13 @@ void learned_something_new(hints_event_type seen_what, coord_def gc)
         break;
 
     case HINT_YOU_ENCHANTED:
+        text << jtrans("hint you enchanted");
+        /*
         text << "Enchantments of all types can befall you temporarily. "
                 "Brief descriptions of these appear at the lower end of the "
                 "stats area. Press <w>%</w> for more details. You can search "
                 "for full enchantment descriptions by pressing <w>%/T</w>.";
+        */
         cmd.push_back(CMD_DISPLAY_CHARACTER_STATUS);
         cmd.push_back(CMD_DISPLAY_COMMANDS);
         cmd.push_back(CMD_DISPLAY_COMMANDS); // yes, twice
@@ -1798,9 +2059,12 @@ void learned_something_new(hints_event_type seen_what, coord_def gc)
             learned_something_new(HINT_YOU_ENCHANTED);
             Hints.hints_just_triggered = true;
         }
+        text << jtrans("hint you poison");
+        /*
         text << "Poison will slowly reduce your health. You can wait it out "
                 "with <w>%</w>, if you're in combat or lethally poisoned, "
                 "you'll probably want to quaff a potion of curing.";
+        */
         cmd.push_back(CMD_REST);
         break;
 
@@ -1811,11 +2075,14 @@ void learned_something_new(hints_event_type seen_what, coord_def gc)
         learned_something_new(HINT_YOU_ENCHANTED);
         Hints.hints_just_triggered = true;
 
+        text << jtrans("hint you rotting");
+        /*
         text << "Ugh, your flesh has been rotted away! This reduces your"
                 "<w>maximum</w> health (your usual maximum health will be "
                 "indicated by a number in parentheses).\n"
                 "Whenever you drink potions of curing and heal wounds, "
                 "some rot will be cured, but you'll be healed less.";
+        */
         cmd.push_back(CMD_QUAFF);
         break;
 
@@ -1837,26 +2104,40 @@ void learned_something_new(hints_event_type seen_what, coord_def gc)
         break;
 
     case HINT_YOU_HUNGRY:
+        text << jtrans("hint you hungry");
+        /*
         text << "There are two ways to overcome hunger: food you started "
                 "with or found, and self-made chunks from corpses. To get the "
                 "latter, all you need to do is <w>%</w>hop up a corpse. "
                 "Luckily, all adventurers carry a pocket knife with them "
                 "which is perfect for butchering. Try to dine on chunks in "
                 "order to save permanent food.";
+        */
         if (Hints.hints_type == HINT_BERSERK_CHAR)
+            text << "\n"
+                 << jtrans("hint you hungry berserker");
+            /*
             text << "\nNote that you cannot Berserk while very hungry or worse.";
+            */
         cmd.push_back(CMD_BUTCHER);
         break;
 
     case HINT_YOU_STARVING:
+        text << jtrans("hint you starving");
+        /*
         text << "You are now suffering from terrible hunger. You'll need to "
                 "<w>%</w>at something quickly, or you'll die. The safest "
                 "way to deal with this is to simply eat something from your "
                 "inventory, rather than wait for a monster to leave a corpse.";
+        */
         cmd.push_back(CMD_EAT);
 
         if (Hints.hints_type == HINT_MAGIC_CHAR)
+            text << "\n"
+                 << jtrans("hint you starving conjurer");
+            /*
             text << "\nNote that you cannot cast spells while starving.";
+            */
         break;
 
     case HINT_MULTI_PICKUP:
@@ -1878,50 +2159,70 @@ void learned_something_new(hints_event_type seen_what, coord_def gc)
         break;
 
     case HINT_FULL_INVENTORY:
+        text << jtrans("hint full inventory");
+        /*
         text << "Sadly, your inventory is limited to 52 items, and it "
             "appears your knapsack is full.";
         text << " However, this is easy enough to rectify: simply "
                 "<w>%</w>rop some of the stuff you don't need right now.";
+        */
         cmd.push_back(CMD_DROP);
 
 #ifdef USE_TILE
+        text << "\n"
+            << jtrans("hint full inventory use tile");
+        /*
         text << " In the drop menu you can then comfortably select which "
                 "items to drop by pressing their inventory letter, or by "
                 "clicking on them.";
+        */
 #endif
         break;
 
     case HINT_MAKE_CHUNKS:
+        text << jtrans("hint make chunks");
+        /*
         text << "How lucky! That monster left a corpse which you can now "
                 "<w>%</w>hop up, producing chunks that you can then "
                 "<w>%</w>at. Some monsters are inedible or or even mutagenic,"
                 "but their chunks will be named accordingly, so don't worry "
                 "about any surprises in the food!";
+        */
         cmd.push_back(CMD_BUTCHER);
         cmd.push_back(CMD_EAT);
         break;
 
     case HINT_SHIFT_RUN:
+        text << jtrans("hint shift run");
+        /*
         text << "Walking around takes fewer keystrokes if you press "
                 "<w>Shift-direction</w> or <w>/ direction</w>. "
                 "That will let you run until a monster comes into sight or "
                 "your character sees something interesting.";
+        */
         break;
 
     case HINT_MAP_VIEW:
+        text << jtrans("hint map view");
+        /*
         text << "As you explore a level, orientation can become difficult. "
                 "Press <w>%</w> to bring up the level map. Typing <w>?</w> "
                 "shows the list of level map commands. "
                 "Most importantly, moving the cursor to a spot and pressing "
                 "<w>.</w> or <w>Enter</w> lets your character move there on "
                 "its own.";
+        */
         cmd.push_back(CMD_DISPLAY_MAP);
 
 #ifdef USE_TILE
+        text << "\n"
+             << jtrans("hint map view use tile");
+        /*
         text << "\nAlso, clicking on the right-side minimap with your "
                 "<w>right mouse button</w> will zoom into that dungeon area. "
                 "Clicking with the <w>left mouse button</w> instead will let "
                 "you move there.";
+        */
 #endif
         break;
 
@@ -1929,18 +2230,27 @@ void learned_something_new(hints_event_type seen_what, coord_def gc)
         if (!Hints.hints_explored)
             return;
 
+        text << jtrans("hint auto explore");
+        /*
         text << "Fully exploring a level and picking up all the interesting "
                 "looking items can be tedious. To save on this tedium you "
                 "can press <w>%</w> to auto-explore, which will "
                 "automatically explore unmapped regions, automatically pick "
                 "up interesting items, and stop if a monster or interesting "
                 "dungeon feature (stairs, altar, etc.) is encountered.";
+        */
         cmd.push_back(CMD_EXPLORE);
         Hints.hints_explored = false;
         break;
 
     case HINT_DONE_EXPLORE:
         // XXX: You'll only get this message if you're using auto exploration.
+#ifndef USE_TILE
+        text << jtrans("hint done explore");
+#else
+        text << jtrans("hint done explore use tile");
+#endif
+        /*
         text << "Hey, you've finished exploring the dungeon on this level! "
                 "You can search for stairs from the level map (<w>%</w>) "
                 "by pressing <w>></w>. The cursor will jump to the nearest "
@@ -1955,6 +2265,7 @@ void learned_something_new(hints_event_type seen_what, coord_def gc)
 #endif
                 "down stairs. Unexplored parts can often be accessed via "
                 "another level.";
+        */
         cmd.push_back(CMD_DISPLAY_MAP);
         break;
 
@@ -1969,6 +2280,10 @@ void learned_something_new(hints_event_type seen_what, coord_def gc)
             learned_something_new(HINT_AUTO_EXPLORE);
             Hints.hints_just_triggered = true;
         }
+
+        text << "\n"
+             << jtrans("hint auto exclusion");
+        /*
         text << "\nTo prevent autotravel or autoexplore taking you into "
                 "dangerous territory, you can set travel exclusions by "
                 "entering the map view (<w>%</w>) and then toggling the "
@@ -1981,6 +2296,7 @@ void learned_something_new(hints_event_type seen_what, coord_def gc)
                 "exclusion with <w>%ee</w> but unless you remove this monster "
                 "from the auto_exclude list, the exclusion will be reset the "
                 "next turn.";
+        */
         cmd.push_back(CMD_DISPLAY_MAP);
         cmd.push_back(CMD_DISPLAY_MAP);
         break;
@@ -1994,6 +2310,12 @@ void learned_something_new(hints_event_type seen_what, coord_def gc)
         break;
 
     case HINT_NEED_HEALING:
+#ifdef USE_TILE
+        text << jtrans("hint need healing use tile");
+#else
+        text << jtrans("hint need healing");
+#endif
+        /*
         text << "If you're low on health or magic and there's no urgent "
                 "need to move, you can rest for a bit. Ideally, you should "
                 "retreat to an area you've already explored and cleared "
@@ -2005,24 +2327,31 @@ void learned_something_new(hints_event_type seen_what, coord_def gc)
                 ", or click on the 'rest' button,"
 #endif
                 " to do so.";
+        */
         cmd.push_back(CMD_REST);
         break;
 
     case HINT_NEED_POISON_HEALING:
+        text << jtrans("hint need poison healing");
+        /*
         text << "You are lethally poisoned, so now would be a good time to "
                 "<w>%</w>uaff a potion of heal wounds or, better yet, a "
                 "potion of curing. If you have seen neither of these so far, "
                 "try unknown potions in your inventory. Good luck!";
+        */
         cmd.push_back(CMD_QUAFF);
         break;
 
     case HINT_INVISIBLE_DANGER:
+        text << jtrans("hint invisible danger");
+        /*
         text << "Fighting against a monster you cannot see is difficult. "
                 "If you don't have a source of see invisibility, you can find "
                 "invisible monsters by luring them into shallow water, opaque "
                 "clouds (from a scroll of fog), or a corridor, where their "
                 "movements will be more predictable. If things go south, try "
                 "teleporting out, or leaving the level entirely!";
+        */
 
         // To prevent this text being immediately followed by the next one...
         Hints.hints_last_healed = you.num_turns - 30;
@@ -2030,11 +2359,14 @@ void learned_something_new(hints_event_type seen_what, coord_def gc)
 
             // XXX: replace this with an explanation of autopickup toggles?
     case HINT_NEED_HEALING_INVIS:
+        text << jtrans("hint need healing invis");
+        /*
         text << "You recently noticed an invisible monster, so unless you "
                 "killed it or left the scene resting might not be safe. If you "
                 "still need to replenish your health or magic, you'll have "
                 "to quaff an appropriate potion. For normal resting you will "
                 "first have to get away from the danger.";
+        */
 
         Hints.hints_last_healed = you.num_turns;
         break;
@@ -2044,68 +2376,96 @@ void learned_something_new(hints_event_type seen_what, coord_def gc)
         if (Hints.hints_berserk_counter)
             return;
 
+        text << jtrans("hint can berserk");
+        /*
         text << "Against particularly difficult foes, you should use your "
                 "Berserk <w>%</w>bility. Killing monsters while berserking "
                 "makes it last longer.";
+        */
         cmd.push_back(CMD_USE_ABILITY);
         break;
 
     case HINT_POSTBERSERK:
+        text << jtrans("hint postberserk");
+        /*
         text << "Berserking is extremely exhausting! It burns a lot of "
                 "nutrition, and afterwards you are slowed down and "
                 "occasionally even pass out. You won't be able to berserk "
                 "again until enough time passes for your exhaustion to fade.";
+        */
         break;
 
     case HINT_RUN_AWAY:
+        text << jtrans("hint run away");
+        /*
         text << "Whenever your health is very low and you're in danger of "
                 "dying, check your options carefully. Often, retreat or use "
                 "of some item might be a viable alternative to fighting on.";
+        */
 
         if (you.species == SP_CENTAUR)
         {
+            text << "\n"
+                 << jtrans("hint run away centaur");
+            /*
             text << " As a four-legged centaur you are particularly quick - "
                     "running is usually an option!";
+            */
         }
 
         if (you_worship(GOD_TROG) && you.can_go_berserk())
         {
+            text << "\n"
+                 << make_stringf(jtransc("hint run away trog"),
+                                 god_name_jc(you.religion));
+            /*
             text << "With "
                 << apostrophise(god_name(you.religion))
                 << " support you can use your Berserk ability (<w>%</w>) to "
                     "temporarily gain more health and greater strength. Bear "
                     "in mind that berserking at the last minute is often "
                     "risky, and prevents you from using items to escape!";
+            */
             cmd.push_back(CMD_USE_ABILITY);
         }
 
+        text << "\n"
+             << jtrans("hint run away 2");
+        /*
         text << " If retreating to another level, keep in mind that monsters "
                 "may follow you if they're standing right next to you when "
                 "you start climbing or descending the stairs. And even if "
                 "you've managed to shake them off, they'll still be there when "
                 "you come back, so you might want to use a different set of "
                 "stairs when you return.";
+        */
 
         break;
 
     case HINT_RETREAT_CASTER:
+        text << jtrans("hint retreat caster");
+        /*
         text << "Without magical power you're unable to cast spells. While "
                 "melee is a possibility, that's not where your strengths "
                 "lie, so retreat (if possible) might be the better option.";
+        */
 
         if (_advise_use_wand())
         {
-            text << "\n\nOr you could e<w>%</w>oke a wand to deal damage.";
+            text << jtrans_notrim("\n\nOr you could e<w>%</w>oke a wand to deal damage.");
             cmd.push_back(CMD_EVOKE);
         }
         break;
 
     case HINT_YOU_MUTATED:
+        text << jtrans("hint you mutated");
+        /*
         text << "Mutations can be obtained from several sources, among them "
                 "potions, spell miscasts, and overuse of strong enchantments "
                 "like invisibility. The gods Zin and Jiyva will cure your "
                 "mutations, but otherwise, your only recourse is to potions "
                 "of cure mutation. Check your mutations with <w>%</w>.";
+        */
         cmd.push_back(CMD_DISPLAY_MUTATIONS);
         break;
 
@@ -2120,27 +2480,40 @@ void learned_something_new(hints_event_type seen_what, coord_def gc)
         case GOD_XOM:
         case GOD_SHINING_ONE:
             // TODO: update me
+#ifdef USE_TILE
+            text << jtrans("hint new passive ability god use tile");
+#else
+            text << jtrans("hint new passive ability god");
+#endif
+            /*
             text << "You just gained a divine ability. Press <w>%</w> "
 #ifdef USE_TILE
                     "or press <w>Shift</w> and <w>right-click</w> on the "
                     "player tile "
 #endif
                     "to take a look at your abilities.";
+            */
             cmd.push_back(CMD_DISPLAY_RELIGION);
             break;
 
         // Gods where first granted ability is active.
         default:
+            text << jtrans("hint new ability god");
+            /*
             text << "You just gained a divine ability. Press <w>%</w> to "
                     "take a look at your abilities or to use one of them.";
+            */
             cmd.push_back(CMD_USE_ABILITY);
             break;
         }
         break;
 
     case HINT_NEW_ABILITY_MUT:
+        text << jtrans("hint new ability mut");
+        /*
         text << "That mutation granted you a new ability. Press <w>%</w> to "
                 "take a look at your abilities or to use one of them.";
+        */
         cmd.push_back(CMD_USE_ABILITY);
         break;
 
@@ -2168,18 +2541,29 @@ void learned_something_new(hints_event_type seen_what, coord_def gc)
         }
         else
         {
+#ifdef USE_TILE
+        text << jtrans("hint new ability item non-flying use tile");
+#else
+        text << jtrans("hint new ability item non-flying");
+#endif
+            /*
             text << "That item you just equipped granted you a new ability. "
                     "Press <w>%</w> "
 #ifdef USE_TILE
                     "(or <w>click</w> in the <w>command panel</w>) "
 #endif
                     "to take a look at your abilities or to use one of them.";
+            */
         }
         cmd.push_back(CMD_USE_ABILITY);
         break;
 
     case HINT_ITEM_RESISTANCES:
+#ifdef USE_TILE_LOCAL
+        text << jtrans("hint item resistances use tile local");
+#else
         text << jtrans("hint item resistances");
+#endif
         /*
         text << "Equipping this item affects your resistances. Check the "
                 "overview screen (<w>%</w>"
@@ -2195,13 +2579,22 @@ void learned_something_new(hints_event_type seen_what, coord_def gc)
     case HINT_FLYING:
         if (you.evokable_flight())
         {
+            text << jtrans("hint flying");
+            /*
             text << "To stop flying, use the corresponding ability "
                     "in the ability menu (<w>%</w>).";
+            */
             cmd.push_back(CMD_USE_ABILITY);
         }
         break;
 
     case HINT_INACCURACY:
+#ifdef USE_TILE_LOCAL
+        text << jtrans("hint inaccuracy use tile local");
+#else
+        text << jtrans("hint inaccuracy");
+#endif
+        /*
         text << "Not all items are useful, and some of them are outright "
                 "harmful. Press <w>%</w> ";
 #ifdef USE_TILE_LOCAL
@@ -2209,6 +2602,7 @@ void learned_something_new(hints_event_type seen_what, coord_def gc)
 #else
         text << "to remove your amulet.";
 #endif
+        */
         cmd.push_back(CMD_REMOVE_JEWELLERY);
         break;
 
@@ -2232,6 +2626,14 @@ void learned_something_new(hints_event_type seen_what, coord_def gc)
         break;
 
     case HINT_GOD_DISPLEASED:
+#ifdef USE_TILE
+        text << make_stringf(jtransc("hint god displeased use tile"),
+#else
+        text << make_stringf(jtransc("hint god displeased"),
+#endif
+                             god_name_jc(you.religion),
+                             god_name_jc(you.religion));
+        /*
         text << "Uh-oh, " << god_name(you.religion) << " is growing "
                 "displeased because your piety is running low. Possibly this "
                 "is the case because you're committing heretical acts, "
@@ -2247,6 +2649,7 @@ void learned_something_new(hints_event_type seen_what, coord_def gc)
                 " or press <w>Shift</w> and <w>right-click</w> on your avatar"
 #endif
                 ".";
+        */
         cmd.push_back(CMD_DISPLAY_RELIGION);
         break;
 
@@ -2263,11 +2666,20 @@ void learned_something_new(hints_event_type seen_what, coord_def gc)
                 break;
             }
 
-        const string old_god_name  = god_name(old_god);
-        const string new_god_name  = god_name(new_god);
+        const string old_god_name  = god_name_j(old_god);
+        const string new_god_name  = god_name_j(new_god);
 
         if (new_god == GOD_NO_GOD)
         {
+            if (old_piety < 1)
+                text << make_stringf(jtransc("hint excommunicate old piety < 1"),
+                                     old_god_name.c_str(),
+                                     old_god_name.c_str());
+            else
+                text << make_stringf(jtransc("hint excommunicate old piety >= 1"),
+                                     old_god_name.c_str(),
+                                     old_god_name.c_str());
+            /*
             if (old_piety < 1)
             {
                 text << "Uh-oh, " << old_god_name << " just excommunicated you "
@@ -2288,7 +2700,7 @@ void learned_something_new(hints_event_type seen_what, coord_def gc)
             text << " you can re-convert, and all will be well. Otherwise "
                     "you'll have to weather this god's displeasure until all "
                     "divine wrath is spent.";
-
+            */
         }
         else
         {
@@ -2297,6 +2709,12 @@ void learned_something_new(hints_event_type seen_what, coord_def gc)
             {
                 if (is_good_god(new_god))
                 {
+                    text << make_stringf(jtransc("hint excommunicate convert good god -> good god"),
+                                         old_god_name.c_str(),
+                                         new_god_name.c_str(),
+                                         jtrans_notrimc(old_piety > piety_breakpoint(0) ?
+                                                        "\nYou even kept some of your piety!" : ""));
+                    /*
                     text << "Fortunately, it seems that " << old_god_name <<
                             " didn't mind your converting to " << new_god_name
                          << ". ";
@@ -2307,9 +2725,15 @@ void learned_something_new(hints_event_type seen_what, coord_def gc)
                     text << "Note that this kind of alliance only exists "
                             "between the three good gods, so don't expect this "
                             "to be the norm.";
+                    */
                 }
                 else if (!god_hates_your_god(old_god))
                 {
+                    text << make_stringf(jtransc("hint excommunicate convert good god -> !hated god"),
+                                         old_god_name.c_str(),
+                                         new_god_name.c_str(),
+                                         old_god_name.c_str());
+                    /*
                     text << "Fortunately, it seems that " << old_god_name <<
                             " didn't mind your converting to " << new_god_name
                          << ". That's because " << old_god_name << " is one of "
@@ -2317,9 +2741,15 @@ void learned_something_new(hints_event_type seen_what, coord_def gc)
                             "about change of faith - unless you switch over to "
                             "the path of evil, in which case their retribution "
                             "can be nasty indeed!";
+                    */
                 }
                 else
                 {
+                    text << make_stringf(jtransc("hint excommunicate convert good god -> hated god"),
+                                         old_god_name.c_str(),
+                                         new_god_name.c_str(),
+                                         old_god_name.c_str());
+                    /*
                     text << "Looks like " << old_god_name << " didn't "
                             "appreciate your converting to " << new_god_name
                          << "! But really, changing from one of the good gods "
@@ -2327,26 +2757,38 @@ void learned_something_new(hints_event_type seen_what, coord_def gc)
                             "not on the opposing side of the faith, "
                          << old_god_name << " would have been much more "
                             "forgiving. ";
+                    */
 
                     angry = true;
                 }
             }
             else if (god_hates_your_god(old_god))
             {
+                    text << make_stringf(jtransc("hint excommunicate convert god -> hated god"),
+                                         old_god_name.c_str(),
+                                         new_god_name.c_str());
+                /*
                 text << "Looks like " << old_god_name << " didn't appreciate "
                         "your converting to " << new_god_name << "! (Actually, "
                         "only the three good gods will usually be forgiving "
                         "about this kind of faithlessness.) ";
+                */
 
                 angry = true;
             }
 
             if (angry)
             {
+                text << "\n"
+                     << make_stringf(jtransc("hint excommunicate convert angry"),
+                                     old_god_name.c_str(),
+                                     new_god_name.c_str());
+                /*
                 text << "Unfortunately, while converting back would appease "
                      << old_god_name << ", it would annoy " << new_god_name
                      << ", so you're stuck with having to suffer the wrath of "
                         "one god or another.";
+                */
             }
         }
 
@@ -2368,15 +2810,21 @@ void learned_something_new(hints_event_type seen_what, coord_def gc)
         if (Hints.hints_type == HINT_RANGER_CHAR && wpn != -1
             && you.inv[wpn].is_type(OBJ_WEAPONS, WPN_SHORTBOW))
         {
+            text << jtrans("hint wield weapon ranger");
+            /*
             text << "You can easily switch between weapons in slots a and "
                     "b by pressing <w>%</w>.";
+            */
             cmd.push_back(CMD_WEAPON_SWAP);
         }
         else
         {
+            text << jtrans("hint wield weapon other");
+            /*
             text << "You can easily switch back to your weapon in slot a by "
                     "pressing <w>%</w>. To change the slot of an item, type "
                     "<w>%i</w> and choose the appropriate slots.";
+            */
             cmd.push_back(CMD_WEAPON_SWAP);
             cmd.push_back(CMD_ADJUST_INVENTORY);
         }
@@ -2386,16 +2834,28 @@ void learned_something_new(hints_event_type seen_what, coord_def gc)
         if (Hints.hints_type != HINT_BERSERK_CHAR)
             return;
 
+        text << jtrans("hint fleeing monster");
+        /*
         text << "Now that monster is scared of you! Note that you do not "
                 "absolutely have to follow it. Rather, you can let it run "
                 "away. Sometimes, though, it can be useful to attack a "
                 "fleeing creature by throwing something after it. If you "
                 "have any stones in your <w>%</w>nventory, you can look "
                 "at one of them to read an explanation of how to do this.";
+        */
         cmd.push_back(CMD_DISPLAY_INVENTORY);
         break;
 
     case HINT_MONSTER_BRAND:
+#ifdef USE_TILE
+        tiles.place_cursor(CURSOR_TUTORIAL, gc);
+        if (const monster* m = monster_at(gc))
+            tiles.add_text_tag(TAG_TUTORIAL, m->name(DESC_PLAIN), gc);
+        text << jtrans("hint monster brand use tile");
+#else
+        text << jtrans("hint monster brand");
+#endif
+        /*
 #ifdef USE_TILE
         tiles.place_cursor(CURSOR_TUTORIAL, gc);
         if (const monster* m = monster_at(gc))
@@ -2409,6 +2869,7 @@ void learned_something_new(hints_event_type seen_what, coord_def gc)
                 "pressing <w>%</w> and moving the cursor onto its square.";
         cmd.push_back(CMD_LOOK_AROUND);
 #endif
+            */
         break;
 
     case HINT_MONSTER_FRIENDLY:
@@ -2420,20 +2881,27 @@ void learned_something_new(hints_event_type seen_what, coord_def gc)
 
 #ifdef USE_TILE
         tiles.place_cursor(CURSOR_TUTORIAL, gc);
-        tiles.add_text_tag(TAG_TUTORIAL, m->name(DESC_A), gc);
+        tiles.add_text_tag(TAG_TUTORIAL, m->name(DESC_PLAIN), gc);
 #endif
+        text << jtrans("hint monster friendly");
+        /*
         text << "That monster is friendly to you and will attack your "
                 "enemies, though you'll get only part of the experience for "
                 "monsters damaged by allies, compared to what you'd get for "
                 "doing all the work yourself. You can command your allies by "
                 "pressing <w>%</w>.";
+        */
         cmd.push_back(CMD_SHOUT);
 
         if (!mons_att_wont_attack(m->attitude))
         {
+            text << "\n"
+                 << jtrans("hint monster friendly !att wont atack");
+            /*
             text << "\nHowever, it is only <w>temporarily</w> friendly, and "
                     "will become dangerous again when this friendliness "
                     "wears off.";
+            */
         }
         break;
     }
@@ -2459,31 +2927,40 @@ void learned_something_new(hints_event_type seen_what, coord_def gc)
         if (vis)
         {
             tiles.place_cursor(CURSOR_TUTORIAL, gc);
-            tiles.add_text_tag(TAG_TUTORIAL, m->name(DESC_A), gc);
+            tiles.add_text_tag(TAG_TUTORIAL, m->name(DESC_PLAIN), gc);
         }
 #endif
         if (!vis)
         {
+            text << jtrans("hint monster shout !vis");
+            /*
             text << "Uh-oh, some monster noticed you, either one that's "
                     "around a corner or one that's invisible. Plus, the "
                     "noise it made will alert other monsters in the "
                     "vicinity, who will come to check out what the commotion "
                     "was about.";
+            */
         }
         else if (!mons_can_shout(m->type))
         {
+            text << jtrans("hint monster shout !mons_can_shout");
+            /*
             text << "Uh-oh, that monster noticed you! Fortunately, it "
                     "didn't make any noise, but many monsters do make "
                     "noise when they notice you. That will alert other "
                     "monsters in the area, who will come to check out what "
                     "the commotion was about.";
+            */
         }
         else
         {
+            text << jtrans("hint monster shout");
+            /*
             text << "Uh-oh, that monster noticed you! Plus, the "
                     "noise it made will alert other monsters in the "
                     "vicinity, who will come to check out what the commotion "
                     "was about.";
+            */
         }
         break;
     }
@@ -2495,10 +2972,14 @@ void learned_something_new(hints_event_type seen_what, coord_def gc)
         if (!m || !you.can_see(*m))
             DELAY_EVENT;
 
+        text << make_stringf(jtransc("hint monster left los"),
+                             m->name(DESC_THE, true).c_str());
+        /*
         text << m->name(DESC_THE, true) << " didn't vanish, but merely "
                 "moved onto a square which you can't currently see. It's still "
                 "nearby, unless something happens to it in the short amount of "
                 "time it's out of sight.";
+        */
         break;
     }
 
@@ -2514,6 +2995,18 @@ void learned_something_new(hints_event_type seen_what, coord_def gc)
         if (!mi)
             DELAY_EVENT;
 
+#ifdef USE_TILE
+        // need to highlight monster
+        tiles.place_cursor(CURSOR_TUTORIAL, gc);
+        tiles.add_text_tag(TAG_TUTORIAL, *mi);
+        text << make_stringf(jtransc("hint seen zero exp mon use tile"),
+                             mi->proper_name(DESC_PLAIN).c_str());
+#else
+        text << make_stringf(jtransc("hint seen zero exp mon"),
+                             glyph_to_tagstr(get_mons_glyph(*mi)).c_str(),
+                             mi->proper_name(DESC_PLAIN).c_str());
+#endif
+        /*
         text << "That ";
 #ifdef USE_TILE
         // need to highlight monster
@@ -2530,10 +3023,18 @@ void learned_something_new(hints_event_type seen_what, coord_def gc)
                 "dungeon furniture, since it's harmless and doesn't move. "
                 "If it's in your way you can attack and kill it like other "
                 "monsters, but you won't get any experience for doing so. ";
+        */
         break;
     }
 
     case HINT_ABYSS:
+#ifndef USE_TILE
+        text << make_stringf(jtransc("hint abyss"),
+                             stringize_glyph(get_feat_symbol(DNGN_EXIT_ABYSS)).c_str());
+#else
+        text << jtrans("hint abyss use tile");
+#endif
+        /*
         text << "Uh-oh, you've wound up in the Abyss! The Abyss is a special "
                 "place where you cannot remember or map where you've been; it "
                 "is filled with nasty monsters, and you're probably going to "
@@ -2548,6 +3049,7 @@ void learned_something_new(hints_event_type seen_what, coord_def gc)
                 ", keep moving, don't fight any of the monsters, and don't "
                 "chase after items on the ground. If monsters are closing in, "
                 "try to use items of hasting to get away.";
+        */
         break;
 
     case HINT_SPELL_MISCAST:
@@ -2558,7 +3060,11 @@ void learned_something_new(hints_event_type seen_what, coord_def gc)
 
         if (!crawl_state.game_is_hints())
         {
+#ifdef USE_TILE_LOCAL
+            text << jtrans("hint spell miscast use tile local");
+#else
             text << jtrans("hint spell miscast");
+#endif
             /*
             text << "Miscasting a spell can have nasty consequences, "
                     "particularly for the more difficult spells. Your chance "
@@ -2573,19 +3079,24 @@ void learned_something_new(hints_event_type seen_what, coord_def gc)
             cmd.push_back(CMD_DISPLAY_SPELLS);
             break;
         }
-        text << "You just miscast a spell. ";
+        text << jtransln("You just miscast a spell. ");
 
         const item_def *shield = you.slot_item(EQ_SHIELD, false);
         if (!player_effectively_in_light_armour() || shield)
         {
+            text << jtrans("hint spell miscast heavy armour") << "\n\n";
+            /*
             text << "Wearing heavy body armour or using a shield, especially a "
                     "large one, can severely hamper your spellcasting "
                     "abilities. You can check the effect of this by comparing "
                     "the failure rates on the <w>%\?</w> screen with and "
                     "without the item being worn.\n\n";
+            */
             cmd.push_back(CMD_CAST_SPELL);
         }
 
+        text << jtrans_notrim("hint spell miscast 2") << "\n\n";
+        /*
         text << "If the spellcasting success chance is high (which can be "
                 "checked by entering <w>%\?</w> or <w>%</w>) then a miscast "
                 "merely means the spell is not working, along with a harmless "
@@ -2597,15 +3108,25 @@ void learned_something_new(hints_event_type seen_what, coord_def gc)
                 "time, but if you're repeatedly contaminated in a short amount "
                 "of time you'll mutate or suffer from other ill side effects."
                 "\n\n";
+        */
         cmd.push_back(CMD_CAST_SPELL);
         cmd.push_back(CMD_DISPLAY_SPELLS);
 
+        text << jtrans("hint spell miscast 3");
+        /*
         text << "Note that a miscast spell will still consume the full amount "
                 "of MP and nutrition that a successfully cast spell would.";
+        */
         break;
     }
             // XXX: remove this?
     case HINT_SPELL_HUNGER:
+#ifdef USE_TILE
+        text << jtrans("hint spell hunger use tile");
+#else
+        text << jtrans("hint spell hunger");
+#endif
+        /*
         text << "The spell you just cast made you hungrier; you can see how "
                 "hungry spells make you by "
 #ifdef USE_TILE
@@ -2616,11 +3137,17 @@ void learned_something_new(hints_event_type seen_what, coord_def gc)
                 "the spell and decreases depending on your intelligence stat "
                 "and your Spellcasting skill. If both of these are high "
                 "enough a spell might even not cost you any nutrition at all.";
+        */
         cmd.push_back(CMD_CAST_SPELL);
         cmd.push_back(CMD_DISPLAY_SPELLS);
         break;
 
     case HINT_GLOWING:
+        if (!player_severe_contamination())
+            text << jtrans("hint glowing");
+        else
+            text << jtrans("hint glowing player severe contamination");
+        /*
         text << "You've accumulated so much magical contamination that you're "
                 "glowing! You usually acquire magical contamination from using "
                 "some powerful magics, like invisibility or haste, or from "
@@ -2643,9 +3170,17 @@ void learned_something_new(hints_event_type seen_what, coord_def gc)
         text << "can have nasty effects, such as mutating you or dealing direct "
                 "damage. In addition, glowing is going to make you much more "
                 "noticeable.";
+        */
         break;
 
     case HINT_YOU_RESIST:
+#ifdef USE_TILE
+        text << jtrans("hint you resist use tile");
+#else
+        text << jtrans("hint you resist");
+        cmd.push_back(CMD_RESISTS_SCREEN);
+#endif
+        /*
         text << "There are many dangers in Crawl. Luckily, there are ways to "
                 "(at least partially) resist some of them, if you are "
                 "fortunate enough to find them. There are two basic variants "
@@ -2663,28 +3198,46 @@ void learned_something_new(hints_event_type seen_what, coord_def gc)
                 "press <w>%</w>.";
         cmd.push_back(CMD_RESISTS_SCREEN);
 #endif
+        */
         break;
 
     case HINT_CAUGHT_IN_NET:
+        text << jtransln("hint caught in net");
+        /*
         text << "While you are held in a net, you cannot move around or engage "
                 "monsters in combat. Instead, any movement you take is counted "
                 "as an attempt to struggle free from the net.";
+        */
         cmd.push_back(CMD_FIRE);
 
         if (Hints.hints_type == HINT_MAGIC_CHAR)
         {
+            text << "\n"
+                 << jtrans("hint caught in net conjurer");
+            /*
             text << " Note that casting spells is still very much possible, "
                     "as is using wands, scrolls and potions.";
+            */
         }
         else
         {
+            text << "\n"
+                 << jtrans("hint caught in net non-conjurer");
+            /*
             text << " Note that using wands, scrolls and potions is still "
                     "very much possible.";
+            */
         }
         break;
 
     case HINT_YOU_SILENCE:
         redraw_screen();
+#ifdef USE_TILE
+        text << jtrans("hint you silence use tile");
+#else
+        text << jtrans("hint you silence");
+#endif
+        /*
         text << "While you are silenced, you cannot cast spells, read scrolls "
                 "or use divine invocations. The same is true for any monster "
                 "within the effect radius. The field of silence (recognizable "
@@ -2697,15 +3250,18 @@ void learned_something_new(hints_event_type seen_what, coord_def gc)
                 ") is always centered on you and will move along with you. "
                 "The radius will gradually shrink, eventually making you the "
                 "only one affected, before the effect fades entirely.";
+        */
         break;
 
     case HINT_LOAD_SAVED_GAME:
     {
-        text << "Welcome back! If it's been a while, you may want to refresh "
-                "your memory.\nYour <w>%</w>nventory, ";
-        cmd.push_back(CMD_DISPLAY_INVENTORY);
+        text << jtrans_notrim("Welcome back! If it's been a while, you may want to refresh "
+                              "your memory.\n");
 
         vector<const char *> listed;
+
+        listed.push_back("Your <w>%</w>nventory");
+        cmd.push_back(CMD_DISPLAY_INVENTORY);
         if (you.spell_no > 0)
         {
             listed.push_back("your spells (<w>%?</w>)");
@@ -2730,18 +3286,29 @@ void learned_something_new(hints_event_type seen_what, coord_def gc)
         listed.push_back("the message history (<w>%</w>)");
         listed.push_back("the character overview screen (<w>%</w>)");
         listed.push_back("the dungeon overview screen (<w>%</w>)");
-        text << comma_separated_line(listed.begin(), listed.end())
-             << " are good things to check.";
+        text << "・"
+             << to_separated_line(listed.begin(), listed.end(),
+                                  "\n・", "\n・", "\n・")
+             << jtrans_notrim("\n are good things to check.");
         cmd.push_back(CMD_REPLAY_MESSAGES);
         cmd.push_back(CMD_RESISTS_SCREEN);
         cmd.push_back(CMD_DISPLAY_OVERMAP);
         break;
     }
     case HINT_AUTOPICKUP_THROWN:
+        text << jtrans("hint autopickup thrown");
+        /*
         text << "When stepping on items you've thrown, they will be "
                 "picked up automatically.";
+        */
         break;
     case HINT_GAINED_SPELLCASTING:
+#ifdef USE_TILE
+        text << jtrans("hint gained spellcasting use tile");
+#else
+        text << jtrans("hint gained spellcasting");
+#endif
+        /*
         text << "As your Spellcasting skill increases, you will be able to "
              << "memorise more spells, and will suffer less hunger and "
              << "somewhat fewer failures when you cast them.\n"
@@ -2750,6 +3317,7 @@ void learned_something_new(hints_event_type seen_what, coord_def gc)
              << "(or click on the <w>skill button</w> in the command panel) "
 #endif
              << "to have a look at your skills and manage their training.";
+        */
         cmd.push_back(CMD_DISPLAY_SKILLS);
         break;
 #if TAG_MAJOR_VERSION == 34
@@ -2757,14 +3325,20 @@ void learned_something_new(hints_event_type seen_what, coord_def gc)
         break;
 #endif
     case HINT_FUMBLING_SHALLOW_WATER:
+        text << jtrans("hint fumbling shallow water");
+        /*
         text << "Fighting in shallow water will sometimes cause you to slip "
                 "and fumble your attack. If possible, try to fight on "
                 "firm ground.";
+        */
         break;
     case HINT_CLOUD_WARNING:
+        text << jtrans("hint cloud warning");
+        /*
         text << "Rather than step into this cloud and hurt yourself, you "
                 "should either wait for a few turns to see if it "
                 "vanishes (with <w>%</w>), or just step around it.";
+        */
         cmd.push_back(CMD_WAIT);
         break;
     case HINT_ANIMATE_CORPSE_SKELETON:
@@ -2775,7 +3349,7 @@ void learned_something_new(hints_event_type seen_what, coord_def gc)
         */
         break;
     default:
-        text << "You've found something new (but I don't know what)!";
+        text << jtrans("You've found something new (but I don't know what)!");
     }
 
     if (!text.str().empty())
@@ -2795,11 +3369,14 @@ formatted_string hints_abilities_info()
 {
     ostringstream text;
     text << "<" << colour_to_str(channel_to_colour(MSGCH_TUTORIAL)) << ">";
+    string broken = jtrans("hints abilities info");
+    /*
     string broken = "This screen shows your character's set of talents. "
         "You can gain new abilities via certain items, through religion or by "
         "way of mutations. Activation of an ability usually comes at a cost, "
         "e.g. nutrition or Magic power. Press '<w>!</w>' or '<w>?</w>' to "
         "toggle between ability selection and description.";
+    */
     linebreak_string(broken, _get_hints_cols());
     text << broken;
 
@@ -2815,6 +3392,8 @@ string hints_skills_info()
     textcolour(channel_to_colour(MSGCH_TUTORIAL));
     ostringstream text;
     text << "<" << colour_to_str(channel_to_colour(MSGCH_TUTORIAL)) << ">";
+    string broken = jtrans("hints skills info");
+    /*
     string broken = "This screen shows the skill set of your character. "
         "The number next to the skill is your current level, the higher the "
         "better. The <brown>brown percent value</brown> shows how much "
@@ -2822,6 +3401,7 @@ string hints_skills_info()
         "You can toggle which skills to train by "
         "pressing their slot letters. A <darkgrey>grey</darkgrey> skill "
         "will not be trained and ease the training of others.";
+    */
     text << broken;
     text << "</" << colour_to_str(channel_to_colour(MSGCH_TUTORIAL)) << ">";
 
@@ -2833,11 +3413,14 @@ string hints_skill_training_info()
     textcolour(channel_to_colour(MSGCH_TUTORIAL));
     ostringstream text;
     text << "<" << colour_to_str(channel_to_colour(MSGCH_TUTORIAL)) << ">";
+    string broken = jtrans("hints skill training info");
+    /*
     string broken = "The training percentage (in <brown>brown</brown>) "
         "shows the relative amount of the experience gained which will be "
         "used to train each skill. It is automatically set depending on "
         "which skills you have used recently. Disabling a skill sets the "
         "training rate to 0.";
+    */
     text << broken;
     text << "</" << colour_to_str(channel_to_colour(MSGCH_TUTORIAL)) << ">";
 
@@ -2849,9 +3432,12 @@ string hints_skills_description_info()
     textcolour(channel_to_colour(MSGCH_TUTORIAL));
     ostringstream text;
     text << "<" << colour_to_str(channel_to_colour(MSGCH_TUTORIAL)) << ">";
+    string broken = jtrans("hints skills description info");
+    /*
     string broken = "This screen shows the skill set of your character. "
                     "Press the letter of a skill to read its description, or "
                     "press <w>?</w> again to return to the skill selection.";
+    */
 
     linebreak_string(broken, _get_hints_cols());
     text << broken;
@@ -2863,7 +3449,8 @@ string hints_skills_description_info()
 // A short explanation of Crawl's target mode and its most important commands.
 static string _hints_target_mode(bool spells = false)
 {
-    string result;
+    string result = jtrans("hints target mode");
+    /*
     result = "then be taken to target mode with the nearest monster or "
              "previous target already targeted. You can also cycle through "
              "all hostile monsters in sight with <w>+</w> or <w>-</w>. "
@@ -2884,14 +3471,15 @@ static string _hints_target_mode(bool spells = false)
     }
 
     result += "</w> fires at the same target again.";
-    insert_commands(result, { cmd });
+    */
+    insert_commands(result, { spells ? CMD_CAST_SPELL : CMD_FIRE });
 
     return result;
 }
 
 static string _hints_abilities(const item_def& item)
 {
-    string str = "To do this, ";
+    string str = jtrans("To do this, ");
 
     vector<command_type> cmd;
     if (!item_is_equipped(item))
@@ -2899,26 +3487,29 @@ static string _hints_abilities(const item_def& item)
         switch (item.base_type)
         {
         case OBJ_WEAPONS:
-            str += "first <w>%</w>ield it";
+            str += jtrans("first <w>%</w>ield it");
             cmd.push_back(CMD_WIELD_WEAPON);
             break;
         case OBJ_ARMOUR:
-            str += "first <w>%</w>ear it";
+            str += jtrans("first <w>%</w>ear it");
             cmd.push_back(CMD_WEAR_ARMOUR);
             break;
         case OBJ_JEWELLERY:
-            str += "first <w>%</w>ut it on";
+            str += jtrans("first <w>%</w>ut it on");
             cmd.push_back(CMD_WEAR_JEWELLERY);
             break;
         default:
-            str += "<r>(BUG! this item shouldn't give an ability)</r>";
+            str += jtrans("<r>(BUG! this item shouldn't give an ability)</r>");
             break;
         }
-        str += ", then ";
+        str += jtrans(", then ");
     }
+    str += jtrans("hints abilities");
+    /*
     str += "enter the ability menu with <w>%</w>, and then "
            "choose the corresponding ability. Note that such an attempt of "
            "activation, especially by the untrained, is likely to fail.";
+    */
     cmd.push_back(CMD_USE_ABILITY);
 
     insert_commands(str, cmd);
@@ -2927,8 +3518,14 @@ static string _hints_abilities(const item_def& item)
 
 static string _hints_throw_stuff(const item_def &item)
 {
-    string result;
-
+    string result =
+        make_stringf(jtransc("hints throw stuff"),
+                     jtransc(item_base_name(item)),
+                     item.slot ? make_stringf("選択するため<w>[%c]</w>を押す",
+                                              (char)item.slot).c_str()
+                               : "選択する",
+                     _hints_target_mode().c_str());
+    /*
     result  = "To do this, type <w>%</w> to fire, then <w>";
     result += item.slot;
     result += "</w> for ";
@@ -2938,6 +3535,7 @@ static string _hints_throw_stuff(const item_def &item)
     result += (item.quantity > 1? "s" : "");
     result += ". You'll ";
     result += _hints_target_mode();
+    */
 
     insert_commands(result, { CMD_FIRE });
     return result;
@@ -2966,7 +3564,6 @@ void check_item_hint(const item_def &item, unsigned int num_old_talents)
 string hints_describe_item(const item_def &item)
 {
     ostringstream ostr;
-    ostr << "<" << colour_to_str(channel_to_colour(MSGCH_TUTORIAL)) << ">";
     vector<command_type> cmd;
 
     switch (item.base_type)
@@ -2978,14 +3575,24 @@ string hints_describe_item(const item_def &item)
                 if (gives_ability(item))
                 {
                     // You can activate it.
+                    ostr << jtrans("hints describe item weapon gives ability");
+                    /*
                     ostr << "When wielded, some weapons (such as this one) "
                             "offer certain abilities you can activate. ";
+                    */
                     ostr << _hints_abilities(item);
                     break;
                 }
                 else if (gives_resistance(item))
                 {
                     // It grants a resistance.
+                    ostr << "\n";
+#ifdef USE_TILE
+                    ostr << jtrans("hints describe item weapon gives resistance use tile");
+#else
+                    ostr << jtrans("hints describe item weapon gives resistance");
+#endif
+                    /*
                     ostr << "\nThis weapon offers its wearer protection from "
                             "certain sources. For an overview of your "
                             "resistances (among other things) type <w>%</w>"
@@ -2994,6 +3601,7 @@ string hints_describe_item(const item_def &item)
                             "button</w>"
 #endif
                             ".";
+                    */
                     cmd.push_back(CMD_RESISTS_SCREEN);
                     break;
                 }
@@ -3007,9 +3615,13 @@ string hints_describe_item(const item_def &item)
 
             if (!wielded)
             {
+                ostr << "\n"
+                     << jtrans("hints describe item weapon !wielded");
+                /*
                 ostr << "You can wield this weapon with <w>%</w>, or use "
                         "<w>%</w> to switch between the weapons in slot "
                         "a and b. (Use <w>%i</w> to adjust item slots.)";
+                */
                 cmd.push_back(CMD_WIELD_WEAPON);
                 cmd.push_back(CMD_WEAPON_SWAP);
                 cmd.push_back(CMD_ADJUST_INVENTORY);
@@ -3030,6 +3642,11 @@ string hints_describe_item(const item_def &item)
 
                 if (you.skills[curr_wpskill] + 2 < you.skills[best_wpskill])
                 {
+                    ostr << "\n"
+                         << make_stringf(jtransc("hints describe item weapon !wielded !bestskill"),
+                                         skill_name_jc(best_wpskill),
+                                         skill_name_jc(curr_wpskill));
+                    /*
                     ostr << "\nHowever, you've been training in <w>"
                          << skill_name(best_wpskill)
                          << "</w> for a while, so maybe you should "
@@ -3037,6 +3654,7 @@ string hints_describe_item(const item_def &item)
                          << skill_name(curr_wpskill)
                          << "</w>. (Type <w>%</w> to see the skill "
                             "management screen for the actual numbers.)";
+                    */
 
                     cmd.push_back(CMD_DISPLAY_SKILLS);
                     long_text = true;
@@ -3046,6 +3664,12 @@ string hints_describe_item(const item_def &item)
             {
                 if (is_range_weapon(item))
                 {
+#ifdef USE_TILE
+                    ostr << jtrans("hints describe item weapon wielded range weapon use tile");
+#else
+                    ostr << jtrans("hints describe item weapon wielded range weapon");
+#endif
+                    /*
                     ostr << "To attack a monster, ";
 #ifdef USE_TILE
                     ostr << "if you have appropriate ammo quivered you can "
@@ -3059,28 +3683,40 @@ string hints_describe_item(const item_def &item)
                     ostr << "you only need to "
                             "<w>%</w>ire the appropriate type of ammunition. "
                             "You'll ";
+                    */
                     ostr << _hints_target_mode();
                     cmd.push_back(CMD_FIRE);
                 }
                 else
+                    ostr << jtrans("hints describe item weapon wielded melee weapon");
+                    /*
                     ostr << "To attack a monster, you can simply walk into it.";
+                    */
             }
 
             if (!item_type_known(item)
                 && (is_artefact(item)
                     || get_equip_desc(item) != ISFLAG_NO_DESC))
             {
+                ostr << "\n\n"
+                     << jtrans("hints describe item weapon unknown artefact");
+                /*
                 ostr << "\n\nWeapons and armour that have unusual descriptions "
                      << "like this are much more likely to be of higher "
                      << "enchantment or have special properties, good or bad.";
+                */
 
                 Hints.hints_events[HINT_SEEN_RANDART] = false;
             }
             if (item_known_cursed(item) && !long_text)
             {
+                ostr << "\n\n"
+                     << jtrans("hints describe item weapon cursed");
+                /*
                 ostr << "\n\nOnce wielded, a cursed weapon can't be "
                         "unwielded until the curse has been lifted by "
                         "reading a scroll of remove curse.";
+                */
 
                 Hints.hints_events[HINT_YOU_CURSED] = false;
             }
@@ -3090,13 +3726,26 @@ string hints_describe_item(const item_def &item)
         case OBJ_MISSILES:
             if (is_throwable(&you, item))
             {
+                /*
                 ostr << item.name(DESC_YOUR)
                      << " can be <w>%</w>ired without the use of a launcher. ";
                 ostr << _hints_throw_stuff(item);
+                */
+                ostr << make_stringf(jtransc("hints describe item missiles throwable"),
+                                     jtransc(item_base_name(item)));
+                ostr << "\n"
+                     << _hints_throw_stuff(item);
                 cmd.push_back(CMD_FIRE);
             }
             else if (is_launched(&you, you.weapon(), item))
             {
+#ifdef USE_TILE
+                ostr << make_stringf(jtransc("hints describe item missiles launched use tile"),
+#else
+                ostr << make_stringf(jtransc("hints describe item missiles launched"),
+#endif
+                                     item.name(DESC_BASENAME).c_str());
+                /*
                 ostr << "As you're already wielding the appropriate launcher, "
                         "you can simply ";
 #ifdef USE_TILE
@@ -3116,17 +3765,23 @@ string hints_describe_item(const item_def &item)
                      << " " << item.name(DESC_BASENAME)
                      << (item.quantity > 1? "s" : "")
                      << ". You'll ";
+                */
                 ostr << _hints_target_mode();
                 cmd.push_back(CMD_FIRE);
             }
             else
             {
+                ostr << "\n"
+                     << make_stringf(jtransc("hints describe item missiles other"),
+                                     item.name(DESC_BASENAME).c_str());
+                /*
                 ostr << "To shoot "
                      << (item.quantity > 1 ? "these" : "this")
                      << " " << item.name(DESC_BASENAME)
                      << (item.quantity > 1? "s" : "")
                      << ", first you need to <w>%</w>ield an appropriate "
                         "launcher.";
+                */
                 cmd.push_back(CMD_WIELD_WEAPON);
             }
             Hints.hints_events[HINT_SEEN_MISSILES] = false;
@@ -3137,32 +3792,50 @@ string hints_describe_item(const item_def &item)
             bool wearable = true;
             if (you.species == SP_CENTAUR && item.sub_type == ARM_BOOTS)
             {
+                ostr << jtransln("hints describe item armour centaur");
+                /*
                 ostr << "As a Centaur you cannot wear boots. "
                         "(Type <w>%</w> to see a list of your mutations and "
                         "innate abilities.)";
+                */
                 cmd.push_back(CMD_DISPLAY_MUTATIONS);
                 wearable = false;
             }
             else if (you.species == SP_MINOTAUR && is_hard_helmet(item))
             {
+                ostr << jtransln("hints describe item armour minotaur");
+                /*
                 ostr << "As a Minotaur you cannot wear helmets. "
                         "(Type <w>%</w> to see a list of your mutations and "
                         "innate abilities.)";
+                */
                 cmd.push_back(CMD_DISPLAY_MUTATIONS);
                 wearable = false;
             }
             else if (item.sub_type == ARM_CENTAUR_BARDING)
             {
+                ostr << jtransln("hints describe item armour centaur barding");
+                /*
                 ostr << "Only centaurs can wear centaur barding.";
+                */
                 wearable = false;
             }
             else if (item.sub_type == ARM_NAGA_BARDING)
             {
+                ostr << jtransln("hints describe item armour naga barding");
+                /*
                 ostr << "Only nagas can wear naga barding.";
+                */
                 wearable = false;
             }
             else
             {
+#ifdef USE_TILE
+                ostr << jtrans("hints describe item armour use tile");
+#else
+                ostr << jtrans("hints describe item armour");
+#endif
+                /*
                 ostr << "You can wear pieces of armour with <w>%</w> and take "
                         "them off again with <w>%</w>"
 #ifdef USE_TILE
@@ -3170,6 +3843,7 @@ string hints_describe_item(const item_def &item)
                         "perform either action."
 #endif
                         ".";
+                */
                 cmd.push_back(CMD_WEAR_ARMOUR);
                 cmd.push_back(CMD_REMOVE_ARMOUR);
             }
@@ -3178,32 +3852,48 @@ string hints_describe_item(const item_def &item)
                 && get_armour_slot(item) == EQ_BODY_ARMOUR
                 && !is_effectively_light_armour(&item))
             {
+                ostr << "\n"
+                     << jtrans("hints describe item armour conjurer !lightarmour");
+                /*
                 ostr << "\nNote that body armour with a high encumbrance "
                         "rating may hinder your ability to cast spells. Light "
                         "armour such as robes and leather armour will be "
                         "generally safe for any aspiring spellcaster.";
+                */
             }
             else if (Hints.hints_type == HINT_MAGIC_CHAR
                      && is_shield(item))
             {
+                ostr << "\n"
+                     << jtrans("hints describe item armour conjurer shield");
+                /*
                 ostr << "\nNote that shields will hinder your ability to "
                         "cast spells, until you've gained enough Shields "
                         "skill to remove the penalty.";
+                */
             }
             else if (Hints.hints_type == HINT_RANGER_CHAR
                      && is_shield(item))
             {
+                ostr << "\n"
+                     << jtrans("hints describe item armour ranger shield");
+                /*
                 ostr << "\nNote that many ranged weapons are two handed and so "
                         "cannot be used with a shield.";
+                */
             }
 
             if (!item_type_known(item)
                 && (is_artefact(item)
                     || get_equip_desc(item) != ISFLAG_NO_DESC))
             {
+                ostr << "\n\n"
+                     << jtrans("hints describe item armour artefact");
+                /*
                 ostr << "\n\nWeapons and armour that have unusual descriptions "
                      << "like this are much more likely to be of higher "
                      << "enchantment or have special properties, good or bad.";
+                */
 
                 Hints.hints_events[HINT_SEEN_RANDART] = false;
             }
@@ -3211,12 +3901,24 @@ string hints_describe_item(const item_def &item)
             {
                 if (item_known_cursed(item))
                 {
+                    ostr << "\n"
+                         << jtrans("hints describe item armour wearable cursed");
+                    /*
                     ostr << "\nA cursed piece of armour, once worn, cannot be "
                             "removed again until the curse has been lifted by "
                             "reading a scroll of remove curse.";
+                    */
                 }
                 if (gives_resistance(item))
                 {
+#ifdef USE_TILE
+                    ostr << "\n\n"
+                         << jtrans("hints describe item armour wearable gives resistance use tile");
+#else
+                    ostr << "\n\n"
+                         << jtrans("hints describe item armour wearable gives resistance");
+#endif
+                    /*
                     ostr << "\n\nThis armour offers its wearer protection from "
                             "certain sources. For an overview of your"
                             " resistances (among other things) type <w>%</w>"
@@ -3225,13 +3927,18 @@ string hints_describe_item(const item_def &item)
                             "button</w>"
 #endif
                             ".";
+                    */
                     cmd.push_back(CMD_RESISTS_SCREEN);
                 }
                 if (gives_ability(item))
                 {
+                    ostr << "\n\n"
+                         << jtransln("hints describe item armour wearable gives ability");
+                    /*
                     ostr << "\n\nWhen worn, some types of armour (such as "
                             "this one) offer certain <w>%</w>bilities you can "
                             "activate. ";
+                    */
                     ostr << _hints_abilities(item);
                     cmd.push_back(CMD_USE_ABILITY);
                 }
@@ -3240,6 +3947,21 @@ string hints_describe_item(const item_def &item)
             break;
         }
         case OBJ_WANDS:
+            ostr << jtrans("hints describe item wand");
+#ifdef USE_TILE
+            ostr << "\n"
+                 << make_stringf(jtransc("hints describe item wand use tile"),
+#ifdef USE_TILE_WEB
+                                 jtransc("Ctrl + Shift keys")
+#else
+#if defined(UNIX) && defined(USE_TILE_LOCAL)
+                                 !tiles.is_fullscreen() ? jtransc("Ctrl + Shift keys") :
+#endif
+                                 jtransc("Alt key")
+#endif
+#endif
+                                 );
+            /*
             ostr << "The magic within can be unleashed by evoking "
                     "(<w>%</w>) it.";
             cmd.push_back(CMD_EVOKE);
@@ -3261,32 +3983,51 @@ string hints_describe_item(const item_def &item)
                     "<w>left mouse click</w> on the wand tile and then "
                     "<w>left mouse click</w> on your target.";
 #endif
+            */
             Hints.hints_events[HINT_SEEN_WAND] = false;
             break;
 
         case OBJ_FOOD:
+#ifdef USE_TILE
+            ostr << jtrans("hints describe item food use tile");
+#else
+            ostr << jtrans("hints describe item food");
+#endif
+            /*
             ostr << "Food can simply be <w>%</w>aten"
 #ifdef USE_TILE
                     ", something you can also do by <w>left clicking</w> "
                     "on it"
 #endif
                     ". ";
+            */
             cmd.push_back(CMD_EAT);
 
             if (item.sub_type == FOOD_CHUNK)
             {
+                ostr << "\n"
+                     << jtrans("hints describe item food chunk");
+                /*
                 ostr << "Note that most species refuse to eat raw meat "
                         "unless hungry. ";
+                */
             }
             Hints.hints_events[HINT_SEEN_FOOD] = false;
             break;
 
         case OBJ_SCROLLS:
+#ifdef USE_TILE
+            ostr << jtrans("hints describe item scroll use tile");
+#else
+            ostr << jtrans("hints describe item scroll");
+#endif
+            /*
             ostr << "Type <w>%</w> to read this scroll"
 #ifdef USE_TILE
                     "or simply click on it with your <w>left mouse button</w>"
 #endif
                     ".";
+            */
             cmd.push_back(CMD_READ);
 
             Hints.hints_events[HINT_SEEN_SCROLL] = false;
@@ -3294,6 +4035,12 @@ string hints_describe_item(const item_def &item)
 
         case OBJ_JEWELLERY:
         {
+#ifdef USE_TILE
+            ostr << jtrans("hints describe item jewellery use tile");
+#else
+            ostr << jtrans("hints describe item jewellery");
+#endif
+            /*
             ostr << "Jewellery can be <w>%</w>ut on or <w>%</w>emoved "
                     "again"
 #ifdef USE_TILE
@@ -3301,18 +4048,31 @@ string hints_describe_item(const item_def &item)
                     "item in your inventory"
 #endif
                     ".";
+            */
             cmd.push_back(CMD_WEAR_JEWELLERY);
             cmd.push_back(CMD_REMOVE_JEWELLERY);
 
             if (item_known_cursed(item))
             {
+                ostr << "\n"
+                     << jtrans("hints describe item jewellery cursed");
+                /*
                 ostr << "\nA cursed piece of jewellery will cling to its "
                         "unfortunate wearer's neck or fingers until the curse "
                         "is finally lifted when he or she reads a scroll of "
                         "remove curse.";
+                */
             }
             if (gives_resistance(item))
             {
+                ostr << "\n\n"
+#ifdef USE_TILE
+                     << make_stringf(jtransc("hints describe item jewellery gives resistance use tile"),
+#else
+                     << make_stringf(jtransc("hints describe item jewellery gives resistance"),
+#endif
+                                     jtransc(item.sub_type < NUM_RINGS ? "ring" : "amulet"));
+                /*
                 ostr << "\n\nThis "
                      << (item.sub_type < NUM_RINGS ? "ring" : "amulet")
                      << " offers its wearer protection "
@@ -3323,12 +4083,17 @@ string hints_describe_item(const item_def &item)
                         "button</w>"
 #endif
                         ".";
+                */
                 cmd.push_back(CMD_RESISTS_SCREEN);
             }
             if (gives_ability(item))
             {
+                ostr << "\n\n"
+                     << jtrans("hints describe item jewellery gives ability");
+                /*
                 ostr << "\n\nWhen worn, some types of jewellery (such as this "
                         "one) offer certain <w>%</w>bilities you can activate. ";
+                */
                 cmd.push_back(CMD_USE_ABILITY);
                 ostr << _hints_abilities(item);
             }
@@ -3336,11 +4101,18 @@ string hints_describe_item(const item_def &item)
             break;
         }
         case OBJ_POTIONS:
+#ifdef USE_TILE
+            ostr << jtrans("hints describe item potions use tile");
+#else
+            ostr << jtrans("hints describe item potions");
+#endif
+            /*
             ostr << "Type <w>%</w> to quaff this potion"
 #ifdef USE_TILE
                     "or simply click on it with your <w>left mouse button</w>"
 #endif
                     ".";
+            */
             cmd.push_back(CMD_QUAFF);
             Hints.hints_events[HINT_SEEN_POTION] = false;
             break;
@@ -3348,10 +4120,13 @@ string hints_describe_item(const item_def &item)
         case OBJ_BOOKS:
             if (item.sub_type == BOOK_MANUAL)
             {
+                ostr << jtrans("hints describe item books manual");
+                /*
                 ostr << "A manual can greatly help you in training a skill. "
                         "As long as you are carrying it, the skill in "
                         "question will be trained more efficiently and will "
                         "level up faster.";
+                */
                 cmd.push_back(CMD_READ);
             }
             else // It's a spellbook!
@@ -3360,16 +4135,28 @@ string hints_describe_item(const item_def &item)
                 {
                     if (!item_ident(item, ISFLAG_KNOW_TYPE))
                     {
+                        ostr << "\n"
+                             << jtrans("hints describe item books trog unindent");
+                        /*
                         ostr << "\nIt's a book, you can <w>%</w>ead it.";
+                        */
                         cmd.push_back(CMD_READ);
                     }
                     else
                     {
+                        ostr << "\n"
+                             << jtrans("hints describe item books trog indent");
+                        /*
                         ostr << "\nA spellbook! You could <w>%</w>emorise some "
                                 "spells and then cast them with <w>%</w>.";
+                        */
                         cmd.push_back(CMD_MEMORISE_SPELL);
                         cmd.push_back(CMD_CAST_SPELL);
                     }
+                    ostr << "\n"
+                         << make_stringf(jtransc("hints describe item books trog"),
+                                         god_name_jc(GOD_TROG));
+                    /*
                     ostr << "\nAs a worshipper of "
                          << god_name(GOD_TROG)
                          << ", though, you might instead wish to burn this "
@@ -3377,10 +4164,19 @@ string hints_describe_item(const item_def &item)
                             "<w>%</w>bility. "
                             "Note that this only works on books that are lying "
                             "on the floor and not on your current square. ";
+                    */
                     cmd.push_back(CMD_USE_ABILITY);
                 }
                 else if (!item_ident(item, ISFLAG_KNOW_TYPE))
                 {
+#ifdef USE_TILE
+                    ostr << "\n"
+                         << jtrans("hints describe item books unindent use tile");
+#else
+                    ostr << "\n"
+                         << jtrans("hints describe item books unindent");
+#endif
+                    /*
                     // XXX: can this happen?
                     ostr << "\nIt's a book, you can <w>%</w>ead it"
 #ifdef USE_TILE
@@ -3388,27 +4184,45 @@ string hints_describe_item(const item_def &item)
                             "on its tile in your inventory."
 #endif
                             ".";
+                    */
                     cmd.push_back(CMD_READ);
                 }
                 else
                 {
                     if (player_can_memorise(item))
                     {
+                        ostr << "\n"
+                             << jtransln("hints describe item books can memorise");
+                        /*
                         ostr << "\nSuch a <lightblue>highlighted "
                                 "spell</lightblue> can be <w>%</w>emorised "
                                 "right away. ";
+                        */
                         cmd.push_back(CMD_MEMORISE_SPELL);
                     }
                     else
                     {
+                        ostr << "\n"
+                             << make_stringf(jtransc("hints describe item books cannot memorise\n"),
+                                             (you.spell_no ? "これ以上" : ""));
+                        /*
                         ostr << "\nYou cannot memorise any "
                              << (you.spell_no ? "more " : "")
                              << "spells right now. This will change as you "
                                 "grow in levels and Spellcasting proficiency. ";
+                        */
                     }
 
                     if (you.spell_no)
                     {
+#ifdef USE_TILE
+                        ostr << "\n"
+                             << jtransln("hints describe item books you.spell_no use tile");
+#else
+                        ostr << "\n"
+                             << jtransln("hints describe item books you.spell_no");
+#endif
+                        /*
                         ostr << "\n\nTo use magic, ";
 #ifdef USE_TILE
                         ostr << "you can <w>left mouse click</w> on the "
@@ -3424,6 +4238,7 @@ string hints_describe_item(const item_def &item)
                         ostr << "you can type <w>%</w> and choose a "
                                 "spell, e.g. <w>a</w> (check with <w>?</w>). "
                                 "For attack spells you'll ";
+                        */
                         cmd.push_back(CMD_CAST_SPELL);
                         ostr << _hints_target_mode(true);
                     }
@@ -3438,19 +4253,31 @@ string hints_describe_item(const item_def &item)
 
             if (item.sub_type == CORPSE_SKELETON)
             {
+                ostr << jtrans("hints describe item corpse skeleton");
+                /*
                 ostr << "Skeletons can be used as components for certain "
                         "necromantic spells. Apart from that, they are "
                         "largely useless.";
+                */
                 break;
             }
 
+            ostr << jtrans("hints describe item corpse");
+            /*
             ostr << "Most corpses can be <w>%</w>hopped into edible chunks.";
+            */
             cmd.push_back(CMD_BUTCHER);
             break;
 
         case OBJ_RODS:
             if (!item_ident(item, ISFLAG_KNOW_TYPE))
             {
+#ifdef USE_TILE
+                ostr << jtrans_notrim("hints describe item rod unindent use tile");
+#else
+                ostr << jtrans_notrim("hints describe item rod unindent");
+#endif
+                /*
                 ostr << "\n\nTo find out what this rod might do, you have "
                         "to <w>%</w>ield it to see if you can use the "
                         "spell hidden within, then e<w>%</w>oke it to "
@@ -3459,15 +4286,23 @@ string hints_describe_item(const item_def &item)
                         ", both of which can be done by clicking on it"
 #endif
                         ".";
+                */
             }
             else
             {
+#ifdef USE_TILE
+                ostr << jtrans_notrim("hints describe item rod indent use tile");
+#else
+                ostr << jtrans_notrim("hints describe item rod indent");
+#endif
+                /*
                 ostr << "\n\nYou can use this rod's magic by "
                         "<w>%</w>ielding and e<w>%</w>oking it"
 #ifdef USE_TILE
                         ", both of which can be achieved by clicking on it"
 #endif
                         ".";
+                */
             }
             cmd.push_back(CMD_WIELD_WEAPON);
             cmd.push_back(CMD_EVOKE_WIELDED);
@@ -3475,12 +4310,21 @@ string hints_describe_item(const item_def &item)
             break;
 
         case OBJ_STAVES:
+            ostr << jtransln("hints describe item staves");
+            /*
             ostr << "This staff can enhance your spellcasting, possibly "
                     "making a certain spell school more powerful, or "
                     "making difficult magic easier to cast. ";
+            */
 
             if (gives_resistance(item))
             {
+#ifdef USE_TILE
+                ostr << jtrans("hints describe item staves give resistance use tile");
+#else
+                ostr << jtrans("hints describe item staves give resistance");
+#endif
+                /*
                 ostr << "It also offers its wielder protection from "
                         "certain sources. For an overview of your "
                         "resistances (among other things) type <w>%</w>"
@@ -3489,16 +4333,22 @@ string hints_describe_item(const item_def &item)
                         "button</w>"
 #endif
                         ".";
+                */
 
                 cmd.push_back(CMD_RESISTS_SCREEN);
             }
             else if (you_worship(GOD_TROG))
             {
+                ostr << "\n\n"
+                     << make_stringf(jtrans_notrimc("hints describe item staves trog"),
+                                     god_name_j(GOD_TROG, false).c_str());
+                /*
                 ostr << "\n\nSeeing how "
                      << god_name(GOD_TROG, false)
                      << " frowns upon the use of magic, this staff will be "
                         "of little use to you and you might just as well "
                         "<w>%</w>rop it now.";
+                */
                 cmd.push_back(CMD_DROP);
             }
             Hints.hints_events[HINT_SEEN_STAFF] = false;
@@ -3507,6 +4357,12 @@ string hints_describe_item(const item_def &item)
         case OBJ_MISCELLANY:
             if (is_deck(item))
             {
+#ifdef USE_TILE
+                ostr << jtrans("hints describe item misc decks use tile");
+#else
+                ostr << jtrans("hints describe item misc decks");
+#endif
+                /*
                 ostr << "Decks of cards are powerful but dangerous magical "
                         "items. Try e<w>%</w>oking it"
 #ifdef USE_TILE
@@ -3514,13 +4370,17 @@ string hints_describe_item(const item_def &item)
 #endif
                         ". You can read about the effect of a card by "
                         "searching the game's database with <w>%/c</w>.";
+                */
                 cmd.push_back(CMD_EVOKE);
                 cmd.push_back(CMD_DISPLAY_COMMANDS);
             }
             else
             {
+                ostr << jtrans("hints describe item misc");
+                /*
                 ostr << "Miscellaneous items sometimes harbour magical powers "
                         "that can be harnessed by e<w>%</w>oking the item.";
+                */
                 cmd.push_back(CMD_EVOKE);
             }
 
@@ -3531,8 +4391,10 @@ string hints_describe_item(const item_def &item)
             return "";
     }
 
-    ostr << "</" << colour_to_str(channel_to_colour(MSGCH_TUTORIAL)) << ">";
-    string broken = ostr.str();
+    string broken = make_stringf("<%s>%s</%s>",
+                                 colour_to_str(channel_to_colour(MSGCH_TUTORIAL)).c_str(),
+                                 trimmed_string(ostr.str()).c_str(),
+                                 colour_to_str(channel_to_colour(MSGCH_TUTORIAL)).c_str());
     if (!cmd.empty())
         insert_commands(broken, cmd);
     return broken;
@@ -3551,16 +4413,24 @@ void hints_inscription_info(string prompt)
     if (wherey() <= get_number_of_lines() - 8)
     {
         text << "\n"
+             << jtrans("hints inscription info");
+        /*
+        text << "\n"
          "Inscriptions are a powerful concept of Dungeon Crawl.\n"
          "You can inscribe items to comment on them \n"
          "or to set rules for item interaction. If you are new to Crawl, \n"
          "you can safely ignore this feature.";
+        */
 
         longtext = true;
     }
 
     text << "\n"
+         << jtransln("hints inscription info 2");
+    /*
+    text << "\n"
        "(In the main screen, press <w>?6</w> for more information.)\n";
+    */
     text << "</" << colour_to_str(channel_to_colour(MSGCH_TUTORIAL)) << ">";
 
     formatted_string::parse_string(text.str()).display();
@@ -3615,43 +4485,61 @@ static void _hints_describe_feature(int x, int y)
     {
     case DNGN_ORCISH_IDOL:
     case DNGN_GRANITE_STATUE:
+        ostr << jtrans("");
+        /*
         ostr << "It's just a harmless statue - or is it?\nEven if not "
                 "a danger by themselves, statues often mark special "
                 "areas, dangerous ones or ones harbouring treasure.";
+        */
         break;
 
     case DNGN_TRAP_TELEPORT:
     case DNGN_TRAP_ALARM:
     case DNGN_TRAP_ZOT:
     case DNGN_TRAP_MECHANICAL:
+        ostr << jtrans("hints describe feature dngn nasty traps");
+        /*
         ostr << "These nasty constructions can cause a range of "
                 "unpleasant effects. You won't be able to avoid "
                 "tripping traps by flying over them; their magic "
                 "construction will cause them to be triggered anyway.";
+        */
         Hints.hints_events[HINT_SEEN_TRAP] = false;
         break;
 
     case DNGN_TRAP_SHAFT:
+        ostr << jtrans("hints describe feature dngn trap shaft");
+        /*
         ostr << "The dungeon contains a number of natural obstacles such "
                 "as shafts, which lead one to three levels down. Once you "
                 "know the shaft is there, you can safely step over it.\n"
                 "If you want to jump down there, use <w>></w> to do so. "
                 "Be warned that getting back here might be difficult.";
+        */
         Hints.hints_events[HINT_SEEN_TRAP] = false;
         break;
 
     case DNGN_TRAP_WEB:
+        ostr << jtrans("hints describe feature dngn trap web");
+        /*
         ostr << "Some areas of the dungeon, such as the Spider Nest, may "
                 "be strewn with giant webs that may ensnare you for a short "
                 "time and notify nearby spiders of your location. "
                 "Players in Spider Form can safely navigate the webs (as "
                 "can incorporeal entities and various oozes). ";
+        */
         Hints.hints_events[HINT_SEEN_WEB] = false;
         break;
 
     case DNGN_STONE_STAIRS_DOWN_I:
     case DNGN_STONE_STAIRS_DOWN_II:
     case DNGN_STONE_STAIRS_DOWN_III:
+#ifdef USE_TILE
+        ostr << jtrans("hints describe feature dngn stone stairs down use tile");
+#else
+        ostr << jtrans("hints describe feature dngn stone stairs down");
+#endif
+        /*
         ostr << "You can enter the next (deeper) level by following them "
                 "down (<w>></w>). To get back to this level again, "
                 "press <w><<</w> while standing on the upstairs.";
@@ -3659,25 +4547,35 @@ static void _hints_describe_feature(int x, int y)
         ostr << " In Tiles, you can achieve the same, in either direction, "
                 "by clicking the <w>left mouse button</w>.";
 #endif
+        */
 
         if (is_unknown_stair(where))
         {
+            ostr << "\n\n"
+                 << jtrans("hints describe feature dngn stone stairs down unknown");
+            /*
             ostr << "\n\nYou have not yet passed through this particular "
                     "set of stairs. ";
+            */
         }
 
         Hints.hints_events[HINT_SEEN_STAIRS] = false;
         break;
 
     case DNGN_EXIT_DUNGEON:
+        ostr << jtrans("hints describe feature dngn exit dungeon");
+        /*
         ostr << "These stairs lead out of the dungeon. Following them "
                 "will end the game. The only way to win is to "
                 "transport the fabled Orb of Zot outside.";
+        */
         break;
 
     case DNGN_STONE_STAIRS_UP_I:
     case DNGN_STONE_STAIRS_UP_II:
     case DNGN_STONE_STAIRS_UP_III:
+        ostr << jtrans("");
+        /*
         ostr << "You can enter the previous (shallower) level by "
                 "following these up (<w><<</w>). This is ideal for "
                 "retreating or finding a safe resting spot, since the "
@@ -3690,26 +4588,34 @@ static void _hints_describe_feature(int x, int y)
         ostr << " In Tiles, you can perform either action simply by "
                 "clicking the <w>left mouse button</w> instead.";
 #endif
+        */
         if (is_unknown_stair(where))
         {
+            ostr << "\n\n"
+                 << jtrans("hints describe feature dngn stairs up unknown");
+            /*
             ostr << "\n\nYou have not yet passed through this "
                     "particular set of stairs. ";
+            */
         }
         Hints.hints_events[HINT_SEEN_STAIRS] = false;
         break;
 
     case DNGN_ESCAPE_HATCH_DOWN:
     case DNGN_ESCAPE_HATCH_UP:
+        ostr << jtrans("hints describe feature dngn escape hatch");
+        /*
         ostr << "Escape hatches can be used to quickly leave a level with "
                 "<w><<</w> and <w>></w>, respectively. Note that you will "
                 "usually be unable to return right away.";
+        */
 
         Hints.hints_events[HINT_SEEN_ESCAPE_HATCH] = false;
         break;
 
 #if TAG_MAJOR_VERSION == 34
     case DNGN_ENTER_PORTAL_VAULT:
-        ostr << "This " << _describe_portal(where);
+        ostr << "これは" << _describe_portal(where);
         Hints.hints_events[HINT_SEEN_PORTAL] = false;
         break;
 #endif
@@ -3719,6 +4625,9 @@ static void _hints_describe_feature(int x, int y)
             // XXX: should this be elsewhere?
         if (!Hints.hints_explored)
         {
+            ostr << "\n"
+                 << jtrans("hints describe feature dngn closed/runed door");
+            /*
             ostr << "\nTo avoid accidentally opening a door you'd rather "
                     "remain closed during travel or autoexplore, you can "
                     "mark it with an exclusion from the map view "
@@ -3726,6 +4635,7 @@ static void _hints_describe_feature(int x, int y)
                     "grid in question. Such an exclusion will prevent "
                     "autotravel from ever entering that grid until you "
                     "remove the exclusion with another press of <w>Xe</w>.";
+            */
         }
         break;
 
@@ -3741,6 +4651,9 @@ static void _hints_describe_feature(int x, int y)
             if (altar_god == GOD_SIF_MUNA
                 && !player_can_join_god(altar_god))
             {
+                ostr << make_stringf(jtransc("hints describe feature altar sif !player_can_join_god"),
+                                     god_name_jc(altar_god));
+                /*
                 ostr << "As <w>p</w>raying on the altar will tell you, "
                      << god_name(altar_god) << " only accepts worship from "
                         "those who have already dabbled in magic. You can "
@@ -3748,9 +4661,13 @@ static void _hints_describe_feature(int x, int y)
                         "database with <w>?/g</w>.\n"
                         "For other gods, you'll be able to join the faith "
                         "by <w>p</w>raying at their altar.";
+                */
             }
             else if (you_worship(GOD_NO_GOD))
             {
+                ostr << make_stringf(jtransc("hints describe feature altar no god"),
+                                     god_name_jc(altar_god));
+                /*
                 ostr << "This is your chance to join a religion! In "
                         "general, the gods will help their followers, "
                         "bestowing powers of all sorts upon them, but many "
@@ -3761,6 +4678,7 @@ static void _hints_describe_feature(int x, int y)
                      << "</w> by pressing <w>p</w> while standing on the "
                         "altar. Before taking up the responding faith "
                         "you'll be asked for confirmation.";
+                */
             }
             else if (you_worship(altar_god))
             {
@@ -3769,6 +4687,15 @@ static void _hints_describe_feature(int x, int y)
             }
             else
             {
+#ifdef USE_TILE
+                ostr << make_stringf(jtransc("hints describe feature altar use tile"),
+#else
+                ostr << make_stringf(jtransc("hints describe feature altar"),
+#endif
+                                     god_name_jc(you.religion),
+                                     god_name_jc(altar_god),
+                                     god_name_jc(you.religion));
+                /*
                 ostr << god_name(you.religion)
                      << " probably won't like it if you switch allegiance, "
                         "but having a look won't hurt: to get information "
@@ -3786,16 +4713,23 @@ static void _hints_describe_feature(int x, int y)
                         "on your avatar while pressing <w>Shift</w>"
 #endif
                         ".";
+                */
             }
             Hints.hints_events[HINT_SEEN_ALTAR] = false;
             break;
         }
         else if (feat_is_branch_entrance(feat))
         {
+            if (feat != DNGN_ENTER_TEMPLE)
+                ostr << jtrans("hints describe feature branch entrance");
+            else
+                ostr << jtrans("hints describe feature temple entrance");
+            /*
             ostr << "An entryway into one of the many dungeon side branches in "
                     "Crawl. ";
             if (feat != DNGN_ENTER_TEMPLE)
                 ostr << "Beware, sometimes these can be deadly!";
+            */
             break;
         }
         else
@@ -3812,10 +4746,13 @@ static void _hints_describe_feature(int x, int y)
         if (!boring)
             ostr << "\n\n";
 
+        ostr << jtrans("hints describe feature blood-covered");
+        /*
         ostr << "Many forms of combat will spatter the surroundings with blood"
                 " (if the victim has any, that is). Some monsters, like jackals "
                 "or vampires, can smell blood from a distance and may come "
                 "looking.";
+        */
     }
 
     ostr << "</" << colour_to_str(channel_to_colour(MSGCH_TUTORIAL)) << ">";
@@ -3831,41 +4768,51 @@ static void _hints_describe_cloud(int x, int y)
     if (!cloud)
         return;
 
-    const string cname = cloud->cloud_name(true);
+    const string cname = cloud->cloud_name_j(true);
     const cloud_type ctype = cloud->type;
 
     ostringstream ostr;
 
     ostr << "\n\n<" << colour_to_str(channel_to_colour(MSGCH_TUTORIAL)) << ">";
 
-    ostr << "The " << cname << " ";
-
-    if (ends_with(cname, "s"))
-        ostr << "are ";
-    else
-        ostr << "is ";
-
     bool need_cloud = false;
     if (is_harmless_cloud(ctype))
+        ostr << make_stringf(jtranslnc("hints describe cloud harmless"),
+                             cname.c_str());
+        /*
         ostr << "harmless. ";
+        */
     else if (is_damaging_cloud(ctype, true))
     {
+        ostr << make_stringf(jtranslnc("hints describe cloud damaging cloud"),
+                             cname.c_str());
+        /*
         ostr << "probably dangerous, and you should stay out of it if you "
                 "can. ";
+        */
     } else
     {
+        ostr << make_stringf(jtranslnc("hints describe cloud non-damaging cloud"),
+                             cname.c_str());
+        /*
         ostr << "currently harmless, but that could change at some point. "
                 "Check the overview screen (<w>%</w>) to view your "
                 "resistances.";
+        */
         need_cloud = true;
     }
 
     if (is_opaque_cloud(ctype))
     {
+        ostr << make_stringf(jtranslnc("hints describe cloud non-damaging cloud"),
+                             cname.c_str(),
+                             jtrans_notrimc(need_cloud ? "\nThis cloud" : "it"));
+        /*
         ostr << (need_cloud? "\nThis cloud" : "It")
              << " is opaque. If two or more opaque clouds are between "
                 "you and a square, you won't be able to see anything in that "
                 "square.";
+        */
     }
 
     ostr << "</" << colour_to_str(channel_to_colour(MSGCH_TUTORIAL)) << ">";
@@ -3884,11 +4831,14 @@ static void _hints_describe_disturbance(int x, int y)
 
     ostr << "\n\n<" << colour_to_str(channel_to_colour(MSGCH_TUTORIAL)) << ">";
 
+    ostr << jtrans("hints describe disturbance");
+    /*
     ostr << "The strange disturbance means that there's a monster hiding "
             "under the surface of the shallow water. Submerged monsters will "
             "not be autotargeted when doing a ranged attack while there are "
             "other, visible targets in sight. Of course you can still target "
             "it manually if you wish to.";
+    */
 
     ostr << "</" << colour_to_str(channel_to_colour(MSGCH_TUTORIAL)) << ">";
 
@@ -3930,16 +4880,22 @@ string hints_describe_monster(const monster_info& mi, bool has_stat_desc)
     bool dangerous = false;
     if (mons_is_unique(mi.type))
     {
+        ostr << jtrans("hints describe monster unique") << "\n\n";
+        /*
         ostr << "Did you think you were the only adventurer in the dungeon? "
                 "Well, you thought wrong! These unique adversaries often "
                 "possess skills that normal monsters wouldn't, so be "
                 "careful.\n\n";
+        */
         dangerous = true;
     }
     else if (mi.type == MONS_PLAYER_GHOST)
     {
+        ostr << jtrans("hints describe monster player ghost") << "\n\n";
+        /*
         ostr << "The ghost of a deceased adventurer, it would like nothing "
                 "better than to send you the same way.\n\n";
+        */
         dangerous = true;
     }
     else
@@ -3947,6 +4903,8 @@ string hints_describe_monster(const monster_info& mi, bool has_stat_desc)
         const int tier = mons_demon_tier(mi.type);
         if (tier > 0)
         {
+            ostr << jtrans("hints describe monster demon tier " + to_string(tier)) << "\n\n";
+            /*
             ostr << "This monster is a demon of the "
                  << (tier == 1 ? "highest" :
                      tier == 2 ? "second-highest" :
@@ -3955,6 +4913,7 @@ string hints_describe_monster(const monster_info& mi, bool has_stat_desc)
                      tier == 5 ? "lowest"
                                : "buggy")
                  << " tier.\n\n";
+            */
         }
 
         // Don't call friendly monsters dangerous.
@@ -3962,12 +4921,18 @@ string hints_describe_monster(const monster_info& mi, bool has_stat_desc)
         {
             if (mi.threat == MTHRT_NASTY)
             {
+                ostr << jtransln("hints describe monster nasty");
+                /*
                 ostr << "This monster appears to be really dangerous!\n";
+                */
                 dangerous = true;
             }
             else if (mi.threat == MTHRT_TOUGH)
             {
+                ostr << jtransln("hints describe monster tough");
+                /*
                 ostr << "This monster appears to be quite dangerous.\n";
+                */
                 dangerous = true;
             }
         }
@@ -3975,29 +4940,41 @@ string hints_describe_monster(const monster_info& mi, bool has_stat_desc)
 
     if (mi.is(MB_BERSERK))
     {
+        ostr << jtrans("hints describe monster berserking") << "\n\n";
+        /*
         ostr << "A berserking monster is bloodthirsty and fighting madly. "
                 "Such a blood rage makes it particularly dangerous!\n\n";
+        */
         dangerous = true;
     }
 
     // Monster is highlighted.
     if (mi.attitude == ATT_FRIENDLY)
     {
+        ostr << jtrans("hints describe monster friendly");
+        /*
         ostr << "Friendly monsters will follow you around and attempt to aid "
                 "you in battle. You can order your allies by <w>t</w>alking "
                 "to them.";
+        */
 
         if (!mons_att_wont_attack(mi.attitude))
         {
+            ostr << "\n\n"
+                 << jtrans("hints describe monster temporarily friendly");
+        /*
             ostr << "\n\nHowever, it is only <w>temporarily</w> friendly, "
                     "and will become dangerous again when this friendliness "
                     "wears off.";
+        */
         }
     }
     else if (dangerous)
     {
         if (!Hints.hints_explored && (mi.is(MB_WANDERING) || mi.is(MB_UNAWARE)))
         {
+            ostr << jtrans("hints describe monster dangerous wandering/unaware");
+            /*
             ostr << "You can easily mark its square as dangerous to avoid "
                     "accidentally entering into its field of view when using "
                     "auto-explore or auto-travel. To do so, enter targeting "
@@ -4006,37 +4983,54 @@ string hints_describe_monster(const monster_info& mi, bool has_stat_desc)
                     "mark this grid and all surrounding ones within a radius "
                     "of 8 as \"excluded\" ones that explore or travel modes "
                     "won't enter.";
+            */
         }
         else
         {
+            if (!(you_worship(GOD_TROG) && you.can_go_berserk()))
+                ostr << jtransln("hints describe monster dangerous");
+            else
+                ostr << jtransln("hints describe monster dangerous trog");
+            /*
             ostr << "This might be a good time to run away";
 
             if (you_worship(GOD_TROG) && you.can_go_berserk())
                 ostr << " or apply your Berserk <w>a</w>bility";
             ostr << ".";
+            */
         }
     }
     else if (Options.stab_brand != CHATTR_NORMAL
              && mi.is(MB_STABBABLE))
     {
+        ostr << jtrans("hints describe monster stabbable");
+        /*
         ostr << "Apparently it has not noticed you - yet. Note that you do "
                 "not have to engage every monster you meet. Sometimes, "
                 "discretion is the better part of valour.";
+        */
     }
     else if (Options.may_stab_brand != CHATTR_NORMAL
              && mi.is(MB_DISTRACTED))
     {
+        ostr << jtrans("hints describe monster distracted");
+        /*
         ostr << "Apparently it has been distracted by something. You could "
                 "use this opportunity to sneak up on this monster - or to "
                 "sneak away.";
+        */
     }
 
     if (!dangerous && !has_stat_desc)
     {
+        ostr << "\n"
+             << jtrans("hints describe monster !dangerous !has_stat_desc");
+        /*
         ostr << "\nThis monster doesn't appear to have any resistances or "
                 "susceptibilities. It cannot fly and is of average speed. "
                 "Examining other, possibly more high-level monsters can give "
                 "important clues as to how to deal with them.";
+        */
     }
 
     ostr << "</" << colour_to_str(channel_to_colour(MSGCH_TUTORIAL)) << ">";
@@ -4091,7 +5085,7 @@ void tutorial_msg(const char *key, bool end)
 {
     string text = getHintString(key);
     if (text.empty())
-        return mprf(MSGCH_ERROR, "Error, no message for '%s'.", key);
+        return mprf(MSGCH_ERROR, jtransc("Error, no message for '%s'."), key);
 
     _replace_static_tags(text);
     text = untag_tiles_console(text);
