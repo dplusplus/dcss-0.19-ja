@@ -4275,7 +4275,7 @@ static void _deck_from_specs(const char* _specs, item_def &item,
             item.initial_cards = 1;
             init_deck(item);
             // Remove "plain " from front.
-            string name = item.name(DESC_PLAIN).substr(6);
+            string name = item.name_en(DESC_PLAIN).substr(6);
             item.props.clear();
 
             if (name.find(type_str) != string::npos)
