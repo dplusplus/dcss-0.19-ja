@@ -1054,7 +1054,7 @@ Carrion
 %%%%
 [%c] %5d gold - %s %s %s
 
-[%c] %5dゴールド - %s%s
+[%c] %5dゴールド - %s%s%s
 %%%%
 Fund which merchant?
 
@@ -1070,7 +1070,7 @@ You don't have enough gold to fund that merchant!
 %%%%
 %s invites you to visit %s %s%s%s.
 
-%sは%s%s%s%sへとあなたを招いている。
+%sは自分の%s%sへとあなたを招いている。
 %%%%
 Your bribe of %s has been exhausted.
 

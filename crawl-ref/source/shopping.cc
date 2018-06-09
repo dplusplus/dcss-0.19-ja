@@ -1578,7 +1578,7 @@ static const char *_shop_type_suffix(shop_type type, const coord_def &where)
 }
 
 #define SHOP_NAME_SIZE 50
-const char *rand_store_names[SHOP_NAME_SIZE] = {
+const char *_rand_store_names[SHOP_NAME_SIZE] = {
     "アーヴィン",
     "アラン",
     "アンディ",
@@ -1631,6 +1631,11 @@ const char *rand_store_names[SHOP_NAME_SIZE] = {
     "ロレッタ",
 };
 
+const char* rand_store_names(int n)
+{
+    return _rand_store_names[n % SHOP_NAME_SIZE];
+}
+
 string shop_name(const shop_struct& shop)
 {
     const shop_type type = shop.type;
@@ -1646,7 +1651,7 @@ string shop_name(const shop_struct& shop)
         sh_name += jtrans(shop.shop_name) + "の";
     else
     {
-        string rand_name = rand_store_names[shop.keeper_name[0] % SHOP_NAME_SIZE];
+        string rand_name = rand_store_names(shop.keeper_name[0]);
 
         sh_name += rand_name + "の";
     }
@@ -1659,7 +1664,12 @@ string shop_name(const shop_struct& shop)
         sh_name2 += shop_type_name_j(type);
 
     if (!shop.shop_suffix_name.empty())
-        sh_name2 += " " + shop.shop_suffix_name;
+    {
+        if (jtrans_has_key(sh_name2 + " " + shop.shop_suffix_name))
+            sh_name2 = jtrans(sh_name2 + " " + shop.shop_suffix_name);
+        else
+            sh_name2 += shop.shop_suffix_name;
+    }
     else
     {
         string sh_suffix = shop_type_name_j(_shop_type_suffix(type, shop.pos));
