@@ -500,7 +500,15 @@ while your transformation is expiring
 %%%%
 Are you sure you want to %s while confused and next to %s?
 
-あなたは混乱しており、%sのそばに立っています。それでも%sしますか？
+あなたは混乱しており、%sのすぐ隣にいます。それでも%sしますか？
+%%%%
+Are you sure you want to %s while confused and next to %s, despite your sanctuary?
+
+あなたは自らの聖域内に立ちながら混乱しており、%sのすぐ隣にいます。それでも%sしますか？
+%%%%
+Are you sure you want to %s while confused and next to %s, when you might land in your sanctuary?
+
+あなたは自らの聖域内に着地するかもしれず、なおかつ混乱しており、%sのすぐ隣にいます。それでも%sしますか？
 %%%%
 You're too confused to attack without stumbling around!
 

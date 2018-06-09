@@ -2779,9 +2779,10 @@ static bool _cancel_confused_move(bool stationary)
         else
         {
             string name = bad_mons->name(DESC_PLAIN);
-
-            prompt += make_stringf(jtransc("Are you sure you want to %s while confused and next to %s?"),
-                                   (bad_adj + name + bad_suff).c_str(),
+            string prompt_template = "Are you sure you want to %s while confused and next to %s"
+                                   + bad_suff + "?";
+            prompt += make_stringf(jtransc(prompt_template),
+                                   (bad_adj + name).c_str(),
                                    jtransc(!stationary ? "stumble around" : "swing wildly"));
         }
 

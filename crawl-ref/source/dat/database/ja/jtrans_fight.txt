@@ -17,11 +17,11 @@ This could place you under penance!
 %%%%
 , despite your sanctuary
 
-聖域内で
+# 訳不要
 %%%%
 , when you might land in your sanctuary
 
-あなたは聖域内に着地する可能性がありますが、
+# 訳不要
 %%%%
 your ally
 
@@ -43,13 +43,29 @@ ally
 
 敵対的でない
 %%%%
-Really %s%s%s?%s
+Really %s%s?%s
 
-%s本当に%s%sますか？ %s
+本当に%s%sますか？ %s
+%%%%
+Really %s%s, despite your sanctuary?%s
+
+聖域内で本当に%s%sますか？ %s
+%%%%
+Really %s%s, when you might land in your sanctuary?%s
+
+聖域内に着地する可能性がありますが、本当に%s%sますか？ %s
 %%%%
 Really %s %s%s?%s
 
-%s本当に%s%sますか？ %s
+本当に%s%sますか？ %s
+%%%%
+Really %s %s, despite your sanctuary?%s
+
+聖域内で本当に%s%sますか？ %s
+%%%%
+Really %s %s, when you might land in your sanctuary?%s
+
+聖域内に着地する可能性がありますが、本当に%s%sますか？ %s
 %%%%
 This attack would place you under penance!
 
