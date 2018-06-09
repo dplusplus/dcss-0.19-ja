@@ -950,8 +950,9 @@ bool stop_attack_prompt(const monster* mon, bool beam_attack,
     else
         verb = "を攻撃し";
 
-    const string prompt = make_stringf(jtransc("Really %s%s%s?%s"),
-             jtransc(suffix), jtransc(mon_name),
+    const string prompt_template = "Really %s%s" + suffix + "?%s";
+    const string prompt = make_stringf(jtransc(prompt_template),
+             jtransc(mon_name),
              verb_j(verb, "[stop attack prompt]").c_str(),
              jtrans_notrimc(penance ? " This attack would place you under penance!" : ""));
 
@@ -1007,9 +1008,9 @@ bool stop_attack_prompt(targetter &hitfunc, const char* verb,
         return false;
 
     string mon_name = adj + victims.describe(DESC_PLAIN);
-
-    const string prompt = make_stringf(jtransc("Really %s %s%s?%s"),
-             jtransc(suffix), jtransc(mon_name),
+    string prompt_template = "Really %s %s" + suffix + "?%s";
+    const string prompt = make_stringf(jtransc(prompt_template),
+             jtransc(mon_name),
              verb_j(verb, "[stop attack prompt]").c_str(),
              jtrans_notrimc(penance ? " This attack would place you under penance!" : ""));
 
