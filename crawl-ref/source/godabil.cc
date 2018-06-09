@@ -70,6 +70,7 @@
 #include "religion.h"
 #include "rot.h"
 #include "shout.h"
+#include "shopping.h"
 #include "skill_menu.h"
 #include "spl-book.h"
 #include "spl-goditem.h"
@@ -4306,9 +4307,10 @@ static void _setup_gozag_shop(int index, vector<shop_type> &valid_shops)
     you.props[make_stringf(GOZAG_SHOP_TYPE_KEY, index)].get_int() = type;
 
     you.props[make_stringf(GOZAG_SHOPKEEPER_NAME_KEY, index)].get_string()
-                                    = make_name();
+                                    = rand_store_names(1 + random2(200));
 
-    you.props[make_stringf(GOZAG_SHOP_SUFFIX_KEY, index)].get_string() = "";
+    you.props[make_stringf(GOZAG_SHOP_SUFFIX_KEY, index)].get_string()
+                                    = shop_type_name_j("Shop");
 
     you.props[make_stringf(GOZAG_SHOP_COST_KEY, index)].get_int()
         = gozag_price_for_shop();
@@ -4450,13 +4452,9 @@ static void _gozag_place_shop(int index)
     shop_struct *shop = shop_at(you.pos());
     ASSERT(shop);
 
-    const gender_type gender = random_choose(GENDER_FEMALE, GENDER_MALE);
-
     mprf(MSGCH_GOD, jtransc("%s invites you to visit %s %s%s%s."),
                     shop->shop_name.c_str(),
-                    decline_pronoun_j(gender, PRONOUN_POSSESSIVE).c_str(),
                     shop_type_name_jc(shop->type),
-                    !shop->shop_suffix_name.empty() ? " " : "",
                     shop->shop_suffix_name.c_str());
 }
 

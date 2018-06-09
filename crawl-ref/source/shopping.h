@@ -31,6 +31,7 @@ string shop_type_name(shop_type type);
 string shop_type_name_j(shop_type typ);
 string shop_type_name_j(const string &name);
 #define shop_type_name_jc(t) (shop_type_name_j(t).c_str())
+const char* rand_store_names(int n);
 
 bool shoptype_identifies_stock(shop_type type);
 
