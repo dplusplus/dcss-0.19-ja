@@ -115,47 +115,59 @@ Fragment what (e.g. wall or brittle monster)?
 
 # 訳不要
 %%%%
-[spell type]Conjuration
+[spell type long]Conjuration
 
-妖術
+<[skill]Conjurations>
 %%%%
-[spell type]Hexes
+[spell type long]Hexes
 
-呪術
+<[skill]Hexes>
 %%%%
-[spell type]Charms
+[spell type long]Charms
 
-加護
+<[skill]Charms>
 %%%%
-[spell type]Transmutation
+[spell type long]Fire
 
-変異術
+<[skill]Fire Magic>
 %%%%
-[spell type]Necromancy
+[spell type long]Ice
 
-死霊術
+<[skill]Ice Magic>
 %%%%
-[spell type]Summoning
+[spell type long]Transmutation
 
-召喚術
+<[skill]Transmutations>
 %%%%
-[spell type]Divination
+[spell type long]Necromancy
+
+<[skill]Necromancy>
+%%%%
+[spell type long]Summoning
+
+<[skill]Summonings>
+%%%%
+[spell type long]Divination
 
 予見術
 %%%%
-[spell type]Translocation
+[spell type long]Translocation
 
-転位術
+<[skill]Translocations>
 %%%%
-[spell type]Poison
+[spell type long]Poison
 
-毒
+<[skill]Poison Magic>
 %%%%
-[spell type]Earth
+[spell type long]Earth
 
-地
+<[skill]Earth Magic>
 %%%%
-[spell type]Random
+[spell type long]Air
+
+<[skill]Air Magic>
+%%%%
+[spell type long]Random
 
 ランダム
 %%%%

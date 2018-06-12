@@ -21,6 +21,7 @@
 #include "godwrath.h"
 #include "item_use.h"
 #include "itemprop.h"
+#include "japanese.h"
 #include "mapmark.h"
 #include "message.h"
 #include "misc.h"

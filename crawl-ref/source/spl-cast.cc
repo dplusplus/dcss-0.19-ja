@@ -2288,7 +2288,7 @@ string spell_schools_string(spell_type spell)
         {
             if (already)
                 desc += "/";
-            desc += spelltype_name_j(spelltype_long_name(bit));
+            desc += spelltype_name_j(spelltype_short_name(bit));
             already = true;
         }
     }

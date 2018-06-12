@@ -868,9 +868,13 @@ const char* spelltype_long_name(spschool_flag_type which_spelltype)
     }
 }
 
-const string spelltype_name_j(const char* type)
+const string spelltype_name_j(string type)
 {
-    return tagged_jtrans("[spell type]", type);
+    trim_string(type);
+    if (jtrans_has_key("[spell type long]" + type))
+        return tagged_jtrans("[spell type long]", type);
+    else
+        return tagged_jtrans("[spell type]", type);
 }
 
 skill_type spell_type2skill(spschool_flag_type spelltype)
