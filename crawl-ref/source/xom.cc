@@ -1715,7 +1715,7 @@ static void _xom_change_scenery(int /*sever*/)
         if (effects.empty())
             closed = uppercase_first(closed);
         effects.push_back(closed);
-        terse.push_back(make_stringf("%d doors close", doors_close));
+        terse.push_back(make_stringf(jtransc("%d doors close"), doors_close));
     }
     if (!effects.empty())
     {
