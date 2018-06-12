@@ -1998,7 +1998,7 @@ static void _xom_pseudo_miscast(int /*sever*/)
 
     {
         string str = make_stringf(jtransc("A monocle briefly appears over your {r/l} eye."),
-                                  jtransc(coinflip() ? "right" : "left"),
+                                  coinflip() ? "右" : "左",
                                   you.form == TRAN_SPIDER ? "側の" : "");
         messages.push_back(str);
     }
