@@ -55,7 +55,7 @@ Really %s%s, when you might land in your sanctuary?%s
 
 聖域内に着地する可能性がありますが、本当に%s%sますか？ %s
 %%%%
-Really %s %s%s?%s
+Really %s %s?%s
 
 本当に%s%sますか？ %s
 %%%%
