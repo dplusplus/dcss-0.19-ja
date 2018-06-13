@@ -1082,7 +1082,7 @@ Your weapon is exuding a protective aura.
 %%%%
 You flicker for a moment.
 
-あなたの姿が一瞬だけ明滅した
+あなたの姿が一瞬だけ明滅した。
 %%%%
 You break out of your daze.
 
