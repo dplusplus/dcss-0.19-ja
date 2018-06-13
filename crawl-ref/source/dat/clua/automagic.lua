@@ -258,7 +258,7 @@ function mag_attack(allow_movement)
       attack(allow_movement)
     else
       crawl.mpr("あなたには" ..
-          you.spell_table()[AUTOMAGIC_SPELL_SLOT] ..
+          crawl.tagged_jtrans("[spell]", you.spell_table()[AUTOMAGIC_SPELL_SLOT]) ..
           "の呪文を唱える魔力がない！")
     end
   elseif mp_is_low() then

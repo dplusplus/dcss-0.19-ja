@@ -1715,6 +1715,7 @@ endif
 	cp -p $(ZIP_DOCS) build-win/stone_soup-tiles-$(MAJOR_VERSION)/
 
 #	fix encoding (utf-8 -> shift-jis)
+	find build-win/stone_soup-tiles-$(MAJOR_VERSION)/dat/clua/ -name '*.lua' | xargs -I{} iconv {} -f utf8 -t sjis -o {}
 	find build-win/stone_soup-tiles-$(MAJOR_VERSION)/dat/defaults/ -name '*.txt' | xargs -I{} iconv {} -f utf8 -t sjis -o {}
 	iconv build-win/stone_soup-tiles-$(MAJOR_VERSION)/dat/dlua/lm_timed.lua -f utf8 -t sjis -o build-win/stone_soup-tiles-$(MAJOR_VERSION)/dat/dlua/lm_timed.lua
 	iconv build-win/stone_soup-tiles-$(MAJOR_VERSION)/dat/dlua/lm_tmsg.lua -f utf8 -t sjis -o build-win/stone_soup-tiles-$(MAJOR_VERSION)/dat/dlua/lm_tmsg.lua
