@@ -97,10 +97,11 @@ const string spell_title_j(spell_type which_spell);
 const string spell_title_j(const string &name_en);
 #define spell_title_jc(sp) (spell_title_j(sp).c_str())
 const char* spelltype_short_name(spschool_flag_type which_spelltype);
+const string spelltype_short_name_j(spschool_flag_type which_spelltype);
+#define spelltype_short_name_jc(x) (spelltype_short_name_j(x).c_str())
 const char* spelltype_long_name(spschool_flag_type which_spelltype);
-
-const string spelltype_name_j(string type);
-#define spelltype_name_jc(x) (spelltype_name_j(x).c_str())
+const string spelltype_long_name_j(spschool_flag_type which_spelltype);
+#define spelltype_long_name_jc(x) (spelltype_long_name_j(x).c_str())
 
 typedef function<int (coord_def where)> cell_func;
 typedef int cloud_func(coord_def where, int pow, int spreadrate,

@@ -1060,7 +1060,7 @@ void debug_miscast(int target_index)
     else if (spell != SPELL_NO_SPELL && school != SPTYP_NONE)
     {
         mprf(jtransc("Ambiguous: can be spell '%s' or school '%s'."),
-             spell_title_jc(spell), spelltype_name_jc(spelltype_short_name(school)));
+             spell_title_jc(spell), spelltype_short_name_jc(school));
         return;
     }
 
@@ -1079,7 +1079,7 @@ void debug_miscast(int target_index)
     if (spell != SPELL_NO_SPELL)
         mprf(jtransc("Miscasting spell %s."), spell_title_jc(spell));
     else
-        mprf(jtransc("Miscasting school %s."), spelltype_name_jc(spelltype_long_name(school)));
+        mprf(jtransc("Miscasting school %s."), spelltype_long_name_jc(school));
 
     if (spell != SPELL_NO_SPELL)
         mprf(MSGCH_PROMPT, jtrans_notrim("Enter spell_power,raw_spell_failure: "));

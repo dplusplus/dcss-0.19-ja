@@ -423,7 +423,7 @@ static string _spell_schools(spell_type spell)
 
         if (!schools.empty())
             schools += "/";
-        schools += spelltype_name_j(spelltype_short_name(school_flag));
+        schools += spelltype_short_name_j(school_flag);
     }
 
     return schools;

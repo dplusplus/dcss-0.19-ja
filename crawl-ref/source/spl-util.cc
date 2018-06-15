@@ -831,6 +831,11 @@ const char* spelltype_short_name(spschool_flag_type which_spelltype)
     }
 }
 
+const string spelltype_short_name_j(spschool_flag_type which_spelltype)
+{
+    return tagged_jtrans("[spell type]", spelltype_short_name(which_spelltype));
+}
+
 const char* spelltype_long_name(spschool_flag_type which_spelltype)
 {
     switch (which_spelltype)
@@ -868,13 +873,9 @@ const char* spelltype_long_name(spschool_flag_type which_spelltype)
     }
 }
 
-const string spelltype_name_j(string type)
+const string spelltype_long_name_j(spschool_flag_type which_spelltype)
 {
-    trim_string(type);
-    if (jtrans_has_key("[spell type long]" + type))
-        return tagged_jtrans("[spell type long]", type);
-    else
-        return tagged_jtrans("[spell type]", type);
+    return tagged_jtrans("[spell type long]", spelltype_long_name(which_spelltype));
 }
 
 skill_type spell_type2skill(spschool_flag_type spelltype)

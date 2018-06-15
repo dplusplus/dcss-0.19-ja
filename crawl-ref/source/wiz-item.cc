@@ -1056,7 +1056,7 @@ static void _debug_acquirement_stats(FILE *ostat)
                 continue;
 
             fprintf(ostat, jtrans_notrimc("%-13s:  %2d/%2d spells unseen\n"),
-                    spelltype_name_jc(spelltype_long_name(disc)),
+                    spelltype_long_name_jc(disc),
                     unseen_spells[d], total_spells[d]);
         }
     }
