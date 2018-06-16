@@ -322,18 +322,22 @@
 # TAG_MAJOR_VERSION == 34
 [feature]staircase to the Dwarven Hall
 
+ドワーフの大広間へ戻る出口の階段
 %%%%
 # TAG_MAJOR_VERSION == 34
 [feature]staircase to the Enchanted Forest
 
+魔法の森へ戻る出口の階段
 %%%%
 # TAG_MAJOR_VERSION == 34
 [feature]staircase to the Hall of Blades
 
+刃の広間へ戻る出口の階段
 %%%%
 # TAG_MAJOR_VERSION == 34
 [feature]staircase back to the Vaults
 
+宝物庫へ戻る出口の階段
 %%%%
 [feature]staircase to the Lair
 
