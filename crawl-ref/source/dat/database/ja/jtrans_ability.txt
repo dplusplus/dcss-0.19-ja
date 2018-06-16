@@ -651,7 +651,7 @@ Permanent
 %%%%
 , Skill drain
 
-, スキル減少
+, スキル衰弱
 %%%%
 , Scroll of remove curse
 
