@@ -2771,13 +2771,13 @@ hints describe item misc decks use tile
 # #endif
 #                         ". You can read about the effect of a card by "
 #                         "searching the game's database with <w>%/c</w>.";
-カードのデッキは強力ながら危険な魔法のアイテムである。
+カードのデッキは強力ながら危険な魔道具である。
 <w>[%]</w>を押して発動させてみよう。
 <w>%/c</w>を押してゲーム内のデータベースを検索し、カードの効果について閲覧することができる。
 %%%%
 hints describe item misc decks
 
-カードのデッキは強力ながら危険な魔法のアイテムである。
+カードのデッキは強力ながら危険な魔道具である。
 <w>[クリック]</w>して発動させてみよう。
 <w>%/c</w>を押してゲーム内のデータベースを検索し、カードの効果について閲覧することができる。
 %%%%

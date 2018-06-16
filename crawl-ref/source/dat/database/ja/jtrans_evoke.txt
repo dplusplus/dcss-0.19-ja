@@ -89,7 +89,7 @@ You have no means to grasp a wand firmly enough.
 %%%%
 You cannot evoke magical items.
 
-あなたは魔法のアイテムを発動できない。
+あなたは魔道具を発動できない。
 %%%%
 's wrath prevents you from evoking devices!
 
@@ -125,7 +125,7 @@ Evoking this partially-identified wand wasted a few charges.
 %%%%
 Your skill with magical items lets you calculate the power of this device...
 
-魔法のアイテムに関する技能から、この道具の残り使用回数が判明した。
+魔道具に関する技能から、この道具の残り使用回数が判明した。
 %%%%
 This wand has %d charge%s left.
 
