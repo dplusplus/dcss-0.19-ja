@@ -695,7 +695,8 @@ static void _decrement_durations()
         if (you.stat(s) > 0
             && _decrement_a_duration(stat_zero_duration(s), delay))
         {
-            mprf(MSGCH_RECOVERY, jtransc("Your %s has recovered."), stat_desc(s, SD_NAME));
+            mprf(MSGCH_RECOVERY, jtransc("Your %s has recovered."),
+                 jtransc(stat_desc(s, SD_NAME)));
             you.redraw_stats[s] = true;
         }
     }
