@@ -5807,7 +5807,8 @@ string ru_sac_text(ability_type sac)
     const string school_names
         = to_separated_fn(sacrifice_muts.begin(), sacrifice_muts.end(),
              [](CrawlStoreValue mut) {
-                 return jtrans(_arcane_mutation_to_school_abbr(AS_MUT(mut)));
+                 return tagged_jtrans("[spell type]",
+                                      _arcane_mutation_to_school_abbr(AS_MUT(mut)));
              }, "/", "/", "/");
 
     return make_stringf(" (%s)", school_names.c_str());
