@@ -209,7 +209,7 @@ You enter the Zot trap.
 %%%%
 Oh no! You have blundered into a Zot trap!
 
-しまった！あなたはゾットの罠に踏み込んでしまった！
+なんてこった！ あなたはゾットの罠に踏み込んでしまった！
 %%%%
 You hear a loud "Zot"!
 
