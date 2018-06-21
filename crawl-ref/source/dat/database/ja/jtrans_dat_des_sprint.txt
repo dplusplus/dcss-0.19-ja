@@ -264,17 +264,17 @@ to the Lair
 
 獣の棲み処へと通じる
 %%%%
-to the Lair:8
+to Lair:6
 
-獣の棲み処の8階へと通じる
+獣の棲み処の6階へと通じる
 %%%%
 to the Orcish Mines
 
 オークの坑道へと通じる
 %%%%
-to the Orc:4
+to Orc:2
 
-オークの坑道の4階へと通じる
+オークの坑道の2階へと通じる
 %%%%
 to the Swamp
 
@@ -296,21 +296,21 @@ to the Vaults
 
 宝物庫へと通じる
 %%%%
-to Swamp:5
+to Swamp:4
 
-沼の5階へと通じる
+沼の4階へと通じる
 %%%%
-to Shoals:5
+to Shoals:4
 
-浅瀬の5階へと通じる
+浅瀬の4階へと通じる
 %%%%
-to Spider:5
+to Spider:4
 
-蜘蛛の穴ぐらの5階へと通じる
+蜘蛛の穴ぐらの4階へと通じる
 %%%%
-to Snake:5
+to Snake:4
 
-蛇穴の5階へと通じる
+蛇穴の4階へと通じる
 %%%%
 to Vaults:5
 
