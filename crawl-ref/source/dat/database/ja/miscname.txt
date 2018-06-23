@@ -282,63 +282,91 @@ sound_name
 # Used by Summon Horrible Things.
 SHT_int_loss
 
-Your mind reels, touched by the horrors through the portal.
+# Your mind reels, touched by the horrors through the portal.
+ポータルを通して恐怖にさらされ、あなたの精神はぐるぐると渦巻いた。
 
-You quiver within your mortal coil, caressed by the liquid insanity through the scintillating gateway.
+# You quiver within your mortal coil, caressed by the liquid insanity through the scintillating gateway.
+あなたは煌めく門を通して液状の狂気に愛撫され、生のしがらみを感じて震えた。
 
 # Bal-Sagoth
-The summoning rite seems to take a not insignificant toll on your sanity.
+# The summoning rite seems to take a not insignificant toll on your sanity.
+召喚儀式は無視する事のできないほどあなたの正気を蝕ばむように見えた。
 
-You have a brief vision of a great black cyclopean cityscape with towering stygian walls.
+# You have a brief vision of a great black cyclopean cityscape with towering stygian walls.
+あなたはそびえ立つ暗黒壁を擁する壮大な黒き巨石街の幻影を垣間見た。
 
-Your vision is obscured by outlandish glyphs which seem to writhe squamously and alter their shape.
+# Your vision is obscured by outlandish glyphs which seem to writhe squamously and alter their shape.
+あなたの視界は、身を捩るかのようにその姿を変化させる異様な図形によって覆い隠された。
 
-You feel inexorably dogged by some nameless and implacable gloom.
+# You feel inexorably dogged by some nameless and implacable gloom.
+あなたは名も知れぬ執念深い憂鬱によって容赦無く苦悩させられていると感じた。
 #-----------
 
-You reel in agony as your mind is raked by horrors beyond mortal ken.
+# You reel in agony as your mind is raked by horrors beyond mortal ken.
+あなたは精神を人知の及ばぬ恐怖にさらされ、苦悶に震えた。
 
-Your mind is seduced by sublime insanity as you glimpse through the portal into the nether beyond.
+# Your mind is seduced by sublime insanity as you glimpse through the portal into the nether beyond.
+あなたが彼岸へのポータルの向こうを垣間見ると、あなたの精神は崇高なる狂気に誘惑された。
 
-You cackle madly at the sight of the eldritch monstrosity.
+# You cackle madly at the sight of the eldritch monstrosity.
+あなたはこの世の物とも思えぬ怪物を目にして狂気の笑い声を上げた。
 
-You are seized by madness!
+# You are seized by madness!
+あなたは狂気に満たされた！
 
-Attempting to comprehend the unknowable depths of infinity takes a toll on your sanity.
+# Attempting to comprehend the unknowable depths of infinity takes a toll on your sanity.
+限りなき不可知の深淵を理解しようと試みるとあなたの正気が損なわれてしまう。
 
-Your thoughts are inescapably tormented by a ceaseless, buzzing drone.
+# Your thoughts are inescapably tormented by a ceaseless, buzzing drone.
+あなたの思考は必然的に絶え間なくブンブン唸る雄蜂に苛まれている。
 
-Your mind collapses in madness at the sight of this blasphemy against creation!
+# Your mind collapses in madness at the sight of this blasphemy against creation!
+神の創造物に対する冒涜的存在を目にし、あなたの精神は狂気の内に崩壊した。
 
-Your mind briefly shatters, though you barely manage to hold yourself together.
+# Your mind briefly shatters, though you barely manage to hold yourself together.
+あなたはなんとか自分自身を保とうとしたにもかかわらず、あなたの精神は一瞬砕け散った。
 
-You feel your tenuous grasp on sanity beginning to erode.
+# You feel your tenuous grasp on sanity beginning to erode.
+あなたは自分がかろうじて保っていた正気が蝕まれていくのを感じた。
 
-Penetrating whispers of deepest heresy ceaselessly assail your thoughts.
+# Penetrating whispers of deepest heresy ceaselessly assail your thoughts.
+最も深い異端の囁きが身にしみ、あなたの思考は絶え間なく脅かされる。
 
-Your mind aches with revulsion at the sight of the undulating horrors you have wrought.
+# Your mind aches with revulsion at the sight of the undulating horrors you have wrought.
+自らの作り出した波打つ恐怖を目にしてあなたの精神は嫌悪に疼く。
 
-For but a moment your mind is laid bare before the towering infinitude of the unimaginable.
+# For but a moment your mind is laid bare before the towering infinitude of the unimaginable.
+あなたの精神は想像を絶する無数の存在の前に無防備にさらされている。
 
-Your skull pulses and throbs as words spoken in an unspeakable tongue drift across your psyche.
+# Your skull pulses and throbs as words spoken in an unspeakable tongue drift across your psyche.
+言いようのない所から発される言葉があなたの精神に流れ込み、頭蓋が脈動するのを感じた。
 
-A thin, monotonous whinny from outside of time grows ever louder in your ears.
+# A thin, monotonous whinny from outside of time grows ever louder in your ears.
+時間の外側から聞こえる単調で微かないななき声が耳の中で次第に大きくなっていく。
 
-Shapeless horrors persist on the edge of your vision, drawing ever closer.
+# Shapeless horrors persist on the edge of your vision, drawing ever closer.
+無形の恐怖があなたの視界の隅にとどまり、じわじわとこちらに寄ってきている。
 
-You are overcome with an inexorable feeling of implacable gloom.
+# You are overcome with an inexorable feeling of implacable gloom.
+あなたは容赦なく押し寄せる抑えきれない憂鬱な感情に打ちのめされた。
 
-Coherent, reasonable thoughts seem alien to you.
+# Coherent, reasonable thoughts seem alien to you.
+合理的で一貫した思考は自分とは相容れないような気がする。
 
-Tendrils of madness seep and wend into the darkest crevices of your mind.
+# Tendrils of madness seep and wend into the darkest crevices of your mind.
+狂気なる触手があなたの精神の奥暗い裂け目へと染み入った。
 
-You struggle to grasp the nature of the incomprehensible forces at work.
+# You struggle to grasp the nature of the incomprehensible forces at work.
+作用している理解できない力の本質を捉えようとあなたはもがいた。
 
-Nightmarish fiends assault your waking thoughts!
+# Nightmarish fiends assault your waking thoughts!
+禍々しい悪鬼があなたの覚醒した意識に襲いかかった！
 
-Seething terrors besiege your sanity!
+# Seething terrors besiege your sanity!
+煮えたぎる恐怖があなたの精神を悩ませた！
 
-Lucidity slithers from your feeble grasp.
+# Lucidity slithers from your feeble grasp.
+かろうじて保っていた正気があなたから失われようとしている。
 %%%%
 welcome_spam
 
