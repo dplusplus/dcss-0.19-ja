@@ -2547,7 +2547,7 @@ void forest_damage(const actor *mon)
                         "A root smacks @foe@ from below.");
                 }
 
-                msg = replace_all(replace_all(msg,
+                msg = replace_all(replace_all(jtrans(msg),
                     "@foe@", foe->name(DESC_THE)),
                     "@is@", foe->conj_verb("be"));
                 if (you.see_cell(foe->pos()))

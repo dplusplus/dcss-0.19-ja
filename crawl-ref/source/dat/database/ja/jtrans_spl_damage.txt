@@ -481,7 +481,7 @@ Tree limbs sway around you.
 %%%%
 @foe@ @is@ waved at by a branch.
 
-@foe@は枝に振り回された。
+@foe@@is@枝に振り回された。
 %%%%
 A tree reaches out but misses @foe@.
 
@@ -493,7 +493,7 @@ A root lunges up near @foe@.
 %%%%
 @foe@ @is@ scraped by a branch!
 
-@foe@は木の枝に引っかかれた！
+@foe@@is@木の枝に引っかかれた！
 %%%%
 A tree reaches out and scrapes @foe@!
 
@@ -505,7 +505,7 @@ A root barely touches @foe@ from below.
 %%%%
 @foe@ @is@ hit by a branch!
 
-@foe@は木の枝に打ちすえられた！
+@foe@@is@木の枝に打ちすえられた！
 %%%%
 A tree reaches out and hits @foe@!
 
