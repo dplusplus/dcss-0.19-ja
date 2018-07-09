@@ -546,7 +546,7 @@
 %%%%
 [ability]Line Pass
 
-鎧袖一触
+横切り
 %%%%
 [ability]Grand Finale
 
