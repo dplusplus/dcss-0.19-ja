@@ -1243,13 +1243,24 @@ static void _sdump_action_counts(dump_params &par)
     if (max_lt)
         max_lt++;
 
-    int width_1st = 10;
-    int width_2nd = strwidth(jtrans("Iskenderun's battlesphere")); // longest spell title
-    text += chop_string(jtrans("Action"), width_1st + width_2nd);
+    int action_type_column_width = 10;
+    int action_subtype_column_width = 10;
+
+    // count max(action subtype string width)
+    for (const auto &entry : you.action_count)
+    {
+        string action_str = trimmed_string(_describe_action_subtype(caction_type(entry.first.first),
+                                                                    entry.first.second));
+        action_subtype_column_width = max(action_subtype_column_width,
+                                          strwidth(tagged_jtrans("[desc action]", action_str)));
+    }
+
+    text += chop_string(jtrans("Action"),
+                        action_type_column_width + action_subtype_column_width);
     for (int lt = 0; lt < max_lt; lt++)
         text += make_stringf(" | %2d-%2d", lt * 3 + 1, lt * 3 + 3);
     text += make_stringf(" || %5s", jtransc("total"));
-    text += "\n" + string(width_1st + width_2nd + 1, '-');
+    text += "\n" + string(action_type_column_width + action_subtype_column_width + 1, '-');
     for (int lt = 0; lt < max_lt; lt++)
         text += "+-------";
     text += "++-------\n";
@@ -1278,14 +1289,14 @@ static void _sdump_action_counts(dump_params &par)
             {
                 text += align_right(tagged_jtrans("[desc action]",
                                                   trimmed_string(_describe_action(caction_type(cact)))),
-                                    width_1st - 2);
+                                    action_type_column_width - 2);
                 text += ": ";
             }
             else
-                text += string(width_1st, ' ');
+                text += string(action_type_column_width, ' ');
             text += chop_string(tagged_jtrans("[desc action]",
                                               trimmed_string(_describe_action_subtype(caction_type(cact), ac->first))),
-                                width_2nd);
+                                action_subtype_column_width);
             for (int lt = 0; lt < max_lt; lt++)
             {
                 int ltotal = 0;
