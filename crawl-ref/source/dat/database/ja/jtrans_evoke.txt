@@ -173,7 +173,7 @@ You have finished your manual of %s and toss it away.
 %%%%
 %lu skills
 
-%lu種のスキル
+%lu種の
 %%%%
 You open the lid...
 
