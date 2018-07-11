@@ -362,7 +362,7 @@ Spellbook %s has spell %s with no category
 %%%%
 almost destroyed
 
-ほとんど破壊されかけている
+ほとんど倒されかけている
 %%%%
 almost dead
 

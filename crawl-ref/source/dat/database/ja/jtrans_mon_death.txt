@@ -299,21 +299,21 @@ exhausts itself and dries up.
 
 は消耗して涸れ果てた。
 %%%%
-%s is %s!
+%s is blown up!
 
-%sは%s！
+%sは爆破された！
 %%%%
-[verb passive]blown up
+[mons_is_firewood]%s is destroyed!
 
-爆破された
+%sは薙ぎ倒された！
 %%%%
-[verb passive]destroyed
+[!mons_is_firewood]%s is destroyed!
 
-破壊された
+%sは倒された！
 %%%%
-[verb passive]killed
+%s is killed!
 
-殺された
+%sは殺された！
 %%%%
 You %s %s!
 
@@ -323,9 +323,13 @@ blow up
 
 破裂させた
 %%%%
-destroy
+[mons_is_firewood]destroy
 
-破壊した
+薙ぎ倒した
+%%%%
+[!mons_is_firewood]destroy
+
+倒した
 %%%%
 kill
 

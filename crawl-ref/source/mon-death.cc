@@ -2198,19 +2198,21 @@ item_def* monster_die(monster* mons, killer_type killer,
                 if (killer == KILL_YOU_CONF
                     && (anon || !invalid_monster_index(killer_index)))
                 {
-                    mprf(MSGCH_MONSTER_DAMAGE, MDAM_DEAD, jtransc("%s is %s!"),
-                         mons->name(DESC_THE).c_str(), tagged_jtransc("[verb passive]",
-                         exploded                        ? "blown up" :
-                         wounded_damaged(targ_holy)      ? "destroyed"
-                                                         : "killed"));
+                    mprf(MSGCH_MONSTER_DAMAGE, MDAM_DEAD, make_stringf(
+                         tagged_jtransc(mons_is_firewood(*mons) ? "[mons_is_firewood]" : "[!mons_is_firewood]",
+                                        exploded                   ? "%s is blown up!" :
+                                        wounded_damaged(targ_holy) ? "%s is destroyed!"
+                                                                   : "%s is killed!"),
+                         mons->name(DESC_THE).c_str()));
                 }
                 else
                 {
                     mprf(MSGCH_MONSTER_DAMAGE, MDAM_DEAD, jtransc("You %s %s!"),
-                         mons->name(DESC_THE).c_str(), jtransc(
-                         exploded                        ? "blow up" :
-                         wounded_damaged(targ_holy)      ? "destroy"
-                                                         : "kill"));
+                         mons->name(DESC_THE).c_str(),
+                         tagged_jtransc(mons_is_firewood(*mons) ? "[mons_is_firewood]" : "[!mons_is_firewood]",
+                                        exploded                   ? "blow up" :
+                                        wounded_damaged(targ_holy) ? "destroy"
+                                                                   : "kill"));
                 }
                 // If this monster would otherwise give xp but didn't because
                 // it grants no reward or was neutral, give a message.
