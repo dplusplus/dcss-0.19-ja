@@ -105,7 +105,7 @@ Tentacles
 %%%%
 Your unstable footing causes you to fumble your attack.
 
-あなたは足がもつれて攻撃に失敗した。
+足場が悪いために、あなたは攻撃を失敗した。
 %%%%
 # protects you from inadvertent hurry.
 

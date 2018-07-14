@@ -52,7 +52,7 @@ blade-form
 %%%%
 [verb]shred
 
-切り刻んだ
+細切れにした
 %%%%
 [form]scythe-like blade
 

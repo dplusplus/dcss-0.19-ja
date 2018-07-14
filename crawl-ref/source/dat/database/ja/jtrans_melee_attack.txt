@@ -105,7 +105,7 @@ kick
 %%%%
 claw
 
-かきむしった
+爪でかきむしった
 %%%%
 [aux verb]claw
 
@@ -145,11 +145,11 @@ tail-slap
 %%%%
 punch
 
-殴った
+殴りつけた
 %%%%
 [aux verb]punch
 
-パンチ
+殴打
 %%%%
 slash
 
@@ -169,7 +169,7 @@ tentacle-slap
 %%%%
 bite
 
-嚙んだ
+噛みついた
 %%%%
 [aux verb]bite
 
@@ -177,7 +177,7 @@ bite
 %%%%
 bludgeon
 
-殴りつけた
+打ちのめした
 %%%%
 [aux verb]bludgeon
 
@@ -257,19 +257,19 @@ You {evasion margin} miss {name}
 %%%%
 [verb]puncture
 
-刺した
+突き刺した
 %%%%
 [verb]impale
 
-突き刺した
+貫いた
 %%%%
 [verb]spit
 
-刺し貫いた
+串刺しにした
 %%%%
 like the proverbial pig
 
-豚の丸焼きのように
+# 訳不要
 %%%%
 [verb]attack
 
@@ -285,7 +285,7 @@ like a pig
 %%%%
 [verb]skewer
 
-刺し貫いた
+串刺しにした
 %%%%
 like a kebab
 
@@ -343,33 +343,25 @@ like a turkey
 
 毛皮を刈り取った
 %%%%
-like a pillowcase
+open like a pillowcase
 
-枕カバーのように
+やすやすと切り裂いた
 %%%%
-like a ripe choko
+slice like a ripe choko
 
-熟したハヤトウリのように
+熟したハヤトウリのように切り裂いた
 %%%%
-[verb]cut
+cut into ribbons
 
-切り裂いた
+リボンのように切り裂いた
 %%%%
-into ribbons
+carve like a ham
 
-リボンのように
+ハムのように切り分けた
 %%%%
-like a ham
+chop into pieces
 
-ハムのように
-%%%%
-# [verb]chop
-
-# jtrans_art_func.txtと重複
-%%%%
-# into pieces
-
-# jtrans_art_func.txtと重複
+バラバラにぶった切った
 %%%%
 [verb]thump
 
@@ -377,7 +369,7 @@ like a ham
 %%%%
 [verb]sock
 
-殴った
+打ちすえた
 %%%%
 [verb]shatter
 
@@ -391,53 +383,33 @@ into a gooey mess
 
 べたべたした肉塊に
 %%%%
-# [verb]crush
-
-# jtrans_art_func.txtと重複
-%%%%
-like a grape
-
-ブドウ粒のように
-%%%%
-[verb]beat
-
-叩いた
-%%%%
-like a drum
-
-太鼓のように
-%%%%
-[verb]hammer
-
-叩いた
-%%%%
-like a gong
-
-太鼓のように
-%%%%
-[verb]pound
-
-叩きつけた
-%%%%
-like an anvil
-
-金床のように
-%%%%
-[verb]flatten
+crush like a grape
 
 ぺしゃんこにした
 %%%%
-like a pancake
+beat like a drum
 
-パンケーキのように
+太鼓のように叩いた
+%%%%
+hammer like a gong
+
+銅鑼のように叩いた
+%%%%
+pound like an anvil
+
+金床のように叩きつけた
+%%%%
+flatten like a pancake
+
+パンケーキのようにぺしゃんこにした
 %%%%
 [verb]whack
 
-ぴしゃりと打った
+ビシッっと打った
 %%%%
 [verb]thrash
 
-鞭打った
+強く鞭打った
 %%%%
 [verb]punish
 
@@ -457,7 +429,7 @@ like a pancake
 %%%%
 [verb]mangle
 
-めちゃくちゃに傷つけた
+ずたずたに切り裂いた
 %%%%
 [verb]eviscerate
 
@@ -469,7 +441,7 @@ like a pancake
 %%%%
 [verb]pummel
 
-殴り倒した
+続けざまに殴りつけた
 %%%%
 [verb]squash
 
@@ -479,25 +451,25 @@ like the proverbial ant
 
 蟻のように
 %%%%
-into fine dust
+pound into fine dust
 
-塵になるまで
+塵になるまで叩きつけた
 %%%%
-like a punching bag
+pummel like a punching bag
 
-サンドバッグのように
+サンドバッグのように殴り倒した
 %%%%
-# [verb]pulverise
+pulverise
 
-# jtrans_art_func.txtと重複
+<[verb]pulverise>
 %%%%
-like an ant
+squash like an ant
 
-蟻のように
+蟻のようにぺしゃんこにした
 %%%%
-into a bloody pulp
+beat into a bloody pulp
 
-血の塊になるまで
+血の塊になるまで叩いた
 %%%%
 Special damage to %s: %d, flavour: %d
 
@@ -517,7 +489,7 @@ The flame cauterises the wound!
 %%%%
 grows two more!
 
-の首がさらに2本増えた！
+の首が2本生えてきた！
 %%%%
 [claw verb]rip
 
@@ -533,19 +505,19 @@ grows two more!
 %%%%
 [slice verb]slice
 
-切り落とした
+斬った
 %%%%
 [slice verb]lop
 
-断ち切った
+刈り取った
 %%%%
 [slice verb]chop
 
-はねた
+叩き切った
 %%%%
 [slice verb]hack
 
-切り裂いた
+ぶった切った
 %%%%
 %s %s %s last head off!
 
@@ -553,7 +525,7 @@ grows two more!
 %%%%
 %s %s one of %s heads off!
 
-%sは%sの首を1本%s！
+%sは%sの首の一つを%s！
 %%%%
 [hands act]your hands burn!
 
@@ -738,7 +710,7 @@ mutagenic touch
 %%%%
 [verb]shock
 
-電撃を与えた
+電撃を加えた
 %%%%
 Shock damage: %d
 

@@ -135,7 +135,7 @@ You smite %s!
 %%%%
 You are blasted by holy energy!
 
-あなたは聖なるエネルギーを浴びせられた！
+あなたは神聖なエネルギーで焼き焦がされた！
 %%%%
 holy word
 

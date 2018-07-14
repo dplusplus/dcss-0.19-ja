@@ -181,15 +181,15 @@ a chaos effect from %s
 %%%%
 You %s %s from a blind spot!
 
-あなたは死角から%s%s！
+あなたは死角から%sに%s！
 %%%%
 [stab verb]pounce on
 
-に飛びかかった
+飛びかかった
 %%%%
 [stab verb]strike
 
-を攻撃した
+一撃を加えた
 %%%%
 You catch %s momentarily off-guard.
 
@@ -201,7 +201,7 @@ You catch %s completely off-guard!
 %%%%
 You %s %s from behind!
 
-あなたは背後から%s%s！
+あなたは背後から%sに%s！
 %%%%
 You pounce on the unaware %s!
 
@@ -209,7 +209,7 @@ You pounce on the unaware %s!
 %%%%
 %s fails to defend %s.
 
-%sは防御できなかった。
+%sは身を守ることもできずに攻撃を受けた。
 %%%%
 {defender} {verb} {itself} attack.
 
@@ -249,7 +249,7 @@ You are electrocuted!
 %%%%
 There is a sudden explosion of sparks!
 
-電光の爆発が突然巻き起こった！
+突如として電光の爆発が巻き起こった！
 %%%%
 %s draws strength from your wounds!
 

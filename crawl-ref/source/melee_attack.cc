@@ -1587,7 +1587,7 @@ void melee_attack::set_attack_verb(int damage)
                 && defender_genus == MONS_HOG)
             {
                 attack_verb = "spit";
-                verb_degree2 = "like the proverbial pig";
+                // verb_degree2 = "like the proverbial pig";
             }
             else if (defender_genus == MONS_CRAB
                      && Options.has_fake_lang(FLANG_GRUNT))
@@ -1599,7 +1599,8 @@ void melee_attack::set_attack_verb(int damage)
             {
                 static const char * const pierce_desc[][2] =
                 {
-                    {"spit", "like a pig"},
+//                  {"spit", "like a pig"},
+                    {"spit", ""},
                     {"skewer", "like a kebab"},
                     {"stick", "like a pincushion"},
 //                  {"perforate", "like a sieve"} // 喩えがわかりにくいのでコメントアウト
@@ -1643,15 +1644,17 @@ void melee_attack::set_attack_verb(int damage)
         {
             static const char * const slice_desc[][2] =
             {
-                {"切り裂いた", "like a pillowcase"}, // "open" を直接書き換え
+                {"open",    "like a pillowcase"},
                 {"slice",   "like a ripe choko"},
                 {"cut",     "into ribbons"},
                 {"carve",   "like a ham"},
                 {"chop",    "into pieces"}
             };
             const int choice = random2(ARRAYSZ(slice_desc));
-            attack_verb = slice_desc[choice][0];
-            verb_degree2 = slice_desc[choice][1];
+            attack_verb = jtrans(make_stringf("%s %s",
+                                              slice_desc[choice][0],
+                                              slice_desc[choice][1]));
+            verb_degree2 = "";
         }
         break;
 
@@ -1681,8 +1684,10 @@ void melee_attack::set_attack_verb(int damage)
                 {"flatten", "like a pancake"}
             };
             const int choice = random2(ARRAYSZ(bludgeon_desc));
-            attack_verb = bludgeon_desc[choice][0];
-            verb_degree2 = bludgeon_desc[choice][1];
+            attack_verb = jtrans(make_stringf("%s %s",
+                                              bludgeon_desc[choice][0],
+                                              bludgeon_desc[choice][1]));
+            verb_degree2 = "";
         }
         break;
 
@@ -1780,6 +1785,9 @@ void melee_attack::set_attack_verb(int damage)
                     attack_verb = punch_desc[choice][0];
                     verb_degree = punch_desc[choice][1];
                 }
+
+                attack_verb = jtrans(attack_verb + " " + verb_degree);
+                verb_degree = "";
             }
         }
         break;

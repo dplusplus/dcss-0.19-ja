@@ -761,7 +761,7 @@ Your %s momentarily turn%s into snakes!
 %%%%
 Your body is twisted painfully.
 
-あなたの体は痛々しく捻られた。
+あなたの肉体は痛々しく捻られた。
 %%%%
 @The_monster@'s body twists unnaturally.
 
@@ -1277,7 +1277,7 @@ Electricity courses through your body.
 %%%%
 @The_monster@ is jolted!
 
-@The_monster@はビリビリした。
+@The_monster@は電気ショックを浴びた！
 %%%%
 Something invisible sparkles with electricity.
 
