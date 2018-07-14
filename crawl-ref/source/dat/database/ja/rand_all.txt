@@ -338,7 +338,7 @@ _sky_or_light_
 陽光
 
 # Starshine
-星明かり
+星影
 
 # the Sky
 蒼穹
