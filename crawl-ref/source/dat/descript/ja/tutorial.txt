@@ -6,7 +6,7 @@ tutorial intro
 # <localtiles> or <input>left click</input> with mouse</localtiles> to clear the
 # <cyan>--more--</cyan> prompts.
 <input>$cmd[CMD_REPLAY_MESSAGES]</input>でいつでもメッセージを読み返すことができます。
-そして、 <cyan>--more--</cyan> が表示された場合、 <input>Space</input>を押してメッセージ送りしてください。
+そして、 <cyan>--続く--</cyan> が表示された場合、 <input>Space</input>を押してメッセージ送りしてください。
 %%%%
 ##############################################
 # Tutorial map 1: Movement and exploration   #
