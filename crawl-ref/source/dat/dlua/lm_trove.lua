@@ -294,11 +294,11 @@ function TroveMarker:item_name(do_grammar)
   end
 
   if item.sub_type == "horn of Geryon" then
-    return crawl.jtrans("horn of Geryon")
+    return "★" .. crawl.jtrans("horn of Geryon")
   end
 
   if item.artefact_name ~= false then
-    return item.artefact_name
+    return "★" .. crawl.jtrans(item.artefact_name)
   end
 
   if item.base_type == "weapon" or item.base_type == "armour" then
