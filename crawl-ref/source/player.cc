@@ -2975,7 +2975,7 @@ void level_change(bool skip_attribute_increase)
 
                     // Tell the player about their new species
                     for (auto &mut : fake_mutations(you.species, false))
-                        mprf(MSGCH_INTRINSIC_GAIN, "%s", mut.c_str());
+                        mprf(MSGCH_INTRINSIC_GAIN, "%s", jtransc(mut));
 
                     // needs to be done early here, so HP doesn't look rotted
                     // when we redraw the screen
