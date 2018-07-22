@@ -772,7 +772,7 @@ static string _describe_demon(const string& name, bool flying)
     if (hash_rand(2, seed, 6)) // 50%
     {
         description << "\n";
-        description << HRANDOM_ELEMENT(misc_descs, 6);
+        description << jtrans(HRANDOM_ELEMENT(misc_descs, 6));
     }
 
     return description.str();
