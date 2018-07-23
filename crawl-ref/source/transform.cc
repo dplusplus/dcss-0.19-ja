@@ -241,6 +241,9 @@ string Form::transform_message(transformation_type previous_trans) const
 
     if (you.form != TRAN_STATUE)
     {
+        if (msg.find("化", 0) != string::npos)
+            msg = replace_all(msg, "化", "");
+
         if (msg.find("姿", 0) != string::npos)
             msg = replace_all(msg, "姿を", "姿");
         else
