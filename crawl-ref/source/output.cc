@@ -2510,7 +2510,7 @@ void print_overview_screen()
 static string _annotate_form_based(string desc, bool suppressed)
 {
     if (suppressed)
-        return "<darkgrey>(" + desc + ")</darkgrey>";
+        return "<darkgrey>(" + jtrans(desc) + ")</darkgrey>";
     else
         return desc;
 }
