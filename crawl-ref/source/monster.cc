@@ -2423,7 +2423,16 @@ string monster::base_name(description_level_type desc, bool force_vis) const
         return s;
 
     monster_info mi(this, MILEV_NAME);
-    return mi.common_name(desc);
+
+    string name = mi.common_name(desc);
+    if (mi.has_proper_name())
+    {
+        if (type == MONS_ZOMBIE)
+            name += "の" + jtrans("zombie");
+        else if (type == MONS_SKELETON)
+            name += "の" + jtrans("skeleton");
+    }
+    return name;
 }
 
 string monster::base_name_en(description_level_type desc, bool force_vis) const

@@ -1142,7 +1142,12 @@ string monster_info::common_name(description_level_type desc) const
     case MONS_ZOMBIE_LARGE:
 #endif
         if (!is(MB_NAME_ZOMBIE))
-            ss << (nocore ? "" : "の") << jtrans("zombie");
+        {
+            if (has_proper_name())
+                ss << (nocore ? "" : "の");
+            else
+                ss << (nocore ? "" : "の") << jtrans("zombie");
+        }
         break;
     case MONS_SKELETON:
 #if TAG_MAJOR_VERSION == 34
@@ -1150,7 +1155,12 @@ string monster_info::common_name(description_level_type desc) const
     case MONS_SKELETON_LARGE:
 #endif
         if (!is(MB_NAME_ZOMBIE))
-            ss << (nocore ? "" : "の") << jtrans("skeleton");
+        {
+            if (has_proper_name())
+                ss << (nocore ? "" : "の");
+            else
+                ss << (nocore ? "" : "の") << jtrans("skeleton");
+        }
         break;
     case MONS_SIMULACRUM:
 #if TAG_MAJOR_VERSION == 34
@@ -1323,9 +1333,9 @@ string monster_info::proper_name(description_level_type desc) const
     if (has_proper_name())
     {
         if (desc == DESC_ITS)
-            return mname + "の";
+            return jtrans(mname) + "の";
         else
-            return mname;
+            return jtrans(mname);
     }
     else
         return common_name(desc);
@@ -1346,26 +1356,40 @@ string monster_info::proper_name_en(description_level_type desc) const
 
 string monster_info::full_name(description_level_type desc) const
 {
+    string jname = jtrans(mname);
+
     if (desc == DESC_NONE)
         return "";
 
     if (has_proper_name())
     {
         string bra = "『", ket = "』";
-        string stripped_mname = replace_all(mname, ket, "");
+        string stripped_mname = replace_all(jname, ket, "");
         string::size_type found;
 
-        if ((found = mname.find(bra, 0)) != string::npos)
+        // ユニークが変化、あるいはゾンビ化/骸骨化した場合
+        if ((found = jname.find(bra, 0)) != string::npos)
         {
             stripped_mname.replace(0, found + bra.length(), "");
-            bra = "の" + bra;
+
+            if (type != MONS_ZOMBIE && type != MONS_SKELETON)
+                bra = "の" + bra;
         }
 
         // (例)オークの戦士『Alork』
         string s = common_name() + bra + stripped_mname + ket;
 
+        if (jname.find(ket, 0) != string::npos)
+        {
+            if (type == MONS_ZOMBIE)
+                s += "の" + jtrans("zombie");
+            else if (type == MONS_SKELETON)
+                s += "の" + jtrans("skeleton");
+        }
+
         if (desc == DESC_ITS)
             s += "の";
+
         return s;
     }
     else
