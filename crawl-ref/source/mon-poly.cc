@@ -278,7 +278,7 @@ void change_monster_type(monster* mons, monster_type targetc)
     }
     else if (mons_is_unique(mons->type))
     {
-        name = mons->name(DESC_PLAIN, true);
+        name = mons->name_en(DESC_PLAIN, true);
 
         // "Blork the orc" and similar.
         const size_t the_pos = name.find(" the ");
