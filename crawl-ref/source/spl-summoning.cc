@@ -1898,7 +1898,7 @@ spret_type cast_animate_skeleton(god_type god, bool fail)
             mpr(jtrans("There is no skeleton here to animate!"));
             break;
         case 0:
-            mpr(no_space);
+            mpr(jtrans(no_space));
             break;
         default:
             // success, messages already printed
