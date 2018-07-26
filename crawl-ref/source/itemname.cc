@@ -2155,7 +2155,7 @@ string item_def::name_aux(description_level_type desc, bool terse, bool ident,
         if (!terse && know_ego && get_armour_ego_type(*this) == SPARM_NORMAL &&
             !know_pluses && !is_artefact(*this) && get_equip_desc(*this))
         {
-            buff << jtrans("enchanted ");
+            buff << tagged_jtrans("[ego prefix]", "enchanted ");
         }
 
         if (item_typ == ARM_GLOVES || item_typ == ARM_BOOTS)
