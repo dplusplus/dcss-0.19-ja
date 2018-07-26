@@ -1265,26 +1265,6 @@ glowing
 
 魔力を帯びた
 %%%%
-(%s)
-
-
-%%%%
-of
-
-
-%%%%
-x)
-
-
-%%%%
-(curse)" :  "
-
-
-%%%%
-terse" is only currently used for the "in hand
-
-
-%%%%
 (damnation)
 
 (天罰)
