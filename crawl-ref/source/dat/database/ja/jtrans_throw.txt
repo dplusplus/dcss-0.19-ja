@@ -59,11 +59,7 @@ You cannot throw anything while caught in a web.
 
 あなたは蜘蛛の巣に巻きつかれている間何も投擲できない。
 %%%%
-You cannot shoot with your %s while held in a net.
-
-あなたは%s間%sを射撃できない。
-%%%%
-You cannot shoot with your %s while caught in a web.
+You cannot shoot with your %s while %s.
 
 あなたは%s間%sを射撃できない。
 %%%%
