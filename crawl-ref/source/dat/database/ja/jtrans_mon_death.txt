@@ -159,6 +159,11 @@ hexed by %s
 
 %sに呪われた
 %%%%
+# hiscores.ccでの処理用
+hexed by
+
+に呪われた
+%%%%
 By Zin's power, the fiery explosion is contained.
 
 ジンの御業により、燃えさかる爆発の威力は抑えられた。
