@@ -2885,10 +2885,6 @@ static string _blame_chain_string(vector<string> &fields)
     if (blames.size() > 1 && (!starts_with(get<0>(blames[1]), "hexed by")))
         reverse(blames.begin(), blames.end());
 
-    if (blames.size() > 1 && (starts_with(get<0>(blames[0]), "summoned by") &&
-                              starts_with(get<0>(blames[1]), "triggered by")))
-        reverse(blames.begin(), blames.end());
-
     // (animated by the player character (hexed by the player character))
     // └→あなたに蘇らされ呪われた
     // (created by the royal jelly (hexed by the player character))
