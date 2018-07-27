@@ -2952,7 +2952,8 @@ static bool _place_druids_call_beast(const monster* druid, monster* beast,
         }
 
         // Assign blame (for statistical purposes, mostly)
-        mons_add_blame(beast, make_stringf(jtransc("called by %s"),
+        // "called by "は訳さないでおいてよい
+        mons_add_blame(beast, make_stringf("called by %s",
                                            druid->name(DESC_A, true).c_str()));
 
         return true;

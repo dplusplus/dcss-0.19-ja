@@ -1709,6 +1709,7 @@ static monster* _place_monster_aux(const mgen_data &mg, const monster *leader,
         blame_prefix = "created by ";
 
     if (!mg.non_actor_summoner.empty())
+        // blame_prefixは訳さないでおいてよい
         mons_add_blame(mon, blame_prefix + mg.non_actor_summoner);
     // NOTE: The summoner might be dead if the summoned is placed by a
     // beam which killed the summoner first (like fire vortexes placed
@@ -1721,7 +1722,8 @@ static monster* _place_monster_aux(const mgen_data &mg, const monster *leader,
         ASSERT(mg.summoner->alive());
         mon->summoner = mg.summoner->mid;
         if (mg.summoner->is_player())
-            mons_add_blame(mon, jtrans("the player character") + jtrans(blame_prefix));
+            // blame_prefixは訳さないでおいてよい
+            mons_add_blame(mon, blame_prefix + jtrans("the player character"));
         else
         {
             const monster* sum = mg.summoner->as_monster();

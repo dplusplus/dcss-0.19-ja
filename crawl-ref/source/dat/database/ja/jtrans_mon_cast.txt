@@ -303,10 +303,6 @@ Vines fly forth from the trees!
 
 蔦が急に木から伸びてきた！
 %%%%
-called by %s
-
-%sに呼び出されている
-%%%%
 Thorny briars emerge from the ground!
 
 茨の茂みが地面に発生した！

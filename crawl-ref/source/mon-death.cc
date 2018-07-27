@@ -1319,7 +1319,8 @@ static bool _explode_monster(monster* mons, killer_type killer,
         if (agent && agent->is_player())
             mons_add_blame(mons, "hexed by the player character");
         else if (agent)
-            mons_add_blame(mons, make_stringf(jtransc("hexed by %s"),
+            // "hexed by "は訳さないでおいてよい
+            mons_add_blame(mons, make_stringf("hexed by %s",
                                               agent->name(DESC_A, true).c_str()));
         mons->flags    |= MF_EXPLODE_KILL;
         sanct_msg       = "By Zin's power, the fiery explosion "
@@ -1568,7 +1569,8 @@ static void _make_derived_undead(monster* mons, bool quiet, bool bound_soul)
                 if (agent)
                 {
                     mons_add_blame(undead,
-                        make_stringf(jtransc("animated by %s"),
+                        // "animated by "は訳さないでおいてよい
+                        make_stringf("animated by %s",
                                      agent->as_monster()->full_name(DESC_A).c_str()));
                 }
             }

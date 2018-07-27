@@ -2864,7 +2864,7 @@ static tuple<string, string> _split_blame(const string& blame)
         return make_tuple(blame.substr(0, pos + by.length()),
                           blame.substr(pos + by.length()));
     else
-        return make_tuple("bugged by", "unknown reason");
+        return make_tuple("unknown reason", "bugged by ");
 }
 
 static string _blame_chain_string(vector<string> &fields)
@@ -2897,7 +2897,7 @@ static string _blame_chain_string(vector<string> &fields)
     for (auto tpl : blames)
     {
         string prefix, blamed;
-        tie(prefix, blamed) = tpl;
+        tie(prefix, blamed) = tpl; // ex. prefix=="hexed by ", blamed=="the player character"
 
         if (starts_with(prefix, "hexed by"))
         {
@@ -2914,7 +2914,9 @@ static string _blame_chain_string(vector<string> &fields)
             }
         }
 
-        if (blamed == old_blamed)
+        // by ～以下が重複する場合省略
+        // 例)あなたに蘇らされあなたに呪われた→あなたに蘇らされ呪われた
+        if (!old_blamed.empty() && (jtrans(blamed) == jtrans(old_blamed)))
         {
             string jprefix = jtrans(prefix);
             if (starts_with(jprefix, "の"))

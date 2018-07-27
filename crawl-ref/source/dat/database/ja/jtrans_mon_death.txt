@@ -224,10 +224,6 @@ A glowing mist starts to gather...
 
 輝く霧が寄り集まった……
 %%%%
-animated by %s
-
-%sに蘇らされた
-%%%%
 With its final breath, %s offers up its power to the beasts of the wild!
 
 息を引き取る寸前、%sは野生の獣たちに自らの力を分け与えた！

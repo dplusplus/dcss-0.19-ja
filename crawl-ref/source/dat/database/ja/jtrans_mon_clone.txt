@@ -1,8 +1,4 @@
 %%%%
-woven by %s
-
-%sが作り出した
-%%%%
 %s seems to step out of %s!
 
 %sは%sから抜け出したようだ！
