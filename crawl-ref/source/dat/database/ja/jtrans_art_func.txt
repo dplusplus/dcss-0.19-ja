@@ -265,7 +265,7 @@ joyfully
 %%%%
 {attacker} {verb} {defender} {adv}.
 
-%s %s %s%s.
+%sは%sを%s%s。
 %%%%
 [hands act]your hands smoulder for a moment.
 
