@@ -129,11 +129,11 @@ No exact matches for '%s', possible matches are:
 %%%%
 Placing %s on top of you would put part of the map outside of the level, cancelling.
 
-# 訳不要
+'%s'マップをあなたのいる位置に置くと階層からはみ出してしまうため、中断します。
 %%%%
 %s decides where it goes, can't place where you are.
 
-# 訳不要
+'%s'マップはどこに配置されるか決められているため、あなたのいる位置に置くことはできません。
 %%%%
 Successfully placed %s.
 
