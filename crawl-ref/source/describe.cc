@@ -3689,17 +3689,17 @@ void get_monster_db_desc(const monster_info& mi, describe_info &inf,
     }
 
     case MONS_PLAYER_GHOST:
-        inf.body << make_stringf(jtrans_notrimc("The apparition of {desc}.\n"),
+        inf.body << make_stringf(jtrans_notrimc("\nThe apparition of {desc}.\n"),
                                  get_ghost_description(mi).c_str());
         break;
 
     case MONS_PLAYER_ILLUSION:
-        inf.body << make_stringf(jtrans_notrimc("An illusion of {desc}.\n"),
+        inf.body << make_stringf(jtrans_notrimc("\nAn illusion of {desc}.\n"),
                                  get_ghost_description(mi).c_str());
         break;
 
     case MONS_PANDEMONIUM_LORD:
-        inf.body << _describe_demon(mi.mname, mi.airborne()) << "\n";
+        inf.body << "\n" << _describe_demon(mi.mname, mi.airborne()) << "\n";
         break;
 
     case MONS_MUTANT_BEAST:
