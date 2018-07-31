@@ -558,7 +558,7 @@ You are very lightly contaminated with residual magic.
 %%%%
 You are lightly contaminated with residual magic.
 
-あなたは残留した魔力で軽微に汚染されている
+あなたは残留した魔力で軽微に汚染されている。
 %%%%
 You are contaminated with residual magic.
 
