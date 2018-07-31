@@ -4824,7 +4824,7 @@ spret_type qazlal_upheaval(coord_def target, bool quiet, bool fail)
     if (!quiet)
     {
         scaled_delay(100);
-        mprf(MSGCH_GOD, "%s", message.c_str());
+        mprf(MSGCH_GOD, "%s", jtransc(message));
     }
     else
         scaled_delay(25);
