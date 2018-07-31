@@ -280,6 +280,7 @@ end
 -- all the important information about what the toll item should be.
 function TroveMarker:item_name(do_grammar)
   local item = get_toll(self).item
+
   if item == nil then
     error("item_name called on a toll without an item", 2)
   end
@@ -314,7 +315,7 @@ function TroveMarker:item_name(do_grammar)
                         "amulet of reflection"}
   if item.base_type == "jewellery" and
      util.contains(jwith_pluses, item.sub_type) then
-    s = s .. " +" .. item.plus1
+     s = crawl.jtrans(s) .. " (+" .. item.plus1 .. ")"
   end
 
   if item.base_type == "potion" or item.base_type == "scroll" then
@@ -324,6 +325,8 @@ function TroveMarker:item_name(do_grammar)
              "Young Poisoner's Handbook", "Grand Grimoire"}
     if util.contains(books, item.sub_type) then
       return crawl.jtrans(item.sub_type)
+    elseif string.find(item.sub_type, 'manual of ') ~= nil then
+      return crawl.tagged_jtrans('[skill]', string.gsub(item.sub_type, 'manual of ', '')) .. crawl.jtrans("manual of")
     end
   elseif item.base_type == "wand" then
     s = s .. crawl.jtrans(" wand of".. " " .. item.sub_type)
@@ -339,6 +342,8 @@ function TroveMarker:item_name(do_grammar)
     end
     s = s .. ")"
   end
+
+  s = s .. " " .. crawl.jtrans(item.sub_type)
 
   if item.base_type == "wand" then
     s = s .. " (" .. item.plus1 .. ")"
