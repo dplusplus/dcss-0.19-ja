@@ -791,7 +791,7 @@ static string _gen_randbook_name(string subject, string owner,
 
     const string real_subject = subject.empty() ?
         _maybe_gen_book_subject(owner) :
-        subject;
+        jtrans(subject);
 
     if (!real_subject.empty())
     {
