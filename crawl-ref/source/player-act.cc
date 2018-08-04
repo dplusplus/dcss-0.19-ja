@@ -491,7 +491,7 @@ string player::conj_verb(const string &verb) const
 static string _hand_name_singular()
 {
     if (!get_form()->hand_name.empty())
-        return get_form()->hand_name;
+        return tagged_jtrans("[form]", get_form()->hand_name);
 
     if (you.species == SP_FELID)
         return "paw";
