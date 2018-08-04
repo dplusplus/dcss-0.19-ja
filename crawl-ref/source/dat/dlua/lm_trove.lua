@@ -343,8 +343,6 @@ function TroveMarker:item_name(do_grammar)
     s = s .. ")"
   end
 
-  s = s .. " " .. crawl.jtrans(item.sub_type)
-
   if item.base_type == "wand" then
     s = s .. " (" .. item.plus1 .. ")"
   end
