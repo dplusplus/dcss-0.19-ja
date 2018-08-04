@@ -99,7 +99,7 @@ function TimedMessaging:emit_message(cm, msg)
       return
     end
 
-    crawl.mpr(crawl.jtrans(msg), self:channel())
+    crawl.mpr(msg, self:channel())
   end
 end
 
