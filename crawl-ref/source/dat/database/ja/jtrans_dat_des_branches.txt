@@ -65,6 +65,14 @@ You hear the creaking of ancient metal!
 
 あなたは太古の金属が軋む音を立てるのを耳にした！
 %%%%
+The iron statue comes to life!
+
+鉄の像が動きだした！
+%%%%
+You hear a grinding sound.
+
+あなたは壁を削るような物音を耳にした。
+%%%%
 #### dat/des/branches/elf.des #################################
 %%%%
 Elven Fire
@@ -86,6 +94,14 @@ tempered metal wall
 elephant-shaped statue
 
 象の像
+%%%%
+The elephant guardians awaken!
+
+象の衛兵が目を覚ました！
+%%%%
+You hear a distant trumpeting.
+
+あなたは遠くでトランペットが鳴るような音を聞いた。
 %%%%
 #### dat/des/branches/pan.des #################################
 %%%%
