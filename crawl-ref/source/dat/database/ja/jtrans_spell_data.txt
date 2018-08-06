@@ -748,7 +748,7 @@
 %%%%
 [spell]Tomb of Doroklohe
 
-ドルオロクヒの玄室
+ドルオクロヒの玄室
 %%%%
 [spell]Summon Eyeballs
 
