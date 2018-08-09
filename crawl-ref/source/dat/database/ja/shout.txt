@@ -347,11 +347,6 @@ Wanderer player ghost
 # VISUAL:@The_monster@ twitches @possessive@ antennae in your direction.
 VISUAL:@The_monster@は@possessive@触角をあなたの方へ向けた。
 %%%%
-'cap-B'
-
-# VISUAL:@The_monster@ twitches @possessive@ antennae in your direction.
-VISUAL:@The_monster@は@possessive@触角をあなたの方へ向けた。
-%%%%
 'cap-G'
 
 # VISUAL:@The_monster@ turns @possessive@ gaze towards you.
@@ -377,6 +372,11 @@ ballistomycete spore
 
 # VISUAL:@The_monster@ waves @possessive@ rhizomes.
 VISUAL:@The_monster@は@possessive@根茎を波打たせた。
+%%%%
+glowing orange brain
+
+# VISUAL:@The_monster@ turns @possessive@ attention towards you.
+VISUAL:@The_monster@はあなたに注意を向けた。
 %%%%
 # Iron imps, shadow imps and white imps copy imps.
 imp
