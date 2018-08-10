@@ -251,6 +251,10 @@ shaped shifter
 
 沈黙を振りまいている
 %%%%
+[attr]paralysed
+
+麻痺している
+%%%%
 [attr]repelling missiles
 
 飛来物を逸らしている
