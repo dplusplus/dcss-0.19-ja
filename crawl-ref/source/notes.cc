@@ -375,7 +375,8 @@ string Note::describe(bool when, bool where, bool what) const
             break;
         case NOTE_ANCESTOR_TYPE:
             result << make_stringf(jtransc("Remembered your ancestor %s as %s"),
-                                   hepliaklqana_ally_name().c_str(), name.c_str());
+                                   jtransc(name),
+                                   hepliaklqana_ally_name().c_str());
             break;
 #if TAG_MAJOR_VERSION == 34
         case NOTE_ANCESTOR_SPECIALIZATION:

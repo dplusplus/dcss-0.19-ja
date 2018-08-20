@@ -141,7 +141,7 @@ Offered knowledge of %s by Vehumet.
 %%%%
 Remembered your ancestor %s as %s
 
-%sの祖霊『%s』が味方についた
+%sの祖霊『%s』を呼び覚ました
 %%%%
 #if TAG_MAJOR_VERSION == 34
 Remembered your ancestor %s %s
