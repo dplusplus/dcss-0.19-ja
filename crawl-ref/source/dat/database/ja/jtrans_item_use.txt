@@ -547,7 +547,7 @@ Read which item?
 %%%%
 Your blink will be uncontrolled - continue anyway?
 
-あなたの瞬間移動は制御に失敗するでしょう。 それでも続けますか？
+あなたの瞬間移動は行き先が不確定になるでしょう。 それでも続けますか？
 %%%%
 Really read with blurry vision while enemies are nearby?
 
