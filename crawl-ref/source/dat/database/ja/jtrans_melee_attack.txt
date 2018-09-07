@@ -405,7 +405,7 @@ flatten like a pancake
 %%%%
 [verb]whack
 
-ビシッっと打った
+ビシッと打った
 %%%%
 [verb]thrash
 
