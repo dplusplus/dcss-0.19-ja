@@ -27,9 +27,9 @@ function desolation_portal(e)
       verb = 'whistling',
       noisemaker = 'wind',
       ranges = {
-        { 5000, 'faint ' },  { 4000, 'quiet ' },
-        { 2500, '' }, { 1500, 'loud ' },
-        { 0, 'ear-piercing ' }
+        { 5000, 'かすかな' },  { 4000, '小さな' },
+        { 2500, '' }, { 1500, '大きな' },
+        { 0, '耳をつんざくような' }
       }
     }
 
