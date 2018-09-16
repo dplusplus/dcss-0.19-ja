@@ -2327,8 +2327,8 @@ static string _resist_composer(
 static vector<formatted_string> _get_overview_resistances(
     vector<char> &equip_chars, bool calc_unid, int sw)
 {
-    // 3 columns, splits at columns 19, 33
-    column_composer cols(3, 19, 33);
+    // 3 columns, splits at columns 21, 32
+    column_composer cols(3, 21, 32);
     // First column, resist name is 7 chars
     int cwidth = 9;
     string out;
