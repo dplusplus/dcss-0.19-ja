@@ -88,7 +88,7 @@ tutorial1 autoexplore
 # happen automatically. Try it by pressing <input>$cmd[CMD_EXPLORE]</input>
 # <localtiles>, or by clicking on 'autoexplore', the first button in the command
 # bar below the minimap.</localtiles>.
-ゲームに慣れてくると手動での探索が面倒に思えて、
+ゲームに慣れてくると手動での探索が面倒に感じて、
 自動で探索できないものかと思うかもしれません。
 <input>$cmd[CMD_EXPLORE]</input><localtiles>を押すか、
 ミニマップ下部のコマンドバーの最初にある'自動探索'ボタン</localtiles>を押してみてください。
@@ -958,7 +958,7 @@ tutorial5 dungeon_overview
 # or <input>click the dungeon overmap button</input> in the command
 # panel</localtiles> for a list of all altars and other interesting features
 # found so far.
-この先にあるのは怒れるトログの祭壇です！ トログは数多くいる神々の一柱です。
+この先にあるのは怒れるトログの祭壇です！ トログは数多の神々のうちの一柱です。
 実際のゲームでは、 <input>$cmd[CMD_DISPLAY_OVERMAP]</input>を押<localtiles>すか、
 コマンドパネル<input>ダンジョン全体図ボタンをクリック</input></localtiles>してそれまでに発見した全ての祭壇や施設の一覧を見ることができます。
 %%%%

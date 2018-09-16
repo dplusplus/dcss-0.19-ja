@@ -14,6 +14,18 @@ exit from the tutorial
 "レッスン2: モンスターとの遭遇と戦闘"
 %%%%
 #### dat/des/tutorial/lesson3.des #############################
+You hear a click...
+
+あなたはカチッという音を耳にした……
+%%%%
+Nothing continues to happen.
+
+しかし何も起こらなかった。
+%%%%
+Luckily, nothing happens.
+
+幸運なことに何も起こらなかった。
+%%%%
 "Lesson 3: Items and Inventory"
 
 "レッスン3: アイテムとその一覧"
