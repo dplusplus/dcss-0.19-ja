@@ -1162,7 +1162,7 @@ static string _abyss_monster_creation_message(const monster* mon)
         { " materialises.", 45 },
         { " emerges from chaos.", 13 },
         { " emerges from the beyond.", 26 },
-        { make_stringf(" assembles %s!",
+        { make_stringf(jtransc(" assembles %s!"),
                        mon->pronoun_j(PRONOUN_REFLEXIVE).c_str()), 33 },
         { " erupts from nowhere.", 9 },
         { " bursts from nowhere.", 18 },

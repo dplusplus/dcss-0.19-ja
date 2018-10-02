@@ -215,11 +215,11 @@ pops from nullspace!
 %%%%
 appears in a shower of translocational energy.
 
-はほとばしる転位のエネルギーと共に出現した！
+はほとばしる転位のエネルギーと共に出現した。
 %%%%
 appears in a shower of sparks.
 
-はほとばしる火花と共に出現した！
+はほとばしる火花と共に出現した。
 %%%%
 materialises.
 
@@ -231,27 +231,27 @@ emerges from chaos.
 %%%%
 emerges from the beyond.
 
-が彼岸から這いだした！
+が彼岸から這いだした。
 %%%%
 assembles %s!
 
-が出現した！
+が%sを召喚した！
 %%%%
 erupts from nowhere.
 
-はどこからともなく出現した！
+はどこからともなく出現した。
 %%%%
 bursts from nowhere.
 
-はどこからともなく出現した！
+はどこからともなく出現した。
 %%%%
 is cast out of space.
 
-は外宇宙から現れた！
+は外宇宙から現れた。
 %%%%
 is cast out of reality.
 
-は現実の外から現れた！
+は現実の外から現れた。
 %%%%
 coalesces out of pure chaos.
 
@@ -267,11 +267,11 @@ punctures the fabric of time!
 %%%%
 punctures the fabric of the universe.
 
-は宇宙の構造を打ち破った！
+は宇宙の構造を打ち破った。
 %%%%
 manifests!
 
-が%s現れた！
+が現れた！
 %%%%
 manifests with a bang!
 
