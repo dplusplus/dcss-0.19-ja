@@ -402,10 +402,10 @@ void item_noise(const item_def &item, string msg, int loudness)
 
     // Replace weapon references. Can't use DESC_THE because that includes
     // pluses etc. and we want just the basename.
-    msg = replace_all(msg, "@The_weapon@", "The @weapon@");
-    msg = replace_all(msg, "@the_weapon@", "the @weapon@");
-    msg = replace_all(msg, "@Your_weapon@", "Your @weapon@");
-    msg = replace_all(msg, "@your_weapon@", "your @weapon@");
+    msg = replace_all(msg, "@The_weapon@", jtrans("The @weapon@"));
+    msg = replace_all(msg, "@the_weapon@", jtrans("the @weapon@"));
+    msg = replace_all(msg, "@Your_weapon@", jtrans("Your @weapon@"));
+    msg = replace_all(msg, "@your_weapon@", jtrans("your @weapon@"));
     msg = replace_all(msg, "@weapon@", item.name(DESC_BASENAME));
 
     // replace references to player name and god

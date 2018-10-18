@@ -7,6 +7,14 @@ You hear a strange noise.
 
 あなたは奇妙な騒音を耳にした。
 %%%%
+The @weapon@
+
+@weapon@
+%%%%
+Your @weapon@
+
+あなたの@weapon@
+%%%%
 atheism
 
 無神論
