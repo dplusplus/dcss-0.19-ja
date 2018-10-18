@@ -12,27 +12,41 @@ there. Underestimate her at your peril!
 %%%%
 Aizul
 
-Once the primary guardian serpent of a legendary treasure hoard, she was
-disgraced after thieves looted it while she slept. She now slithers about the
-dungeon, seeking vengeance against all would-be looters. She is an accomplished
-spellcaster, but no more deadly in melee combat than others of her kind.
+# Once the primary guardian serpent of a legendary treasure hoard, she was
+# disgraced after thieves looted it while she slept. She now slithers about the
+# dungeon, seeking vengeance against all would-be looters. She is an accomplished
+# spellcaster, but no more deadly in melee combat than others of her kind.
+かつては伝説の宝物庫を守護する大蛇の衛兵の筆頭であったが、
+彼女の寝ている間に泥棒が宝物庫に侵入したことでその地位を失ってしまった。
+彼女は今ダンジョンを這い回り、全ての略奪を行うであろう輩へ復讐せんと欲している。
+彼女は卓越した魔法の使い手であるが、
+彼女と同種のモンスターと同様に近接戦闘はそう危険ではない。
 %%%%
 Antaeus
 
-Once a mighty and renowned titan, his arrogance was his undoing. Now he is
-corrupt and tainted, a powerful demon who lords over the frozen wastes of
-Cocytus. His strength is legendary.
+# Once a mighty and renowned titan, his arrogance was his undoing. Now he is
+# corrupt and tainted, a powerful demon who lords over the frozen wastes of
+# Cocytus. His strength is legendary.
+かつては強大で名の知れたタイタンであったが、自らの尊大さで身を滅ぼした。
+現在の彼は堕落して悪に染まった、
+コキュートスの凍った荒地を治める強大なデーモンである。
+彼の膂力は伝説的なほどだ。
 %%%%
 Arachne
 
-Once a talented human weaver, Arachne was cursed by being transformed into her
-present form: half-human, half-spider. Her sympathies now lie with the inhuman
-residents of her new home, and she's eager to dispose of any who would threaten
-them.
+# Once a talented human weaver, Arachne was cursed by being transformed into her
+# present form: half-human, half-spider. Her sympathies now lie with the inhuman
+# residents of her new home, and she's eager to dispose of any who would threaten
+# them.
+アラクネはかつて機織りに秀でた人間であったが、呪いによって、半身は人、
+半身は蜘蛛という現在の姿に変えられてしまった。
+彼女は今や新たなる棲み処の人ならざる住民に共感しており、
+それらを脅かそうとする者を排除しようとしている。
 %%%%
 Asmodeus
 
-One of the arch-demons who dwell in the depths of Hell, wreathed in fire.
+# One of the arch-demons who dwell in the depths of Hell, wreathed in fire.
+炎に取り巻かれた地獄の深層に居を構える大悪魔の一柱だ。
 %%%%
 Asterion
 
@@ -44,7 +58,8 @@ destructive might.
 %%%%
 Azrael
 
-A powerful, belligerent efreet. (Is there any other kind?)
+# A powerful, belligerent efreet. (Is there any other kind?)
+強力で、好戦的なイフリートだ。(好戦的じゃないイフリートがいるんですか？)
 %%%%
 Bai Suzhen
 
@@ -56,76 +71,118 @@ her husband dead. Adventurers may wish they were so lucky!
 %%%%
 Blork the orc
 
-A particularly fat and ugly orc. He's scavenged a pair of rainbow-coloured
-suspenders from somewhere. They're not helping.
+# A particularly fat and ugly orc. He's scavenged a pair of rainbow-coloured
+# suspenders from somewhere. They're not helping.
+著しく太った醜悪なオークだ。
+彼はどこからか虹色模様のサスペンダーを拾い集めてきたが、それは助けにはなっていない。
 %%%%
 Boris
 
-An ancient and powerful lich. Like all true liches, Boris is immortal, and will
-regenerate his desiccated skeletal remains even if completely disintegrated.
+# An ancient and powerful lich. Like all true liches, Boris is immortal, and will
+# regenerate his desiccated skeletal remains even if completely disintegrated.
+太古の強力なリッチだ。他の真なるリッチと同様にボリスも不死の存在であり、
+完全にバラバラになった時でさえ、その乾燥した骸骨の体を再生させる。
 %%%%
 Cerebov
 
-A violent and wrathful demon, Cerebov appears as a giant humanoid covered in
-shining golden armour and wielding a huge twisted sword.
+# A violent and wrathful demon, Cerebov appears as a giant humanoid covered in
+# shining golden armour and wielding a huge twisted sword.
+怒りに満ちた凶暴なデーモンだ。セレボブは輝く黄金の鎧を身につけ、
+巨大な捻れた剣を帯びた巨人として現れる。
 %%%%
 Chuck
 
-Chuck the stone giant loves rocks, the bigger the better! Over the years, he
-has managed to amass quite the collection, including some rare, enchanted ones.
+# Chuck the stone giant loves rocks, the bigger the better! Over the years, he
+# has managed to amass quite the collection, including some rare, enchanted ones.
+チャックは岩石を愛する岩の巨人だ。大きいことはいいことだ！
+長年にわたり、彼は稀少であったり魔法が込められた岩など、
+かなりの愛蔵品を集めている。
 %%%%
 Crazy Yiuf
 
-A withered old gnoll with a long silver beard, wielding a quarterstaff and
-wearing a cloak. He looks like a figure from mythology! Wait, is his beard held
-on to his ears with hooks?
+# A withered old gnoll with a long silver beard, wielding a quarterstaff and
+# wearing a cloak. He looks like a figure from mythology! Wait, is his beard held
+# on to his ears with hooks?
+長い銀のあご髭を蓄え、六尺棒とクロークを身につけた、くたびれた老齢のノールだ。
+彼はまるで神話の登場人物のようだ！ ちょっと待った、
+彼のひげは耳から掛けられてないか？
 %%%%
 Dispater
 
-The lord of the Iron City of Dis.
+# The lord of the Iron City of Dis.
+鉄の都ディースの支配者だ。
 %%%%
 Dissolution
 
-The Pits of Slime used to be a thriving civilization, and Dissolution was the
-prophet of their god. When the city was overtaken by its current residents,
-only Dissolution survived, for he alone turned faithfully to the Slime God.
-Dissolution became a tremendous mass of acidic ooze, yet retained his
-intelligence. He is filled with hatred for anything that can hold a form.
+# The Pits of Slime used to be a thriving civilization, and Dissolution was the
+# prophet of their god. When the city was overtaken by its current residents,
+# only Dissolution survived, for he alone turned faithfully to the Slime God.
+# Dissolution became a tremendous mass of acidic ooze, yet retained his
+# intelligence. He is filled with hatred for anything that can hold a form.
+スライムの穴ぐらにはかつて栄えた文明があり、
+この者はそこで崇拝された神の預言者であった。
+この都市が現在の住人に侵略されたとき、生き残ったのは彼だけであった。
+何故なら彼だけはスライムの神に忠誠を誓ったからだ。
+彼は巨大な毒のある分泌物の塊になったが、彼はまだその知性を保っている。
+彼は形を保つ者全てへの憎しみに満たされている。
 %%%%
 Donald
 
+# {{
+#     local descript = "An adventurer just like you, trying to find the Orb."
+#
+#     if you.race() ~= "Merfolk" and you.race() ~= "Octopode" then
+#         descript = descript .. " Unlike you, and d"
+#     else
+#         descript = descript .. " D"
+#     end
+#
+#     descript = descript .. "espite his hatred of it, he takes to water " ..
+#                            "like a fowl."
+#
+#     return descript
+# }}
 {{
-    local descript = "An adventurer just like you, trying to find the Orb."
+    local descript = "あなたと同じく、オーブを探す冒険者だ。\n彼は"
 
     if you.race() ~= "Merfolk" and you.race() ~= "Octopode" then
-        descript = descript .. " Unlike you, and d"
-    else
-        descript = descript .. " D"
+        descript = descript .. "あなたとは違い"
     end
 
-    descript = descript .. "espite his hatred of it, he takes to water " ..
-                           "like a fowl."
+    descript = descript .. "まるでアヒルのように水を渡ることができるものの、" ..
+                           "それをよくは思っていない。"
 
     return descript
 }}
 %%%%
 Dowan
 
-A beautiful but vain elf with an aptitude for magic and little else. His skills
-are the perfect complement of his twin sister Duvessa's fighting prowess.
+# A beautiful but vain elf with an aptitude for magic and little else. His skills
+# are the perfect complement of his twin sister Duvessa's fighting prowess.
+美しいが自惚れの強いエルフだ。彼は魔法への適性があり、
+その他のこともそれなりにこなす。
+彼の能力は双子の妹デュヴェッサの戦闘技術を完全に補完するためのものだ。
 %%%%
 Duvessa
 
-A plain-looking elven fighter who is technically brilliant in many forms of
-combat, but over-confident because of it. She is complemented by the magical
-skills of her twin brother, Dowan.
+# A plain-looking elven fighter who is technically brilliant in many forms of
+# combat, but over-confident because of it. She is complemented by the magical
+# skills of her twin brother, Dowan.
+特に変わったところのないエルフの戦士だ。
+彼女はあらゆる格闘手段に専門的に通じているが、そのために自信過剰になっている。
+彼女の力は双子の兄ドウェンの魔法の力によって補完される。
 %%%%
 Edmund
 
-A jealous sibling of Sigmund (indeed, the youngest of nine brothers). He has
-none of Sigmund's skills in magic, but makes up for it with his skills in
-fighting and a canny head for money. He is eager to prove his superiority by
-killing hapless adventurers with his expensive flail and quick wit.
+# A jealous sibling of Sigmund (indeed, the youngest of nine brothers). He has
+# none of Sigmund's skills in magic, but makes up for it with his skills in
+# fighting and a canny head for money. He is eager to prove his superiority by
+# killing hapless adventurers with his expensive flail and quick wit.
+嫉妬深い、シグムンドの弟だ(正確には九人兄弟の末っ子だ)。
+彼はシグムンドのような魔法の力を全く持っていないが、
+それを戦闘と金儲けの技術で補っている。
+彼は不運な冒険者を彼の持つ高価なフレイルと頭の回転をもって殺害することで、
+彼自身の優位性を証明せんと欲している。
 %%%%
 the Enchantress
 
@@ -135,126 +192,178 @@ with many colours.
 %%%%
 Ereshkigal
 
-A fearsome arch-fiend who rules the deathly netherworld of Tartarus.
+# A fearsome arch-fiend who rules the deathly netherworld of Tartarus.
+タルタロスの死の地獄を支配する恐るべき大悪魔だ。
 %%%%
 Erica
 
-A wild-tempered adventuress.
+# A wild-tempered adventuress.
+荒々しい気性の女冒険者だ。
 %%%%
 Erolcha
 
-An especially cunning ogre-mage.
+# An especially cunning ogre-mage.
+とても狡猾なオーガの魔法使いだ。
 %%%%
 Eustachio
 
-An apprentice summoner with a flowing moustache. He has funny ideas about
-honour.
+# An apprentice summoner with a flowing moustache. He has funny ideas about
+# honour.
+長い口ひげを生やした召喚術師見習いだ。彼は名誉に関しておかしな考えを持っている。
 %%%%
 Fannar
 
-A cold-hearted elven sorcerer, draped in robes of high office. He whispers
-grimly to himself as he stalks the dungeon, trailing ice crystals through the
-air behind him.
+# A cold-hearted elven sorcerer, draped in robes of high office. He whispers
+# grimly to himself as he stalks the dungeon, trailing ice crystals through the
+# air behind him.
+高い地位を示すローブに身を包んだ、冷酷なエルフの魔道士だ。
+彼はダンジョンを静かに歩きながら、不気味なことに自らに囁きかけており、
+彼の通った後には空気の中に氷の結晶がたなびいている。
 %%%%
 Frances
 
-A stout warrior who once bested a powerful lord of Pandemonium in combat,
-gaining control over the demon's realm and thanes. The battle left her with a
-deep facial scar, one that she carries as a badge of honour rather than a
-symbol of shame.
+# A stout warrior who once bested a powerful lord of Pandemonium in combat,
+# gaining control over the demon's realm and thanes. The battle left her with a
+# deep facial scar, one that she carries as a badge of honour rather than a
+# symbol of shame.
+かつて強大なパンデモニウムロードと戦って勝利し、
+デーモンの領土と貴族に対する影響力を手に入れた勇敢な戦士だ。
+その戦いで彼女は顔に大きな傷を負ったが、彼女はその傷を恥ではなく、
+むしろ名誉の証だと思っている。
 %%%%
 Frederick
 
-A svelte fighter-mage with a gold-rimmed monocle, a keen sense of tradition,
-and the blood of the gods running through his veins. He's here looking for a
-worthy opponent, but he's yet to find one.
+# A svelte fighter-mage with a gold-rimmed monocle, a keen sense of tradition,
+# and the blood of the gods running through his veins. He's here looking for a
+# worthy opponent, but he's yet to find one.
+金縁の片眼鏡を身につけた、礼儀にうるさい細身の魔法戦士だ。
+彼の体には神々の末裔としての血が流れている。
+彼は自分にふさわしく戦うに値する敵をここで探しているが、まだ見つけられていない。
 %%%%
 Gastronok
 
-A voracious and surprisingly intelligent slug, devoted to eating everything and
-everyone he comes across, with a pointed hat perched rakishly atop his head. He
-acquired the hat the same way he acquired his intelligence and his knowledge of
-spells: by consuming their former owner, a powerful wizard.
+# A voracious and surprisingly intelligent slug, devoted to eating everything and
+# everyone he comes across, with a pointed hat perched rakishly atop his head. He
+# acquired the hat the same way he acquired his intelligence and his knowledge of
+# spells: by consuming their former owner, a powerful wizard.
+貪欲で驚くほど聡明なナメクジだ。彼は頭にとんがり帽子を斜めに被り、
+出くわしたあらゆるものを食い尽くすことに余念がない。
+彼はその帽子を彼がその知性と魔法の知識を得たのと同じ方法で手に入れた。
+――つまり以前の持ち主であった力ある魔法使いを食べることによって。
 %%%%
 Geryon
 
-A huge, three-headed, winged arch-demon, guardian of the four Hells. Legends
-say that his silver horn can summon terrible beasts to aid him in battle.
+# A huge, three-headed, winged arch-demon, guardian of the four Hells. Legends
+# say that his silver horn can summon terrible beasts to aid him in battle.
+巨大で三つの頭を持ち、羽の生えた大悪魔だ。この者は四つの地獄を守護している。
+伝説によれば、彼の持つ銀色の角笛によって恐ろしい獣どもを彼の援軍として召喚することができるそうだ。
 %%%%
 Gloorx Vloq
 
-A shadowy figure clothed in profound darkness.
+# A shadowy figure clothed in profound darkness.
+深淵の暗闇を身に纏った影のような姿の存在だ。
 %%%%
 Grinder
 
-An inefficient shadow imp previously employed as a torturer in one of the lower
-circles of Hell. She has a tendency to complain and make inane statements.
+# An inefficient shadow imp previously employed as a torturer in one of the lower
+# circles of Hell. She has a tendency to complain and make inane statements.
+かつて地獄の低層で拷問吏として雇われていた無能な影のインプだ。
+彼女はぶつぶつ文句を言ったり、馬鹿げた発言をする癖がある。
 %%%%
 Grum
 
-A tough-looking gnoll, wearing the pelt of one of his former war dogs.
+# A tough-looking gnoll, wearing the pelt of one of his former war dogs.
+乱暴そうな見た目のノールだ。飼っていた軍犬の毛皮を身に着けている。
 %%%%
 Harold
 
-A middle-aged bounty hunter, anxious to retire after one final job. He hopes to
-settle down somewhere and live a quiet life with his family, using the money
-from his final bounty: you.
+# A middle-aged bounty hunter, anxious to retire after one final job. He hopes to
+# settle down somewhere and live a quiet life with his family, using the money
+# from his final bounty: you.
+初老の賞金稼ぎだ。最後の仕事を終わらせたら賞金稼ぎを辞めたいと考えているようだ。
+彼はどこかに根を下ろし、家族と静かに暮らしたいと望んでいる。
+――最後の賞金首(つまり、あなた)に掛けられた金を使って。
 %%%%
 Ignacio
 
-While a mortal cannot turn into a demon aside from divine intervention, this is
-what happened to Ignacio after Makhleb saw his love for his job and smiled upon
-him. He is now slated to continue the joy of his life for all eternity.
+# While a mortal cannot turn into a demon aside from divine intervention, this is
+# what happened to Ignacio after Makhleb saw his love for his job and smiled upon
+# him. He is now slated to continue the joy of his life for all eternity.
+#
+# Although his new form includes a number of large razor-sharp blades growing
+# from his demonic appendages, he kept his favourite axe and is eager to let you
+# test its edge.
+定命の者は神の干渉無しには悪魔へと転じることはできないのだが、
+イグナシオはマクレブが彼の仕事への愛を見て、
+彼に微笑みかけたことで斯様なものへと変貌した。
+彼は現在、その人生の楽しみを永遠に続けることを予定している。
 
-Although his new form includes a number of large razor-sharp blades growing
-from his demonic appendages, he kept his favourite axe and is eager to let you
-test its edge.
+彼の新しい姿には悪魔めいた躯から生えている多くの鋭い刃があるが、
+彼は自分のお気に入りの斧を使い続け、その切れ味をあなたで試したいと望んでいる。
 %%%%
 Ijyb
 
-A small and twisted goblin, wearing some ugly blue rags. She claims dominion
-over this level of the dungeon; the punishment for trespassing is death.
+# A small and twisted goblin, wearing some ugly blue rags. She claims dominion
+# over this level of the dungeon; the punishment for trespassing is death.
+小さくて不細工なゴブリンだ。何やら青いぼろを着ている。
+彼女はダンジョンのこの階層における支配権を要求している――侵入者に対する処罰は死だ。
 %%%%
 Ilsuiw
 
-A deadly merfolk water-witch, who uses her dominion over the tides to draw
-unwitting adventurers to their deaths.
+# A deadly merfolk water-witch, who uses her dominion over the tides to draw
+# unwitting adventurers to their deaths.
+恐るべき水棲の民の水の魔術師だ。彼女は潮流を支配する力を用い、
+愚かな冒険者たちに破滅をもたらす。
 %%%%
 Jessica
 
-An evil apprentice sorceress. She entered the dungeon hoping to find a quiet,
-secluded place where she could study the darker arts without being disturbed.
+# An evil apprentice sorceress. She entered the dungeon hoping to find a quiet,
+# secluded place where she could study the darker arts without being disturbed.
+邪悪な魔女実習生だ。彼女は誰にも邪魔されずに暗黒の力の研究に打ち込める、
+静かで人目につかない場所を求めてこのダンジョンへとやってきた。
 %%%%
 Jorgrun
 
-A dwarven magician, particularly well-attuned to the dungeon around him. He
-wields powerful earth magic in combat.
+# A dwarven magician, particularly well-attuned to the dungeon around him. He
+# wields powerful earth magic in combat.
+ドワーフの魔術師だ。周囲のダンジョンに実にうまく溶け込んでいる。
+彼は戦闘において強力な地の魔術を巧みに用いる。
 %%%%
 Jory
 
-Once a simple village peasant, Jory found himself transformed in undeath into a
-powerful creature. Through the countless centuries unlived since then, he has
-honed his skills in combat and magic, and amassed great wealth and many
-possessions.
+# Once a simple village peasant, Jory found himself transformed in undeath into a
+# powerful creature. Through the countless centuries unlived since then, he has
+# honed his skills in combat and magic, and amassed great wealth and many
+# possessions.
+ジョリーはかつては単なる田舎の百姓であったが、
+気がつけば不死の強力なモンスターへと変身していた。それ以来無数の世紀を通して、
+彼は格闘と魔法の技術に磨きをかけ、多くの貴重品と財産を蓄えた。
 %%%%
 Joseph
 
-Looks like a mercenary in a stupid-looking hat.
+# Looks like a mercenary in a stupid-looking hat.
+馬鹿のような見た目の帽子を被った傭兵のようだ。
 %%%%
 Josephine
 
-A formidable necromancer, committed to her craft even after it left her aged,
-decaying, and half-undead herself.
+# A formidable necromancer, committed to her craft even after it left her aged,
+# decaying, and half-undead herself.
+魔法の技に傾倒した手強い死霊術師だ。
+年老い、腐敗し、半ばアンデッドとなった今でも彼女のその手管は失われていない。
 %%%%
 Khufu
 
-An incredibly powerful emperor on the way to godhood. He died quite some time
-ago, but he sees no reason why that should stop him.
+# An incredibly powerful emperor on the way to godhood. He died quite some time
+# ago, but he sees no reason why that should stop him.
+神への道の途上にある信じがたいほど強力な王だ。
+彼はかなり昔に亡くなったものの、それさえ彼の行く手を阻む理由にはならなかった。
 %%%%
 Kirke
 
-A master of transformation and treachery. Beware, or you may be the next swine
-to join her herd!
+# A master of transformation and treachery. Beware, or you may be the next swine
+# to join her herd!
+変異術と詐術の達人だ。
+気をつけろ、さもなくばあなたは彼女が従える豚の群れの一員となるだろう！
 %%%%
 the Lernaean hydra
 
@@ -265,20 +374,32 @@ for prey to slake its bottomless appetite.
 %%%%
 Lom Lobon
 
-Stoic and inscrutable, Lom Lobon is an ancient demon infamous for its mastery
-of magic. Rumoured to be the most learned being in the halls of Pandemonium,
-it is at times sought out by mortal wizards who offer their souls in exchange
-for the secrets of the arcane. Lacking the terrible wrath present in most
-demons, Lom Lobon's single eye instead hides a cold, impartial cruelty.
+# Stoic and inscrutable, Lom Lobon is an ancient demon infamous for its mastery
+# of magic. Rumoured to be the most learned being in the halls of Pandemonium,
+# it is at times sought out by mortal wizards who offer their souls in exchange
+# for the secrets of the arcane. Lacking the terrible wrath present in most
+# demons, Lom Lobon's single eye instead hides a cold, impartial cruelty.
+禁欲的にして深遠なるロム・ロボンはその魔法に精通していることで悪名を馳せる古代のデーモンだ。
+パンデモニウムの大広間で最も博識な存在であり、
+時おり神秘の秘奥の為に魂を差し出そうという定命の魔術師たちを探しにいくと噂されている。
+ほとんどの悪魔に見られる恐るべき怒りに欠けているが、
+ロム・ロボンの単眼はそうではなく、冷たく、誰彼かまわない残酷さを隠し持っている。
 %%%%
 Louise
 
-A mighty sorceress, clad from head to toe in heavy armour. Once an adventurer
-looking for the fabled Orb of Zot, she was cast into the Abyss and got
-hopelessly lost there. Toyed with by some greater power, she was stuck on the
-hostile plane for nearly a decade. When she finally emerged from the Abyss,
-Louise had become powerful indeed, but had also gone fully insane. She now
-wanders the halls of the dungeon, seeking other adventurers to share her fate.
+# A mighty sorceress, clad from head to toe in heavy armour. Once an adventurer
+# looking for the fabled Orb of Zot, she was cast into the Abyss and got
+# hopelessly lost there. Toyed with by some greater power, she was stuck on the
+# hostile plane for nearly a decade. When she finally emerged from the Abyss,
+# Louise had become powerful indeed, but had also gone fully insane. She now
+# wanders the halls of the dungeon, seeking other adventurers to share her fate.
+頭の天辺からつま先まで重鎧に身を包んだ、強力な女魔術師だ。
+かつては伝説のゾットのオーブを探す冒険者であったが、アビスに落とされ、
+どうしようもなく迷い込んでしまった。何らかの強大な力にもてあそばれ、
+彼女は10年近くも戦場から動けなくさせられていた。
+最終的にアビスから脱出した時には、彼女は本当に強力な存在になっていたが、
+全く正気を失ってしまっていた。彼女は現在ダンジョンの階層を彷徨い、
+彼女の不運な運命を共有すべく、他の冒険者を探している。
 %%%%
 Mara
 
@@ -294,31 +415,49 @@ slew the ancient dragon from whose hide her strange armour is crafted.
 %%%%
 Maurice
 
-A sly, conniving thief. In his profession, Maurice is considered a legend — at
-least according to himself. He is skilled, nonetheless, and among all the
-thieves and rogues lured by the Orb, Maurice is undoubtedly the most crafty.
+# A sly, conniving thief. In his profession, Maurice is considered a legend — at
+# least according to himself. He is skilled, nonetheless, and among all the
+# thieves and rogues lured by the Orb, Maurice is undoubtedly the most crafty.
+ずる賢く陰謀を企てる盗賊だ。この道において、
+彼は伝説な存在と考えられている――少なくとも彼に言わせれば。にもかかわらず、
+彼は技巧に長け、そしてオーブに惹かれ集まった全ての盗賊やごろつきの中でも、
+モーリスは間違いなく最も狡猾だ。
 %%%%
 Menkaure
 
-A fair and noble ruler of an ancient and mighty kingdom, mummified after an
-early death. His faithful priests subsequently infused him with great and
-powerful magic, seeking to grant him eternal life. Now he is forgotten and
-reduced to mouldering bandages and dry, brittle bones.
+# A fair and noble ruler of an ancient and mighty kingdom, mummified after an
+# early death. His faithful priests subsequently infused him with great and
+# powerful magic, seeking to grant him eternal life. Now he is forgotten and
+# reduced to mouldering bandages and dry, brittle bones.
+公正にして高貴な、古代の強大な王国の統治者だ。
+彼は若くしてこの世を去ったのちにミイラにされた。彼の忠実な司祭はその後、
+彼が永遠の命を得られるように、強大で強力な魔力を吹き込んだ。現在彼は忘れ去られ、
+包帯や乾いて脆くなった骨は朽ち始めている。
 %%%%
 Mennas
 
-There was once a human priest named Mennas. He travelled far and wide preaching
-of Zin to any who would listen, going even so far as to travel into Orcish
-lands, preaching to orcs about laws and mercy. By all accounts the orcs were
-not happy with Mennas. They demanded he swear Beogh was the one true god, and
-when Mennas remained silent they cut out his tongue.
+# There was once a human priest named Mennas. He travelled far and wide preaching
+# of Zin to any who would listen, going even so far as to travel into Orcish
+# lands, preaching to orcs about laws and mercy. By all accounts the orcs were
+# not happy with Mennas. They demanded he swear Beogh was the one true god, and
+# when Mennas remained silent they cut out his tongue.
+#
+# Whether or not this angel is that same Mennas is something of a mystery, as he
+# seems to have difficulty speaking.
+かつてメナスと名付けられた人間の司祭がいた。彼は遠方を旅し、
+耳を傾ける者にジンの教えを説教して回った。彼はオークの国にさえ出向き、
+オークたちに神の教えと慈悲を説いた。言うまでもなく、
+メナスはオークたちに受け入れられないかった。
+オークたちは彼にベオこそが唯一にして真なる神であると宣誓するように強要し、
+それに対して沈黙を保ったメナスの舌を切り落としてしまった。
 
-Whether or not this angel is that same Mennas is something of a mystery, as he
-seems to have difficulty speaking.
+この天使がそのメナスと同一のものであるかは謎だが、
+彼は喋るのに難儀しているようだ。
 %%%%
 Mnoleg
 
-A weirdly glowing figure, dancing through the twisted air of Pandemonium.
+# A weirdly glowing figure, dancing through the twisted air of Pandemonium.
+不可思議に輝く人影だ。パンデモニウムの不気味な大気の中を踊っている。
 %%%%
 Murray
 
@@ -336,9 +475,11 @@ to put her down for good.
 %%%%
 Nellie
 
-A highly intelligent elephant who travelled as part of a circus. One dark
-night, she slipped out of her chain and disappeared into Pandemonium, never to
-be seen again.
+# A highly intelligent elephant who travelled as part of a circus. One dark
+# night, she slipped out of her chain and disappeared into Pandemonium, never to
+# be seen again.
+サーカスの一員として旅をする高い知力を持った象だ。ある暗い晩、彼女は鎖を外し、
+パンデモニウムへ消え去った。その後彼女を見た者はいない。
 %%%%
 Nergalle
 
@@ -454,12 +595,15 @@ particularly skilled in translocation magic.
 %%%%
 Xtahua
 
-An ancient and mighty dragon.
+# An ancient and mighty dragon.
+古代の強力なドラゴンだ。
 %%%%
 the Serpent of Hell gehenna
 
-A huge, red-glowing, three-headed dragon, shrouded in damnation. It is
-possessed by the very essence of Gehenna and its eternal fire.
+# A huge, red-glowing, three-headed dragon, shrouded in damnation. It is
+# possessed by the very essence of Gehenna and its eternal fire.
+地獄の瘴気を纏って赤く輝く、巨大な三つ首のドラゴンだ。
+ゲヘナの本質とその永劫の炎をその身に備えている。
 %%%%
 the Serpent of Hell cocytus
 
@@ -480,31 +624,39 @@ is palpable.
 # Non-unique monsters
 acid blob
 
-A lump of sickly pustulent flesh, dripping with lethal acid.
+# A lump of sickly pustulent flesh, dripping with lethal acid.
+致命的な酸を滲ませる、不健康な膿疱のある肉塊だ。
 %%%%
 adder
 
-A common dungeon snake, a species of troglodytic reptile commonly found in
-subterranean spaces.
+# A common dungeon snake, a species of troglodytic reptile commonly found in
+# subterranean spaces.
+地下空間でよく見かける穴居性の爬虫類、いわゆるダンジョン蛇だ。
 %%%%
 air elemental
 
-A spirit drawn from the elemental plane of air. It exists in this world as a
-swirling vortex of air.
+# A spirit drawn from the elemental plane of air. It exists in this world as a
+# swirling vortex of air.
+大気の精霊界から召喚された精霊だ。この世界では渦巻く大気の形をとって顕現する。
 %%%%
 alligator
 
-An aggressive crocodilian with great crunching jaws full of sharp teeth.
+# An aggressive crocodilian with great crunching jaws full of sharp teeth.
+鋭い歯がずらりと並んだ大きな顎で獲物をバリバリと噛み砕く攻撃的なワニ類だ。
 %%%%
 alligator snapping turtle
 
-A particularly large and nasty snapping turtle. Like its smaller relative, it
-can reach out and bite from afar.
+# A particularly large and nasty snapping turtle. Like its smaller relative, it
+# can reach out and bite from afar.
+とびきり大きく危険なワニガメだ。より小さな同種のモンスターと同様に、
+遠くから首を伸ばして噛みつくことができる。
 %%%%
 anaconda
 
-A very large snake that moves with startling swiftness. It kills not by poison
-but by constricting its prey.
+# A very large snake that moves with startling swiftness. It kills not by poison
+# but by constricting its prey.
+驚くべき敏捷さで動く非常に大きな蛇だ。
+これは獲物を毒によってではなく、締めつけて殺してしまう。
 %%%%
 ancestor
 
@@ -519,8 +671,10 @@ its bones, and pulses with terrible, unholy power.
 %%%%
 ancient lich
 
-A lich who, having existed for countless centuries, has grown almost
-unimaginably powerful through the study of dark magic.
+# A lich who, having existed for countless centuries, has grown almost
+# unimaginably powerful through the study of dark magic.
+これは途方もなく長い間存在し、
+黒魔術の研究によっておよそ想像もつかないほど強力になったリッチだ。
 %%%%
 ancient zyme
 
@@ -529,12 +683,15 @@ Its nature inflicts withering illness on all living beings in its presence.
 %%%%
 angel
 
-A divine warrior of the Shining One. It is a towering winged figure of
-unnatural beauty surrounded by an aura of brilliant white light.
+# A divine warrior of the Shining One. It is a towering winged figure of
+# unnatural beauty surrounded by an aura of brilliant white light.
+輝けるものに仕える天上の戦士だ。これは輝く白い光のオーラを纏い、
+異様なほど美しく、素晴らしい翼を持った姿をしている。
 %%%%
 apis
 
-A placid, sacred bull of Elyvilon.
+# A placid, sacred bull of Elyvilon.
+大人しい、エリヴィロンに仕える神聖な牡牛だ。
 %%%%
 apocalypse crab
 
@@ -568,7 +725,8 @@ the slightest disturbance.
 %%%%
 balrug
 
-A huge and very powerful demon, wreathed in fire and shadows.
+# A huge and very powerful demon, wreathed in fire and shadows.
+巨大で非常に強力なデーモンだ。炎と影とに包まれている。
 %%%%
 basilisk
 
@@ -604,8 +762,10 @@ A kobold that is bigger and tougher than the ordinary kobold, and often armed.
 %%%%
 black bear
 
-A small black bear. Like all ursines, it will become enraged if badly hurt or
-frightened.
+# A small black bear. Like all ursines, it will become enraged if badly hurt or
+# frightened.
+小型の黒い熊だ。
+他の熊類のように、ひどく傷ついたり恐慌した際には凶暴化する。
 %%%%
 black draconian
 
@@ -661,8 +821,10 @@ through, walking through it looks like a painful prospect.
 %%%%
 Brimstone Fiend
 
-A huge and powerful demon wreathed in damnation, with great scaly wings. It is
-one of the most fearsome denizens of any of the Hells.
+# A huge and powerful demon wreathed in damnation, with great scaly wings. It is
+# one of the most fearsome denizens of any of the Hells.
+大きく鱗のある翼を持った、地獄の瘴気を纏った巨大かつ強力なデーモンだ。
+地獄の最も恐ろしい住人のうちの一つである。
 %%%%
 burning bush
 
@@ -750,18 +912,23 @@ fire and cold that are reflected by any surface.
 %%%%
 curse skull
 
-A charred skull floating in the air and rotating slowly. Mystic symbols are
-carved into its blackened surface.
+# A charred skull floating in the air and rotating slowly. Mystic symbols are
+# carved into its blackened surface.
+空中に浮いてゆっくりと回転している、黒焦げの頭蓋骨だ。
+その黒ずんだ表面には神秘的な紋様が刻まれている。
 %%%%
 curse toe
 
-A disembodied toe, hanging in the air and radiating an intense field of
-negative energy.
+# A disembodied toe, hanging in the air and radiating an intense field of
+# negative energy.
+切り離された足の指だ。宙に浮いていて、負のエネルギーの強烈な場を放射している。
 %%%%
 cyclops
 
-A giant with one eye in the centre of its forehead. Despite its lack of
-binocular vision, it is able to throw boulders with fearsome accuracy.
+# A giant with one eye in the centre of its forehead. Despite its lack of
+# binocular vision, it is able to throw boulders with fearsome accuracy.
+額の中央に一つだけ目を持つ巨人だ。
+両眼による立体視の欠如にも関わらず、恐るべき命中率で大岩を投げることができる。
 %%%%
 daeva
 
@@ -811,8 +978,10 @@ life energies of those unfortunate enough to encounter it.
 %%%%
 death yak
 
-A larger and beefier relative of the common dungeon yak. Its little red eyes
-gleam with hunger for living flesh.
+# A larger and beefier relative of the common dungeon yak. Its little red eyes
+# gleam with hunger for living flesh.
+普通のダンジョンヤクより大きくて逞しい近縁種だ。その小さな赤い目は、
+生き物の肉への飢えに輝いている。
 %%%%
 deep elf annihilator
 
@@ -980,12 +1149,14 @@ A member of a short, sturdy mountain-dwelling folk.
 %%%%
 earth elemental
 
-A spirit drawn from the elemental plane of earth, which exists in this world by
-inhabiting a lump of earth and rocks.
+# A spirit drawn from the elemental plane of earth, which exists in this world by
+# inhabiting a lump of earth and rocks.
+大地の精霊界から召換された精霊だ。土と岩の塊に宿ることでこの世界に存在している。
 %%%%
 efreet
 
-An imposing, muscular figure engulfed in a cloud of searing flame.
+# An imposing, muscular figure engulfed in a cloud of searing flame.
+灼熱の炎に包まれた、巨大で筋骨逞しい存在だ。
 %%%%
 eidolon
 
@@ -1043,12 +1214,15 @@ and right with its two huge weapons.
 %%%%
 Executioner
 
-A horribly powerful and swift demon, its shape obscured by a cloud of swirling
-scythe-like blades.
+# A horribly powerful and swift demon, its shape obscured by a cloud of swirling
+# scythe-like blades.
+恐ろしいほどに強力で敏捷なデーモンだ。
+渦巻く鎌のような刃の群れでその形状は曖昧なものに見える。
 %%%%
 eye of devastation
 
-A huge eyeball, encased in a levitating globe of incandescent energy.
+# A huge eyeball, encased in a levitating globe of incandescent energy.
+宙に浮かんだ光り輝くエネルギーの球体に包まれた巨大な眼球だ。
 %%%%
 eye of draining
 
@@ -1076,14 +1250,19 @@ supernatural ability to expel massive quantities of flames.
 %%%%
 fire dragon
 
-A great reptilian beast with powerful claws on its limbs, covered in thick
-red scales and with two huge bat-like wings. Little trails of smoke spill
-from its toothy maw.
+# A great reptilian beast with powerful claws on its limbs, covered in thick
+# red scales and with two huge bat-like wings. Little trails of smoke spill
+# from its toothy maw.
+強力な爪をその四肢に備えた、爬虫類めいた偉大なる獣だ。
+全身が分厚い赤色の鱗に覆われ、一対のコウモリに似た巨大な翼を持つ。
+牙の並んだ顎からはかすかな煙がたなびいている。
 %%%%
 fire elemental
 
-A spirit drawn from the elemental plane of fire, which exists in this world as
-a brilliant column of raging flames.
+# A spirit drawn from the elemental plane of fire, which exists in this world as
+# a brilliant column of raging flames.
+火の精霊界から召喚された精霊だ。
+輝く猛烈な炎の柱に宿ることでこの世界に存在している。
 %%%%
 fire giant
 
@@ -1093,7 +1272,8 @@ entire world to cinders.
 %%%%
 fire vortex
 
-A swirling cloud of flame. After striking a foe, it disintegrates.
+# A swirling cloud of flame. After striking a foe, it disintegrates.
+渦巻く炎の雲だ。敵対する者に攻撃した後、それは分解してしまう。
 %%%%
 flayed ghost
 
@@ -1144,7 +1324,8 @@ explosion.
 %%%%
 fungus
 
-A lumpy grey fungus, growing well in the dank underground dungeon.
+# A lumpy grey fungus, growing well in the dank underground dungeon.
+塊になった灰色の菌類だ。暗く湿った地下迷宮で活発に生育する。
 %%%%
 gargoyle
 
@@ -1177,13 +1358,16 @@ it is in fact quite susceptible to mutagenic energies.
 %%%%
 glowing orange brain
 
-A huge wrinkled brain, floating just off the floor and glowing with mutagenic
-energies. Every now and then it seems to pulsate.
+# A huge wrinkled brain, floating just off the floor and glowing with mutagenic
+# energies. Every now and then it seems to pulsate.
+地面から浮かんでいる、変異性のエネルギーで輝いた巨大で皺々の脳髄だ。
+その姿は常に脈動している。
 %%%%
 glowing shapeshifter
 
-A shapeshifter which has lost control over its transformations, and is
-constantly changing form.
+# A shapeshifter which has lost control over its transformations, and is
+# constantly changing form.
+変異能力の制御を失った変身能力者で、常に変化を続けている。
 %%%%
 gnoll
 
@@ -1228,7 +1412,9 @@ terrifying feats of magic.
 %%%%
 green death
 
-A bloated form covered in oozing sores and exhaling clouds of lethal poison.
+# A bloated form covered in oozing sores and exhaling clouds of lethal poison.
+膨れあがった体をしたデーモンだ。全身が爛れた腫れ物に覆われ、
+致命的な毒の雲を放っている。
 %%%%
 green draconian
 
@@ -1246,7 +1432,9 @@ heavy punishment.
 %%%%
 guardian mummy
 
-An ancient warrior, embalmed and cursed to walk in undeath for eternity.
+# An ancient warrior, embalmed and cursed to walk in undeath for eternity.
+古代の戦士だ。死体に防腐処理を施され、
+呪術によって永遠に死ぬこともなく使役されている。
 %%%%
 guardian serpent
 
@@ -1295,8 +1483,10 @@ energies that spawned it.
 %%%%
 Hell Sentinel
 
-A towering monolith constructed and possessed by demonic forces. A thousand
-eyes leer through slits in its jagged, spiked armour.
+# A towering monolith constructed and possessed by demonic forces. A thousand
+# eyes leer through slits in its jagged, spiked armour.
+悪魔の軍勢によって建造され、支配されたそびえ立つ一枚岩だ。
+千もの目がギザギザした、棘の生えた鎧の隙間から視線を送ってくる。
 %%%%
 hellephant
 
@@ -1305,13 +1495,17 @@ fires of Hell.
 %%%%
 hellion
 
-A hateful demon, desirous to see all life destroyed by its damnation.
+# A hateful demon, desirous to see all life destroyed by its damnation.
+全ての命あるものを己の鉄槌で壊滅させたいと願う忌まわしきデーモンだ。
 %%%%
 hellwing
 
-A hideous skeletal demon. It swoops through the air on powerful wings of
-ancient withered skin, taking sadistic joy from harrying those who would try to
-flee its grasp.
+# A hideous skeletal demon. It swoops through the air on powerful wings of
+# ancient withered skin, taking sadistic joy from harrying those who would try to
+# flee its grasp.
+おぞましい骸骨のデーモンだ。
+太古の干からびた皮の羽を使って空中から襲いかかり、
+その拘束から逃れようとする者を執拗に攻めたてることで嗜虐的な歓喜を得る。
 %%%%
 hexer
 
@@ -1328,8 +1522,9 @@ adventurers.
 %%%%
 hippogriff
 
-A hybrid with the hindquarters of a horse and the wings, head and talons of a
-great eagle.
+# A hybrid with the hindquarters of a horse and the wings, head and talons of a
+# great eagle.
+大鷲の頭と鉤爪と翼に、馬の後ろ足と臀部を組み合わせた生き物だ。
 %%%%
 hobgoblin
 
@@ -1364,18 +1559,27 @@ fragile, elves think of them as clumsy, and monsters think of them as tasty.
 %%%%
 hungry ghost
 
-The undead form of someone who died of starvation. It drains sustenance from
-the bodies of its victims, hoping to inflict its own miserable fate on others.
+# The undead form of someone who died of starvation. It drains sustenance from
+# the bodies of its victims, hoping to inflict its own miserable fate on others.
+飢えで死んだ何者かのアンデッドだ。
+それは獲物の身体から養分を吸収し、自らの悲惨な末路を他の者にも与えることを望んでいる。
 %%%%
 hydra
 
-A great and nightmarish lacertilian beast. It has many heads, and the potential
-to grow many more!
+# A great and nightmarish lacertilian beast. It has many heads, and the potential
+# to grow many more!
+#
+# Hitting it with any bladed weapon bigger than a short blade risks lopping a
+# head off and causing two more to grow in its place. Very large claws, such as
+# trolls', are long enough to do the same. Only a weapon branded with flame will
+# cauterize the wound and prevent more heads from growing.
+巨大で非常に恐ろしい爬虫類めいた獣だ。
+これは複数の頭を持ち、さらに頭を増やす能力がある！
 
-Hitting it with any bladed weapon bigger than a short blade risks lopping a
-head off and causing two more to grow in its place. Very large claws, such as
-trolls', are long enough to do the same. Only a weapon branded with flame will
-cauterize the wound and prevent more heads from growing.
+短剣より大きいあらゆる刃の付いた武器で攻撃すると、
+首を刎ねたところからさらに二つの首が生えてくるといった危険がある。
+大きな鉤爪(例えばトロルのような)でも同様である。
+火炎の魔力を備えた武器だけが、傷口を焼いて首が生えてくるのを防ぐ。
 %%%%
 hyperactive ballistomycete
 
@@ -1384,12 +1588,15 @@ by explosions of spores, damaging everything nearby.
 %%%%
 ice beast
 
-A terrible creature, formed of snow and crystalline ice. Its feet leave puddles
-of icy water on the floor.
+# A terrible creature, formed of snow and crystalline ice. Its feet leave puddles
+# of icy water on the floor.
+恐ろしいモンスターだ。雪と透き通る氷でできた体を持つ。
+その歩みは地面に冷たい水溜りを残していく。
 %%%%
 ice devil
 
-A man-sized demon covered in glittering ice.
+# A man-sized demon covered in glittering ice.
+光り輝く氷に覆われた人間サイズのデーモンだ。
 %%%%
 ice dragon
 
@@ -1397,8 +1604,10 @@ A white, frost-coated dragon. Snowflakes trickle from its nostrils.
 %%%%
 Ice Fiend
 
-A huge frigid demon covered in frost and wreathed in freezing air. It is one of
-the most terrible denizens of the many Hells.
+# A huge frigid demon covered in frost and wreathed in freezing air. It is one of
+# the most terrible denizens of the many Hells.
+霜に覆われ、凍てつく大気を身にまとった巨大な極寒のデーモンだ。
+それは数多の地獄に住まう住民の中でも最も恐ろしいもののひとつである。
 %%%%
 ice statue
 
@@ -1466,12 +1675,15 @@ accepting a portion of the injuries inflicted upon them.
 %%%%
 jackal
 
-A small canine scavenger. Packs of jackals roam the underworld, searching for
-carrion to devour.
+# A small canine scavenger. Packs of jackals roam the underworld, searching for
+# carrion to devour.
+小型のイヌ科の腐肉食動物だ。
+この生き物の群れは、死肉を貪るために地底を徘徊する。
 %%%%
 jelly
 
-A pulsating mass of acidic protoplasm.
+# A pulsating mass of acidic protoplasm.
+脈動する酸性の原形質の塊だ。
 %%%%
 jiangshi
 
@@ -1496,9 +1708,13 @@ A giant bee, bearing a deadly barb which can sting repeatedly.
 %%%%
 Killer Klown
 
-A comical figure full of life and laughter. It looks very happy to see you...
-but is there a slightly malicious cast to its features? Is that red face paint
-or something altogether less pleasant?
+# A comical figure full of life and laughter. It looks very happy to see you...
+# but is there a slightly malicious cast to its features? Is that red face paint
+# or something altogether less pleasant?
+生き生きとして笑顔に満ちたコミカルな姿をしている。
+あなたに会えてとても嬉しそうにしている……。
+しかしその容貌には悪意がにじみ出ていないだろうか？
+それは赤く塗られた顔か、はたまた不快の表れか？
 %%%%
 knight
 
@@ -1540,8 +1756,10 @@ at passers-by.
 %%%%
 leopard gecko
 
-A brightly-coloured lizard with huge, sharp teeth. The pads on its toes allow
-it to cling to walls and ceilings.
+# A brightly-coloured lizard with huge, sharp teeth. The pads on its toes allow
+# it to cling to walls and ceilings.
+大きく、鋭い牙を持った鮮やかな色のトカゲだ。
+足指の先に吸盤を持ち、壁や天井を上ることができる。
 %%%%
 lich
 
@@ -1555,13 +1773,18 @@ nearby creatures.
 %%%%
 lindwurm
 
-A small serpentine dragon with a pair of strong forelimbs. Its thick scales
-give off an eerie red glow.
+# A small serpentine dragon with a pair of strong forelimbs. Its thick scales
+# give off an eerie red glow.
+力強い一対の前肢を持つ、蛇のような姿の小型ドラゴンだ。
+その分厚い鱗は奇妙な赤い輝きを放っている。
 %%%%
 lorocyproca
 
-A tall and gaunt figure, draped in long robes which flow as if alive. It
-thirsts for magical energies.
+# A tall and gaunt figure, draped in long robes which flow as if alive. It
+# thirsts for magical energies.
+背が高く痩せさらばえた人型の存在だ。
+生きているかのようにたなびく長いローブを羽織っている。
+それは魔力に飢えている。
 %%%%
 lost soul
 
@@ -1591,9 +1814,11 @@ mage in no time.
 %%%%
 manticore
 
-A hideous cross-breed, bearing the features of a human and a lion, with great
-bat-like wings. Its tail bristles with spikes that can be loosed at potential
-prey.
+# A hideous cross-breed, bearing the features of a human and a lion, with great
+# bat-like wings. Its tail bristles with spikes that can be loosed at potential
+# prey.
+ひどく醜い交雑生物だ。人間とライオンの顔と、とても大きな蝙蝠の羽とを持つ。
+その尻尾には、獲物となるものに向けて発射することも可能な棘が逆立っている。
 %%%%
 meliai
 
@@ -1627,13 +1852,16 @@ javelins.
 %%%%
 minotaur
 
-A large muscular human with the head of a bull. It makes its home in secluded
-labyrinths.
+# A large muscular human with the head of a bull. It makes its home in secluded
+# labyrinths.
+大きく筋肉質な人間の体に雄牛の頭部を持つモンスターだ。
+隔離された迷宮を棲み処としている。
 %%%%
 molten gargoyle
 
-A hideous molten stone statue come to life, with flames licking across its
-body.
+# A hideous molten stone statue come to life, with flames licking across its
+# body.
+溶岩でできた忌まわしき生ける像だ。その身体には炎が這い回っている。
 %%%%
 monstrous demonspawn
 
@@ -1656,8 +1884,10 @@ strange liquid flame.
 %%%%
 mummy
 
-An undead figure covered in bandages and embalming fluids, compelled to walk by
-an ancient curse. It radiates a malign aura.
+# An undead figure covered in bandages and embalming fluids, compelled to walk by
+# an ancient curse. It radiates a malign aura.
+防腐処理を施され包帯に覆われた体を持ち、太古の魔術によって無理矢理歩かされているアンデッドだ。
+悪意に満ちたオーラを放っている。
 %%%%
 mummy priest
 
@@ -1706,8 +1936,10 @@ unholy energies, and the raising of corpses into a parody of life.
 %%%%
 necrophage
 
-A vile undead creation of the most unholy necromancy, made from the decaying
-corpses of humanoid creatures. It exists to spread disease and decay.
+# A vile undead creation of the most unholy necromancy, made from the decaying
+# corpses of humanoid creatures. It exists to spread disease and decay.
+最も不浄なる死霊術による邪悪なアンデッド被造物で、腐敗した人間型生物の死体から作成される。
+疫病と腐敗を蔓延させるために存在する。
 %%%%
 neqoxec
 
@@ -1732,8 +1964,10 @@ tremendously strong.
 %%%%
 ogre mage
 
-A rare breed of ogre, skilled in the use of magic. It usually becomes a
-chieftain among its kin.
+# A rare breed of ogre, skilled in the use of magic. It usually becomes a
+# chieftain among its kin.
+稀少な血統のオーガで、魔法の使用に長けている。
+通常は同種族の中での指導者となる。
 %%%%
 oklob plant
 
@@ -1781,8 +2015,10 @@ skill, and is able to make sharp turns to hit adjacent targets.
 %%%%
 orb of fire
 
-A globe of raw primordial fire, capable of impressive pyrotechnics, and of
-twisting the very flesh of creatures who come into its ken.
+# A globe of raw primordial fire, capable of impressive pyrotechnics, and of
+# twisting the very flesh of creatures who come into its ken.
+高度な火炎術を操る、原初の炎そのものの球体だ。
+その視界に入った生物の肉体を捻じ曲げることも可能とする。
 %%%%
 orb spider
 
@@ -1791,9 +2027,11 @@ spinnerets. It seems to want to keep its distance.
 %%%%
 orc
 
-An ugly subterranean creature combining the worst features of humans, pigs and
-several other unpleasant creatures. It tends to run in packs or mobs, and
-delights in outbursts of insane violence.
+# An ugly subterranean creature combining the worst features of humans, pigs and
+# several other unpleasant creatures. It tends to run in packs or mobs, and
+# delights in outbursts of insane violence.
+豚と人間、そしてその他不快な生物の容貌を併せ持った地底に住む醜い種族だ。
+群れをなす傾向があり、狂気めいた暴力を振るうことに喜びを感じている。
 %%%%
 orc high priest
 
@@ -1868,8 +2106,10 @@ A pillar of salt shaped like a statue, but worked by no living hands.
 %%%%
 plant
 
-A plant that has adapted to grow in the unpleasant dungeon environment,
-somehow thriving even underground in the absence of the sun.
+# A plant that has adapted to grow in the unpleasant dungeon environment,
+# somehow thriving even underground in the absence of the sun.
+ダンジョンの不快な環境に適応して育つ植物だ。
+どういうわけか、陽光のない地底でさえ生い茂っている。
 %%%%
 player ghost
 
@@ -1880,8 +2120,10 @@ its path.
 %%%%
 polar bear
 
-A bear covered in glistening white fur, habituated to cold conditions. Like all
-ursines, it will become enraged if badly hurt or frightened.
+# A bear covered in glistening white fur, habituated to cold conditions. Like all
+# ursines, it will become enraged if badly hurt or frightened.
+寒冷な環境に適応した、白く輝く毛皮に覆われた熊だ。
+他の熊類のように、ひどく傷ついたり恐慌した際には凶暴化する。
 %%%%
 porcupine
 
@@ -1921,9 +2163,12 @@ offspring.
 %%%%
 quicksilver dragon
 
-A long and sinuous dragon, seemingly more neck and tail than anything else. Its
-skin shines like molten mercury, magical energies arc from its pointed snout,
-and it moves with terrifying swiftness.
+# A long and sinuous dragon, seemingly more neck and tail than anything else. Its
+# skin shines like molten mercury, magical energies arc from its pointed snout,
+# and it moves with terrifying swiftness.
+長い体を曲がりくねらせたドラゴンだ。見たところ首と尻尾の方がそれ以外の部分より長く見える。
+その皮は水銀のように輝き、魔法のエネルギーがその尖った鼻先からほとばしっており、
+驚くべき俊敏さで動く。
 %%%%
 quokka
 
@@ -1950,8 +2195,10 @@ and covers great distances by bursting into living lightning.
 %%%%
 reaper
 
-A skeletal form wielding a giant scythe, ceaselessly harvesting the souls of
-the living.
+# A skeletal form wielding a giant scythe, ceaselessly harvesting the souls of
+# the living.
+巨大な鎌を手にした、骸骨のような姿の存在だ。
+常に命ある者の魂を収穫している。
 %%%%
 red devil
 
@@ -1969,8 +2216,10 @@ A buzzing hornet with a vicious stinger dripping with paralytic poison.
 %%%%
 redback
 
-A vicious black spider with a splash of red on its swollen abdomen. Its
-mandibles drip with lethal poison.
+# A vicious black spider with a splash of red on its swollen abdomen. Its
+# mandibles drip with lethal poison.
+膨れ上がった腹部の背に赤い飛沫模様のある、獰猛な黒い蜘蛛だ。
+その下顎からは致命的な毒が滴っている。
 %%%%
 revenant
 
@@ -1988,8 +2237,11 @@ tends to form great swarms with its kin.
 %%%%
 the Royal Jelly
 
-A particularly rich and golden gelatinous thing. Smaller jellies swim and pulse
-just below its surface, ready to burst forth at the slightest touch.
+# A particularly rich and golden gelatinous thing. Smaller jellies swim and pulse
+# just below its surface, ready to burst forth at the slightest touch.
+とりわけ豪華な、金色をしたゼラチン状の存在だ。
+より小型のジェリーがその表面下を蠢き泳いでおり、
+ほんのわずかな接触で今にも噴出しそうだ。
 %%%%
 rust devil
 
@@ -2047,8 +2299,10 @@ unerringly from the blind spots of those who cannot see it.
 %%%%
 shadow demon
 
-A mysterious demonic figure, difficult to distinguish from the darkness around
-it. It weaves the shadows into powerful minions.
+# A mysterious demonic figure, difficult to distinguish from the darkness around
+# it. It weaves the shadows into powerful minions.
+不可思議な悪魔的存在で、その周囲の闇と見分けることが難しい。
+それは影を編んで強力な使い魔へと変化させる。
 %%%%
 shadow dragon
 
@@ -2056,7 +2310,9 @@ A great umbral dragon, radiating evil and death. Its breath reeks of the grave.
 %%%%
 shadow imp
 
-A shadowy minor demon, with an affinity for the necromantic arts.
+# A shadowy minor demon, with an affinity for the necromantic arts.
+小さくて影のような下級デーモンだ。
+死霊術の技との親和性を持っている。
 %%%%
 shadow wraith
 
@@ -2072,8 +2328,10 @@ found nesting within its branches, and may not take kindly to being disturbed.
 %%%%
 shapeshifter
 
-A disturbing creature with the power to change its form. It is very rarely
-observed alive in its natural state.
+# A disturbing creature with the power to change its form. It is very rarely
+# observed alive in its natural state.
+自らの姿を変化させる力を持った厭わしいモンスターだ。
+このモンスターが本来の形態で目撃されることは極めて珍しい。
 %%%%
 shard shrike
 
@@ -2099,7 +2357,8 @@ spells or reading scrolls.
 %%%%
 simulacrum
 
-An ice replica of a monster, animated by the powers of necromancy.
+# An ice replica of a monster, animated by the powers of necromancy.
+氷でできたモンスターの似姿だ。死霊術の力で動かされている。
 %%%%
 siren
 
@@ -2112,11 +2371,13 @@ lightning speed. It sprays sparks as it goes.
 %%%%
 skeletal warrior
 
-A vicious and heavily armed humanoid skeleton, animated by unholy power.
+# A vicious and heavily armed humanoid skeleton, animated by unholy power.
+凶悪で重武装した人型生物の骸骨だ。これは邪悪な力によって造られた。
 %%%%
 skeleton
 
-A skeleton compelled to unlife by the exercise of necromancy.
+# A skeleton compelled to unlife by the exercise of necromancy.
+死霊術の働きによって蘇ることを強いられた骸骨だ。
 %%%%
 sky beast
 
@@ -2187,11 +2448,13 @@ vortices.
 %%%%
 spatial vortex
 
-A crazily shifting twist in the fabric of reality.
+# A crazily shifting twist in the fabric of reality.
+狂ったように転位していく現実構造の歪みだ。
 %%%%
 spectral thing
 
-A hideous glowing apparition.
+# A hideous glowing apparition.
+おぞましい輝く幽霊だ。
 %%%%
 spectral weapon
 
@@ -2269,13 +2532,17 @@ base, it can still move parts of itself.
 %%%%
 steam dragon
 
-A relatively small grey dragon, with a resilient-looking scaly hide and steam
-pouring from its mouth.
+# A relatively small grey dragon, with a resilient-looking scaly hide and steam
+# pouring from its mouth.
+比較的小さめの灰色をしたドラゴンで、弾力のありそうな鱗のある皮膚を持ち、
+その顎からは蒸気が立ち昇っている。
 %%%%
 stone giant
 
-A gigantic humanoid with grey skin almost as hard as rock. It carries several
-boulders, and is perfectly capable of flinging them a great distance.
+# A gigantic humanoid with grey skin almost as hard as rock. It carries several
+# boulders, and is perfectly capable of flinging them a great distance.
+岩のように固い灰色の皮膚を持つ巨大な人型生物だ。
+いくつかの大岩を持ち運んでおり、それをかなり遠くへやすやすと投げることができる。
 %%%%
 storm dragon
 
@@ -2284,7 +2551,8 @@ and enormous scaly wings crackling with sparks.
 %%%%
 sun demon
 
-A demonic figure shining with the heat and fury of a fallen star.
+# A demonic figure shining with the heat and fury of a fallen star.
+地に墜ちた星の熱と怒りとに輝く、悪魔的な姿をした存在だ。
 %%%%
 swamp dragon
 
@@ -2293,12 +2561,14 @@ from its snout.
 %%%%
 swamp drake
 
-A small and slimy dragon, covered in swamp muck and giving off a terrible
-stench.
+# A small and slimy dragon, covered in swamp muck and giving off a terrible
+# stench.
+沼の泥に覆われた、ぬめぬめした小さなドラゴンだ。ひどい悪臭を放っている。
 %%%%
 swamp worm
 
-A large slimy worm, adept at traversing swamps and marshes.
+# A large slimy worm, adept at traversing swamps and marshes.
+大きなぬるぬるしたワームだ。この不浄な沼の泥の中を泳ぐのに特化している。
 %%%%
 tarantella
 
@@ -2349,8 +2619,10 @@ beneath the weight of its impacts.
 %%%%
 titan
 
-A huge, bolt-hurling, lightning-limned humanoid. It is unusually large and
-powerful, even among giants.
+# A huge, bolt-hurling, lightning-limned humanoid. It is unusually large and
+# powerful, even among giants.
+巨大で、雷の矢を放つ、雷にかたどられた人型生物だ。
+巨人族の中にあってさえ著しく巨大で力強い。
 %%%%
 thorn hunter
 
@@ -2365,8 +2637,10 @@ matter.
 %%%%
 toenail golem
 
-A huge animated statue made entirely from toenail clippings. Some people just
-have too much time on their hands.
+# A huge animated statue made entirely from toenail clippings. Some people just
+# have too much time on their hands.
+かりそめの生命を与えられた巨大な像だ。爪切りで切った足の爪だけで造られている。
+非常に時間の有り余った誰かが造ったのだろう。
 %%%%
 tormentor
 
@@ -2399,8 +2673,10 @@ A whirling vortex of turbulent air.
 %%%%
 two-headed ogre
 
-A huge ogre with two heads on top of its bloated body. It is capable of holding
-a weapon in each giant hand.
+# A huge ogre with two heads on top of its bloated body. It is capable of holding
+# a weapon in each giant hand.
+肥大した体に二つの頭を持つ、巨大なオーガだ。
+その大きな手に一つずつの武器を持つことができる。
 %%%%
 tyrant leech
 
@@ -2415,7 +2691,8 @@ days when it will devour the sun.
 %%%%
 ufetubus
 
-A chattering and shrieking minor demon.
+# A chattering and shrieking minor demon.
+金切り声でペチャクチャ喋る下級デーモンだ。
 %%%%
 ugly thing
 
@@ -2461,7 +2738,8 @@ drop.
 %%%%
 vault guard
 
-A heavily armed and armoured guardian of the Vaults.
+# A heavily armed and armoured guardian of the Vaults.
+重武装で重装甲を備えた宝物庫の番人だ。
 %%%%
 vault sentinel
 
@@ -2492,7 +2770,8 @@ when out of sight. Noxious spores drift around its cap.
 %%%%
 warg
 
-A particularly evil-looking wolf, usually found in the company of orcs.
+# A particularly evil-looking wolf, usually found in the company of orcs.
+とりわけ邪悪な見た目をした狼で、大抵の場合はオークと一緒にいるのを目にする。
 %%%%
 war gargoyle
 
@@ -2569,24 +2848,32 @@ A giant annelid, glistening with slime, with unusually large teeth.
 %%%%
 wraith
 
-A cloud of black mist surrounding an insubstantial skeletal form. Its eyes burn
-bright with unholy malevolence and hunger for life essence, on which it feeds.
+# A cloud of black mist surrounding an insubstantial skeletal form. Its eyes burn
+# bright with unholy malevolence and hunger for life essence, on which it feeds.
+黒い霧をまとう実態の無い骸骨の姿をしている。
+その目は不浄なる悪意と生命力への飢えに赤く輝いている。
 %%%%
 wretched star
 
-A conflux of unearthly light and energy, awash in unnatural colours and strange
-forms no normal being was meant to perceive. It fills all those in its presence
-with the disorder of the Abyss.
+# A conflux of unearthly light and energy, awash in unnatural colours and strange
+# forms no normal being was meant to perceive. It fills all those in its presence
+# with the disorder of the Abyss.
+この世のものとも思えぬ光とエネルギーの集合体で、不自然な色と奇妙な姿を持ったものとして知覚される。
+それは遭遇したものをみなアビスの無秩序で満たす。
 %%%%
 wyvern
 
-A dragon-like creature with a long, sharply pointed tail. Although smaller and
-less formidable than true dragons, it is nonetheless a foe to be reckoned with.
+# A dragon-like creature with a long, sharply pointed tail. Although smaller and
+# less formidable than true dragons, it is nonetheless a foe to be reckoned with.
+ドラゴンに似た、長い鋭く尖った尻尾を持つモンスターだ。
+ワイバーンは本物の竜よりは小型で手強さも劣るが、とりもなおさず侮り難い敵である。
 %%%%
 yak
 
-A common dungeon yak, covered in shaggy yak hair and bearing a nasty pair of
-yak horns.
+# A common dungeon yak, covered in shaggy yak hair and bearing a nasty pair of
+# yak horns.
+ダンジョンに生息するヤクとしては普通のものだ。ぼさぼさした毛皮に覆われていて、
+一対の危険な角を持つ。
 %%%%
 yaktaur
 
@@ -2609,7 +2896,8 @@ demons under its command.
 %%%%
 zombie
 
-A corpse raised to undeath by necromancy.
+# A corpse raised to undeath by necromancy.
+死霊術によって甦った死体だ。
 %%%%
 # Specials
 test spawner
@@ -2819,7 +3107,8 @@ A demented wizard commanding the primal forces of the universe.
 %%%%
 megabat
 
-A huge black bat.
+# A huge black bat.
+巨大な黒いコウモリだ。
 %%%%
 microbat
 
