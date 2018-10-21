@@ -17,11 +17,11 @@ Poisoning this monster would place you under penance. Continue anyway?
 %%%%
 [verb]burns
 
-<[verb]burn>
+を燃やした
 %%%%
 [verb]freezes
 
-<[verb]freeze>
+を凍りつかせた
 %%%%
 bugs
 
