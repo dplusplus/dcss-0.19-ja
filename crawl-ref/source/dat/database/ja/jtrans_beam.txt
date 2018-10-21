@@ -513,7 +513,7 @@ deflects
 %%%%
 repels
 
-逸らした
+を逸らした
 %%%%
 The {bolt name} misses {name}.
 
