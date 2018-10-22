@@ -2889,8 +2889,8 @@ void melee_attack::mons_apply_attack_flavour()
         {
             mprf(jtransc("{attacker} {verb} {defender}!"),
                  atk_name(DESC_THE).c_str(),
-                 attacker->conj_verb_j("infuriate").c_str(),
-                 defender_name(true).c_str());
+                 defender_name(true).c_str(),
+                 attacker->conj_verb_j("infuriate").c_str());
         }
 
         defender->go_berserk(false);
