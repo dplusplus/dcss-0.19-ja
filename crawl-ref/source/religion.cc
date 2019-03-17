@@ -1359,8 +1359,7 @@ static string _item_ego_name(object_class_type base_type, int brand)
     {
         // 'remembers... draining' reads better than 'drain', but 'flame'
         // reads better than 'flaming'
-        const bool terse = brand == SPWPN_FLAMING
-                           || brand == SPWPN_ANTIMAGIC;
+        const bool terse = brand == SPWPN_ANTIMAGIC;
         return brand_type_name(brand, terse);
     }
     case OBJ_ARMOUR:
@@ -1388,7 +1387,7 @@ static void _regain_item_memory(const monster &ancestor,
     const string item_name
         = make_stringf(jtransc("{base name} of {ego name}"),
                        jtransc("of " + ego_name),
-                       item_base_name(base_type, sub_type).c_str());
+                       jtransc(item_base_name(base_type, sub_type)));
     _regain_memory(ancestor, item_name);
 }
 
