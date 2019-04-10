@@ -1854,7 +1854,7 @@ icemail
 
 氷の鎧
 %%%%
-A meltable icy envelope protects you from harm and freezing vapours (AC +
+A meltable icy envelope protects you from harm. (AC +
 
 氷の外套があなたを外敵から守っている。(AC +
 %%%%
