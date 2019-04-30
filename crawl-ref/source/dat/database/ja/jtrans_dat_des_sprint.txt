@@ -1,35 +1,71 @@
 %%%%
+dungeon_sprint_1
+
+スプリントⅠ
+%%%%
 Sprint I: "Red Sonja"
 
 スプリントⅠ: "Red Sonja"
+%%%%
+the_violet_keep_of_menkaure
+
+スプリントⅡ
 %%%%
 Sprint II: "The Violet Keep of Menkaure"
 
 スプリントⅡ: "The Violet Keep of Menkaure"
 %%%%
+dungeon_sprint_mu
+
+スプリントⅢ
+%%%%
 Sprint III: "The Ten Rune Challenge"
 
 スプリントⅢ: "The Ten Rune Challenge"
+%%%%
+dungeon_sprint_fedhas
+
+スプリントⅣ
 %%%%
 Sprint IV: "Fedhas' Mad Dash"
 
 スプリントⅣ: "Fedhas' Mad Dash"
 %%%%
+sprint_v
+
+スプリントⅤ
+%%%%
 Sprint V: "Ziggurat Sprint"
 
 スプリントⅤ: "Ziggurat Sprint"
+%%%%
+arena_sprint
+
+スプリントⅥ
 %%%%
 Sprint VI: "Thunderdome"
 
 スプリントⅥ: "Thunderdome"
 %%%%
+pitsprint
+
+スプリントⅦ
+%%%%
 Sprint VII: "The Pits"
 
 スプリントⅦ: "The Pits"
 %%%%
+meatsprint
+
+スプリントⅧ
+%%%%
 Sprint VIII: "Arena of Blood"
 
 スプリントⅧ: "Arena of Blood"
+%%%%
+linesprint
+
+スプリントⅨ
 %%%%
 Sprint IX: "|||||||||||||||||||||||||||||"
 

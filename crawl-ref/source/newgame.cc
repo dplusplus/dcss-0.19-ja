@@ -2031,11 +2031,11 @@ static void _construct_gamemode_map_menu(const mapref_vector& maps,
         tmp = new TextItem();
         text.clear();
         text += "Tab - ";
-        text += defaults.map;
+        text += jtrans(defaults.map);
 
         // Adjust the end marker to align the - because
         // Tab text is longer by 2
-        tmp->set_text(text);
+        tmp->set_text(text + "を開始");
         min_coord.x = X_MARGIN + MENU_COLUMN_WIDTH / 2 - 2;
         min_coord.y = SPECIAL_KEYS_START_Y + 2;
         max_coord.x = min_coord.x + tmp->get_text().size();
