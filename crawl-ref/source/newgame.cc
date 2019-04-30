@@ -842,12 +842,10 @@ static void _construct_species_menu(const newgame_def& ng,
 
     if (_char_defined(defaults))
     {
-        string tmp_string = "Tab - ";
-        tmp_string += _char_description(defaults);
         // Adjust the end marker to aling the - because
         // Tab text is longer by 2
         tmp = new TextItem();
-        tmp->set_text(tmp_string + "で開始");
+        tmp->set_text("Tab - " + _char_description(defaults) + "を選択");
         min_coord.x = X_MARGIN + get_number_of_cols() / 2 - 2;
         min_coord.y = SPECIAL_KEYS_START_Y + 3;
         max_coord.x = min_coord.x + tmp->get_text().size();
@@ -1257,7 +1255,7 @@ static void _construct_backgrounds_menu(const newgame_def& ng,
         // Adjust the end marker to align the - because
         // Tab text is longer by 2
         tmp = new TextItem();
-        tmp->set_text("Tab - " + _char_description(defaults) + "で開始");
+        tmp->set_text("Tab - " + _char_description(defaults) + "を選択");
         min_coord.x = X_MARGIN + get_number_of_cols() / 2 - 2;
         min_coord.y = SPECIAL_KEYS_START_Y + 3;
         max_coord.x = min_coord.x + tmp->get_text().size();
@@ -1614,7 +1612,7 @@ static void _construct_weapon_menu(const newgame_def& ng,
         // Adjust the end marker to aling the - because
         // Tab text is longer by 2
         tmp = new TextItem();
-        tmp->set_text(text);
+        tmp->set_text(text + "を選択");
         min_coord.x = X_MARGIN + get_number_of_cols() / 2 - 2;
         min_coord.y = SPECIAL_KEYS_START_Y + 2;
         max_coord.x = min_coord.x + strwidth(tmp->get_text());
