@@ -3,7 +3,7 @@ Abyssal Knight
 
 # Abyssal Knights worship Lugonu, and are sent from the Abyss into the Dungeon to
 # spread corruption and chaos.
-深淵の騎士はルゴヌを崇拝し、
+深淵の騎士はルゴヌを崇拝しており、
 崩壊と混沌を広めるためにアビスからダンジョンに送り込まれた。
 %%%%
 Air Elementalist
@@ -24,7 +24,7 @@ Artificer
 
 # Artificers start with a few magical devices and are competent at using such
 # tools.
-発動術師はわずかな魔法の道具を持って出発し、そのような道具を使う技能がある。
+発動術師は少数の魔法の道具を持って出発し、そのような道具を使う技能がある。
 %%%%
 Assassin
 
@@ -44,12 +44,12 @@ Chaos Knight
 # Chaos Knights are playthings of the unpredictable Xom, and are subject to the
 # god's constantly changing moods.
 混沌の騎士は気まぐれなゾムのおもちゃであり、
-しばしば起きる神の気分の変化しだいである。
+しばしば起きる神の気分の変化に翻弄される。
 %%%%
 Conjurer
 
 # Conjurers confront problems with damaging spells from the book of Conjurations.
-妖術師は妖術の魔術書による破壊の呪文の問題に取り組んでいる。
+妖術師は妖術の魔術書による破壊の呪文の諸々に取り組んでいる。
 %%%%
 Earth Elementalist
 
@@ -110,7 +110,7 @@ Necromancer
 # Necromancers are wizards specializing in the practice of death magic. They
 # start out with the Pain spell.
 死人使いは死の魔法の修練に特化した魔術師である。
-彼らは苦痛の呪文を得て出発する。
+彼らは苦痛の呪文を会得して冒険を開始する。
 %%%%
 Skald
 
@@ -135,7 +135,7 @@ Venom Mage
 
 # Venom Mages start with the Young Poisoner's Handbook and the Sting spell, and
 # their poison magic is very effective against susceptible foes.
-毒素の魔術師は初級毒殺者の手引書と毒針の呪文で出発する。
+毒素の魔術師は初級毒殺者の手引書と毒針の呪文を備えて冒険を開始する。
 彼らの毒の魔術は毒に弱い敵に対しては特に有効だ。
 %%%%
 Wanderer
