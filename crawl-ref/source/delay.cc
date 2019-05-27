@@ -1286,7 +1286,7 @@ static inline bool _monster_warning(activity_interrupt_type ai,
             zin_id = true;
             mon->props["zin_id"] = true;
             discover_shifter(*mon);
-            string mon_name = string(mon->has_ench(ENCH_GLOWING_SHAPESHIFTER) ? "glowing" : "") + "shapeshifter";
+            string mon_name = string(mon->has_ench(ENCH_GLOWING_SHAPESHIFTER) ? "glowing " : "") + "shapeshifter";
             god_warning = make_stringf(jtransc("{god name} warns you: {subj} is a foul {(glowing) shapeshifter}."),
                                        god_name_jc(you.religion),
                                        mon->pronoun_j(PRONOUN_SUBJECTIVE).c_str(),
