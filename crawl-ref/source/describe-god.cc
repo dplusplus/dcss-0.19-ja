@@ -257,7 +257,7 @@ string god_title(god_type which_god, species_type which_species, int piety)
     {
         { "Adj", species_adj_j(which_species, SPNAME_ADJ) },
         { "Genus", species_genus_j(which_species, SPNAME_GENUS) },
-        { "Walking", species_walking_verb(which_species) },
+        { "Walking", jtrans(species_walking_verb(which_species)) },
         { "Walker", jtrans(species_walking_verb(which_species)) + jtrans("er") },
     };
 
