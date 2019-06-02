@@ -1280,7 +1280,7 @@ It can have at most {max} charges and {+rate} recharge rate.
 %%%%
 It falls into the 'Staves' category.
 
-このロッドは棒術の種別に分類される。
+この杖は棒術の種別に分類される。
 %%%%
 Once activated, this device (and all other devices of its kind) will be rendered temporarily inert. However, (they|it) will recharge as you gain experience.
 
