@@ -979,8 +979,7 @@ It is coated with poison.
 
 この%sは毒に浸されている。
 %%%%
-It is tipped with a substance that causes asphyxiation, dealing direct damage as well as poisoning and slowing those it strikes.\n
-It is twice as likely to be destroyed on impact as other needles.
+It is tipped with a substance that causes asphyxiation, dealing direct damage as well as poisoning and slowing those it strikes.\nIt is twice as likely to be destroyed on impact as other needles.
 
 この%sには窒息性の毒が塗られており、直接のダメージに加えて毒と減速効果を当たった対象にもたらす。
 命中時に使いものにならなくなる割合は他の針に比べて二倍となる。
@@ -1157,7 +1156,7 @@ It shields its wearer from harm at the cost of magical power.
 %%%%
 It has no special ego (it is not resistant to fire, etc), but is still enchanted in some way - positive or negative.
 
-この武器は特別な効果(耐火など)は持たないが、いずれにせよ魔法によって強化、あるいは弱化さてれいる。
+この武器は特別な効果(耐火など)は持たないが、いずれにせよ魔法によって強化、あるいは弱化されている。
 %%%%
 It improves your effectiveness with ranged weaponry (Slay+4).
 
