@@ -4588,7 +4588,7 @@ void gozag_deduct_bribe(branch_type br, int amount)
     if (branch_bribe[br] <= 0)
     {
         mprf(MSGCH_DURATION, jtransc("Your bribe of %s has been exhausted."),
-             branch_name_j(branches[br].longname));
+             branch_name_jc(branches[br].longname));
         add_daction(DACT_BRIBE_TIMEOUT);
     }
 }
@@ -4629,7 +4629,7 @@ bool gozag_check_bribe_branch(bool quiet)
             if (branch2 != NUM_BRANCHES)
                 mprf(jtransc("You can't bribe %s or %s."), who.c_str(), who2.c_str());
             else
-                mprf("You can't bribe %s.", who.c_str());
+                mprf(jtransc("You can't bribe %s."), who.c_str());
         }
         return false;
     }
