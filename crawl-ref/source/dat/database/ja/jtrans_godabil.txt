@@ -1346,15 +1346,15 @@ You stomp with the beat, sending a shockwave through the revelers around you!
 %%%%
 You can't repeat line pass.
 
-あなたは鎧袖一触を連続して繰り返すことはできない。
+あなたは連続して横切るのを繰り返すことはできない。
 %%%%
 Aiming: <white>Line Pass</white>
 
-照準: <white>鎧袖一触</white>
+照準: <white>横切り</white>
 %%%%
 Cancelling line pass due to HUP.
 
-HUPシグナルを受信したため、鎧袖一触を中断します。
+HUPシグナルを受信したため、横切るのを中断します。
 %%%%
 You cannot move away from %s!
 
