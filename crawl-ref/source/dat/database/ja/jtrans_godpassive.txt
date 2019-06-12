@@ -356,25 +356,13 @@ You are not bound in armour or jewellery.
 
 あなたは鎧も装身具も呪縛されていない。
 %%%%
-You are partically bound in armour or jewellery.
-
-あなたは鎧もしくは装身具が部分的に呪縛されている。
-%%%%
-You are fully bound in armour or jewellery.
-
-あなたは鎧もしくは装身具が完全に呪縛されている。
-%%%%
-You are partically bound in armour and jewellery.
+You are partially bound in armour and jewellery.
 
 あなたは鎧および装身具が部分的に呪縛されている。
 %%%%
 You are fully bound in armour and jewellery.
 
 あなたは鎧および装身具が完全に呪縛されている。
-%%%%
-or
-
-もしくは
 %%%%
 You are not bound in armour.
 
