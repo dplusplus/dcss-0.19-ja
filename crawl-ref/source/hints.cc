@@ -1717,8 +1717,8 @@ void learned_something_new(hints_event_type seen_what, coord_def gc)
                 "will be highlighted, and the symbol for the item on the top "
                 "of the heap will be shown.";
 #endif
-        break;
         */
+        break;
 
     case HINT_TRAP_BRAND:
 #ifdef USE_TILE
