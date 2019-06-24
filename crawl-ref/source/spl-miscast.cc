@@ -378,7 +378,7 @@ void MiscastEffect::do_msg(bool suppress_nothing_happens)
             msg = jtrans(mon_msg_seen);
         else
         {
-            msg = mon_msg_unseen;
+            msg = jtrans(mon_msg_unseen);
             // Can't see the hands of invisible monsters.
             ASSERT(msg.find("@hand") == string::npos);
         }
