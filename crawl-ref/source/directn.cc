@@ -3505,10 +3505,25 @@ string get_monster_equipment_desc(const monster_info& mi,
                                                 item_descriptions.end(),
                                                 "と", "、", "、および");
 
-    if (!item_description.empty() && !desc.empty())
-        desc += " (" + item_description + "を装備している)";
-    if (!carried_desc.empty() && !desc.empty())
-        desc += " (" + carried_desc + ")";
+    if (!desc.empty()) // ターゲット時
+    {
+        if (!item_description.empty())
+            desc += " (" + item_description + "を装備している)";
+        if (!carried_desc.empty())
+            desc += " (" + carried_desc + ")";
+    }
+    else // 遭遇時
+    {
+        if (!item_description.empty())
+            desc = item_description + "を装備している";
+        if (!carried_desc.empty())
+        {
+            if (!desc.empty())
+                desc = replace_all(desc, "を装備している", "を装備しており、" + carried_desc);
+            else
+                desc = carried_desc;
+        }
+    }
 
     return desc;
 }
