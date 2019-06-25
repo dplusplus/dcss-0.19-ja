@@ -1701,8 +1701,8 @@ bool drain_wands()
     if (wands.empty())
         return false;
 
-    mprf(MSGCH_PLAIN, make_stringf(jtransc("Magical energy is drained from %"),
-                                   to_separated_line(wands.begin(), wands.end())));
+    mprf(MSGCH_PLAIN, make_stringf(jtransc("Magical energy is drained from your %s"),
+                                   to_separated_line(wands.begin(), wands.end()).c_str()));
     return true;
 }
 
