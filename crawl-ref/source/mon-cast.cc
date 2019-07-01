@@ -7504,8 +7504,8 @@ static void _throw_ally_to(const monster &thrower, monster &throwee,
     throwee.check_redraw(old_pos);
 
     const string killed_by = make_stringf(jtransc("Hit by %s thrown by %s"),
-                                          throwee.name(DESC_A, true).c_str(),
-                                          thrower.name(DESC_PLAIN, true).c_str());
+                                          thrower.name(DESC_PLAIN, true).c_str(),
+                                          throwee.name(DESC_A, true).c_str());
     const int dam = foe->apply_ac(random2(thrower.get_hit_dice() * 2));
     foe->hurt(&thrower, dam, BEAM_NONE, KILLED_BY_BEAM, "", killed_by, true);
 
