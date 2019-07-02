@@ -262,7 +262,7 @@ sound_name
 遠くから聞こえる@_roaring_animal_name_@の怒れる咆哮
 
 # the chiming of a distant gong
-遠くからの聞こえる銅鑼の鳴る音
+遠くから聞こえる銅鑼の鳴る音
 
 # the sound of one hand clapping
 隻手音声
