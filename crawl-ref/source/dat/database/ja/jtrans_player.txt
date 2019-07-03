@@ -849,7 +849,7 @@ held in place by your roots
 %%%%
 [no_tele_reason()]wielding %s
 
-の装備
+%sの装備
 %%%%
 wearing %s %s preventing teleportation
 
