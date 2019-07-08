@@ -2182,27 +2182,33 @@ string scorefile_entry::death_description(death_desc_verbosity verbosity, bool a
         {
             // Note: This is also used for the "by" cases in non-verbose
             //       mode since listing the monster is more imporatant.
-            if (semiverbose)
+
+            if (_is_you(death_source_name))
             {
-                if (_is_you(death_source_name))
+                if (semiverbose)
+                {
                     desc += jtrans("Killed by themself") + beam_cause_line(verbosity);
-                else
-                    desc += make_stringf("%sで死んだ",
-                                         jtransc(death_source_desc()))
-                          + beam_cause_line(verbosity);
-            }
-            else if (!terse);
-            {
-                if (death_source_name == "you")
+                }
+                else if (!terse)
                 {
                     string cause = replace_all(beam_cause_line(verbosity), "を", "で");
                     desc += make_stringf(jtransc("Killed from afar by themself"),
                                          cause.c_str());
                 }
-                else
-                    desc += make_stringf(jtransc("Killed from afar by %s"),
-                                         jtransc(death_source_desc()),
-                                         beam_cause_line(verbosity).c_str());
+            }
+            else
+            {
+                desc += death_source_desc();
+
+                if (semiverbose)
+                    desc += jtrans("Killed by ");
+                else if (!terse)
+                    desc += "に";
+
+                desc += beam_cause_line(verbosity);
+
+                if (!semiverbose && !terse)
+                    desc += jtrans("Killed from afar by ");
             }
 
             if (!auxkilldata.empty())

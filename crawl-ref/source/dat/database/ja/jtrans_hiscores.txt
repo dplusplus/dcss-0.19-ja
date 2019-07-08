@@ -159,13 +159,21 @@ Killed %s
 
 %sで死んだ
 %%%%
+Killed by themself
+
+自分自身を殺した
+%%%%
+Killed by
+
+で死んだ
+%%%%
 Killed from afar by themself
 
 自分自身を%s撃って死んだ
 %%%%
-Killed from afar by %s
+Killed from afar by
 
-%sに%s撃たれて死んだ
+撃たれて死んだ
 %%%%
 Turned to ash by lava
 
