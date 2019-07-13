@@ -2377,7 +2377,7 @@ string scorefile_entry::death_description(death_desc_verbosity verbosity, bool a
             {
                 // A lot of sources for this case... some have "by" already.
                 desc += make_stringf(jtransc("Killed %s%s"),
-                          jtransc(auxkilldata),
+                          zap_name_jc(auxkilldata),
                           (auxkilldata.find("by ") != 0) ? "によって" : "");
             }
         }
@@ -2503,12 +2503,12 @@ string scorefile_entry::death_description(death_desc_verbosity verbosity, bool a
         break;
 
     case KILLED_BY_TSO_SMITING:
-        desc += terse? "smitten by Shining One" : "Smitten by the Shining One";
+        desc += jtrans(terse? "smitten by Shining One" : "Smitten by the Shining One");
         needs_damage = true;
         break;
 
     case KILLED_BY_BEOGH_SMITING:
-        desc += terse? "ベオの打擲" : "Smitten by Beogh";
+        desc += jtrans(terse? "ベオの打擲" : "Smitten by Beogh");
         needs_damage = true;
         break;
 
