@@ -388,7 +388,7 @@ moderate level book
 # Further Steps in @_the_book_magic_@
 
 # @_the_book_magic_@, Part @level@
-@_the_book_magic_@について 第@level巻
+@_the_book_magic_@について 第@level@巻
 
 # Advanced @_book_magic_@
 上級@_the_book_magic_@
