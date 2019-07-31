@@ -180,7 +180,7 @@ You can ignite nearby creatures when you spit burning liquid.
 %%%%
 breathe sticky flame splash
 
-<breathe sticky flame>
+<[ability]breathe sticky flame>
 %%%%
 [spec name]Pale Draconian
 
