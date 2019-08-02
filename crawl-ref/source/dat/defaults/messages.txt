@@ -99,7 +99,7 @@ msc += $warning:魔法のポータル.*パチパチ
 # msc += $warning:distant wind
 msc += $warning:遠くから風の音
 # msc += $warning:whistling.*wind
-msc += $warning:ヒュウヒュウと鳴く風の音
+msc += $warning:ヒュウヒュウと鳴く
 # msc += $warning:rapidly growing quiet
 msc += $warning:風の音は急に止んだ
 
