@@ -3270,152 +3270,152 @@ void melee_attack::do_spines()
                 mprf(jtransc("%s %s struck by %s %s."),
                      attacker->name(DESC_THE).c_str(),
                      defender->name(DESC_ITS).c_str());
-             }
-             attacker->hurt(defender, hurt, BEAM_MISSILE, KILLED_BY_SPINES);
-         }
-     }
- }
+            }
+            attacker->hurt(defender, hurt, BEAM_MISSILE, KILLED_BY_SPINES);
+        }
+    }
+}
 
- void melee_attack::emit_foul_stench()
- {
-     monster* mon = attacker->as_monster();
+void melee_attack::emit_foul_stench()
+{
+    monster* mon = attacker->as_monster();
 
-     if (you.mutation[MUT_FOUL_STENCH]
-         && attacker->alive()
-         && adjacent(you.pos(), mon->pos()))
-     {
-         const int mut = player_mutation_level(MUT_FOUL_STENCH);
+    if (you.mutation[MUT_FOUL_STENCH]
+        && attacker->alive()
+        && adjacent(you.pos(), mon->pos()))
+    {
+        const int mut = player_mutation_level(MUT_FOUL_STENCH);
 
-         if (one_chance_in(3))
-             mon->sicken(50 + random2(100));
+        if (one_chance_in(3))
+            mon->sicken(50 + random2(100));
 
-         if (damage_done > 4 && x_chance_in_y(mut, 5)
-             && !cell_is_solid(mon->pos())
-             && !cloud_at(mon->pos()))
-         {
-             mpr(jtrans("You emit a cloud of foul miasma!"));
-             place_cloud(CLOUD_MIASMA, mon->pos(), 5 + random2(6), &you);
-         }
-     }
- }
+        if (damage_done > 4 && x_chance_in_y(mut, 5)
+            && !cell_is_solid(mon->pos())
+            && !cloud_at(mon->pos()))
+        {
+            mpr(jtrans("You emit a cloud of foul miasma!"));
+            place_cloud(CLOUD_MIASMA, mon->pos(), 5 + random2(6), &you);
+        }
+    }
+}
 
- void melee_attack::do_minotaur_retaliation()
- {
-     if (!defender->is_player())
-     {
-         // monsters have no STR or DEX
-         if (x_chance_in_y(2, 5))
-         {
-             int hurt = attacker->apply_ac(random2(21));
-             if (you.see_cell(defender->pos()))
-             {
-                 const string defname = defender->name(DESC_THE);
-                 mprf(jtransc("%s furiously retaliates!"), defname.c_str());
-                 if (hurt <= 0)
-                 {
-                     mprf(jtransc("%s headbutts %s, but does no damage."), defname.c_str(),
-                          attacker->name(DESC_THE).c_str());
-                 }
-                 else
-                 {
-                     mprf(jtransc("%s headbutts %s%s"), defname.c_str(),
-                          attacker->name(DESC_THE).c_str(),
-                          attack_strength_punctuation(hurt).c_str());
-                 }
-             }
-             if (hurt > 0)
-             {
-                 attacker->hurt(defender, hurt, BEAM_MISSILE,
-                                KILLED_BY_HEADBUTT);
-             }
-         }
-         return;
-     }
+void melee_attack::do_minotaur_retaliation()
+{
+    if (!defender->is_player())
+    {
+        // monsters have no STR or DEX
+        if (x_chance_in_y(2, 5))
+        {
+            int hurt = attacker->apply_ac(random2(21));
+            if (you.see_cell(defender->pos()))
+            {
+                const string defname = defender->name(DESC_THE);
+                mprf(jtransc("%s furiously retaliates!"), defname.c_str());
+                if (hurt <= 0)
+                {
+                    mprf(jtransc("%s headbutts %s, but does no damage."), defname.c_str(),
+                         attacker->name(DESC_THE).c_str());
+                }
+                else
+                {
+                    mprf(jtransc("%s headbutts %s%s"), defname.c_str(),
+                         attacker->name(DESC_THE).c_str(),
+                         attack_strength_punctuation(hurt).c_str());
+                }
+            }
+            if (hurt > 0)
+            {
+                attacker->hurt(defender, hurt, BEAM_MISSILE,
+                               KILLED_BY_HEADBUTT);
+            }
+        }
+        return;
+    }
 
-     if (!form_keeps_mutations())
-     {
-         // You are in a non-minotaur form.
-         return;
-     }
-     // This will usually be 2, but could be 3 if the player mutated more.
-     const int mut = player_mutation_level(MUT_HORNS);
+    if (!form_keeps_mutations())
+    {
+        // You are in a non-minotaur form.
+        return;
+    }
+    // This will usually be 2, but could be 3 if the player mutated more.
+    const int mut = player_mutation_level(MUT_HORNS);
 
-     if (5 * you.strength() + 7 * you.dex() > random2(600))
-     {
-         // Use the same damage formula as a regular headbutt.
-         int dmg = 5 + mut * 3;
-         dmg = player_stat_modify_damage(dmg);
-         dmg = random2(dmg);
-         dmg = player_apply_fighting_skill(dmg, true);
-         dmg = player_apply_misc_modifiers(dmg);
-         dmg = player_apply_slaying_bonuses(dmg, true);
-         dmg = player_apply_final_multipliers(dmg);
-         int hurt = attacker->apply_ac(dmg);
+    if (5 * you.strength() + 7 * you.dex() > random2(600))
+    {
+        // Use the same damage formula as a regular headbutt.
+        int dmg = 5 + mut * 3;
+        dmg = player_stat_modify_damage(dmg);
+        dmg = random2(dmg);
+        dmg = player_apply_fighting_skill(dmg, true);
+        dmg = player_apply_misc_modifiers(dmg);
+        dmg = player_apply_slaying_bonuses(dmg, true);
+        dmg = player_apply_final_multipliers(dmg);
+        int hurt = attacker->apply_ac(dmg);
 
-         mpr(jtrans("You furiously retaliate!"));
-         dprf(DIAG_COMBAT, "Retaliation: dmg = %d hurt = %d", dmg, hurt);
-         if (hurt <= 0)
-         {
-             mprf(jtransc("You headbutt %s, but do no damage."),
-                  attacker->name(DESC_THE).c_str());
-             return;
-         }
-         else
-         {
-             mprf(jtransc("You headbutt %s%s"),
-                  attacker->name(DESC_THE).c_str(),
-                  attack_strength_punctuation(hurt).c_str());
-             attacker->hurt(&you, hurt);
-         }
-     }
- }
+        mpr(jtrans("You furiously retaliate!"));
+        dprf(DIAG_COMBAT, "Retaliation: dmg = %d hurt = %d", dmg, hurt);
+        if (hurt <= 0)
+        {
+            mprf(jtransc("You headbutt %s, but do no damage."),
+                 attacker->name(DESC_THE).c_str());
+            return;
+        }
+        else
+        {
+            mprf(jtransc("You headbutt %s%s"),
+                 attacker->name(DESC_THE).c_str(),
+                 attack_strength_punctuation(hurt).c_str());
+            attacker->hurt(&you, hurt);
+        }
+    }
+}
 
- /**
-  * Launch a long blade counterattack against the attacker. No sanity checks;
-  * caller beware!
-  *
-  * XXX: might be wrong for deep elf blademasters with a long blade in only
-  * one hand
-  */
- void melee_attack::riposte()
- {
-     if (you.see_cell(defender->pos()))
-     {
-         mprf(jtransc("%s riposte%s."), defender->name(DESC_THE).c_str(),
-              defender->is_player() ? "" : "s");
-     }
-     melee_attack attck(defender, attacker, 0, effective_attack_number + 1);
-     attck.is_riposte = true;
-     attck.attack();
- }
+/**
+ * Launch a long blade counterattack against the attacker. No sanity checks;
+ * caller beware!
+ *
+ * XXX: might be wrong for deep elf blademasters with a long blade in only
+ * one hand
+ */
+void melee_attack::riposte()
+{
+    if (you.see_cell(defender->pos()))
+    {
+        mprf(jtransc("%s riposte%s."), defender->name(DESC_THE).c_str(),
+             defender->is_player() ? "" : "s");
+    }
+    melee_attack attck(defender, attacker, 0, effective_attack_number + 1);
+    attck.is_riposte = true;
+    attck.attack();
+}
 
- bool melee_attack::do_knockback(bool trample)
- {
-     if (defender->is_stationary())
-         return false; // don't even print a message
+bool melee_attack::do_knockback(bool trample)
+{
+    if (defender->is_stationary())
+        return false; // don't even print a message
 
-     const int size_diff =
-         attacker->body_size(PSIZE_BODY) - defender->body_size(PSIZE_BODY);
-     const coord_def old_pos = defender->pos();
-     const coord_def new_pos = old_pos + old_pos - attack_position;
+    const int size_diff =
+        attacker->body_size(PSIZE_BODY) - defender->body_size(PSIZE_BODY);
+    const coord_def old_pos = defender->pos();
+    const coord_def new_pos = old_pos + old_pos - attack_position;
 
-     if (!x_chance_in_y(size_diff + 3, 6)
-         // need a valid tile
-         || !defender->is_habitable_feat(grd(new_pos))
-         // don't trample anywhere the attacker can't follow
-         || !attacker->is_habitable_feat(grd(old_pos))
-         // don't trample into a monster - or do we want to cause a chain
-         // reaction here?
-         || actor_at(new_pos)
-         // Prevent trample/drown combo when flight is expiring
-         || defender->is_player() && need_expiration_warning(new_pos))
-     {
-         if (needs_message)
-         {
-             mprf(jtransc("%s %s %s ground!"),
-                  defender_name(false).c_str(),
-                  defender->conj_verb_j("hold").c_str(),
-                  defender->pronoun_j(PRONOUN_POSSESSIVE).c_str());
+    if (!x_chance_in_y(size_diff + 3, 6)
+        // need a valid tile
+        || !defender->is_habitable_feat(grd(new_pos))
+        // don't trample anywhere the attacker can't follow
+        || !attacker->is_habitable_feat(grd(old_pos))
+        // don't trample into a monster - or do we want to cause a chain
+        // reaction here?
+        || actor_at(new_pos)
+        // Prevent trample/drown combo when flight is expiring
+        || defender->is_player() && need_expiration_warning(new_pos))
+    {
+        if (needs_message)
+        {
+            mprf(jtransc("%s %s %s ground!"),
+                 defender_name(false).c_str(),
+                 defender->conj_verb_j("hold").c_str(),
+                 defender->pronoun_j(PRONOUN_POSSESSIVE).c_str());
         }
 
         return false;
