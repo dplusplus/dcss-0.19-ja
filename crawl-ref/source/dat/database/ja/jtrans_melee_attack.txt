@@ -794,7 +794,7 @@ is struck by your spines.
 %%%%
 %s %s struck by %s %s.
 
-%s%s棘で傷ついた。
+%sは%s棘で傷ついた。
 %%%%
 You emit a cloud of foul miasma!
 
