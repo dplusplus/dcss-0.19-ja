@@ -572,6 +572,10 @@ is burned by acid!
 
 鞭打った
 %%%%
+[verb]pound
+
+叩きつけた
+%%%%
 [verb]slap
 
 打ちつけた
