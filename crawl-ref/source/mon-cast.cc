@@ -2540,7 +2540,7 @@ static bool _seal_doors_and_stairs(const monster* warden,
         ASSERT(!check_only);
         mprf(MSGCH_MONSTER_SPELL, jtransc("%s activates a sealing rune."),
                 (warden->visible_to(&you) ? warden->name(DESC_THE, true).c_str()
-                                          : "Someone"));
+                                          : jtransc("Someone")));
         if (num_closed > 1)
             mpr(jtrans("The doors slam shut!"));
         else if (num_closed == 1)
