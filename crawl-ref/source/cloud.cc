@@ -1063,7 +1063,7 @@ static bool _actor_apply_cloud_side_effects(actor *act,
         {
             const actor* agent = cloud.agent();
             poison_player(5 + roll_dice(3, 8), agent ? agent->name(DESC_A) : "",
-                          cloud.cloud_name());
+                          cloud.cloud_name_j());
         }
         else
             poison_monster(mons, cloud.agent());
@@ -1071,7 +1071,7 @@ static bool _actor_apply_cloud_side_effects(actor *act,
 
     case CLOUD_MIASMA:
         if (player)
-            miasma_player(cloud.agent(), cloud.cloud_name());
+            miasma_player(cloud.agent(), cloud.cloud_name_j());
         else
             miasma_monster(mons, cloud.agent());
         break;

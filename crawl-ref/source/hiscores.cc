@@ -2101,8 +2101,7 @@ string scorefile_entry::death_description(death_desc_verbosity verbosity, bool a
                                  death_source_name.empty() ? "" :
                                  (jtrans(death_source_name == "you" ? "their own" :
                                          death_source_name) + "の").c_str(),
-                                 death_source_name.empty() ? jtransc(auxkilldata)
-                                                           : "");
+                                 jtransc(auxkilldata));
         }
         needs_damage = true;
         break;
