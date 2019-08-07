@@ -1562,17 +1562,19 @@ string cloud_type_name_j(cloud_type type, bool terse)
         {
         case CLOUD_FIRE:
         case CLOUD_STEAM:
-            return _cloud_j(clouds[type].terse_name) + "の雲";
+            return _cloud_j(clouds[type].verbose_name) + "の雲";
 
         case CLOUD_RAIN:
         case CLOUD_STORM:
-            return _cloud_j(clouds[type].terse_name) + "雲";
+            return _cloud_j(clouds[type].verbose_name) + "雲";
 
         case CLOUD_COLD:
-        case CLOUD_TLOC_ENERGY:
         case CLOUD_FOREST_FIRE:
+#if TAG_MAJOR_VERSION == 34
+        case CLOUD_GLOOM:
+#endif
         case CLOUD_MIASMA:
-            return _cloud_j(clouds[type].terse_name);
+            return _cloud_j(clouds[type].verbose_name);
 
         default:
             return "buggy verbose flame";
