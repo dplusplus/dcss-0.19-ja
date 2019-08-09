@@ -6692,7 +6692,7 @@ void mons_cast(monster* mons, bolt pbolt, spell_type spell_cast,
         if (you.can_see(*mons))
         {
             mprf(jtransc("Space distorts along a thin shroud covering %s %s."),
-                 make_stringf(jtransc(mons->is_insubstantial() ? "%s form" : "%s body"),
+                 make_stringf(jtransc(mons->is_insubstantial() ? "{name}'s form" : "{name}'s body"),
                               mons->name(DESC_THE).c_str()).c_str());
         }
         mons->add_ench(mon_enchant(ENCH_SHROUD));
