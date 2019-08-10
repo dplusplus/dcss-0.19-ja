@@ -17,7 +17,7 @@ get_ench returned '%s' when asked for '%s'
 %%%%
 You %sdetect the %s %s.
 
-あなたは%s%sの姿を探知した。
+あなたは%sた%sの姿を探知した。
 %%%%
 You can no longer detect the %s %s.
 
