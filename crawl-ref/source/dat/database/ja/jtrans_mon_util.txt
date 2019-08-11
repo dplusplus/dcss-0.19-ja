@@ -25,7 +25,7 @@ in a puff of smoke
 %%%%
 The %s mimic %svanishes%s!
 
-%sのミミックは甲高く笑いながら%s消え去った！
+%sのミミックは%s%s消え去った！
 %%%%
 %s %s a mimic!
 

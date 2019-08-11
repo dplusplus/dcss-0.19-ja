@@ -1063,8 +1063,11 @@ static void _mimic_vanish(const coord_def& pos, const string& name)
 
     const string smoke_str = jtrans(can_place_smoke ? " in a puff of smoke" : "");
 
+    const bool can_cackle = !silenced(pos) && !silenced(you.pos());
+    const string cackle_str = can_cackle ? "甲高く笑いながら" : "";
+
     mprf(jtransc("The %s mimic %svanishes%s!"),
-         name.c_str(), smoke_str.c_str());
+         name.c_str(), cackle_str.c_str(), smoke_str.c_str());
     interrupt_activity(AI_MIMIC);
 }
 
