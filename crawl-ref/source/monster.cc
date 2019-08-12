@@ -1117,8 +1117,8 @@ bool monster::pickup(item_def &item, mon_inv_type slot, bool msg)
         {
             mprf(MSGCH_DIAGNOSTICS, jtransc("Item %s, held by monster %s, being "
                                             "picked up by monster %s."),
-                 item.name(DESC_PLAIN, false, true).c_str(),
                  other_mon->name(DESC_PLAIN, true).c_str(),
+                 item.name(DESC_PLAIN, false, true).c_str(),
                  name(DESC_PLAIN, true).c_str());
         }
     }
