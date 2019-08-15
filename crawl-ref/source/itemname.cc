@@ -178,15 +178,10 @@ string item_def::name(description_level_type descrip, bool terse, bool ident,
 
     monster_flags_t corpse_flags;
 
-    if ((base_type == OBJ_CORPSES && is_named_corpse(*this)
-         && !(((corpse_flags.flags = props[CORPSE_NAME_TYPE_KEY].get_int64())
-               & MF_NAME_SPECIES)
-              && !(corpse_flags & MF_NAME_DEFINITE))
-         && !(corpse_flags & MF_NAME_SUFFIX)
-         && !starts_with(get_corpse_name(*this), "shaped "))
-        || item_is_orb(*this) || item_is_horn_of_geryon(*this)
-        || (ident || item_type_known(*this)) && is_artefact(*this)
-            && special != UNRAND_OCTOPUS_KING_RING)
+    if (item_is_orb(*this) ||
+        item_is_horn_of_geryon(*this) ||
+        is_unrandom_artefact(*this) ||
+        (ident || item_type_known(*this)) && is_artefact(*this))
     {
         // Artefacts always get "the" unless we just want the plain name.
         switch (descrip)
@@ -207,11 +202,6 @@ string item_def::name(description_level_type descrip, bool terse, bool ident,
         case DESC_QUALNAME:
             break;
         }
-    }
-    else if (is_artefact(*this) && special == UNRAND_OCTOPUS_KING_RING)
-    {
-        if (descrip != DESC_DBNAME && descrip != DESC_BASENAME && descrip != DESC_QUALNAME)
-            buff << "★";
     }
     else if (quantity > 1)
     {
