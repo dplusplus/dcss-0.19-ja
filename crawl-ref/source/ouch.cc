@@ -826,7 +826,9 @@ void ouch(int dam, kill_method_type death_type, mid_t source, const char *aux,
 
     const bool is_torment = (aux && (strstr(aux, "torment")
                 || strstr(aux, "Torment")
-                || strstr(aux, "exploding lurking horror")));
+                || strstr(aux, "苦痛")
+                || strstr(aux, "exploding lurking horror")
+                || strstr(aux, jtransc("exploding lurking horror"))));
 
     // Multiply damage if amulet of harm is in play
     if (dam != INSTANT_DEATH)
