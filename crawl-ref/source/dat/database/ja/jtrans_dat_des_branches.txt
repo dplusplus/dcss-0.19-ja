@@ -157,21 +157,17 @@ The surface of the water froths suddenly, and then rushes away.
 %%%%
 #### dat/des/branches/slime.des ###############################
 %%%%
-An unexplained breeze blows through the dungeon.
+You feel a strange vibration for a moment.
 
-不可解なそよ風がダンジョンを通り抜けた。
+あなたは一瞬奇妙な振動を感じた。
 %%%%
 You hear the sound of toppling stones.
 
 あなたは石のぐらつく音を耳にした。
 %%%%
-Suddenly, all colour oozes out of the stone walls.
+The stone walls suddenly crumble and collapse.
 
-突然、石の壁からすべての色がにじみ出してきた。
-%%%%
-You feel a strange vibration for a moment.
-
-あなたは一瞬奇妙な振動を感じた。
+突然石の壁が砕けて崩れ去った。
 %%%%
 You feel a great sense of loss, and a brush of the Abyss.
 
