@@ -399,6 +399,10 @@ antique lich
 
 年季の入ったリッチ
 %%%%
+old memories
+
+太古の記憶
+%%%%
 One of the shadowy figures appears more solid!
 
 人影の一つが立体化した！
