@@ -2592,7 +2592,7 @@ static void _xom_statloss(int /*sever*/)
 
     const char* sstr[3] = { "Str", "Int", "Dex" };
     const string note = make_stringf(jtransc("stat loss: -%s %s (%d/%d)"),
-                                     sstr[stat], to_stringc(loss), you.stat(stat),
+                                     jtransc(sstr[stat]), to_stringc(loss), you.stat(stat),
                                      you.max_stat(stat));
 
     take_note(Note(NOTE_XOM_EFFECT, you.piety, -1, note), true);
