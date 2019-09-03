@@ -390,7 +390,7 @@ Powered by Death strength +%d=%d
 %%%%
 %s has departed this plane of existence.
 
-%sはこの次元からいなくなった。
+祖霊『%s』はこの次元からいなくなった。
 %%%%
 The vine%s fall%s limply to the ground.
 

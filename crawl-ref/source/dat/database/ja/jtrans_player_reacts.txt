@@ -45,7 +45,7 @@ You finish reciting %s
 %%%%
 %s emerges from the mists of memory!
 
-祖霊『%s』が記憶の霧の中から浮かび上がってきた！
+%sが記憶の霧の中から浮かび上がってきた！
 %%%%
 Your icy armour evaporates.
 

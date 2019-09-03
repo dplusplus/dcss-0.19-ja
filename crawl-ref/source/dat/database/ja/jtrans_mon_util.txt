@@ -414,5 +414,5 @@ not wounded
 %%%%
 %s regains %s memory of %s.
 
-祖霊『%s』は%sの呪文を思い出した。
+%sは%sの呪文を思い出した。
 %%%%

@@ -679,7 +679,7 @@ Jiyva's grace
 %%%%
 %s regains the memory of %s %s.
 
-祖霊『%s』は%sの記憶を取り戻した。
+%sは%sの記憶を取り戻した。
 %%%%
 unsupported object type
 
@@ -691,11 +691,11 @@ unsupported object type
 %%%%
 %s remembers more of %s old skill.
 
-祖霊『%s』は元の力を取り戻した。
+%sは元の力を取り戻した。
 %%%%
 %s remembers %s %s %s.
 
-祖霊『%s』の持つ%sは%s力を取り戻した。
+%sの持つ%sは%s力を取り戻した。
 %%%%
 grants you @servant@!
 

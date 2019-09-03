@@ -878,7 +878,7 @@ You have no magic power.
 %%%%
 %s is still trapped in memory!
 
-%sはまだ記憶の中に囚われている！
+祖霊『%s』はまだ記憶の中に囚われている！
 %%%%
 Stopping flight right now would be fatal!
 
