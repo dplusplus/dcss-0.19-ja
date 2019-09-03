@@ -689,6 +689,10 @@ unsupported object type
 
 %s%s
 %%%%
+of antimagic
+
+<[ego prefix]antimagic>
+%%%%
 %s remembers more of %s old skill.
 
 %sは元の力を取り戻した。
