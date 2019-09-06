@@ -265,7 +265,7 @@ shaped shifter
 %%%%
 [attr]inspiring fear
 
-恐怖に怯えている
+恐ろしげに見える
 %%%%
 [attr]catching %s breath
 
