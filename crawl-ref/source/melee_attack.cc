@@ -361,7 +361,7 @@ static string _melee_attack_particle(string verb)
 
     if (verb == "sucker-punch" || // 予想外の殴打を加えた
         verb == "karate-kick" || // 空手の蹴りを放った
-        verb == "release spore at" || // 胞子を振りまいた
+        verb == "release spores at" || // 胞子を振りまいた
         verb == "touch" || // 触れた
         verb == "headbutt" || // 頭突きをした
         verb == "pounce on" || // 襲いかかった
