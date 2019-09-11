@@ -126,6 +126,14 @@ Nature
 
 自然
 %%%%
+This door is covered in warnings. Open it anyway?
+
+この扉には警告文がびっしりと書き込まれている。構わずに開けますか？
+%%%%
+warning-scrawled
+
+警告文が殴り書きされた
+%%%%
 # ホルヘ・ルイス・ボルヘス『バベルの図書館』ネタらしい
 Dhcmrlchtdj
 
