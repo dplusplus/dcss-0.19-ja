@@ -2242,9 +2242,17 @@ void ShoppingList::gold_changed(int old_amount, int new_amount)
         }
         ASSERT(!descs.empty());
 
-        mprf(jtransc("You now have enough gold to {item list}."),
-             to_separated_line(descs.begin(), descs.end(),
-                               "、", "、", "、").c_str());
+        if (descs.size() > 1)
+        {
+            mprf(jtransc("You now have enough gold to {item list}."),
+                 to_separated_line(descs.begin(), descs.end(),
+                                   "、", "、", "、").c_str());
+        }
+        else
+        {
+            mprf(jtransc("You now have enough gold to {item}."),
+                 jtransc(descs[0]));
+        }
         mpr(jtrans("You can access your shopping list by pressing '$'."));
 
         // Our gold has changed, maybe we can buy different things now.

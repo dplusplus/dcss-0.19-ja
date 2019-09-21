@@ -209,6 +209,10 @@ You now have enough gold to {item list}.
 
 あなたは%sのどれかを購入するのに足る金貨を手にした。
 %%%%
+You now have enough gold to {item}.
+
+あなたは%sを購入するのに足る金貨を手にした。
+%%%%
 %d %s%s, total %d gold
 
 %d%s, 合計%dゴールド
