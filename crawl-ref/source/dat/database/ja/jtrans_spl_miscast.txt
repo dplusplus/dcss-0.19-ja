@@ -637,7 +637,7 @@ You shiver with cold.
 %%%%
 @The_monster@ is briefly tinged with black.
 
-@The_mosnter@は一瞬黒く染まった。
+@The_monster@は一瞬黒く染まった。
 %%%%
 The air has a black tinge for a moment.
 
@@ -1187,7 +1187,7 @@ Wisps of vapour drift from your @hands@.
 
 蒸気があなたの@hands@から湧きだした。
 %%%%
-Wisps of vapour drift from @the_monster@'s
+Wisps of vapour drift from @the_monster@'s @hands@.
 
 蒸気が@the_monster@の@hands@から湧きだした。
 %%%%
@@ -1349,7 +1349,7 @@ A ball of electricity appears!
 %%%%
 @The_monster@ is struck by twisting air!
 
-@The_mosnter@は渦巻く烈風に打ちすえられた！
+@The_monster@は渦巻く烈風に打ちすえられた！
 %%%%
 The air madly twists around a spot.
 
