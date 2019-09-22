@@ -2978,6 +2978,20 @@ string scorefile_entry::death_description_prefix(death_desc_verbosity verbosity)
         else if (death_type != KILLED_BY_QUITTING
                  && death_type != KILLED_BY_WIZMODE)
         {
+            if (!semiverbose)
+            {
+                if (you.duration[DUR_PARALYSIS])
+                {
+                    desc += "... ";
+                    if (you.props.exists("paralysed_by"))
+                        desc += jtrans(you.props["paralysed_by"].get_string())
+                              + "によって麻痺させられた間に";
+                    else
+                        desc += jtrans("... while paralysed");
+                    desc += _hiscore_newline_string();
+                }
+            }
+
             if (!killerpath.empty())
             {
                 vector<string> summoners = _xlog_split_fields(killerpath);
@@ -3003,20 +3017,6 @@ string scorefile_entry::death_description_prefix(death_desc_verbosity verbosity)
                 }
                 else
                     desc += make_stringf("%sを手にした", auxkilldata.c_str());
-            }
-
-            if (!semiverbose)
-            {
-                if (you.duration[DUR_PARALYSIS])
-                {
-                    desc += "... ";
-                    if (you.props.exists("paralysed_by"))
-                        desc += jtrans(you.props["paralysed_by"].get_string())
-                              + "によって麻痺させられた間に";
-                    else
-                        desc += jtrans("... while paralysed");
-                    desc += _hiscore_newline_string();
-                }
             }
         }
     }
