@@ -124,7 +124,7 @@ The relative cost of raising each skill is in <cyan>cyan</cyan> (or <lightgreen>
 
 強化
 %%%%
-[skill menu state]forcus
+[skill menu state]focus
 
 集中強化
 %%%%
