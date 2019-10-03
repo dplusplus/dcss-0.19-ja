@@ -89,7 +89,7 @@ You can't see a target there!
 %%%%
 %s %s %s.
 
-%sの%s%s。
+%s%s%s。
 %%%%
 [verb]twitch
 

@@ -771,7 +771,7 @@ static bool _check_tukima_validity(const actor *target)
             const string hand = target->hand_name(true, &plural);
 
             mprf(jtransc("%s %s %s."),
-                 apostrophise(target->name(DESC_THE)).c_str(),
+                 target->name(DESC_ITS).c_str(),
                  hand.c_str(), conjugate_verb_j("twitch", plural).c_str());
         }
         return false;
