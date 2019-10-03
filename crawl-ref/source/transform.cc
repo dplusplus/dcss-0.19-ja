@@ -1862,7 +1862,7 @@ bool transform(int pow, transformation_type which_trans, bool involuntary,
 
     if (you.digging && !form_keeps_mutations(which_trans))
     {
-        mpr(("Your mandibles meld away."));
+        mpr(jtrans("Your mandibles meld away."));
         you.digging = false;
     }
 
