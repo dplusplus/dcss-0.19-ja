@@ -993,7 +993,7 @@ static void _mummy_curse(monster* mons, int pow, killer_type killer, int index)
              target->name(DESC_THE).c_str());
     }
     const string cause = make_stringf(jtransc("%s death curse"),
-                            apostrophise(mons->name(DESC_A)).c_str());
+                                      mons->name(DESC_A).c_str());
     MiscastEffect(target, mons, MUMMY_MISCAST, SPTYP_NECROMANCY,
                   pow, random2avg(88, 3), cause.c_str());
 }
