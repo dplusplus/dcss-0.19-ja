@@ -1823,7 +1823,7 @@ string scorefile_entry::terse_beam_cause() const
 {
     string cause = zap_name_j(auxkilldata);
 
-    if (cause.find(jtrans("By ")) != string::npos);
+    if (cause.find(jtrans("By ")) != string::npos)
         cause = replace_all(cause, jtrans("By "), "");
 
     return cause;
