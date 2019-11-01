@@ -4805,10 +4805,10 @@ void bolt::affect_monster(monster* mon)
                 mpr(jtrans("Your demonic guardian avoids your attack."));
             else if (!bush_immune(*mon))
             {
-                simple_god_message(jtrans(
+                simple_god_message(
                     make_stringf(" protects %s plant from harm.",
                         attitude == ATT_FRIENDLY ? "your" : "a").c_str(),
-                    GOD_FEDHAS));
+                    GOD_FEDHAS);
             }
         }
     }
