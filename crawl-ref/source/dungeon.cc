@@ -6736,7 +6736,7 @@ bool vault_placement::is_space(const coord_def &c)
 {
     // Can't check outside bounds of vault
     if (size.zero() || c.x > size.x || c.y > size.y)
-        return (bool)NUM_FEATURES;
+        return true;
 
     const int feat = map.map.glyph(c);
     return feat == ' ';
@@ -6745,7 +6745,7 @@ bool vault_placement::is_exit(const coord_def &c)
 {
     // Can't check outside bounds of vault
     if (size.zero() || c.x > size.x || c.y > size.y)
-        return (bool)NUM_FEATURES;
+        return true;
 
     const int feat = map.map.glyph(c);
     return feat == '@';
