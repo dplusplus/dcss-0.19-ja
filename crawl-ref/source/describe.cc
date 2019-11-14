@@ -3500,7 +3500,6 @@ static string _monster_stat_description(const monster_info& mi)
                                                nlpronoun_is, nlpronoun_is);
             }
         }
-        result << jtrans_notrim(".\n");
     }
     else if (did_speed)
         result << jtrans_notrim(".\n");
