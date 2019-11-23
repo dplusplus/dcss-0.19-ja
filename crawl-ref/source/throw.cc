@@ -855,7 +855,7 @@ bool throw_it(bolt &pbolt, int throw_2, dist *target)
     // Create message.
     mprf(jtransc("You %s%s %s."),
          jtransc(teleport ? "magically " : ""),
-         ammo_name.c_str(),
+         tagged_jtransc("[ammo]", ammo_name),
          verb_jc(projected == LRET_FUMBLED ? "toss away" :
                  projected == LRET_LAUNCHED ? "shoot" : "throw"));
 
