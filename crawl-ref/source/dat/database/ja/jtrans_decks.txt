@@ -401,7 +401,7 @@ is moving somewhat quickly.
 %%%%
 drawing a card
 
-天罰のカードを引いたこと
+放浪のカードを引いたこと
 %%%%
 A shaft materialises beneath you!
 
