@@ -1084,8 +1084,8 @@ void bolt::affect_wall()
             && !is_targeting && YOU_KILL(thrower) && !dont_stop_trees)
         {
             const string prompt =
-                make_stringf(make_stringf(jtransc("Are you sure you want to %s %s?"),
-                             burns_trees ? "burn" : "destroy").c_str(),
+                make_stringf(jtransc(burns_trees ? "Are you sure you want to burn %s?"
+                                                 : "Are you sure you want to destroy %s?"),
                              feature_description_at(pos(), false, DESC_THE,
                                                     false).c_str());
 

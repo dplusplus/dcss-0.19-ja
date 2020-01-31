@@ -99,11 +99,11 @@ You hear timber falling.
 %%%%
 Are you sure you want to burn %s?
 
-本当に%%sを燃やしますか？
+本当に%sを燃やしますか？
 %%%%
 Are you sure you want to destroy %s?
 
-本当に%%sを破壊しますか？
+本当に%sを破壊しますか？
 %%%%
 Your line of fire to {name} is blocked by {feat}. Continue anyway?
 
