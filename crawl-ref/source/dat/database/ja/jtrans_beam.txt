@@ -773,7 +773,7 @@ By Zin's power, the %s is contained.
 %%%%
 [beam name]acid
 
-<[zap]>acid
+<[zap]acid>
 %%%%
 [beam name]miasma
 
