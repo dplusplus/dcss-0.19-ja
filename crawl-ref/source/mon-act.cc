@@ -3811,7 +3811,7 @@ static bool _monster_move(monster* mons)
                     const bool actor_visible = you.can_see(*mons);
                     mprf(jtransc("%s knocks down a tree!"),
                          actor_visible?
-                         mons->name(DESC_THE).c_str() : "Something");
+                         mons->name(DESC_THE).c_str() : jtransc("Something"));
                     noisy(25, target);
                 }
                 else
