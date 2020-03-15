@@ -87,6 +87,12 @@ The fountain becomes smaller until it vanishes.
 
 噴水はだんだんと小さくなって消えてしまった。
 %%%%
+#### dat/des/variable/large_themed.des #######################
+%%%%
+You hear a hidden mechanism click...the prison walls lower!
+
+あなたは目に見えぬからくりが音を立てるのを耳にした……牢獄の壁が床に沈んだ！
+%%%%
 #### dat/des/variable/mini_monsters.des #######################
 %%%%
 strange structure made of doors
