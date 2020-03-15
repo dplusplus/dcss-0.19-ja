@@ -547,8 +547,8 @@ static string _gen_randlevel_name(int level, god_type god)
 
     if (bookname.find("@level@", 0) != string::npos)
     {
-        const string level_name = uppercase_first(number_in_words(level));
-        bookname = replace_all(bookname, "@level@", level_name);
+        const string num[10] = {"零", "一", "二", "三", "四", "五", "六", "七", "八", "九"};
+        bookname = replace_all(bookname, "@level@", num[level]);
     }
 
     if (bookname.empty())
