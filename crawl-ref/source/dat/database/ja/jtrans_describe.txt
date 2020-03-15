@@ -1772,7 +1772,7 @@ cause pain to the living
 %%%%
 ensnare with webbing
 
-網で絡めとる攻撃
+網で絡めとる攻撃を行う
 %%%%
 engulf with water
 
