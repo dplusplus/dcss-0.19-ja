@@ -21,7 +21,7 @@ Your mindless thrall stays behind.
 %%%%
 's fungi set to work.
 
-胞子が動き出した。
+の胞子が動き出した。
 %%%%
 #ifdef DEBUG_LEVEL_LOAD
 Loading... branch: %d, level: %d

@@ -225,7 +225,7 @@ This flesh (%d) tastes buggy!
 %%%%
 This %sblood tastes delicious!
 
-この%s血は美味だ！
+この%s血液はとてもおいしい！
 %%%%
 warm
 
@@ -257,7 +257,7 @@ You aren't quite hungry enough to eat that!
 %%%%
 There is no blood in this body!
 
-この死体は血が流れていない！
+この死体には血が通っていない！
 %%%%
 You feel more resilient.
 

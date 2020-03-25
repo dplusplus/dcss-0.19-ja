@@ -53,7 +53,7 @@ It causes incoming damage to be split between your health and magic.
 %%%%
 It allows you to gain divine favour quickly.
 
-この%sを身につけていると神の関心をより引きやすくなる。
+この%sを身につけていると神の歓心をより引きやすくなる。
 %%%%
 It shields you and reflects attacks.
 
@@ -778,7 +778,7 @@ It hits all enemies adjacent to the wielder, dealing less damage to those not ta
 %%%%
 It can be used to riposte, swiftly retaliating against a missed attack.
 
-この武器は躱した攻撃に対し反撃を加えることができる。
+この武器は躱した攻撃に対し鮮やかな反撃を加えることができる。
 %%%%
 [adj]extremely
 
@@ -884,7 +884,7 @@ It inflicts extra damage upon your enemies.
 %%%%
 Each projectile launched from it has a different, random effect.
 
-この武器から放たれた射出物が当たるたびに異なった効果が発揮される。
+この武器から射出物を放つたびに予測できない異なった効果が発揮される。
 %%%%
 Each time it hits an enemy it has a different, random effect.
 
@@ -1284,11 +1284,11 @@ It falls into the 'Staves' category.
 %%%%
 Once activated, this device (and all other devices of its kind) will be rendered temporarily inert. However, (they|it) will recharge as you gain experience.
 
-一度発動した場合このアイテム%sは一時的に使用不能になるものの、あなたが経験を積むにしたがって再び使用可能になる。
+一度発動した場合このアイテム%sは一時的に使用不能になるものの、あなたが経験値を取得するにしたがって再び使用可能になる。
 %%%%
 and all other devices of its kind
 
-および同種のアイテム
+(および他の同種のアイテム全て)
 %%%%
 The device is presently inert.
 
@@ -1344,7 +1344,7 @@ A cloud of {cloud}.
 %%%%
 Press '<w>!</w>' or <w>Right-click</w> to toggle between the description and quote.
 
-解説と引用を切り替えるには '<w>!</w>' を押すか右クリックしてください。
+解説と引用を切り替えるには '<w>!</w>' を押すか<w>右クリック</w>してください。
 %%%%
 Press '<w>!</w>' to toggle between the description and quote.
 
@@ -1416,7 +1416,7 @@ Replace inscription with what?
 %%%%
 Inscribe with what?
 
-どういう銘を付けますか？
+どういう銘を上書きしますか？
 %%%%
 Level: %d
 
@@ -1976,7 +1976,7 @@ resistant to {resist list}.
 %%%%
 %s covers ground more quickly when invisible.
 
-%sは見えなくなっている間素早く移動できる。
+%sは見えなくなっている間さらに素早く移動できる。
 %%%%
 %s can fly.
 

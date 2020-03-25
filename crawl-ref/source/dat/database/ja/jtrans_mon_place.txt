@@ -146,7 +146,7 @@ Created %s.
 %%%%
 %s is revulsed by your support of nature!
 
-%sは自然の助けに嫌悪感を抱いた！
+%sはあなたの自然への働きかけに嫌悪感を抱いた！
 %%%%
 %s is enraged by your evilness!
 

@@ -61,7 +61,7 @@ You aren't carrying any food.
 %%%%
 You aren't carrying any potions.
 
-あなたは薬を持っていない。
+あなたは水薬を持っていない。
 %%%%
 You aren't carrying any spellbooks or scrolls.
 

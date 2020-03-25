@@ -353,7 +353,7 @@ Triple draw from which deck?
 %%%%
 You draw... (choose one card, ? for their descriptions)
 
-あなたはカードを引いた…… (カードを選択してください。? キーで解説を表示)
+あなたの引くカードは…… (カードを選択してください。? キーで解説を表示)
 %%%%
 You %s a card...
 

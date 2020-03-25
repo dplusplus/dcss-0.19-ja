@@ -1,7 +1,7 @@
 %%%%
 %s slides away as you move %s it!
 
-あなたが%sの%sに進むとそれは滑るように移動した。
+あなたが%sの%sに進むとそれは滑るように移動した！
 %%%%
 Really %s into that cloud of %s?
 
@@ -153,11 +153,11 @@ invalid slot: %d
 %%%%
 Your amulet attunes itself to your body and you begin to regenerate more quickly.
 
-護符があなたの体と同調し、あなたはより速く再生するようになった。
+護符があなたの体に順応し、あなたはより速く再生するようになった。
 %%%%
 Your amulet attunes itself to your body and you begin to regenerate magic more quickly.
 
-護符があなたの体と同調し、あなたの魔力はより速く再生するようになった。
+護符があなたの体に順応し、あなたの魔力はより速く再生するようになった。
 %%%%
 You feel the corruption within you wane completely.
 
@@ -230,7 +230,7 @@ You can now transform into a vampire bat.
 %%%%
 Your skin feels tougher.
 
-あなたの皮膚は丈夫になった。
+あなたの皮膚はより硬くなった。
 %%%%
 Your scales start taking on a fiery red colour.
 
@@ -302,7 +302,7 @@ demonic ancestry
 %%%%
 Your scales feel tougher.
 
-あなたの鱗は丈夫になった。
+あなたの鱗はより強固になったようだ。
 %%%%
 XP before: %d
 
@@ -522,7 +522,7 @@ You are illuminated by a small divine halo.
 %%%%
 An external divine halo illuminates you.
 
-あなたは神聖な光輪に照らされている。
+あなたは他者の放つ神聖な光輪に照らされている。
 %%%%
 # Your base attributes are Str %d, Int %d, Dex %d.
 
@@ -918,7 +918,7 @@ Your divine stamina protects you from petrification!
 %%%%
 Your limbs have turned to stone.
 
-あなたの体は石へと変わった。
+あなたの手足は石へと変わった。
 %%%%
 You are slowing down.
 
@@ -994,7 +994,7 @@ You escape %s grasp.
 %%%%
 %s grasp on you weakens, but your attempt to escape fails.
 
-%sの束縛は緩んだものの、そこから逃れるまでには至らなかった。
+%s束縛は緩んだものの、そこから逃れるまでには至らなかった。
 %%%%
 The mark upon you grows brighter.
 

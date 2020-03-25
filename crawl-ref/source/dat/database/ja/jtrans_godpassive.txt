@@ -330,7 +330,7 @@ drain nearby creatures when transferring your ancestor
 %%%%
 You hear a distant slurping noise.
 
-あなたは遠くで物を食べる音を耳にした。
+あなたは遠くで物を食べるような音を耳にした。
 %%%%
 [hands act]your hands are bound.
 

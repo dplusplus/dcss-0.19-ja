@@ -1,7 +1,7 @@
 %%%%
 Couldn't open %s for writing!
 
-ファイル%sを書き込み用として開くことができません！
+ファイル'%s'を書き込み用として開くことができません！
 %%%%
 (Key replay ran out of keys)
 

@@ -65,7 +65,7 @@ As %s %s, the sound returns.
 %%%%
 is destroyed
 
-動きを止める
+倒れる
 %%%%
 dies
 
@@ -125,7 +125,7 @@ You can no longer detect the %s.
 %%%%
 breaks free of your control!
 
-はあなたの束縛から逃れた！
+はあなたの支配下から逃れた！
 %%%%
 is no longer charmed.
 

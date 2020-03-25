@@ -115,7 +115,7 @@ the targeted %s
 %%%%
 %s appears from out of your range of vision.
 
-%sがあなたの視界の外から飛んできた！
+%sがあなたの視界の外から飛んできた。
 %%%%
 completely resists.
 
@@ -385,9 +385,9 @@ by dispel undead
 %%%%
 You are blasted!
 
-あなたは爆破された！
+あなたは分解された！
 %%%%
-disintegration bolt
+[zap]disintegration bolt
 
 分解の矢
 %%%%
@@ -441,7 +441,7 @@ The barbed spikes become lodged in your body.
 %%%%
 # You are encased in ice.
 
-# jtrans_art_funcと重複
+# jtrans_art_func.txtと重複
 %%%%
 is dazzled.
 
@@ -545,7 +545,7 @@ convulses!
 %%%%
 is blasted.
 
-は爆破された。
+は分解された。
 %%%%
 looks drowsy...
 

@@ -205,7 +205,7 @@ shaped shifter
 %%%%
 [attr]softly glowing
 
-輝いている
+柔らかく輝いている
 %%%%
 [attr]frenzied and insane
 

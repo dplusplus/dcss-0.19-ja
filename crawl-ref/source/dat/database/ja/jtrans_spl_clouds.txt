@@ -21,7 +21,7 @@ You can't place the cloud on a creature.
 %%%%
 The fire roars!
 
-炎は燃え上がった！
+炎が燃え上がった！
 %%%%
 A cloud of flames roars to life!
 

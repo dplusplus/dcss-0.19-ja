@@ -94,7 +94,6 @@ Piety increases by 1 due to piety pool.
 #if defined(DEBUG_DIAGNOSTICS) || defined(DEBUG_SACRIFICE) || defined(DEBUG_PIETY)
 Piety pool is now empty.
 
-
 %%%%
 The winds around you start to calm down.
 

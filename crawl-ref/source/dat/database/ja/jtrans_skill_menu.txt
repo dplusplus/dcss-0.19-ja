@@ -61,7 +61,7 @@ Press the letter of a skill to choose whether you want to practise it. Skills ma
 %%%%
 Press the letter of a skill to cycle between <darkgrey>disabled</darkgrey> (<darkgrey>-</darkgrey>), enabled (+) and <white>focused</white> (<white>*</white>). Focused skills train twice as fast relative to others.
 
-スキルを何度か選択すると(-),(+),(*)と表示されます。(*)の状態では普段より多くの経験値が振り分けられます。
+スキルを何度か選択すると(<darkgrey>-<darkgrey>),(+),(<white>*</white>)と表示されます。(*)の状態では普段より多くの経験値が振り分けられます。
 %%%%
 Heroism
 
@@ -238,7 +238,7 @@ Select the skills you want to be trained. The chosen skills will be raised to th
 %%%%
 The species aptitude is in <white>white</white>.
 
-種族ごとの適性値は<white>白色</white>で表示されます。
+種族ごとの適性値は<white>明るい白</white>で表示されます。
 %%%%
 Bonus from skill manuals is in <lightgreen>green</lightgreen>.
 

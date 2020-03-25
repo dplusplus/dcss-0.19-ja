@@ -17,7 +17,7 @@ Spellbook "%s" contains no spells! Please file a bug report.
 %%%%
 You already know all available spells.
 
-あなたは既にあらゆる呪文を習得している。
+あなたは習得可能な呪文をすべて習得している。
 %%%%
 You cannot currently memorise any of the available spells because you cannot use those schools of magic.
 
@@ -25,7 +25,7 @@ You cannot currently memorise any of the available spells because you cannot use
 %%%%
 You cannot memorise any of the available spells.
 
-あなたはこれらのどの呪文を記憶することができない。
+あなたはこれらのどの呪文も記憶することができない。
 %%%%
 You can't memorise any new spells for an unknown reason; please file a bug report.
 

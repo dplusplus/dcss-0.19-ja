@@ -193,7 +193,7 @@ You pick up the Orb of Zot!
 %%%%
 Now all you have to do is get back out of the dungeon!
 
-今あなたがすべきことはダンジョンの脱出のみだ！
+これで後はダンジョンから脱出するだけだ！
 %%%%
 %s (gained %d)
 
@@ -266,7 +266,7 @@ Sorry, no books on that skill today.
 ## turns away from rotting? [ENTER for fully fresh]
 wishing blood potion prompt
 
-腐敗するまで何ターンを指定しますか？ [Enterで最大ターンになります]
+腐敗するまで何ターンに指定しますか？ [Enterで最大ターンになります]
 %%%%
 You have identified the last %s.
 

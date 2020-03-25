@@ -658,15 +658,15 @@ Resurrect %s?
 %%%%
 There's nobody else here you can resurrect.
 
-蘇らせることのできる死体は他になかった。
+ここには他に蘇らせることのできる死体はなかった。
 %%%%
 There's nobody here you can resurrect.
 
-蘇らせることのできる死体はなかった。
+ここには蘇らせることのできる死体はなかった。
 %%%%
 There's no room!
 
-部屋がない！
+蘇らせる場所がない！
 %%%%
 You have no bad mutations to be cured!
 
@@ -862,7 +862,7 @@ You must target a plant or fungus.
 %%%%
 You can evolve only complete plants, not seeds.
 
-あなたが進化させられるのは生長した植物であり、種ではない。
+あなたが進化させられるのは生長した植物であり、種子ではない。
 %%%%
 Only plants or fungi may be evolved.
 
@@ -946,7 +946,7 @@ There's no one hasty visible. Invoke Slouch anyway?
 %%%%
 You can feel time thicken for a moment.
 
-あなたは時間の流れが濃密になるのを感じ取れた。
+あなたは時間の流れが濃密になるのを感じ取ることができた。
 %%%%
 You warp the flow of time around you!
 
@@ -1282,7 +1282,7 @@ You burst free from the net!
 %%%%
 You can't repeat power leap.
 
-あなたは力強き跳躍を連続しては行えない。
+あなたは力強き跳躍を連続して行うことはできない。
 %%%%
 Aiming: <white>Power Leap</white>
 

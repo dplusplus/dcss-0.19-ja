@@ -169,15 +169,15 @@ You cannot set exclusions on this level.
 %%%%
 Placed new exclusion.
 
-新たな立入禁止区域を設定した。
+新たな立入禁止区域を設定しました。
 %%%%
 Removed exclusion.
 
-立入禁止区域を解除した。
+立入禁止区域を解除しました。
 %%%%
 Reduced exclusion size to a single square.
 
-立入禁止区域をこのマスに限定した。
+立入禁止区域をこのマスに限定しました。
 %%%%
 [unseen terrain]
 
@@ -197,7 +197,7 @@ There is %s here.
 %%%%
 There is an entrance to %s here.
 
-ここには%sの入口がある。
+ここには%sの入り口がある。
 %%%%
 Beware, the minotaur awaits!
 
@@ -250,10 +250,6 @@ awoken
 wielding %s
 
 %sを装備している
-%%%%
-{pronoun} is {ench desc list}.
-
-%sは%s。
 %%%%
 sleepwalking
 

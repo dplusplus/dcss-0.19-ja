@@ -122,7 +122,7 @@ Can't repeat entering explore mode
 %%%%
 You're standing next to a slime covered wall!
 
-あなたはスライムに覆われた岩の壁のそばに立っている！
+あなたはスライムに覆われた壁のそばに立っている！
 %%%%
 You're about to run into the slime covered wall!
 
@@ -134,7 +134,7 @@ You can't repeat informational commands.
 %%%%
 You can't repeat multi-turn commands.
 
-ターンをまたぐコマンドを繰り返すことはできません。
+複数ターンかかるコマンドを繰り返すことはできません。
 %%%%
 You can't repeat that command.
 
@@ -210,15 +210,15 @@ A magical barricade bars your way!
 %%%%
 You can't go down here!
 
-ここでは降りられない！
+ここでは降りることができない！
 %%%%
 You can't go up here!
 
-ここでは上れない！
+ここでは上ることができない！
 %%%%
 You need a rune to enter this place.
 
-この場所に入るにはルーンが必要だ。
+この場所に入るにはルーンがひとつ必要だ。
 %%%%
 You need at least %d runes to enter this place.
 
@@ -448,7 +448,7 @@ You are cast deeper into the Abyss!
 %%%%
 The Abyss bends around you!
 
-あなたの周囲の空間が歪曲した。
+あなたの周囲の空間が歪曲した！
 %%%%
 Your passage of Golubria closes with a snap!
 
@@ -512,7 +512,7 @@ Are you sure you want to %s while confused and next to %s, when you might land i
 %%%%
 You're too confused to attack without stumbling around!
 
-あなたは混乱していたので、攻撃しようとしてよろめいてしまった。
+あなたは混乱していたので、攻撃しようとしてよろめいてしまった！
 %%%%
 You nearly hit yourself!
 
@@ -540,7 +540,7 @@ The door is shut tight!
 %%%%
 It's already open!
 
-既に開いている！
+扉は既に開いている！
 %%%%
 That door is sealed shut!
 
@@ -568,7 +568,7 @@ You can't close doors on yourself!
 %%%%
 It's already closed!
 
-既に閉まっている！
+扉は既に閉まっている！
 %%%%
 There isn't anything that you can close there!
 
@@ -656,7 +656,7 @@ You nearly stumble into %s!
 %%%%
 The barbs in your skin will harm you if you move. Continue?
 
-あなたの体に食い込んだ逆棘は動くたびに傷を広げる。それでも移動しますか？
+あなたの体に食い込んだ逆棘は動くと傷を広げてしまう。それでも移動しますか？
 %%%%
 You deftly slip free of the water engulfing you.
 
@@ -672,7 +672,7 @@ You dig through %s.
 %%%%
 The barbed spikes dig painfully into your body as you move.
 
-あなたが動いたせいで逆棘はさらに食い込んだ。
+あなたが動くと逆棘はさらに食い込んだ。
 %%%%
 The barbed spikes snap loose.
 

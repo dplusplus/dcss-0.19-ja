@@ -194,7 +194,7 @@ forget spells at will
 %%%%
 go berserk at will
 
-自分の意志でバーサークすること
+自分がしたいときにバーサークすること
 %%%%
 call upon Trog for regeneration and protection from hostile enchantments
 
@@ -211,7 +211,7 @@ call upon Trog to burn spellbooks in your surroundings
 %%%%
 choose one out of three cards
 
-デッキから3枚引いた中から1枚カードを選んで使うこと
+カードを3枚引いてそのうちの1枚を選ぶこと
 %%%%
 deal four cards at a time
 
@@ -255,7 +255,7 @@ depart the Abyss
 %%%%
 depart the Abyss at will
 
-自分の意志でアビスから離脱すること
+自分がしたいときにアビスから離脱すること
 %%%%
 bend space around yourself
 
@@ -391,7 +391,7 @@ Ashenzari no longer reveals the unseen.
 %%%%
 Ashenzari keeps your mind clear.
 
-アシェンザリはあなたの思考を明瞭に保ってくれる。
+アシェンザリはあなたの思考を明瞭に保つ。
 %%%%
 Ashenzari no longer keeps your mind clear.
 
@@ -603,7 +603,7 @@ Your vision regains its divine sight.
 %%%%
 restores the support of your attributes.
 
-は再びあなたの能力値を強化した。
+はあなたの能力値を元通り強化した。
 %%%%
 A storm instantly forms around you!
 
@@ -839,11 +839,11 @@ reclaims all of your granted undead slaves!
 %%%%
 All of your followers decide to abandon you.
 
-従者たちはあなたを見捨てることを決意した。
+従者たちは皆あなたを見捨てることを決意した。
 %%%%
 All of your fellow slimes turn on you.
 
-仲間のスライムたちはあなたに敵対した。
+仲間のスライムたちは皆あなたに敵対した。
 %%%%
 The plants of the dungeon turn on you.
 
@@ -1083,13 +1083,9 @@ Which god (%s)?
 %%%%
 Bad god, no bishop!
 
-
+# for die()
 %%%%
 INT_MAX is no good
 
-
-%%%%
-@servant@
-
-
+# for die()
 %%%%

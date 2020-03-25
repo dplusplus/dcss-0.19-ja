@@ -525,7 +525,7 @@
 %%%%
 [feature]sealed passage leading down
 
-封印された下り経路
+魔法で封印された下り経路
 %%%%
 [feature]gateway leading deeper into the Abyss
 

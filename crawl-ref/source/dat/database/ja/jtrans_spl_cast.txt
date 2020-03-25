@@ -71,7 +71,7 @@ Casting: <w>%s</w>
 %%%%
 Confirm with . or Enter, or press ? or * to list all spells.
 
-. またはEnterで前回のと同じ呪文を唱えるか、? または * で一覧から選択してください。
+. またはEnterで前回と同じ呪文を唱えるか、? または * で一覧から選択してください。
 %%%%
 # You don't know that spell.
 

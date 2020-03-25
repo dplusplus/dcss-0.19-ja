@@ -69,7 +69,7 @@ Stat loss points: %d
 %%%%
 Your divine stamina protects you from %s loss.
 
-あなたの活性化された生命力が%sの喪失をはねのけた！
+あなたの活性化された生命力が%sの喪失をはねのけた。
 %%%%
 You feel your %s returning.
 

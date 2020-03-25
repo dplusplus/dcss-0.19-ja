@@ -703,7 +703,7 @@ Piety  : variable
 %%%%
 Piety  : extremely large
 
-信仰値 : 特大
+信仰値 : 莫大
 %%%%
 Piety  : large
 

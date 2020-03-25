@@ -3,10 +3,6 @@ Buggy note passed: unknown note type
 
 # 訳不要
 %%%%
-Buggy note passed
-
-# 訳不要
-%%%%
 Xom revived you
 
 ゾムがあなたを蘇らせた

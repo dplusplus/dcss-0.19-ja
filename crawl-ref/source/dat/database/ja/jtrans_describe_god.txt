@@ -143,7 +143,7 @@ ancestor battlemage misc info
                         六尺棒
                       冷気の投射
                        石錐の矢
-                     +近接ダメージ
+                    近接ダメージ増加
 15                     溶岩の矢
 19                  冷気のラジャタン
 19                       加速
@@ -435,7 +435,7 @@ Your enemies may become distracted by gold.
 %%%%
 Your life essence is reduced. (-10% HP)
 
-あなたの生命力は低下している。(-10% HP)
+あなたの生命力は弱められる。(-10% HP)
 %%%%
 %s prevents your magic from regenerating.
 
@@ -471,7 +471,7 @@ Title  -
 %%%%
 Favour -
 
-好意 -
+歓心 -
 %%%%
 You are not religious.
 

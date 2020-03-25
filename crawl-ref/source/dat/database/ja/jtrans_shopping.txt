@@ -99,7 +99,7 @@ invalid ordering
 %%%%
 Help! Non-existent shop.
 
-お助け！あり得べからざる店だ。
+お助け！ あり得べからざる店だ。
 %%%%
 %s appears to be closed.
 

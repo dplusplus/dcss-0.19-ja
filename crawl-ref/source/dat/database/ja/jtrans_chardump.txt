@@ -452,7 +452,7 @@ You are thirsty.
 %%%%
 You are not thirsty.
 
-あまり渇いていない。
+あなたはあまり渇いていない。
 %%%%
 You are almost alive.
 

@@ -139,9 +139,9 @@ Please select your species.
 
 あなたの種族を選んでください。
 %%%%
-Goodbye!
+# Goodbye!
 
-さようなら！
+# jtrans_hints.txtと重複
 %%%%
 Warrior
 

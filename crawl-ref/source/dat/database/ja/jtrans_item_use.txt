@@ -139,7 +139,7 @@ head
 %%%%
 You'd need your %s free.
 
-あなたは%sを自由にする必要がある。
+あなたは%sの装備を空ける必要がある。
 %%%%
 You can't wear this over your hauberk.
 
@@ -159,7 +159,7 @@ You can't wear a glove with your huge claw%s!
 %%%%
 You can't wear boots with hooves!
 
-あなたは蹄が邪魔してブーツを装備できない！
+あなたは蹄が邪魔してブーツを履くことができない！
 %%%%
 Boots don't fit your talons!
 
@@ -583,7 +583,7 @@ You hear a loud clanging noise!
 %%%%
 The scroll dissolves into smoke.
 
-巻物は霧の中に溶け込んだ。
+巻物は煙の中に溶け込んだ。
 %%%%
 It would have no effect in this place.
 

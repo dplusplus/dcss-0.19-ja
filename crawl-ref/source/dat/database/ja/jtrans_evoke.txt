@@ -89,7 +89,7 @@ You have no means to grasp a wand firmly enough.
 %%%%
 You cannot evoke magical items.
 
-あなたは魔道具を発動できない。
+あなたは魔道具を発動することができない。
 %%%%
 's wrath prevents you from evoking devices!
 
@@ -97,15 +97,15 @@ You cannot evoke magical items.
 %%%%
 Zap which item?
 
-どのアイテムを振りますか？
+どのアイテムを振るいますか？
 %%%%
 You can't zap that!
 
-あなたはそれを振れない！
+あなたはそれを振るうことができない！
 %%%%
 Sorry, this wand was removed!
 
-# 訳不要
+残念ながらそのワンドは削除済みだ！
 %%%%
 This wand has no charges.
 
@@ -285,7 +285,7 @@ You can't use the mirror on yourself.
 %%%%
 You can't see anything there to clone.
 
-鏡に映す対象が見当たらない。
+分身を作り出す対象が見当たらない。
 %%%%
 The mirror can't reflect that.
 

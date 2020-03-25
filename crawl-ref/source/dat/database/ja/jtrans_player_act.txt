@@ -5,7 +5,7 @@ That's too large and heavy for you to wield.
 %%%%
 You can't wield %s.
 
-あなたは%sを武器として扱うことはできない。
+あなたは%sを武器として振るうことはできない。
 %%%%
 You can't use rods.
 
@@ -153,7 +153,7 @@ You are too mesmerised to rage.
 %%%%
 You are too terrified to rage.
 
-あなたは怯えすぎておりバーサークすることができない。
+あなたはあまりに怯えているためバーサークすることができない。
 %%%%
 #if TAG_MAJOR_VERSION == 34
 Only creatures of flesh and blood can berserk.

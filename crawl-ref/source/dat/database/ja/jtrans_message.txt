@@ -61,7 +61,7 @@ You can't do that in your present form.
 %%%%
 You can't do that yet.
 
-あなたはまだそれをできない。
+あなたはまだそれをすることができない。
 %%%%
 # Okay, then.
 
@@ -133,7 +133,7 @@ You feel a strange sense of stasis.
 %%%%
 You don't know any spells.
 
-あなたは呪文を一つも知らない。
+あなたは呪文を何一つ知らない。
 %%%%
 You feel your magic capacity increase.
 

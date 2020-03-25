@@ -118,11 +118,11 @@ You can gain information about it by pressing <w>x</w> and moving the cursor ove
 %%%%
 To attack this monster with your wielded weapon, just move into it.
 
-手に持っている武器でこのモンスターに攻撃するためには、単純にモンスターのいる場所に移動しましょう。
+手に持っている武器でこのモンスターに攻撃するには、モンスターのいる場所に移動しようとするだけでよいです。
 %%%%
 Note that as long as there's a non-friendly monster in view you won't be able to automatically move to distant squares, to avoid death by misclicking.
 
-友好的でないモンスターが見えるところにいる間は、ミスクリックによる死を防ぐため離れた位置に自動的に移動することはできません。
+友好的でないモンスターが見えるところにいる間は、ミスクリックによる死を防ぐため離れた位置に自動的に移動することはできないことに注意してください。
 %%%%
 However, as a hunter you will want to deal with it using your bow. If you have a look at your shortbow from your <w>i</w>nventory, you'll find an explanation of how to do this.
 
@@ -184,7 +184,6 @@ describe portal bazaar
 (あなたが今くぐり抜けてきた「古代の石で造られたアーチ」ではありません！)</console>
 %%%%
 describe portal non-bazaar
-
 
 追加で恩恵をもたらすとともに追加の危険も伴う任意選択制の階層へのポータルです。
 ポータルを見過ごすことにはペナルティはありませんが、ぐずぐずしていると消滅してしまうので
@@ -335,8 +334,8 @@ hint seen missiles ranger
 %%%%
 hint seen missiles conjurer
 
-#             text << jtrans_notrim("\nHowever, as a spellslinger, you don't really need "
-#                                   "another type of ranged attack.");
+#             text << "\nHowever, as a spellslinger, you don't really need "
+#                     "another type of ranged attack.";
 しかしあなたは魔法使いですので、他の種類の遠隔攻撃はそんなに必要ありません。
 %%%%
 hint seen missiles other
@@ -678,8 +677,7 @@ hint heap brand use tile
 #         text << "A small symbol on an item tile signifies that there is at "
 #                 "least one other item in the same heap that you may want to "
 #                 "check out.";
-アイテムのあるマスに付いた小さな記号は、そのアイテムの下に少なくとも一つ
-他のアイテムが存在することを示します。
+アイテムのあるマスに付いた小さな記号は、そのアイテムの下に少なくとも一つ他のアイテムが存在することを示します。
 あなたはそこを確認しておきたくなるかもしれません。
 %%%%
 hint heap brand
@@ -766,7 +764,7 @@ hint seen altar
 あの %s は祭壇です。
 <w>[x]</w>を押して祭壇にカーソルを合わせ、<w>[v]</w>を押すことで
 短い解説文を読むことができます。
-その上に立って<w>[%%]</w>や<w>[%%]</w>を押すことで入信したり、
+その上に立って<w>[%]</w>や<w>[%]</w>を押すことで入信したり、
 その神についての情報を得ることができます。
 まだその神に入信していなければ、確認を求められるでしょう。
 %%%%
@@ -774,6 +772,9 @@ hint seen altar use tile
 
 あれは祭壇です。
 <w>[右クリック]</w>することで短い解説文を読むことができます。
+その上に立って<w>[%]</w>や<w>[%]</w>を押すことで入信したり、
+その神についての情報を得ることができます。
+まだその神に入信していなければ、確認を求められるでしょう。
 %%%%
 hint seen altar conjurer
 
@@ -1810,8 +1811,6 @@ hint spell miscast 2
 #                 "time, but if you're repeatedly contaminated in a short amount "
 #                 "of time you'll mutate or suffer from other ill side effects."
 #                 "\n\n";
-If the spellcasting success chance is high (which can be checked by entering <w>%\?</w> or <w>%</w>) then a miscast merely means the spell is not working, along with a harmless side effect.
-
 もし呪文詠唱の成功率(<w>[%\?]</w>や<w>[%]</w>を押した画面で確認できます)が高い場合は、
 魔法失敗は単に呪文がうまく働かなかっただけのことを意味し、無害な副作用しか起きません。
 しかし失敗率の高い呪文については、あなたが魔力に汚染される危険、およびさらなる有害な副作用をもたらす危険が存在します。
@@ -2094,7 +2093,7 @@ hints skills info
 スキル名の右に表示される数字は現在のレベルを指し、高いほど良いです。
 <brown>茶色でパーセント表示された数値</brown>は経験値がどの程度の割合振分けられているかを表します。
 どのスキルを訓練をするかを、それに割り当てられた文字を押すことで切り替えできます。
-<darkgrey>暗い灰色</darkgrey>のスキルは訓練されておらず、他のスキルの訓練を楽にします。
+<darkgrey>暗い灰色</darkgrey>で表示されたスキルは訓練されておらず、他のスキルの訓練を促します。
 %%%%
 hints skill training info
 
@@ -2152,15 +2151,15 @@ To do this,
 %%%%
 first <w>%</w>ield it
 
-まず<w>[%]</w>を押して装備し、
+まず<w>[%]</w>を押して装備し
 %%%%
 first <w>%</w>ear it
 
-まず<w>[%]</w>を押して装備し、
+まず<w>[%]</w>を押して装備し
 %%%%
 first <w>%</w>ut it on
 
-まず<w>[%]</w>を押して身につけ、
+まず<w>[%]</w>を押して身につけ
 %%%%
 <r>(BUG! this item shouldn't give an ability)</r>
 
@@ -2170,7 +2169,7 @@ first <w>%</w>ut it on
 
 、そして
 %%%%
-hints abiliities
+hints abilities
 
 #     str += "enter the ability menu with <w>%</w>, and then "
 #            "choose the corresponding ability. Note that such an attempt of "
@@ -2317,7 +2316,6 @@ hints describe item missiles launched use tile
 #                      << " " << item.name(DESC_BASENAME)
 #                      << (item.quantity > 1? "s" : "")
 #                      << ". You'll ";
-#                 ostr << _hints_target_mode();
 あなたは既にそれに適した射出道具を手にしているので、
 単純に<w>[Shift]</w>を押しながら射撃したいモンスターを<w>[左クリック]</w>して撃つことができる。
 代替手段として、射撃したい矢弾のアイコンを<w>[左クリック]</w>し、
@@ -2758,7 +2756,6 @@ hints describe item staves trog
 #                      << " frowns upon the use of magic, this staff will be "
 #                         "of little use to you and you might just as well "
 #                         "<w>%</w>rop it now.";
-Seeing how %s frowns upon the use of magic, this staff will be of little use to you and you might just as well <w>%</w>rop it now.
 %sは魔法の使用によい顔をしないのでこの杖はあなたにとってほとんど役に立たず、
 <w>[%]</w>を押して今すぐ置いていった方がよい。
 %%%%
@@ -2996,6 +2993,9 @@ hints describe feature altar use tile
 %%%%
 hints describe feature altar
 
+あなたが信仰を鞍替えするのなら%sはおそらくこれを好まないだろうが、注視するだけならどうもしない。
+<w>%s</w>についての情報を得るには、祭壇の場所に立って<w>[<<]</w>もしくは<w>[>]</w>を押すこと。
+祭壇に応じた神に入信する(そして現在信仰している神を捨てる！)前に、確認が求められるだろう。
 あなたの現在の%sへの信仰状況を見るには<w>[^]</w>を押すこと。
 %%%%
 hints describe feature branch entrance
@@ -3052,10 +3052,6 @@ hints describe cloud opaque cloud
 This cloud
 
 この雲
-%%%%
-It
-
-<[gender neuter subj]it>
 %%%%
 hints describe disturbance
 

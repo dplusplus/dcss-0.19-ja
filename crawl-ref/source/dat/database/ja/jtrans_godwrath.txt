@@ -117,7 +117,7 @@ You feel the Shining One's silent rage upon you!
 %%%%
 draws some chaos from your body!
 
-はあなたの体から混沌を抜き取った！
+はあなたの体から混沌を抜き取ろうとしている！
 %%%%
 rids your body of chaos!
 

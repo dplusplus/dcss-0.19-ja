@@ -18,7 +18,7 @@ You continue taking off %s.
 %%%%
 You continue memorising.
 
-あなたは呪文の習得を続けている
+あなたは呪文の習得を続けている。
 %%%%
 You continue meditating on the rock.
 
@@ -179,7 +179,7 @@ You finish putting on %s.
 %%%%
 You finish taking off %s.
 
-あなたは%sを脱いだ。
+あなたは%sを脱ぎ終えた。
 %%%%
 You finish eating.
 
@@ -199,7 +199,7 @@ You finish merging with the rock.
 %%%%
 ...yet there is something new on the other side. You quickly turn back.
 
-……しかしまだ向こうに岩が残っている。あなたはさっと引き返した。
+……しかし向こう側によく分からないものがある。あなたはさっと引き返した。
 %%%%
 ...and sense your way blocked. You quickly turn back.
 

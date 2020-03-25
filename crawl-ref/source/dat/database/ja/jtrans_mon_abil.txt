@@ -121,5 +121,5 @@ Grasping roots begin to rise from the ground!
 %%%%
 overheats!
 
-はオーバーヒートした！
+は過剰に発熱した！
 %%%%

@@ -256,7 +256,7 @@ becomes momentarily stuck in the liquid earth.
 %%%%
 splashes around in the water.
 
-は水をはねかけた。
+はあたりに水をはねかけた。
 %%%%
 You hear a splashing noise.
 

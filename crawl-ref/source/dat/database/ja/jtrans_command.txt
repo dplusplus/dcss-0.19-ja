@@ -218,7 +218,7 @@ targeting help wiz
 <w>M</w>      : 対象のモンスターやプレイヤーの呪文失敗を引き起こす
 <w>s</w>      : 対象のモンスターを叫ばせる、もしくは喋らせる
 <w>S</w>      : 対象のモンスターを召喚されたモンスターとして扱う
-<w>w</w>      : マップの任意の場所からの最短距離を計算する
+<w>w</w>      : マップの任意の場所への最短経路を計算する
 <w>"</w>      : ポータルのデバッグ情報を取得する
 <w>~</w>      : 対象のモンスターを変化させる
 <w>,</w>      : 対象のモンスターのHPを1に下げる
@@ -396,7 +396,7 @@ command movement help
 %%%%
 wait a turn (also <w>s</w>, <w>Del</w>)
 
-1ターン待つ。(<w>s</w>、<w>Del</w>でも可)
+1ターン待つ。(<w>s</w>、<w>Del</w>も同様)
 %%%%
 rest and long wait; stops when
 
@@ -410,7 +410,7 @@ command help rest
 #     when 100 turns over (<w>numpad-5</w>)
     HPやMPが全快になる、何かを発見す
     る、100ターン経過することで解除
-    される。(テンキーの<w>5</w>でも可)
+    される。(テンキーの<w>5</w>も同様)
 %%%%
 <h>Extended Movement:
 
@@ -455,7 +455,7 @@ command help autofight
 #             without moving
 <h>対象を自動で指定して攻撃:
 <w>Tab</w>       : 一番近くのモンスターを
-            可能なら移動して攻撃する。
+            必要なら移動して攻撃する。
 <w>Shift+Tab</w> : 一番近くのモンスターを
             移動せず攻撃する。
 %%%%
@@ -598,7 +598,7 @@ add note (use <w>%:</w> to read notes)
 add macro (also <w>Ctrl-D</w>)
 
 マクロを編集する。
-         (<w>Ctrl+D</w>でも可)
+         (<w>Ctrl+D</w>も同様)
 %%%%
 reassign inventory/spell letters
 
@@ -828,7 +828,7 @@ eVoke wand and miscellaneous item
 %%%%
 pick up items (also <w>g</w>)
 
-アイテムを拾い上げる。(<w>g</w>でも可)
+アイテムを拾い上げる。(<w>g</w>も同様)
 %%%%
 (press twice for pick up menu)
 
@@ -879,7 +879,7 @@ command additional help
 %%%%
 <w>Shift-Dir.</w> runs into one direction
 
-<w>Shift+(方向) 一直線に移動する。
+<w>Shift+(方向)</w> 一直線に移動する。
 %%%%
 <w>%</w> or <w>%</w> : ascend/descend the stairs
 
@@ -958,7 +958,7 @@ read a book to see spell descriptions
 %%%%
 <console><lightgrey>/</lightgrey> : </console>wands (e<w>%</w>oke)
 
-<console><lightgrey>/</lightgrey> : </console>ンド e(<w>%</w>)okeで発動させる。
+<console><lightgrey>/</lightgrey> : </console>ワンド e(<w>%</w>)okeで発動させる。
 %%%%
 </lightcyan> : </console>books (<w>%</w>ead, <w>%</w>emorise, <w>%</w>ap, <w>%</w>ap)
 
@@ -979,7 +979,7 @@ list inventory (select item to view it)
 pick up item from ground (also <w>g</w>)
 
 地面からアイテムを拾い上げる。
-    (<w>g</w>でも可)
+    (<w>g</w>も同様)
 %%%%
 drop item
 
@@ -999,7 +999,7 @@ use an ability
 %%%%
 show character overview
 
-キャラクター概要を表示する
+キャラクター概要を表示する。
 %%%%
 show religion overview
 
@@ -1018,7 +1018,7 @@ command help targeting
 # "         if still alive and in sight\n"
 <h>照準合わせ:
 <w>Enter</w>、<w>.</w>、<w>Del</w> : 目標を決定する。
-<w>+</w>/<w>-</w>  : 目標を順繰りに切り替える。
+<w>+</w>/<w>-</w>  : 目標を順/逆順に切り替える。
 <w>f</w>、<w>p</w> : 前に指定した目標がまだ生きて
          いて、視界内にいればそれを撃つ。
 %%%%

@@ -77,7 +77,7 @@ by divine providence
 %%%%
 [zap]energy
 
-エネルギー
+エネルギーの奔流
 # from SPELL_ENERGY_BOLT
 %%%%
 [zap]splash of poison
@@ -611,10 +611,10 @@ A great vortex of raging winds appears %s%s%s!
 around %s!
 
 %sの周りに出現した！
-%%%%%
+%%%%
 and lifts %s up!!
 
-%sを巻き上げた!!
+現れ、%sを巻き上げた!!
 %%%%
 A great vortex of raging winds appears out of thin air!
 

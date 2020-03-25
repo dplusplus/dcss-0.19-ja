@@ -53,7 +53,7 @@ You are much too full right now.
 %%%%
 You feel mightier all of a sudden.
 
-あなたは突然、より力強くなった。
+あなたは突然、さらに力強くなった。
 %%%%
 You feel very mighty all of a sudden.
 
@@ -61,7 +61,7 @@ You feel very mighty all of a sudden.
 %%%%
 You feel more clever all of a sudden.
 
-あなたは突然、より賢くなった。
+あなたは突然、さらに賢くなった。
 %%%%
 You feel clever all of a sudden.
 
@@ -69,7 +69,7 @@ You feel clever all of a sudden.
 %%%%
 You feel more agile all of a sudden.
 
-あなたは突然、より機敏になった。
+あなたは突然、さらに機敏になった。
 %%%%
 You feel agile all of a sudden.
 

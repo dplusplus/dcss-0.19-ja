@@ -197,7 +197,7 @@ your weapon melds
 %%%%
 you unwield
 
-あなたが武器を外す
+あなたが武器を手放す
 %%%%
 You feel your power drawn to a protective spirit.
 
@@ -221,7 +221,7 @@ You feel spirits watching over you.
 %%%%
 You feel resistant to fire.
 
-あなたは火への耐性を帯びた。
+あなたは火への耐性を得たようだ。
 %%%%
 # You feel resistant to cold.
 
@@ -233,7 +233,7 @@ You feel resistant to poison.
 %%%%
 You feel perceptive.
 
-あなたは鋭敏になったようだ。
+あなたの視覚は鋭敏になったようだ。
 %%%%
 You become transparent for a moment.
 
@@ -285,7 +285,7 @@ You feel more protected from negative energy.
 %%%%
 You feel strangely lacking in power.
 
-あなたは奇妙な力の不足を感じた。
+あなたは異様に力が不足しているのを感じた。
 %%%%
 You feel powerful.
 
@@ -389,27 +389,27 @@ The amulet feels cold and inert.
 %%%%
 The amulet throbs as it attunes itself to your uninjured body.
 
-護符はあなたの傷ついていない体に同調して脈動した。
+護符はあなたの傷ついていない体に順応して脈動した。
 %%%%
 You sense that the amulet cannot attune itself to your injured body.
 
-護符はあなたの傷ついた体に同調できていないように感じた。
+護符はあなたの傷ついた体に順応できていないように感じた。
 %%%%
 The amulet hums as it attunes itself to your energized body.
 
-護符はあなたの魔力に満ちた体に同調して唸るような音を立てた。
+護符はあなたの魔力に満ちた体に順応して唸るような音を立てた。
 %%%%
 You sense that the amulet cannot attune itself to your exhausted body.
 
-護符は魔力を失ったあなたの体に同調できていないように感じた。
+護符は魔力を失ったあなたの体に順応できていないように感じた。
 %%%%
 You feel more attuned to fire.
 
-あなたはさらに火炎に同調した気がした。
+あなたはさらに火炎に順応した気がした。
 %%%%
 You feel more attuned to ice.
 
-あなたはさらに冷気に同調した気がした。
+あなたはさらに冷気に順応した気がした。
 %%%%
 You feel a slight, muted jump rush through you.
 

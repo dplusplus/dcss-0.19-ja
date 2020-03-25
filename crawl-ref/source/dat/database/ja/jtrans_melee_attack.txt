@@ -674,7 +674,7 @@ is burned by acid!
 %%%%
 [verb]pounce on
 
-襲いかかった
+飛びかかった
 %%%%
 from afar
 

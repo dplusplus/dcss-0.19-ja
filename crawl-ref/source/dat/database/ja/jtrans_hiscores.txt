@@ -125,7 +125,7 @@ Impaled on %s's spines
 %%%%
 Succumbed to poison
 
-毒死
+毒に冒されて死んだ
 %%%%
 poisoned by %s
 
@@ -429,7 +429,7 @@ fell through a gate
 %%%%
 Fell down through a gate
 
-ゲートをくぐり抜けて死亡
+ゲートをくぐり抜けて死んだ
 %%%%
 Splashed by %s's acid
 
