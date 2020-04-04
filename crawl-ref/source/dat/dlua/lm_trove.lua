@@ -327,6 +327,8 @@ function TroveMarker:item_name(do_grammar)
       return crawl.jtrans(item.sub_type)
     elseif string.find(item.sub_type, 'manual of ') ~= nil then
       return crawl.tagged_jtrans('[skill]', string.gsub(item.sub_type, 'manual of ', '')) .. crawl.jtrans("manual of")
+    else
+      return crawl.jtrans(item.sub_type)
     end
   elseif item.base_type == "wand" then
     s = s .. crawl.jtrans(" wand of".. " " .. item.sub_type)
@@ -345,6 +347,11 @@ function TroveMarker:item_name(do_grammar)
 
   if item.base_type == "wand" then
     s = s .. " (" .. item.plus1 .. ")"
+  end
+
+  s = s .. ""
+  if #s == 0 then
+    s = s .. '"' .. item.sub_type .. '"'
   end
 
   return util.trim(s)
