@@ -349,9 +349,8 @@ function TroveMarker:item_name(do_grammar)
     s = s .. " (" .. item.plus1 .. ")"
   end
 
-  s = s .. ""
   if #s == 0 then
-    s = s .. '"' .. item.sub_type .. '"'
+    s = s .. item.sub_type
   end
 
   return util.trim(s)
