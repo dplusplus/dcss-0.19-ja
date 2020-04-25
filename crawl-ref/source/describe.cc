@@ -3465,39 +3465,43 @@ static string _monster_stat_description(const monster_info& mi)
                 result << jtrans_notrim(".\n");
 
             if (did_speed && fast.size() == 1)
-                result << pronoun_is << fast[0];
+                result << pronoun_is << fast[0] << jtrans_notrim(".\n");
             else if (!fast.empty())
             {
                 if (did_speed)
                     result << jtrans(", ");
                 result << comma_separated_line(fast.begin(), fast.end(),
-                                               nlpronoun_is, nlpronoun_is);
+                                               nlpronoun_is, nlpronoun_is)
+                       << jtrans_notrim(".\n");
             }
             if (!slow.empty())
             {
                 if (did_speed || !fast.empty())
                     result << jtrans(", but ");
                 result << comma_separated_line(slow.begin(), slow.end(),
-                                               nlpronoun_is, nlpronoun_is);
+                                               nlpronoun_is, nlpronoun_is)
+                       << jtrans_notrim(".\n");
             }
         }
         else if (speed < 10)
         {
             if (did_speed && slow.size() == 1)
-                result << pronoun_is << slow[0];
+                result << pronoun_is << slow[0] << jtrans_notrim(".\n");
             else if (!slow.empty())
             {
                 if (did_speed)
                     result << jtrans(", ");
                 result << comma_separated_line(slow.begin(), slow.end(),
-                                               nlpronoun_is, nlpronoun_is);
+                                               nlpronoun_is, nlpronoun_is)
+                       << jtrans_notrim(".\n");
             }
             if (!fast.empty())
             {
                 if (did_speed || !slow.empty())
                     result << jtrans(", but ");
                 result << comma_separated_line(fast.begin(), fast.end(),
-                                               nlpronoun_is, nlpronoun_is);
+                                               nlpronoun_is, nlpronoun_is)
+                       << jtrans_notrim(".\n");
             }
         }
     }
