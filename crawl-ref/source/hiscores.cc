@@ -2931,7 +2931,9 @@ static string _blame_chain_string(vector<string> &fields)
 
         old_blamed = blamed;
     }
-    if (!ends_with(text, "た"))
+    if (ends_with(text, "ている"))
+        text = replace_all(text, "ている", "た");
+    else if (!ends_with(text, "た"))
         text += "た";
 
     return text;
