@@ -1080,6 +1080,12 @@ static string _desc_sac_mut(const CrawlStoreValue &mut_store)
     return mut_upgrade_summary(static_cast<mutation_type>(mut_store.get_int()));
 }
 
+static string _desc_sac_arcana(const CrawlStoreValue &mut_store)
+{
+    return replace_all(mut_upgrade_summary(static_cast<mutation_type>(mut_store.get_int())),
+                       "できない。", "できなくなる。");
+}
+
 static string _sacrifice_desc(const ability_type ability)
 {
     const string boilerplate = jtrans_notrim(
@@ -1096,9 +1102,20 @@ static string _sacrifice_desc(const ability_type ability)
 
     ASSERT(you.props.exists(sac_vec_key));
     const CrawlVector &sacrifice_muts = you.props[sac_vec_key].get_vector();
-    return make_stringf(jtrans_notrimc("\nAfter this sacrifice, you will find that {sac list}.\n"),
-               comma_separated_fn(sacrifice_muts.begin(), sacrifice_muts.end(),
-                                  _desc_sac_mut, "、", "および").c_str()) + desc;
+
+    if (ends_with(_desc_sac_mut(*(sacrifice_muts.begin())), "。"))
+    {
+        return make_stringf(jtrans_notrimc("\nAfter this sacrifice, you will find that {sac list}.\n"),
+                            comma_separated_fn(sacrifice_muts.begin(), sacrifice_muts.end(),
+                                               _desc_sac_arcana, "\nこの代償を捧げたあと、",
+                                                                 "\nこの代償を捧げたあと、").c_str()) + desc;
+    }
+    else
+    {
+        return make_stringf(jtrans_notrimc("\nAfter this sacrifice, you will find that {mut desc}.\n"),
+                            to_separated_fn(sacrifice_muts.begin(), sacrifice_muts.end(),
+                                            _desc_sac_mut).c_str()) + desc;
+    }
 }
 
 static inline string _spacer(const int length)

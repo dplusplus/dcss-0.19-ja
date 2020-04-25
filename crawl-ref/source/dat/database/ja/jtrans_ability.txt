@@ -774,6 +774,10 @@ If you make this sacrifice, your powers granted by Ru will become stronger in pr
 %%%%
 After this sacrifice, you will find that {sac list}.
 
+この代償を捧げたあと、%s
+%%%%
+After this sacrifice, you will find that {mut desc}.
+
 この代償を捧げたあと、あなたは%sを得る。
 %%%%
 No description found.
