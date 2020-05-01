@@ -87,6 +87,12 @@ The fountain becomes smaller until it vanishes.
 
 噴水はだんだんと小さくなって消えてしまった。
 %%%%
+#### dat/des/variable/grated_community.des ##############################
+%%%%
+Slaves and Accessories
+
+奴隷と装身具の店
+%%%%
 #### dat/des/variable/large_themed.des #######################
 %%%%
 You hear a hidden mechanism click...the prison walls lower!
